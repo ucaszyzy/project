@@ -1,0 +1,225 @@
+
+
+================================================================
+== Vivado HLS Report for 'weight_load_reorg'
+================================================================
+* Date:           Thu Jul 29 20:17:10 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- Loop 1     |    ?|    ?|   5 ~ ?  |          -|          -|      ?|    no    |
+        | + Loop 1.1  |    3|    ?|  3 ~ 268 |          -|          -| 1 ~ ? |    no    |
+        +-------------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (weight_load_enable_r & !exitcond1)
+3 --> 
+	4  / (!exitcond)
+	2  / (exitcond)
+4 --> 
+	3  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.78>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%TN_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TN_MIN)"   --->   Operation 5 'read' 'TN_MIN_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%TM_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TM_MIN)"   --->   Operation 6 'read' 'TM_MIN_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%Kernel_size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Kernel_size)"   --->   Operation 7 'read' 'Kernel_size_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%n_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %n)"   --->   Operation 8 'read' 'n_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%m_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %m)"   --->   Operation 9 'read' 'm_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%weight_load_enable_r = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %weight_load_enable)"   --->   Operation 10 'read' 'weight_load_enable_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%Weight_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Weight_offset)"   --->   Operation 11 'read' 'Weight_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Weight, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 12 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %weight_load_enable_r, label %_ZrsILi9ELb0EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit, label %.loopexit" [cnn.cpp:493]   --->   Operation 13 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%pingpong = alloca i1"   --->   Operation 14 'alloca' 'pingpong' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%next_t3_0_V_1 = alloca i3"   --->   Operation 15 'alloca' 'next_t3_0_V_1' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%next_t4_0_V_1 = alloca i3"   --->   Operation 16 'alloca' 'next_t4_0_V_1' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%next_t31_0_V_1 = alloca i3"   --->   Operation 17 'alloca' 'next_t31_0_V_1' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%next_t41_0_V_1 = alloca i3"   --->   Operation 18 'alloca' 'next_t41_0_V_1' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%Kernel_size_2b_V = trunc i32 %Kernel_size_read to i2" [cnn.cpp:503]   --->   Operation 19 'trunc' 'Kernel_size_2b_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%TM_MIN_6b_V = trunc i32 %TM_MIN_read to i6" [cnn.cpp:504]   --->   Operation 20 'trunc' 'TM_MIN_6b_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%TN_MIN_3b_V = trunc i32 %TN_MIN_read to i3" [cnn.cpp:505]   --->   Operation 21 'trunc' 'TN_MIN_3b_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%m_10b_V = trunc i32 %m_read to i10" [cnn.cpp:507]   --->   Operation 22 'trunc' 'm_10b_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%n_11b_V = trunc i32 %n_read to i11" [cnn.cpp:508]   --->   Operation 23 'trunc' 'n_11b_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (1.77ns)   --->   "%tmp = icmp eq i10 %m_10b_V, 0" [cnn.cpp:510]   --->   Operation 24 'icmp' 'tmp' <Predicate = (weight_load_enable_r)> <Delay = 1.77> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (1.88ns)   --->   "%tmp_s = icmp eq i11 %n_11b_V, 0" [cnn.cpp:510]   --->   Operation 25 'icmp' 'tmp_s' <Predicate = (weight_load_enable_r)> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%lhs_V = zext i6 %TM_MIN_6b_V to i9" [cnn.cpp:511]   --->   Operation 26 'zext' 'lhs_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%rhs_V = zext i3 %TN_MIN_3b_V to i9" [cnn.cpp:511]   --->   Operation 27 'zext' 'rhs_V' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (3.78ns)   --->   "%r_V = mul i9 %rhs_V, %lhs_V" [cnn.cpp:511]   --->   Operation 28 'mul' 'r_V' <Predicate = (weight_load_enable_r)> <Delay = 3.78> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 3.78> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_2_cast4 = zext i2 %Kernel_size_2b_V to i3" [cnn.cpp:525]   --->   Operation 29 'zext' 'tmp_2_cast4' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (1.56ns)   --->   "%tmp_4 = add i3 1, %tmp_2_cast4" [cnn.cpp:524]   --->   Operation 30 'add' 'tmp_4' <Predicate = (weight_load_enable_r)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%ReadLength_cast6 = call i8 @_ssdm_op_PartSelect.i8.i9.i32.i32(i9 %r_V, i32 1, i32 8)" [cnn.cpp:529]   --->   Operation 31 'partselect' 'ReadLength_cast6' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (1.76ns)   --->   "store i1 true, i1* %pingpong"   --->   Operation 32 'store' <Predicate = (weight_load_enable_r)> <Delay = 1.76>
+ST_1 : Operation 33 [1/1] (1.76ns)   --->   "br label %.preheader299" [cnn.cpp:524]   --->   Operation 33 'br' <Predicate = (weight_load_enable_r)> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.93>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%p_0 = phi i2 [ 0, %_ZrsILi9ELb0EE11ap_int_baseIXT_EXT0_EXleT_Li64EEERKS1_i.exit ], [ %t3_V, %.preheader299.loopexit ]"   --->   Operation 34 'phi' 'p_0' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.95ns)   --->   "%exitcond1 = icmp eq i2 %p_0, %Kernel_size_2b_V" [cnn.cpp:524]   --->   Operation 35 'icmp' 'exitcond1' <Predicate = (weight_load_enable_r)> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (1.56ns)   --->   "%t3_V = add i2 %p_0, 1" [cnn.cpp:524]   --->   Operation 36 'add' 't3_V' <Predicate = (weight_load_enable_r)> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.loopexit.loopexit, label %.preheader.preheader" [cnn.cpp:524]   --->   Operation 37 'br' <Predicate = (weight_load_enable_r)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.95ns)   --->   "%tmp_5 = icmp eq i2 %p_0, 0" [cnn.cpp:529]   --->   Operation 38 'icmp' 'tmp_5' <Predicate = (weight_load_enable_r & !exitcond1)> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (0.97ns)   --->   "%tmp2 = and i1 %tmp_s, %tmp_5" [cnn.cpp:529]   --->   Operation 39 'and' 'tmp2' <Predicate = (weight_load_enable_r & !exitcond1)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (1.76ns)   --->   "br label %.preheader" [cnn.cpp:525]   --->   Operation 40 'br' <Predicate = (weight_load_enable_r & !exitcond1)> <Delay = 1.76>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 41 'br' <Predicate = (weight_load_enable_r & exitcond1)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "ret void" [cnn.cpp:539]   --->   Operation 42 'ret' <Predicate = (!weight_load_enable_r) | (exitcond1)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.12>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%p_1 = phi i3 [ 0, %.preheader.preheader ], [ %t4_V, %.preheader.backedge ]"   --->   Operation 43 'phi' 'p_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 -1, i64 0)"   --->   Operation 44 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %p_1, %tmp_4" [cnn.cpp:525]   --->   Operation 45 'icmp' 'exitcond' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (1.65ns)   --->   "%t4_V = add i3 %p_1, 1" [cnn.cpp:525]   --->   Operation 46 'add' 't4_V' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %.preheader299.loopexit, label %1" [cnn.cpp:525]   --->   Operation 47 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%pingpong_load = load i1* %pingpong" [cnn.cpp:527]   --->   Operation 48 'load' 'pingpong_load' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (1.13ns)   --->   "%tmp_8 = icmp eq i3 %p_1, 0" [cnn.cpp:529]   --->   Operation 49 'icmp' 'tmp_8' <Predicate = (!exitcond)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node p_s)   --->   "%tmp3 = and i1 %tmp, %tmp_8" [cnn.cpp:529]   --->   Operation 50 'and' 'tmp3' <Predicate = (!exitcond)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 51 [1/1] (0.97ns) (out node of the LUT)   --->   "%p_s = and i1 %tmp3, %tmp2" [cnn.cpp:529]   --->   Operation 51 'and' 'p_s' <Predicate = (!exitcond)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 52 [1/1] (1.13ns)   --->   "%tmp_1 = icmp ne i3 %p_1, %tmp_2_cast4" [cnn.cpp:529]   --->   Operation 52 'icmp' 'tmp_1' <Predicate = (!exitcond)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%next_t3_0_V_1_load = load i3* %next_t3_0_V_1" [cnn.cpp:529]   --->   Operation 53 'load' 'next_t3_0_V_1_load' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%next_t4_0_V_1_load = load i3* %next_t4_0_V_1" [cnn.cpp:529]   --->   Operation 54 'load' 'next_t4_0_V_1_load' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%next_t31_0_V_1_load = load i3* %next_t31_0_V_1" [cnn.cpp:530]   --->   Operation 55 'load' 'next_t31_0_V_1_load' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%next_t41_0_V_1_load = load i3* %next_t41_0_V_1" [cnn.cpp:530]   --->   Operation 56 'load' 'next_t41_0_V_1_load' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "br i1 %pingpong_load, label %2, label %3" [cnn.cpp:527]   --->   Operation 57 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_3 : Operation 58 [2/2] (5.01ns)   --->   "%tmp_7 = call fastcc { i3, i3 } @weight_mmcpy_everyKx(i32* %Weight, i30 %Weight_offset_read, [64 x i32]* nocapture @weight_memcpy_buffer_1, i2 %p_0, i3 %p_1, i3 %next_t31_0_V_1_load, i3 %next_t41_0_V_1_load, i8 %ReadLength_cast6, i1 %p_s, i1 %tmp_1)" [cnn.cpp:534]   --->   Operation 58 'call' 'tmp_7' <Predicate = (!exitcond & !pingpong_load)> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 59 [1/1] (1.13ns)   --->   "%tmp_3 = icmp ne i3 %p_1, 0" [cnn.cpp:535]   --->   Operation 59 'icmp' 'tmp_3' <Predicate = (!exitcond & !pingpong_load)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [2/2] (5.17ns)   --->   "call fastcc void @load_weight2buf_ever([64 x i32]* @weight_memcpy_buffer, [9 x i16]* %weight_buffer_0_0, [9 x i16]* %weight_buffer_0_1, [9 x i16]* %weight_buffer_0_2, [9 x i16]* %weight_buffer_0_3, [9 x i16]* %weight_buffer_1_0, [9 x i16]* %weight_buffer_1_1, [9 x i16]* %weight_buffer_1_2, [9 x i16]* %weight_buffer_1_3, [9 x i16]* %weight_buffer_2_0, [9 x i16]* %weight_buffer_2_1, [9 x i16]* %weight_buffer_2_2, [9 x i16]* %weight_buffer_2_3, [9 x i16]* %weight_buffer_3_0, [9 x i16]* %weight_buffer_3_1, [9 x i16]* %weight_buffer_3_2, [9 x i16]* %weight_buffer_3_3, [9 x i16]* %weight_buffer_4_0, [9 x i16]* %weight_buffer_4_1, [9 x i16]* %weight_buffer_4_2, [9 x i16]* %weight_buffer_4_3, [9 x i16]* %weight_buffer_5_0, [9 x i16]* %weight_buffer_5_1, [9 x i16]* %weight_buffer_5_2, [9 x i16]* %weight_buffer_5_3, [9 x i16]* %weight_buffer_6_0, [9 x i16]* %weight_buffer_6_1, [9 x i16]* %weight_buffer_6_2, [9 x i16]* %weight_buffer_6_3, [9 x i16]* %weight_buffer_7_0, [9 x i16]* %weight_buffer_7_1, [9 x i16]* %weight_buffer_7_2, [9 x i16]* %weight_buffer_7_3, [9 x i16]* %weight_buffer_8_0, [9 x i16]* %weight_buffer_8_1, [9 x i16]* %weight_buffer_8_2, [9 x i16]* %weight_buffer_8_3, [9 x i16]* %weight_buffer_9_0, [9 x i16]* %weight_buffer_9_1, [9 x i16]* %weight_buffer_9_2, [9 x i16]* %weight_buffer_9_3, [9 x i16]* %weight_buffer_10_0, [9 x i16]* %weight_buffer_10_1, [9 x i16]* %weight_buffer_10_2, [9 x i16]* %weight_buffer_10_3, [9 x i16]* %weight_buffer_11_0, [9 x i16]* %weight_buffer_11_1, [9 x i16]* %weight_buffer_11_2, [9 x i16]* %weight_buffer_11_3, [9 x i16]* %weight_buffer_12_0, [9 x i16]* %weight_buffer_12_1, [9 x i16]* %weight_buffer_12_2, [9 x i16]* %weight_buffer_12_3, [9 x i16]* %weight_buffer_13_0, [9 x i16]* %weight_buffer_13_1, [9 x i16]* %weight_buffer_13_2, [9 x i16]* %weight_buffer_13_3, [9 x i16]* %weight_buffer_14_0, [9 x i16]* %weight_buffer_14_1, [9 x i16]* %weight_buffer_14_2, [9 x i16]* %weight_buffer_14_3, [9 x i16]* %weight_buffer_15_0, [9 x i16]* %weight_buffer_15_1, [9 x i16]* %weight_buffer_15_2, [9 x i16]* %weight_buffer_15_3, [9 x i16]* %weight_buffer_16_0, [9 x i16]* %weight_buffer_16_1, [9 x i16]* %weight_buffer_16_2, [9 x i16]* %weight_buffer_16_3, [9 x i16]* %weight_buffer_17_0, [9 x i16]* %weight_buffer_17_1, [9 x i16]* %weight_buffer_17_2, [9 x i16]* %weight_buffer_17_3, [9 x i16]* %weight_buffer_18_0, [9 x i16]* %weight_buffer_18_1, [9 x i16]* %weight_buffer_18_2, [9 x i16]* %weight_buffer_18_3, [9 x i16]* %weight_buffer_19_0, [9 x i16]* %weight_buffer_19_1, [9 x i16]* %weight_buffer_19_2, [9 x i16]* %weight_buffer_19_3, [9 x i16]* %weight_buffer_20_0, [9 x i16]* %weight_buffer_20_1, [9 x i16]* %weight_buffer_20_2, [9 x i16]* %weight_buffer_20_3, [9 x i16]* %weight_buffer_21_0, [9 x i16]* %weight_buffer_21_1, [9 x i16]* %weight_buffer_21_2, [9 x i16]* %weight_buffer_21_3, [9 x i16]* %weight_buffer_22_0, [9 x i16]* %weight_buffer_22_1, [9 x i16]* %weight_buffer_22_2, [9 x i16]* %weight_buffer_22_3, [9 x i16]* %weight_buffer_23_0, [9 x i16]* %weight_buffer_23_1, [9 x i16]* %weight_buffer_23_2, [9 x i16]* %weight_buffer_23_3, [9 x i16]* %weight_buffer_24_0, [9 x i16]* %weight_buffer_24_1, [9 x i16]* %weight_buffer_24_2, [9 x i16]* %weight_buffer_24_3, [9 x i16]* %weight_buffer_25_0, [9 x i16]* %weight_buffer_25_1, [9 x i16]* %weight_buffer_25_2, [9 x i16]* %weight_buffer_25_3, [9 x i16]* %weight_buffer_26_0, [9 x i16]* %weight_buffer_26_1, [9 x i16]* %weight_buffer_26_2, [9 x i16]* %weight_buffer_26_3, [9 x i16]* %weight_buffer_27_0, [9 x i16]* %weight_buffer_27_1, [9 x i16]* %weight_buffer_27_2, [9 x i16]* %weight_buffer_27_3, [9 x i16]* %weight_buffer_28_0, [9 x i16]* %weight_buffer_28_1, [9 x i16]* %weight_buffer_28_2, [9 x i16]* %weight_buffer_28_3, [9 x i16]* %weight_buffer_29_0, [9 x i16]* %weight_buffer_29_1, [9 x i16]* %weight_buffer_29_2, [9 x i16]* %weight_buffer_29_3, [9 x i16]* %weight_buffer_30_0, [9 x i16]* %weight_buffer_30_1, [9 x i16]* %weight_buffer_30_2, [9 x i16]* %weight_buffer_30_3, [9 x i16]* %weight_buffer_31_0, [9 x i16]* %weight_buffer_31_1, [9 x i16]* %weight_buffer_31_2, [9 x i16]* %weight_buffer_31_3, i3 %next_t3_0_V_1_load, i3 %next_t4_0_V_1_load, i6 %TM_MIN_6b_V, i3 %TN_MIN_3b_V, i1 %tmp_3)" [cnn.cpp:535]   --->   Operation 60 'call' <Predicate = (!exitcond & !pingpong_load)> <Delay = 5.17> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 61 [2/2] (5.01ns)   --->   "%tmp_6 = call fastcc { i3, i3 } @weight_mmcpy_everyKx(i32* %Weight, i30 %Weight_offset_read, [64 x i32]* nocapture @weight_memcpy_buffer, i2 %p_0, i3 %p_1, i3 %next_t3_0_V_1_load, i3 %next_t4_0_V_1_load, i8 %ReadLength_cast6, i1 %p_s, i1 %tmp_1)" [cnn.cpp:529]   --->   Operation 61 'call' 'tmp_6' <Predicate = (!exitcond & pingpong_load)> <Delay = 5.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 62 [1/1] (1.13ns)   --->   "%tmp_2 = icmp ne i3 %p_1, 0" [cnn.cpp:530]   --->   Operation 62 'icmp' 'tmp_2' <Predicate = (!exitcond & pingpong_load)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 63 [2/2] (5.17ns)   --->   "call fastcc void @load_weight2buf_ever([64 x i32]* @weight_memcpy_buffer_1, [9 x i16]* %weight_buffer_0_0, [9 x i16]* %weight_buffer_0_1, [9 x i16]* %weight_buffer_0_2, [9 x i16]* %weight_buffer_0_3, [9 x i16]* %weight_buffer_1_0, [9 x i16]* %weight_buffer_1_1, [9 x i16]* %weight_buffer_1_2, [9 x i16]* %weight_buffer_1_3, [9 x i16]* %weight_buffer_2_0, [9 x i16]* %weight_buffer_2_1, [9 x i16]* %weight_buffer_2_2, [9 x i16]* %weight_buffer_2_3, [9 x i16]* %weight_buffer_3_0, [9 x i16]* %weight_buffer_3_1, [9 x i16]* %weight_buffer_3_2, [9 x i16]* %weight_buffer_3_3, [9 x i16]* %weight_buffer_4_0, [9 x i16]* %weight_buffer_4_1, [9 x i16]* %weight_buffer_4_2, [9 x i16]* %weight_buffer_4_3, [9 x i16]* %weight_buffer_5_0, [9 x i16]* %weight_buffer_5_1, [9 x i16]* %weight_buffer_5_2, [9 x i16]* %weight_buffer_5_3, [9 x i16]* %weight_buffer_6_0, [9 x i16]* %weight_buffer_6_1, [9 x i16]* %weight_buffer_6_2, [9 x i16]* %weight_buffer_6_3, [9 x i16]* %weight_buffer_7_0, [9 x i16]* %weight_buffer_7_1, [9 x i16]* %weight_buffer_7_2, [9 x i16]* %weight_buffer_7_3, [9 x i16]* %weight_buffer_8_0, [9 x i16]* %weight_buffer_8_1, [9 x i16]* %weight_buffer_8_2, [9 x i16]* %weight_buffer_8_3, [9 x i16]* %weight_buffer_9_0, [9 x i16]* %weight_buffer_9_1, [9 x i16]* %weight_buffer_9_2, [9 x i16]* %weight_buffer_9_3, [9 x i16]* %weight_buffer_10_0, [9 x i16]* %weight_buffer_10_1, [9 x i16]* %weight_buffer_10_2, [9 x i16]* %weight_buffer_10_3, [9 x i16]* %weight_buffer_11_0, [9 x i16]* %weight_buffer_11_1, [9 x i16]* %weight_buffer_11_2, [9 x i16]* %weight_buffer_11_3, [9 x i16]* %weight_buffer_12_0, [9 x i16]* %weight_buffer_12_1, [9 x i16]* %weight_buffer_12_2, [9 x i16]* %weight_buffer_12_3, [9 x i16]* %weight_buffer_13_0, [9 x i16]* %weight_buffer_13_1, [9 x i16]* %weight_buffer_13_2, [9 x i16]* %weight_buffer_13_3, [9 x i16]* %weight_buffer_14_0, [9 x i16]* %weight_buffer_14_1, [9 x i16]* %weight_buffer_14_2, [9 x i16]* %weight_buffer_14_3, [9 x i16]* %weight_buffer_15_0, [9 x i16]* %weight_buffer_15_1, [9 x i16]* %weight_buffer_15_2, [9 x i16]* %weight_buffer_15_3, [9 x i16]* %weight_buffer_16_0, [9 x i16]* %weight_buffer_16_1, [9 x i16]* %weight_buffer_16_2, [9 x i16]* %weight_buffer_16_3, [9 x i16]* %weight_buffer_17_0, [9 x i16]* %weight_buffer_17_1, [9 x i16]* %weight_buffer_17_2, [9 x i16]* %weight_buffer_17_3, [9 x i16]* %weight_buffer_18_0, [9 x i16]* %weight_buffer_18_1, [9 x i16]* %weight_buffer_18_2, [9 x i16]* %weight_buffer_18_3, [9 x i16]* %weight_buffer_19_0, [9 x i16]* %weight_buffer_19_1, [9 x i16]* %weight_buffer_19_2, [9 x i16]* %weight_buffer_19_3, [9 x i16]* %weight_buffer_20_0, [9 x i16]* %weight_buffer_20_1, [9 x i16]* %weight_buffer_20_2, [9 x i16]* %weight_buffer_20_3, [9 x i16]* %weight_buffer_21_0, [9 x i16]* %weight_buffer_21_1, [9 x i16]* %weight_buffer_21_2, [9 x i16]* %weight_buffer_21_3, [9 x i16]* %weight_buffer_22_0, [9 x i16]* %weight_buffer_22_1, [9 x i16]* %weight_buffer_22_2, [9 x i16]* %weight_buffer_22_3, [9 x i16]* %weight_buffer_23_0, [9 x i16]* %weight_buffer_23_1, [9 x i16]* %weight_buffer_23_2, [9 x i16]* %weight_buffer_23_3, [9 x i16]* %weight_buffer_24_0, [9 x i16]* %weight_buffer_24_1, [9 x i16]* %weight_buffer_24_2, [9 x i16]* %weight_buffer_24_3, [9 x i16]* %weight_buffer_25_0, [9 x i16]* %weight_buffer_25_1, [9 x i16]* %weight_buffer_25_2, [9 x i16]* %weight_buffer_25_3, [9 x i16]* %weight_buffer_26_0, [9 x i16]* %weight_buffer_26_1, [9 x i16]* %weight_buffer_26_2, [9 x i16]* %weight_buffer_26_3, [9 x i16]* %weight_buffer_27_0, [9 x i16]* %weight_buffer_27_1, [9 x i16]* %weight_buffer_27_2, [9 x i16]* %weight_buffer_27_3, [9 x i16]* %weight_buffer_28_0, [9 x i16]* %weight_buffer_28_1, [9 x i16]* %weight_buffer_28_2, [9 x i16]* %weight_buffer_28_3, [9 x i16]* %weight_buffer_29_0, [9 x i16]* %weight_buffer_29_1, [9 x i16]* %weight_buffer_29_2, [9 x i16]* %weight_buffer_29_3, [9 x i16]* %weight_buffer_30_0, [9 x i16]* %weight_buffer_30_1, [9 x i16]* %weight_buffer_30_2, [9 x i16]* %weight_buffer_30_3, [9 x i16]* %weight_buffer_31_0, [9 x i16]* %weight_buffer_31_1, [9 x i16]* %weight_buffer_31_2, [9 x i16]* %weight_buffer_31_3, i3 %next_t31_0_V_1_load, i3 %next_t41_0_V_1_load, i6 %TM_MIN_6b_V, i3 %TN_MIN_3b_V, i1 %tmp_2)" [cnn.cpp:530]   --->   Operation 63 'call' <Predicate = (!exitcond & pingpong_load)> <Delay = 5.17> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 64 [1/1] (0.00ns)   --->   "br label %.preheader299"   --->   Operation 64 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.53>
+ST_4 : Operation 65 [1/2] (0.00ns)   --->   "%tmp_7 = call fastcc { i3, i3 } @weight_mmcpy_everyKx(i32* %Weight, i30 %Weight_offset_read, [64 x i32]* nocapture @weight_memcpy_buffer_1, i2 %p_0, i3 %p_1, i3 %next_t31_0_V_1_load, i3 %next_t41_0_V_1_load, i8 %ReadLength_cast6, i1 %p_s, i1 %tmp_1)" [cnn.cpp:534]   --->   Operation 65 'call' 'tmp_7' <Predicate = (!pingpong_load)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%next_t31_0_V = extractvalue { i3, i3 } %tmp_7, 0" [cnn.cpp:534]   --->   Operation 66 'extractvalue' 'next_t31_0_V' <Predicate = (!pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%next_t41_0_V = extractvalue { i3, i3 } %tmp_7, 1" [cnn.cpp:534]   --->   Operation 67 'extractvalue' 'next_t41_0_V' <Predicate = (!pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 68 [1/2] (0.00ns)   --->   "call fastcc void @load_weight2buf_ever([64 x i32]* @weight_memcpy_buffer, [9 x i16]* %weight_buffer_0_0, [9 x i16]* %weight_buffer_0_1, [9 x i16]* %weight_buffer_0_2, [9 x i16]* %weight_buffer_0_3, [9 x i16]* %weight_buffer_1_0, [9 x i16]* %weight_buffer_1_1, [9 x i16]* %weight_buffer_1_2, [9 x i16]* %weight_buffer_1_3, [9 x i16]* %weight_buffer_2_0, [9 x i16]* %weight_buffer_2_1, [9 x i16]* %weight_buffer_2_2, [9 x i16]* %weight_buffer_2_3, [9 x i16]* %weight_buffer_3_0, [9 x i16]* %weight_buffer_3_1, [9 x i16]* %weight_buffer_3_2, [9 x i16]* %weight_buffer_3_3, [9 x i16]* %weight_buffer_4_0, [9 x i16]* %weight_buffer_4_1, [9 x i16]* %weight_buffer_4_2, [9 x i16]* %weight_buffer_4_3, [9 x i16]* %weight_buffer_5_0, [9 x i16]* %weight_buffer_5_1, [9 x i16]* %weight_buffer_5_2, [9 x i16]* %weight_buffer_5_3, [9 x i16]* %weight_buffer_6_0, [9 x i16]* %weight_buffer_6_1, [9 x i16]* %weight_buffer_6_2, [9 x i16]* %weight_buffer_6_3, [9 x i16]* %weight_buffer_7_0, [9 x i16]* %weight_buffer_7_1, [9 x i16]* %weight_buffer_7_2, [9 x i16]* %weight_buffer_7_3, [9 x i16]* %weight_buffer_8_0, [9 x i16]* %weight_buffer_8_1, [9 x i16]* %weight_buffer_8_2, [9 x i16]* %weight_buffer_8_3, [9 x i16]* %weight_buffer_9_0, [9 x i16]* %weight_buffer_9_1, [9 x i16]* %weight_buffer_9_2, [9 x i16]* %weight_buffer_9_3, [9 x i16]* %weight_buffer_10_0, [9 x i16]* %weight_buffer_10_1, [9 x i16]* %weight_buffer_10_2, [9 x i16]* %weight_buffer_10_3, [9 x i16]* %weight_buffer_11_0, [9 x i16]* %weight_buffer_11_1, [9 x i16]* %weight_buffer_11_2, [9 x i16]* %weight_buffer_11_3, [9 x i16]* %weight_buffer_12_0, [9 x i16]* %weight_buffer_12_1, [9 x i16]* %weight_buffer_12_2, [9 x i16]* %weight_buffer_12_3, [9 x i16]* %weight_buffer_13_0, [9 x i16]* %weight_buffer_13_1, [9 x i16]* %weight_buffer_13_2, [9 x i16]* %weight_buffer_13_3, [9 x i16]* %weight_buffer_14_0, [9 x i16]* %weight_buffer_14_1, [9 x i16]* %weight_buffer_14_2, [9 x i16]* %weight_buffer_14_3, [9 x i16]* %weight_buffer_15_0, [9 x i16]* %weight_buffer_15_1, [9 x i16]* %weight_buffer_15_2, [9 x i16]* %weight_buffer_15_3, [9 x i16]* %weight_buffer_16_0, [9 x i16]* %weight_buffer_16_1, [9 x i16]* %weight_buffer_16_2, [9 x i16]* %weight_buffer_16_3, [9 x i16]* %weight_buffer_17_0, [9 x i16]* %weight_buffer_17_1, [9 x i16]* %weight_buffer_17_2, [9 x i16]* %weight_buffer_17_3, [9 x i16]* %weight_buffer_18_0, [9 x i16]* %weight_buffer_18_1, [9 x i16]* %weight_buffer_18_2, [9 x i16]* %weight_buffer_18_3, [9 x i16]* %weight_buffer_19_0, [9 x i16]* %weight_buffer_19_1, [9 x i16]* %weight_buffer_19_2, [9 x i16]* %weight_buffer_19_3, [9 x i16]* %weight_buffer_20_0, [9 x i16]* %weight_buffer_20_1, [9 x i16]* %weight_buffer_20_2, [9 x i16]* %weight_buffer_20_3, [9 x i16]* %weight_buffer_21_0, [9 x i16]* %weight_buffer_21_1, [9 x i16]* %weight_buffer_21_2, [9 x i16]* %weight_buffer_21_3, [9 x i16]* %weight_buffer_22_0, [9 x i16]* %weight_buffer_22_1, [9 x i16]* %weight_buffer_22_2, [9 x i16]* %weight_buffer_22_3, [9 x i16]* %weight_buffer_23_0, [9 x i16]* %weight_buffer_23_1, [9 x i16]* %weight_buffer_23_2, [9 x i16]* %weight_buffer_23_3, [9 x i16]* %weight_buffer_24_0, [9 x i16]* %weight_buffer_24_1, [9 x i16]* %weight_buffer_24_2, [9 x i16]* %weight_buffer_24_3, [9 x i16]* %weight_buffer_25_0, [9 x i16]* %weight_buffer_25_1, [9 x i16]* %weight_buffer_25_2, [9 x i16]* %weight_buffer_25_3, [9 x i16]* %weight_buffer_26_0, [9 x i16]* %weight_buffer_26_1, [9 x i16]* %weight_buffer_26_2, [9 x i16]* %weight_buffer_26_3, [9 x i16]* %weight_buffer_27_0, [9 x i16]* %weight_buffer_27_1, [9 x i16]* %weight_buffer_27_2, [9 x i16]* %weight_buffer_27_3, [9 x i16]* %weight_buffer_28_0, [9 x i16]* %weight_buffer_28_1, [9 x i16]* %weight_buffer_28_2, [9 x i16]* %weight_buffer_28_3, [9 x i16]* %weight_buffer_29_0, [9 x i16]* %weight_buffer_29_1, [9 x i16]* %weight_buffer_29_2, [9 x i16]* %weight_buffer_29_3, [9 x i16]* %weight_buffer_30_0, [9 x i16]* %weight_buffer_30_1, [9 x i16]* %weight_buffer_30_2, [9 x i16]* %weight_buffer_30_3, [9 x i16]* %weight_buffer_31_0, [9 x i16]* %weight_buffer_31_1, [9 x i16]* %weight_buffer_31_2, [9 x i16]* %weight_buffer_31_3, i3 %next_t3_0_V_1_load, i3 %next_t4_0_V_1_load, i6 %TM_MIN_6b_V, i3 %TN_MIN_3b_V, i1 %tmp_3)" [cnn.cpp:535]   --->   Operation 68 'call' <Predicate = (!pingpong_load)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 69 [1/1] (0.00ns)   --->   "store i3 %next_t41_0_V, i3* %next_t41_0_V_1" [cnn.cpp:534]   --->   Operation 69 'store' <Predicate = (!pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "store i3 %next_t31_0_V, i3* %next_t31_0_V_1" [cnn.cpp:534]   --->   Operation 70 'store' <Predicate = (!pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (1.76ns)   --->   "br label %.preheader.backedge"   --->   Operation 71 'br' <Predicate = (!pingpong_load)> <Delay = 1.76>
+ST_4 : Operation 72 [1/2] (0.00ns)   --->   "%tmp_6 = call fastcc { i3, i3 } @weight_mmcpy_everyKx(i32* %Weight, i30 %Weight_offset_read, [64 x i32]* nocapture @weight_memcpy_buffer, i2 %p_0, i3 %p_1, i3 %next_t3_0_V_1_load, i3 %next_t4_0_V_1_load, i8 %ReadLength_cast6, i1 %p_s, i1 %tmp_1)" [cnn.cpp:529]   --->   Operation 72 'call' 'tmp_6' <Predicate = (pingpong_load)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "%next_t3_0_V = extractvalue { i3, i3 } %tmp_6, 0" [cnn.cpp:529]   --->   Operation 73 'extractvalue' 'next_t3_0_V' <Predicate = (pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "%next_t4_0_V = extractvalue { i3, i3 } %tmp_6, 1" [cnn.cpp:529]   --->   Operation 74 'extractvalue' 'next_t4_0_V' <Predicate = (pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 75 [1/2] (0.00ns)   --->   "call fastcc void @load_weight2buf_ever([64 x i32]* @weight_memcpy_buffer_1, [9 x i16]* %weight_buffer_0_0, [9 x i16]* %weight_buffer_0_1, [9 x i16]* %weight_buffer_0_2, [9 x i16]* %weight_buffer_0_3, [9 x i16]* %weight_buffer_1_0, [9 x i16]* %weight_buffer_1_1, [9 x i16]* %weight_buffer_1_2, [9 x i16]* %weight_buffer_1_3, [9 x i16]* %weight_buffer_2_0, [9 x i16]* %weight_buffer_2_1, [9 x i16]* %weight_buffer_2_2, [9 x i16]* %weight_buffer_2_3, [9 x i16]* %weight_buffer_3_0, [9 x i16]* %weight_buffer_3_1, [9 x i16]* %weight_buffer_3_2, [9 x i16]* %weight_buffer_3_3, [9 x i16]* %weight_buffer_4_0, [9 x i16]* %weight_buffer_4_1, [9 x i16]* %weight_buffer_4_2, [9 x i16]* %weight_buffer_4_3, [9 x i16]* %weight_buffer_5_0, [9 x i16]* %weight_buffer_5_1, [9 x i16]* %weight_buffer_5_2, [9 x i16]* %weight_buffer_5_3, [9 x i16]* %weight_buffer_6_0, [9 x i16]* %weight_buffer_6_1, [9 x i16]* %weight_buffer_6_2, [9 x i16]* %weight_buffer_6_3, [9 x i16]* %weight_buffer_7_0, [9 x i16]* %weight_buffer_7_1, [9 x i16]* %weight_buffer_7_2, [9 x i16]* %weight_buffer_7_3, [9 x i16]* %weight_buffer_8_0, [9 x i16]* %weight_buffer_8_1, [9 x i16]* %weight_buffer_8_2, [9 x i16]* %weight_buffer_8_3, [9 x i16]* %weight_buffer_9_0, [9 x i16]* %weight_buffer_9_1, [9 x i16]* %weight_buffer_9_2, [9 x i16]* %weight_buffer_9_3, [9 x i16]* %weight_buffer_10_0, [9 x i16]* %weight_buffer_10_1, [9 x i16]* %weight_buffer_10_2, [9 x i16]* %weight_buffer_10_3, [9 x i16]* %weight_buffer_11_0, [9 x i16]* %weight_buffer_11_1, [9 x i16]* %weight_buffer_11_2, [9 x i16]* %weight_buffer_11_3, [9 x i16]* %weight_buffer_12_0, [9 x i16]* %weight_buffer_12_1, [9 x i16]* %weight_buffer_12_2, [9 x i16]* %weight_buffer_12_3, [9 x i16]* %weight_buffer_13_0, [9 x i16]* %weight_buffer_13_1, [9 x i16]* %weight_buffer_13_2, [9 x i16]* %weight_buffer_13_3, [9 x i16]* %weight_buffer_14_0, [9 x i16]* %weight_buffer_14_1, [9 x i16]* %weight_buffer_14_2, [9 x i16]* %weight_buffer_14_3, [9 x i16]* %weight_buffer_15_0, [9 x i16]* %weight_buffer_15_1, [9 x i16]* %weight_buffer_15_2, [9 x i16]* %weight_buffer_15_3, [9 x i16]* %weight_buffer_16_0, [9 x i16]* %weight_buffer_16_1, [9 x i16]* %weight_buffer_16_2, [9 x i16]* %weight_buffer_16_3, [9 x i16]* %weight_buffer_17_0, [9 x i16]* %weight_buffer_17_1, [9 x i16]* %weight_buffer_17_2, [9 x i16]* %weight_buffer_17_3, [9 x i16]* %weight_buffer_18_0, [9 x i16]* %weight_buffer_18_1, [9 x i16]* %weight_buffer_18_2, [9 x i16]* %weight_buffer_18_3, [9 x i16]* %weight_buffer_19_0, [9 x i16]* %weight_buffer_19_1, [9 x i16]* %weight_buffer_19_2, [9 x i16]* %weight_buffer_19_3, [9 x i16]* %weight_buffer_20_0, [9 x i16]* %weight_buffer_20_1, [9 x i16]* %weight_buffer_20_2, [9 x i16]* %weight_buffer_20_3, [9 x i16]* %weight_buffer_21_0, [9 x i16]* %weight_buffer_21_1, [9 x i16]* %weight_buffer_21_2, [9 x i16]* %weight_buffer_21_3, [9 x i16]* %weight_buffer_22_0, [9 x i16]* %weight_buffer_22_1, [9 x i16]* %weight_buffer_22_2, [9 x i16]* %weight_buffer_22_3, [9 x i16]* %weight_buffer_23_0, [9 x i16]* %weight_buffer_23_1, [9 x i16]* %weight_buffer_23_2, [9 x i16]* %weight_buffer_23_3, [9 x i16]* %weight_buffer_24_0, [9 x i16]* %weight_buffer_24_1, [9 x i16]* %weight_buffer_24_2, [9 x i16]* %weight_buffer_24_3, [9 x i16]* %weight_buffer_25_0, [9 x i16]* %weight_buffer_25_1, [9 x i16]* %weight_buffer_25_2, [9 x i16]* %weight_buffer_25_3, [9 x i16]* %weight_buffer_26_0, [9 x i16]* %weight_buffer_26_1, [9 x i16]* %weight_buffer_26_2, [9 x i16]* %weight_buffer_26_3, [9 x i16]* %weight_buffer_27_0, [9 x i16]* %weight_buffer_27_1, [9 x i16]* %weight_buffer_27_2, [9 x i16]* %weight_buffer_27_3, [9 x i16]* %weight_buffer_28_0, [9 x i16]* %weight_buffer_28_1, [9 x i16]* %weight_buffer_28_2, [9 x i16]* %weight_buffer_28_3, [9 x i16]* %weight_buffer_29_0, [9 x i16]* %weight_buffer_29_1, [9 x i16]* %weight_buffer_29_2, [9 x i16]* %weight_buffer_29_3, [9 x i16]* %weight_buffer_30_0, [9 x i16]* %weight_buffer_30_1, [9 x i16]* %weight_buffer_30_2, [9 x i16]* %weight_buffer_30_3, [9 x i16]* %weight_buffer_31_0, [9 x i16]* %weight_buffer_31_1, [9 x i16]* %weight_buffer_31_2, [9 x i16]* %weight_buffer_31_3, i3 %next_t31_0_V_1_load, i3 %next_t41_0_V_1_load, i6 %TM_MIN_6b_V, i3 %TN_MIN_3b_V, i1 %tmp_2)" [cnn.cpp:530]   --->   Operation 75 'call' <Predicate = (pingpong_load)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 76 [1/1] (0.00ns)   --->   "store i3 %next_t4_0_V, i3* %next_t4_0_V_1" [cnn.cpp:529]   --->   Operation 76 'store' <Predicate = (pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 77 [1/1] (0.00ns)   --->   "store i3 %next_t3_0_V, i3* %next_t3_0_V_1" [cnn.cpp:529]   --->   Operation 77 'store' <Predicate = (pingpong_load)> <Delay = 0.00>
+ST_4 : Operation 78 [1/1] (1.76ns)   --->   "br label %.preheader.backedge" [cnn.cpp:532]   --->   Operation 78 'br' <Predicate = (pingpong_load)> <Delay = 1.76>
+ST_4 : Operation 79 [1/1] (0.00ns)   --->   "%pingpong_1_be = phi i1 [ false, %2 ], [ true, %3 ]"   --->   Operation 79 'phi' 'pingpong_1_be' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 80 [1/1] (1.76ns)   --->   "store i1 %pingpong_1_be, i1* %pingpong"   --->   Operation 80 'store' <Predicate = true> <Delay = 1.76>
+ST_4 : Operation 81 [1/1] (0.00ns)   --->   "br label %.preheader"   --->   Operation 81 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.78ns
+The critical path consists of the following:
+	wire read on port 'TN_MIN' [140]  (0 ns)
+	'mul' operation ('r.V', cnn.cpp:511) [164]  (3.78 ns)
+
+ <State 2>: 1.94ns
+The critical path consists of the following:
+	'phi' operation ('t3.V') with incoming values : ('t3.V', cnn.cpp:524) [171]  (0 ns)
+	'icmp' operation ('tmp_5', cnn.cpp:529) [176]  (0.959 ns)
+	'and' operation ('tmp2', cnn.cpp:529) [177]  (0.978 ns)
+
+ <State 3>: 7.13ns
+The critical path consists of the following:
+	'phi' operation ('t4.V') with incoming values : ('t4.V', cnn.cpp:525) [180]  (0 ns)
+	'icmp' operation ('tmp_8', cnn.cpp:529) [187]  (1.13 ns)
+	'and' operation ('tmp3', cnn.cpp:529) [188]  (0 ns)
+	'and' operation ('p_s', cnn.cpp:529) [189]  (0.978 ns)
+	'call' operation ('tmp_7', cnn.cpp:534) to 'weight_mmcpy_everyKx' [197]  (5.02 ns)
+
+ <State 4>: 3.54ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('pingpong_1_be') [215]  (1.77 ns)
+	'phi' operation ('pingpong_1_be') [215]  (0 ns)
+	'store' operation of variable 'pingpong_1_be' on local variable 'pingpong' [216]  (1.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

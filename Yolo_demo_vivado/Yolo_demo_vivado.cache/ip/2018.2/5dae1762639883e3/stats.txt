@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Thu Jul 29 13:01:06 UTC 2021
+VLNV: xilinx.com:hls:YOLO2_FPGA:1.0
+SynthRuntime: 369

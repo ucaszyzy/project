@@ -1,0 +1,276 @@
+
+
+================================================================
+== Vivado HLS Report for 'weight_mmcpy_everyKx'
+================================================================
+* Date:           Thu Jul 29 20:17:08 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|  266|    1|  266|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+        |                                          |  Latency  | Iteration|  Initiation Interval  |   Trip  |          |
+        |                 Loop Name                | min | max |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +------------------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+        |- memcpy.weight_memcpy_buffer.gep.Weight  |    0|  256|         3|          1|          1| 0 ~ 255 |    yes   |
+        +------------------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 9 10 11 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (enable_read)
+	13  / (!enable_read)
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	12  / (exitcond)
+	10  / (!exitcond)
+10 --> 
+	11  / true
+11 --> 
+	9  / true
+12 --> 
+	13  / true
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.25>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %enable)"   --->   Operation 14 'read' 'enable_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%init_enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %init_enable)"   --->   Operation 15 'read' 'init_enable_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%ReadLength_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %ReadLength)"   --->   Operation 16 'read' 'ReadLength_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%next_t4_0_V_read_1 = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %next_t4_0_V_read)"   --->   Operation 17 'read' 'next_t4_0_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%next_t3_0_V_read_1 = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %next_t3_0_V_read)"   --->   Operation 18 'read' 'next_t3_0_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%t4_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %t4_V)"   --->   Operation 19 'read' 't4_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%t3_V_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %t3_V)"   --->   Operation 20 'read' 't3_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%Weight_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Weight_offset)"   --->   Operation 21 'read' 'Weight_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%ReadLength_cast1 = zext i8 %ReadLength_read to i32"   --->   Operation 22 'zext' 'ReadLength_cast1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%t3_V_cast = zext i2 %t3_V_read to i3"   --->   Operation 23 'zext' 't3_V_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Weight, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.76ns)   --->   "br i1 %enable_read, label %._crit_edge2, label %._crit_edge" [cnn.cpp:431]   --->   Operation 25 'br' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%Woffset_load = load i32* @Woffset, align 4" [cnn.cpp:443]   --->   Operation 26 'load' 'Woffset_load' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.69ns)   --->   "%p_Woffset_load = select i1 %init_enable_read, i32 0, i32 %Woffset_load" [cnn.cpp:438]   --->   Operation 27 'select' 'p_Woffset_load' <Predicate = (enable_read)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_cast = sext i32 %p_Woffset_load to i33" [cnn.cpp:443]   --->   Operation 28 'sext' 'tmp_cast' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%sext_cast = zext i30 %Weight_offset_read to i33"   --->   Operation 29 'zext' 'sext_cast' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (2.55ns)   --->   "%sum = add i33 %tmp_cast, %sext_cast" [cnn.cpp:443]   --->   Operation 30 'add' 'sum' <Predicate = (enable_read)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%sum_cast = sext i33 %sum to i64" [cnn.cpp:443]   --->   Operation 31 'sext' 'sum_cast' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%Weight_addr = getelementptr i32* %Weight, i64 %sum_cast" [cnn.cpp:443]   --->   Operation 32 'getelementptr' 'Weight_addr' <Predicate = (enable_read)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 33 [7/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 33 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 34 [6/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 34 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 35 [5/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 35 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 36 [4/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 36 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 37 [3/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 37 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 38 [2/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 38 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 8.75>
+ST_8 : Operation 39 [1/7] (8.75ns)   --->   "%Weight_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Weight_addr, i32 %ReadLength_cast1)" [cnn.cpp:443]   --->   Operation 39 'readreq' 'Weight_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 40 [1/1] (1.76ns)   --->   "br label %burst.rd.header"   --->   Operation 40 'br' <Predicate = true> <Delay = 1.76>
+
+State 9 <SV = 8> <Delay = 1.91>
+ST_9 : Operation 41 [1/1] (0.00ns)   --->   "%indvar = phi i8 [ 0, %._crit_edge2 ], [ %indvar_next, %burst.rd.body ]"   --->   Operation 41 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 42 [1/1] (1.55ns)   --->   "%exitcond = icmp eq i8 %indvar, %ReadLength_read"   --->   Operation 42 'icmp' 'exitcond' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 43 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 255, i64 0)"   --->   Operation 43 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 44 [1/1] (1.91ns)   --->   "%indvar_next = add i8 %indvar, 1"   --->   Operation 44 'add' 'indvar_next' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 45 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.rd.end, label %burst.rd.body"   --->   Operation 45 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 46 [1/1] (8.75ns)   --->   "%Weight_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %Weight_addr)" [cnn.cpp:443]   --->   Operation 46 'read' 'Weight_addr_read' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 47 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s)"   --->   Operation 47 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 48 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str92)"   --->   Operation 48 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 49 [1/1] (0.00ns)   --->   "%empty_18 = call i32 (...)* @_ssdm_op_SpecLoopName([39 x i8]* @memcpy_OC_weight_mem)"   --->   Operation 49 'specloopname' 'empty_18' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 50 [1/1] (0.00ns)   --->   "%indvar1 = zext i8 %indvar to i64"   --->   Operation 50 'zext' 'indvar1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 51 [1/1] (0.00ns)   --->   "%weight_memcpy_buffer_2 = getelementptr [64 x i32]* %weight_memcpy_buffer, i64 0, i64 %indvar1" [cnn.cpp:443]   --->   Operation 51 'getelementptr' 'weight_memcpy_buffer_2' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 52 [1/1] (3.25ns)   --->   "store i32 %Weight_addr_read, i32* %weight_memcpy_buffer_2, align 4" [cnn.cpp:443]   --->   Operation 52 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 64> <RAM>
+ST_11 : Operation 53 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin)"   --->   Operation 53 'specregionend' 'burstread_rend' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 54 [1/1] (0.00ns)   --->   "br label %burst.rd.header"   --->   Operation 54 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+
+State 12 <SV = 9> <Delay = 2.55>
+ST_12 : Operation 55 [1/1] (2.55ns)   --->   "%tmp_1 = add i32 %p_Woffset_load, %ReadLength_cast1" [cnn.cpp:444]   --->   Operation 55 'add' 'tmp_1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 56 [1/1] (0.00ns)   --->   "store i32 %tmp_1, i32* @Woffset, align 4" [cnn.cpp:440]   --->   Operation 56 'store' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 57 [1/1] (1.76ns)   --->   "br label %._crit_edge" [cnn.cpp:445]   --->   Operation 57 'br' <Predicate = true> <Delay = 1.76>
+
+State 13 <SV = 10> <Delay = 0.00>
+ST_13 : Operation 58 [1/1] (0.00ns)   --->   "%next_t4_0_V_write_a = phi i3 [ %t4_V_read, %burst.rd.end ], [ %next_t4_0_V_read_1, %0 ]" [cnn.cpp:445]   --->   Operation 58 'phi' 'next_t4_0_V_write_a' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 59 [1/1] (0.00ns)   --->   "%next_t3_0_V_write_a = phi i3 [ %t3_V_cast, %burst.rd.end ], [ %next_t3_0_V_read_1, %0 ]" [cnn.cpp:445]   --->   Operation 59 'phi' 'next_t3_0_V_write_a' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 60 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i3, i3 } undef, i3 %next_t3_0_V_write_a, 0" [cnn.cpp:445]   --->   Operation 60 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 61 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i3, i3 } %mrv, i3 %next_t4_0_V_write_a, 1" [cnn.cpp:445]   --->   Operation 61 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 62 [1/1] (0.00ns)   --->   "ret { i3, i3 } %mrv_1" [cnn.cpp:445]   --->   Operation 62 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.25ns
+The critical path consists of the following:
+	wire read on port 'init_enable' [13]  (0 ns)
+	'select' operation ('p_Woffset_load', cnn.cpp:438) [26]  (0.698 ns)
+	'add' operation ('sum', cnn.cpp:443) [29]  (2.55 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Weight' (cnn.cpp:443) [32]  (8.75 ns)
+
+ <State 9>: 1.92ns
+The critical path consists of the following:
+	'phi' operation ('indvar') with incoming values : ('indvar_next') [35]  (0 ns)
+	'add' operation ('indvar_next') [38]  (1.92 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'Weight' (cnn.cpp:443) [45]  (8.75 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('weight_memcpy_buffer_2', cnn.cpp:443) [46]  (0 ns)
+	'store' operation (cnn.cpp:443) of variable 'Weight_addr_read', cnn.cpp:443 on array 'weight_memcpy_buffer' [47]  (3.25 ns)
+
+ <State 12>: 2.55ns
+The critical path consists of the following:
+	'add' operation ('tmp_1', cnn.cpp:444) [51]  (2.55 ns)
+	'store' operation (cnn.cpp:440) of variable 'tmp_1', cnn.cpp:444 on static variable 'Woffset' [52]  (0 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

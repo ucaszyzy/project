@@ -1,0 +1,207 @@
+
+
+================================================================
+== Vivado HLS Report for 'mmcpy_outputport1'
+================================================================
+* Date:           Thu Jul 29 20:17:51 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|  263|    1|  263|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+        |                                |  Latency  | Iteration|  Initiation Interval  |   Trip  |          |
+        |            Loop Name           | min | max |  Latency |  achieved |   target  |  Count  | Pipelined|
+        +--------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+        |- memcpy.Output.output_tmp.gep  |    0|  256|         3|          1|          1| 0 ~ 255 |    yes   |
+        +--------------------------------+-----+-----+----------+-----------+-----------+---------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     87|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    116|
+|Register         |        -|      -|      88|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      88|    203|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |indvar_next_fu_180_p2      |     +    |      0|  0|  15|           8|           1|
+    |sum_fu_155_p2              |     +    |      0|  0|  40|          33|          33|
+    |ap_block_pp0_stage0_11001  |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state10           |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state5_io         |    and   |      0|  0|   2|           1|           1|
+    |enable_fu_141_p2           |   icmp   |      0|  0|  11|           6|           6|
+    |exitcond_fu_175_p2         |   icmp   |      0|  0|  11|           8|           8|
+    |ap_enable_pp0              |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1    |    xor   |      0|  0|   2|           2|           1|
+    +---------------------------+----------+-------+---+----+------------+------------+
+    |Total                      |          |      0|  0|  87|          61|          54|
+    +---------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Output_r_blk_n_AW                      |   9|          2|    1|          2|
+    |Output_r_blk_n_B                       |   9|          2|    1|          2|
+    |Output_r_blk_n_W                       |   9|          2|    1|          2|
+    |ap_NS_fsm                              |  44|          9|    1|          9|
+    |ap_enable_reg_pp0_iter1                |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2                |   9|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_Output_r_AWREADY  |   9|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_Output_r_WREADY   |   9|          2|    1|          2|
+    |indvar_reg_130                         |   9|          2|    8|         16|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  | 116|         25|   16|         39|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------+----+----+-----+-----------+
+    |                  Name                 | FF | LUT| Bits| Const Bits|
+    +---------------------------------------+----+----+-----+-----------+
+    |Output_addr_reg_201                    |  32|   0|   32|          0|
+    |ap_CS_fsm                              |   8|   0|    8|          0|
+    |ap_enable_reg_pp0_iter0                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_Output_r_AWREADY  |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_Output_r_WREADY   |   1|   0|    1|          0|
+    |enable_reg_197                         |   1|   0|    1|          0|
+    |exitcond_reg_207                       |   1|   0|    1|          0|
+    |exitcond_reg_207_pp0_iter1_reg         |   1|   0|    1|          0|
+    |indvar_reg_130                         |   8|   0|    8|          0|
+    |output_tmp_load_reg_221                |  32|   0|   32|          0|
+    +---------------------------------------+----+----+-----+-----------+
+    |Total                                  |  88|   0|   88|          0|
+    +---------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+-------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++-------------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk                   |  in |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|ap_rst                   |  in |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|ap_start                 |  in |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|ap_done                  | out |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|ap_idle                  | out |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|ap_ready                 | out |    1| ap_ctrl_hs | mmcpy_outputport1 | return value |
+|m_axi_Output_r_AWVALID   | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWREADY   |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWADDR    | out |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWID      | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWLEN     | out |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWSIZE    | out |    3|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWBURST   | out |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWLOCK    | out |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWCACHE   | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWPROT    | out |    3|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWQOS     | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWREGION  | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_AWUSER    | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WVALID    | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WREADY    |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WDATA     | out |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WSTRB     | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WLAST     | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WID       | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_WUSER     | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARVALID   | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARREADY   |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARADDR    | out |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARID      | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARLEN     | out |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARSIZE    | out |    3|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARBURST   | out |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARLOCK    | out |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARCACHE   | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARPROT    | out |    3|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARQOS     | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARREGION  | out |    4|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_ARUSER    | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RVALID    |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RREADY    | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RDATA     |  in |   32|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RLAST     |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RID       |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RUSER     |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_RRESP     |  in |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_BVALID    |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_BREADY    | out |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_BRESP     |  in |    2|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_BID       |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|m_axi_Output_r_BUSER     |  in |    1|    m_axi   |      Output_r     |    pointer   |
+|Output_offset            |  in |   30|   ap_none  |   Output_offset   |    scalar    |
+|output_tmp_address0      | out |    8|  ap_memory |     output_tmp    |     array    |
+|output_tmp_ce0           | out |    1|  ap_memory |     output_tmp    |     array    |
+|output_tmp_q0            |  in |   32|  ap_memory |     output_tmp    |     array    |
+|tm_V_2                   |  in |    6|   ap_none  |       tm_V_2      |    scalar    |
+|mLoop_V                  |  in |    6|   ap_none  |      mLoop_V      |    scalar    |
+|OutputOffset             |  in |   32|   ap_none  |    OutputOffset   |    scalar    |
+|OutputLength             |  in |    8|   ap_none  |    OutputLength   |    scalar    |
++-------------------------+-----+-----+------------+-------------------+--------------+
+

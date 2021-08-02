@@ -1,0 +1,2368 @@
+<stg><name>copy_input_weight</name>
+
+
+<trans_list>
+
+<trans id="46" from="1" to="2">
+<condition id="8">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="47" from="1" to="3">
+<condition id="9">
+<or_exp><and_exp><literal name="enable_read" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="49" from="2" to="3">
+<condition id="11">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="4" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="176" bw="6" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+:0  %trow_loops_V_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %trow_loops_V)
+
+]]></Node>
+<StgValue><ssdm name="trow_loops_V_read"/></StgValue>
+</operation>
+
+<operation id="5" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="177" bw="4" op_0_bw="4" op_1_bw="4">
+<![CDATA[
+:1  %LayerType_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %LayerType)
+
+]]></Node>
+<StgValue><ssdm name="LayerType_read"/></StgValue>
+</operation>
+
+<operation id="6" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="178" bw="19" op_0_bw="19" op_1_bw="19">
+<![CDATA[
+:2  %IHxIW_read = call i19 @_ssdm_op_Read.ap_auto.i19(i19 %IHxIW)
+
+]]></Node>
+<StgValue><ssdm name="IHxIW_read"/></StgValue>
+</operation>
+
+<operation id="7" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="179" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:3  %weight_load_enable_r = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %weight_load_enable)
+
+]]></Node>
+<StgValue><ssdm name="weight_load_enable_r"/></StgValue>
+</operation>
+
+<operation id="8" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="180" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:4  %enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %enable)
+
+]]></Node>
+<StgValue><ssdm name="enable_read"/></StgValue>
+</operation>
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="181" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:5  %p_read_3 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %p_read)
+
+]]></Node>
+<StgValue><ssdm name="p_read_3"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="182" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:6  %Padding_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Padding)
+
+]]></Node>
+<StgValue><ssdm name="Padding_read"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="183" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:7  %TCol_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %TCol)
+
+]]></Node>
+<StgValue><ssdm name="TCol_read"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="184" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:8  %TRow_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %TRow)
+
+]]></Node>
+<StgValue><ssdm name="TRow_read"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="185" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:9  %TN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TN)
+
+]]></Node>
+<StgValue><ssdm name="TN_read"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="186" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:10  %TM_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TM_MIN)
+
+]]></Node>
+<StgValue><ssdm name="TM_MIN_read"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="187" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:11  %n_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %n)
+
+]]></Node>
+<StgValue><ssdm name="n_read"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="188" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:12  %m_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %m)
+
+]]></Node>
+<StgValue><ssdm name="m_read"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="189" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:13  %c_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %c)
+
+]]></Node>
+<StgValue><ssdm name="c_read"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="190" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:14  %r_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %r)
+
+]]></Node>
+<StgValue><ssdm name="r_read"/></StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="191" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:15  %Kernel_stride_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Kernel_stride)
+
+]]></Node>
+<StgValue><ssdm name="Kernel_stride_read"/></StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="192" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:16  %Kernel_size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Kernel_size)
+
+]]></Node>
+<StgValue><ssdm name="Kernel_size_read"/></StgValue>
+</operation>
+
+<operation id="21" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="193" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:17  %Input_h_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Input_h)
+
+]]></Node>
+<StgValue><ssdm name="Input_h_read"/></StgValue>
+</operation>
+
+<operation id="22" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="194" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:18  %Input_w_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Input_w)
+
+]]></Node>
+<StgValue><ssdm name="Input_w_read"/></StgValue>
+</operation>
+
+<operation id="23" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="195" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:19  %InFM_num_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %InFM_num)
+
+]]></Node>
+<StgValue><ssdm name="InFM_num_read"/></StgValue>
+</operation>
+
+<operation id="24" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="196" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:20  %Weight_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Weight_offset)
+
+]]></Node>
+<StgValue><ssdm name="Weight_offset_read"/></StgValue>
+</operation>
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="197" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:21  %input3_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input3_offset)
+
+]]></Node>
+<StgValue><ssdm name="input3_offset_read"/></StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="198" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:22  %input2_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input2_offset)
+
+]]></Node>
+<StgValue><ssdm name="input2_offset_read"/></StgValue>
+</operation>
+
+<operation id="27" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="199" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:23  %input1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input1_offset)
+
+]]></Node>
+<StgValue><ssdm name="input1_offset_read"/></StgValue>
+</operation>
+
+<operation id="28" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="200" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:24  %input_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input_offset)
+
+]]></Node>
+<StgValue><ssdm name="input_offset_read"/></StgValue>
+</operation>
+
+<operation id="29" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="201" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:25  call void (...)* @_ssdm_op_SpecInterface(i32* %input_r, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="30" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="202" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:26  call void (...)* @_ssdm_op_SpecInterface(i32* %input1, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str19, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="31" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="203" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:27  call void (...)* @_ssdm_op_SpecInterface(i32* %input2, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str20, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="32" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="204" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:28  call void (...)* @_ssdm_op_SpecInterface(i32* %input3, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str21, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="33" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="205" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:29  call void (...)* @_ssdm_op_SpecInterface(i32* %Weight, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="34" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="206" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:30  br i1 %enable_read, label %1, label %._crit_edge
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="35" st_id="1" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="208" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  %tmp = sub nsw i32 %InFM_num_read, %n_read
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="36" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="209" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  %tmp_s = icmp sgt i32 %tmp, %TN_read
+
+]]></Node>
+<StgValue><ssdm name="tmp_s"/></StgValue>
+</operation>
+
+<operation id="37" st_id="1" stage="1" lat="1">
+<core>Sel</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="210" bw="32" op_0_bw="1" op_1_bw="32" op_2_bw="32">
+<![CDATA[
+:2  %TN_MIN = select i1 %tmp_s, i32 %TN_read, i32 %tmp
+
+]]></Node>
+<StgValue><ssdm name="TN_MIN"/></StgValue>
+</operation>
+
+<operation id="38" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="211" bw="2" op_0_bw="4">
+<![CDATA[
+:3  %tmp_89 = trunc i4 %LayerType_read to i2
+
+]]></Node>
+<StgValue><ssdm name="tmp_89"/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="39" st_id="2" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="212" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="8" op_19_bw="8" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="19" op_24_bw="2" op_25_bw="6">
+<![CDATA[
+:4  call fastcc void @input_load(i32* %input_r, i30 %input_offset_read, i32* %input1, i30 %input1_offset_read, i32* %input2, i30 %input2_offset_read, i32* %input3, i30 %input3_offset_read, [2809 x i16]* nocapture %input_buffer_0, [2809 x i16]* nocapture %input_buffer_1, [2809 x i16]* nocapture %input_buffer_2, [2809 x i16]* nocapture %input_buffer_3, i32 %r_read, i32 %c_read, i32 %n_read, i32 %Kernel_stride_read, i32 %Padding_read, i8 %TRow_read, i8 %TCol_read, i32 %Input_w_read, i32 %Input_h_read, i32 %TN_MIN, i19 %IHxIW_read, i2 %tmp_89, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="40" st_id="2" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="3">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="213" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="1" op_132_bw="32" op_133_bw="32" op_134_bw="32" op_135_bw="32" op_136_bw="32">
+<![CDATA[
+:5  call fastcc void @weight_load_reorg(i32* %Weight, i30 %Weight_offset_read, [9 x i16]* nocapture %weight_buffer_0_0, [9 x i16]* nocapture %weight_buffer_0_1, [9 x i16]* nocapture %weight_buffer_0_2, [9 x i16]* nocapture %weight_buffer_0_3, [9 x i16]* nocapture %weight_buffer_1_0, [9 x i16]* nocapture %weight_buffer_1_1, [9 x i16]* nocapture %weight_buffer_1_2, [9 x i16]* nocapture %weight_buffer_1_3, [9 x i16]* nocapture %weight_buffer_2_0, [9 x i16]* nocapture %weight_buffer_2_1, [9 x i16]* nocapture %weight_buffer_2_2, [9 x i16]* nocapture %weight_buffer_2_3, [9 x i16]* nocapture %weight_buffer_3_0, [9 x i16]* nocapture %weight_buffer_3_1, [9 x i16]* nocapture %weight_buffer_3_2, [9 x i16]* nocapture %weight_buffer_3_3, [9 x i16]* nocapture %weight_buffer_4_0, [9 x i16]* nocapture %weight_buffer_4_1, [9 x i16]* nocapture %weight_buffer_4_2, [9 x i16]* nocapture %weight_buffer_4_3, [9 x i16]* nocapture %weight_buffer_5_0, [9 x i16]* nocapture %weight_buffer_5_1, [9 x i16]* nocapture %weight_buffer_5_2, [9 x i16]* nocapture %weight_buffer_5_3, [9 x i16]* nocapture %weight_buffer_6_0, [9 x i16]* nocapture %weight_buffer_6_1, [9 x i16]* nocapture %weight_buffer_6_2, [9 x i16]* nocapture %weight_buffer_6_3, [9 x i16]* nocapture %weight_buffer_7_0, [9 x i16]* nocapture %weight_buffer_7_1, [9 x i16]* nocapture %weight_buffer_7_2, [9 x i16]* nocapture %weight_buffer_7_3, [9 x i16]* nocapture %weight_buffer_8_0, [9 x i16]* nocapture %weight_buffer_8_1, [9 x i16]* nocapture %weight_buffer_8_2, [9 x i16]* nocapture %weight_buffer_8_3, [9 x i16]* nocapture %weight_buffer_9_0, [9 x i16]* nocapture %weight_buffer_9_1, [9 x i16]* nocapture %weight_buffer_9_2, [9 x i16]* nocapture %weight_buffer_9_3, [9 x i16]* nocapture %weight_buffer_10_0, [9 x i16]* nocapture %weight_buffer_10_1, [9 x i16]* nocapture %weight_buffer_10_2, [9 x i16]* nocapture %weight_buffer_10_3, [9 x i16]* nocapture %weight_buffer_11_0, [9 x i16]* nocapture %weight_buffer_11_1, [9 x i16]* nocapture %weight_buffer_11_2, [9 x i16]* nocapture %weight_buffer_11_3, [9 x i16]* nocapture %weight_buffer_12_0, [9 x i16]* nocapture %weight_buffer_12_1, [9 x i16]* nocapture %weight_buffer_12_2, [9 x i16]* nocapture %weight_buffer_12_3, [9 x i16]* nocapture %weight_buffer_13_0, [9 x i16]* nocapture %weight_buffer_13_1, [9 x i16]* nocapture %weight_buffer_13_2, [9 x i16]* nocapture %weight_buffer_13_3, [9 x i16]* nocapture %weight_buffer_14_0, [9 x i16]* nocapture %weight_buffer_14_1, [9 x i16]* nocapture %weight_buffer_14_2, [9 x i16]* nocapture %weight_buffer_14_3, [9 x i16]* nocapture %weight_buffer_15_0, [9 x i16]* nocapture %weight_buffer_15_1, [9 x i16]* nocapture %weight_buffer_15_2, [9 x i16]* nocapture %weight_buffer_15_3, [9 x i16]* nocapture %weight_buffer_16_0, [9 x i16]* nocapture %weight_buffer_16_1, [9 x i16]* nocapture %weight_buffer_16_2, [9 x i16]* nocapture %weight_buffer_16_3, [9 x i16]* nocapture %weight_buffer_17_0, [9 x i16]* nocapture %weight_buffer_17_1, [9 x i16]* nocapture %weight_buffer_17_2, [9 x i16]* nocapture %weight_buffer_17_3, [9 x i16]* nocapture %weight_buffer_18_0, [9 x i16]* nocapture %weight_buffer_18_1, [9 x i16]* nocapture %weight_buffer_18_2, [9 x i16]* nocapture %weight_buffer_18_3, [9 x i16]* nocapture %weight_buffer_19_0, [9 x i16]* nocapture %weight_buffer_19_1, [9 x i16]* nocapture %weight_buffer_19_2, [9 x i16]* nocapture %weight_buffer_19_3, [9 x i16]* nocapture %weight_buffer_20_0, [9 x i16]* nocapture %weight_buffer_20_1, [9 x i16]* nocapture %weight_buffer_20_2, [9 x i16]* nocapture %weight_buffer_20_3, [9 x i16]* nocapture %weight_buffer_21_0, [9 x i16]* nocapture %weight_buffer_21_1, [9 x i16]* nocapture %weight_buffer_21_2, [9 x i16]* nocapture %weight_buffer_21_3, [9 x i16]* nocapture %weight_buffer_22_0, [9 x i16]* nocapture %weight_buffer_22_1, [9 x i16]* nocapture %weight_buffer_22_2, [9 x i16]* nocapture %weight_buffer_22_3, [9 x i16]* nocapture %weight_buffer_23_0, [9 x i16]* nocapture %weight_buffer_23_1, [9 x i16]* nocapture %weight_buffer_23_2, [9 x i16]* nocapture %weight_buffer_23_3, [9 x i16]* nocapture %weight_buffer_24_0, [9 x i16]* nocapture %weight_buffer_24_1, [9 x i16]* nocapture %weight_buffer_24_2, [9 x i16]* nocapture %weight_buffer_24_3, [9 x i16]* nocapture %weight_buffer_25_0, [9 x i16]* nocapture %weight_buffer_25_1, [9 x i16]* nocapture %weight_buffer_25_2, [9 x i16]* nocapture %weight_buffer_25_3, [9 x i16]* nocapture %weight_buffer_26_0, [9 x i16]* nocapture %weight_buffer_26_1, [9 x i16]* nocapture %weight_buffer_26_2, [9 x i16]* nocapture %weight_buffer_26_3, [9 x i16]* nocapture %weight_buffer_27_0, [9 x i16]* nocapture %weight_buffer_27_1, [9 x i16]* nocapture %weight_buffer_27_2, [9 x i16]* nocapture %weight_buffer_27_3, [9 x i16]* nocapture %weight_buffer_28_0, [9 x i16]* nocapture %weight_buffer_28_1, [9 x i16]* nocapture %weight_buffer_28_2, [9 x i16]* nocapture %weight_buffer_28_3, [9 x i16]* nocapture %weight_buffer_29_0, [9 x i16]* nocapture %weight_buffer_29_1, [9 x i16]* nocapture %weight_buffer_29_2, [9 x i16]* nocapture %weight_buffer_29_3, [9 x i16]* nocapture %weight_buffer_30_0, [9 x i16]* nocapture %weight_buffer_30_1, [9 x i16]* nocapture %weight_buffer_30_2, [9 x i16]* nocapture %weight_buffer_30_3, [9 x i16]* nocapture %weight_buffer_31_0, [9 x i16]* nocapture %weight_buffer_31_1, [9 x i16]* nocapture %weight_buffer_31_2, [9 x i16]* nocapture %weight_buffer_31_3, i1 zeroext %weight_load_enable_r, i32 %m_read, i32 %n_read, i32 %Kernel_size_read, i32 %TM_MIN_read, i32 %TN_MIN)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="41" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="212" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="8" op_19_bw="8" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="19" op_24_bw="2" op_25_bw="6">
+<![CDATA[
+:4  call fastcc void @input_load(i32* %input_r, i30 %input_offset_read, i32* %input1, i30 %input1_offset_read, i32* %input2, i30 %input2_offset_read, i32* %input3, i30 %input3_offset_read, [2809 x i16]* nocapture %input_buffer_0, [2809 x i16]* nocapture %input_buffer_1, [2809 x i16]* nocapture %input_buffer_2, [2809 x i16]* nocapture %input_buffer_3, i32 %r_read, i32 %c_read, i32 %n_read, i32 %Kernel_stride_read, i32 %Padding_read, i8 %TRow_read, i8 %TCol_read, i32 %Input_w_read, i32 %Input_h_read, i32 %TN_MIN, i19 %IHxIW_read, i2 %tmp_89, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="42" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="213" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="30" op_3_bw="16" op_4_bw="16" op_5_bw="16" op_6_bw="16" op_7_bw="16" op_8_bw="16" op_9_bw="16" op_10_bw="16" op_11_bw="16" op_12_bw="16" op_13_bw="16" op_14_bw="16" op_15_bw="16" op_16_bw="16" op_17_bw="16" op_18_bw="16" op_19_bw="16" op_20_bw="16" op_21_bw="16" op_22_bw="16" op_23_bw="16" op_24_bw="16" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="1" op_132_bw="32" op_133_bw="32" op_134_bw="32" op_135_bw="32" op_136_bw="32">
+<![CDATA[
+:5  call fastcc void @weight_load_reorg(i32* %Weight, i30 %Weight_offset_read, [9 x i16]* nocapture %weight_buffer_0_0, [9 x i16]* nocapture %weight_buffer_0_1, [9 x i16]* nocapture %weight_buffer_0_2, [9 x i16]* nocapture %weight_buffer_0_3, [9 x i16]* nocapture %weight_buffer_1_0, [9 x i16]* nocapture %weight_buffer_1_1, [9 x i16]* nocapture %weight_buffer_1_2, [9 x i16]* nocapture %weight_buffer_1_3, [9 x i16]* nocapture %weight_buffer_2_0, [9 x i16]* nocapture %weight_buffer_2_1, [9 x i16]* nocapture %weight_buffer_2_2, [9 x i16]* nocapture %weight_buffer_2_3, [9 x i16]* nocapture %weight_buffer_3_0, [9 x i16]* nocapture %weight_buffer_3_1, [9 x i16]* nocapture %weight_buffer_3_2, [9 x i16]* nocapture %weight_buffer_3_3, [9 x i16]* nocapture %weight_buffer_4_0, [9 x i16]* nocapture %weight_buffer_4_1, [9 x i16]* nocapture %weight_buffer_4_2, [9 x i16]* nocapture %weight_buffer_4_3, [9 x i16]* nocapture %weight_buffer_5_0, [9 x i16]* nocapture %weight_buffer_5_1, [9 x i16]* nocapture %weight_buffer_5_2, [9 x i16]* nocapture %weight_buffer_5_3, [9 x i16]* nocapture %weight_buffer_6_0, [9 x i16]* nocapture %weight_buffer_6_1, [9 x i16]* nocapture %weight_buffer_6_2, [9 x i16]* nocapture %weight_buffer_6_3, [9 x i16]* nocapture %weight_buffer_7_0, [9 x i16]* nocapture %weight_buffer_7_1, [9 x i16]* nocapture %weight_buffer_7_2, [9 x i16]* nocapture %weight_buffer_7_3, [9 x i16]* nocapture %weight_buffer_8_0, [9 x i16]* nocapture %weight_buffer_8_1, [9 x i16]* nocapture %weight_buffer_8_2, [9 x i16]* nocapture %weight_buffer_8_3, [9 x i16]* nocapture %weight_buffer_9_0, [9 x i16]* nocapture %weight_buffer_9_1, [9 x i16]* nocapture %weight_buffer_9_2, [9 x i16]* nocapture %weight_buffer_9_3, [9 x i16]* nocapture %weight_buffer_10_0, [9 x i16]* nocapture %weight_buffer_10_1, [9 x i16]* nocapture %weight_buffer_10_2, [9 x i16]* nocapture %weight_buffer_10_3, [9 x i16]* nocapture %weight_buffer_11_0, [9 x i16]* nocapture %weight_buffer_11_1, [9 x i16]* nocapture %weight_buffer_11_2, [9 x i16]* nocapture %weight_buffer_11_3, [9 x i16]* nocapture %weight_buffer_12_0, [9 x i16]* nocapture %weight_buffer_12_1, [9 x i16]* nocapture %weight_buffer_12_2, [9 x i16]* nocapture %weight_buffer_12_3, [9 x i16]* nocapture %weight_buffer_13_0, [9 x i16]* nocapture %weight_buffer_13_1, [9 x i16]* nocapture %weight_buffer_13_2, [9 x i16]* nocapture %weight_buffer_13_3, [9 x i16]* nocapture %weight_buffer_14_0, [9 x i16]* nocapture %weight_buffer_14_1, [9 x i16]* nocapture %weight_buffer_14_2, [9 x i16]* nocapture %weight_buffer_14_3, [9 x i16]* nocapture %weight_buffer_15_0, [9 x i16]* nocapture %weight_buffer_15_1, [9 x i16]* nocapture %weight_buffer_15_2, [9 x i16]* nocapture %weight_buffer_15_3, [9 x i16]* nocapture %weight_buffer_16_0, [9 x i16]* nocapture %weight_buffer_16_1, [9 x i16]* nocapture %weight_buffer_16_2, [9 x i16]* nocapture %weight_buffer_16_3, [9 x i16]* nocapture %weight_buffer_17_0, [9 x i16]* nocapture %weight_buffer_17_1, [9 x i16]* nocapture %weight_buffer_17_2, [9 x i16]* nocapture %weight_buffer_17_3, [9 x i16]* nocapture %weight_buffer_18_0, [9 x i16]* nocapture %weight_buffer_18_1, [9 x i16]* nocapture %weight_buffer_18_2, [9 x i16]* nocapture %weight_buffer_18_3, [9 x i16]* nocapture %weight_buffer_19_0, [9 x i16]* nocapture %weight_buffer_19_1, [9 x i16]* nocapture %weight_buffer_19_2, [9 x i16]* nocapture %weight_buffer_19_3, [9 x i16]* nocapture %weight_buffer_20_0, [9 x i16]* nocapture %weight_buffer_20_1, [9 x i16]* nocapture %weight_buffer_20_2, [9 x i16]* nocapture %weight_buffer_20_3, [9 x i16]* nocapture %weight_buffer_21_0, [9 x i16]* nocapture %weight_buffer_21_1, [9 x i16]* nocapture %weight_buffer_21_2, [9 x i16]* nocapture %weight_buffer_21_3, [9 x i16]* nocapture %weight_buffer_22_0, [9 x i16]* nocapture %weight_buffer_22_1, [9 x i16]* nocapture %weight_buffer_22_2, [9 x i16]* nocapture %weight_buffer_22_3, [9 x i16]* nocapture %weight_buffer_23_0, [9 x i16]* nocapture %weight_buffer_23_1, [9 x i16]* nocapture %weight_buffer_23_2, [9 x i16]* nocapture %weight_buffer_23_3, [9 x i16]* nocapture %weight_buffer_24_0, [9 x i16]* nocapture %weight_buffer_24_1, [9 x i16]* nocapture %weight_buffer_24_2, [9 x i16]* nocapture %weight_buffer_24_3, [9 x i16]* nocapture %weight_buffer_25_0, [9 x i16]* nocapture %weight_buffer_25_1, [9 x i16]* nocapture %weight_buffer_25_2, [9 x i16]* nocapture %weight_buffer_25_3, [9 x i16]* nocapture %weight_buffer_26_0, [9 x i16]* nocapture %weight_buffer_26_1, [9 x i16]* nocapture %weight_buffer_26_2, [9 x i16]* nocapture %weight_buffer_26_3, [9 x i16]* nocapture %weight_buffer_27_0, [9 x i16]* nocapture %weight_buffer_27_1, [9 x i16]* nocapture %weight_buffer_27_2, [9 x i16]* nocapture %weight_buffer_27_3, [9 x i16]* nocapture %weight_buffer_28_0, [9 x i16]* nocapture %weight_buffer_28_1, [9 x i16]* nocapture %weight_buffer_28_2, [9 x i16]* nocapture %weight_buffer_28_3, [9 x i16]* nocapture %weight_buffer_29_0, [9 x i16]* nocapture %weight_buffer_29_1, [9 x i16]* nocapture %weight_buffer_29_2, [9 x i16]* nocapture %weight_buffer_29_3, [9 x i16]* nocapture %weight_buffer_30_0, [9 x i16]* nocapture %weight_buffer_30_1, [9 x i16]* nocapture %weight_buffer_30_2, [9 x i16]* nocapture %weight_buffer_30_3, [9 x i16]* nocapture %weight_buffer_31_0, [9 x i16]* nocapture %weight_buffer_31_1, [9 x i16]* nocapture %weight_buffer_31_2, [9 x i16]* nocapture %weight_buffer_31_3, i1 zeroext %weight_load_enable_r, i32 %m_read, i32 %n_read, i32 %Kernel_size_read, i32 %TM_MIN_read, i32 %TN_MIN)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="43" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="214" bw="0" op_0_bw="0">
+<![CDATA[
+:6  br label %._crit_edge
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="44" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="216" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+._crit_edge:0  %write_flag = phi i32 [ %n_read, %1 ], [ %p_read_3, %0 ]
+
+]]></Node>
+<StgValue><ssdm name="write_flag"/></StgValue>
+</operation>
+
+<operation id="45" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="7">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="217" bw="0" op_0_bw="32">
+<![CDATA[
+._crit_edge:1  ret i32 %write_flag
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+<port id="50" name="input_r" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="input_r"/></StgValue>
+</port>
+<port id="51" name="input_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="input_offset"/></StgValue>
+</port>
+<port id="52" name="input1" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="input1"/></StgValue>
+</port>
+<port id="53" name="input1_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="input1_offset"/></StgValue>
+</port>
+<port id="54" name="input2" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="input2"/></StgValue>
+</port>
+<port id="55" name="input2_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="input2_offset"/></StgValue>
+</port>
+<port id="56" name="input3" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="input3"/></StgValue>
+</port>
+<port id="57" name="input3_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="input3_offset"/></StgValue>
+</port>
+<port id="58" name="Weight" dir="0" iftype="4">
+<core>NULL</core><StgValue><ssdm name="Weight"/></StgValue>
+</port>
+<port id="59" name="Weight_offset" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Weight_offset"/></StgValue>
+</port>
+<port id="60" name="InFM_num" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="InFM_num"/></StgValue>
+</port>
+<port id="61" name="Input_w" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Input_w"/></StgValue>
+</port>
+<port id="62" name="Input_h" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Input_h"/></StgValue>
+</port>
+<port id="63" name="Kernel_size" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Kernel_size"/></StgValue>
+</port>
+<port id="64" name="Kernel_stride" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Kernel_stride"/></StgValue>
+</port>
+<port id="65" name="r" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="r"/></StgValue>
+</port>
+<port id="66" name="c" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="c"/></StgValue>
+</port>
+<port id="67" name="m" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="m"/></StgValue>
+</port>
+<port id="68" name="n" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="n"/></StgValue>
+</port>
+<port id="69" name="TM_MIN" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="TM_MIN"/></StgValue>
+</port>
+<port id="70" name="TN" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="TN"/></StgValue>
+</port>
+<port id="71" name="TRow" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="TRow"/></StgValue>
+</port>
+<port id="72" name="TCol" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="TCol"/></StgValue>
+</port>
+<port id="73" name="Padding" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Padding"/></StgValue>
+</port>
+<port id="74" name="input_buffer_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_buffer_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="75" name="input_buffer_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_buffer_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="76" name="input_buffer_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_buffer_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="77" name="input_buffer_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_buffer_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="78" name="weight_buffer_0_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_0_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="79" name="weight_buffer_0_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_0_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="80" name="weight_buffer_0_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_0_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="81" name="weight_buffer_0_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_0_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="82" name="weight_buffer_1_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_1_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="83" name="weight_buffer_1_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_1_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="84" name="weight_buffer_1_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_1_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="85" name="weight_buffer_1_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_1_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="86" name="weight_buffer_2_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_2_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="87" name="weight_buffer_2_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_2_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="88" name="weight_buffer_2_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_2_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="89" name="weight_buffer_2_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_2_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="90" name="weight_buffer_3_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_3_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="91" name="weight_buffer_3_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_3_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="92" name="weight_buffer_3_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_3_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="93" name="weight_buffer_3_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_3_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="94" name="weight_buffer_4_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_4_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="95" name="weight_buffer_4_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_4_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="96" name="weight_buffer_4_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_4_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="97" name="weight_buffer_4_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_4_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="98" name="weight_buffer_5_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_5_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="99" name="weight_buffer_5_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_5_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="100" name="weight_buffer_5_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_5_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="101" name="weight_buffer_5_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_5_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="102" name="weight_buffer_6_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_6_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="103" name="weight_buffer_6_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_6_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="104" name="weight_buffer_6_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_6_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="105" name="weight_buffer_6_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_6_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="106" name="weight_buffer_7_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_7_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="107" name="weight_buffer_7_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_7_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="108" name="weight_buffer_7_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_7_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="109" name="weight_buffer_7_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_7_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="110" name="weight_buffer_8_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_8_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="111" name="weight_buffer_8_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_8_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="112" name="weight_buffer_8_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_8_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="113" name="weight_buffer_8_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_8_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="114" name="weight_buffer_9_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_9_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="115" name="weight_buffer_9_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_9_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="116" name="weight_buffer_9_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_9_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="117" name="weight_buffer_9_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_9_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="118" name="weight_buffer_10_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_10_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="119" name="weight_buffer_10_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_10_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="120" name="weight_buffer_10_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_10_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="121" name="weight_buffer_10_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_10_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="122" name="weight_buffer_11_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_11_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="123" name="weight_buffer_11_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_11_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="124" name="weight_buffer_11_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_11_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="125" name="weight_buffer_11_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_11_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="126" name="weight_buffer_12_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_12_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="127" name="weight_buffer_12_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_12_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="128" name="weight_buffer_12_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_12_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="129" name="weight_buffer_12_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_12_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="130" name="weight_buffer_13_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_13_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="131" name="weight_buffer_13_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_13_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="132" name="weight_buffer_13_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_13_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="133" name="weight_buffer_13_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_13_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="134" name="weight_buffer_14_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_14_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="135" name="weight_buffer_14_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_14_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="136" name="weight_buffer_14_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_14_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="137" name="weight_buffer_14_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_14_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="138" name="weight_buffer_15_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_15_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="139" name="weight_buffer_15_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_15_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="140" name="weight_buffer_15_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_15_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="141" name="weight_buffer_15_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_15_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="142" name="weight_buffer_16_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_16_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="143" name="weight_buffer_16_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_16_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="144" name="weight_buffer_16_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_16_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="145" name="weight_buffer_16_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_16_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="146" name="weight_buffer_17_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_17_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="147" name="weight_buffer_17_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_17_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="148" name="weight_buffer_17_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_17_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="149" name="weight_buffer_17_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_17_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="150" name="weight_buffer_18_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_18_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="151" name="weight_buffer_18_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_18_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="152" name="weight_buffer_18_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_18_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="153" name="weight_buffer_18_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_18_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="154" name="weight_buffer_19_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_19_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="155" name="weight_buffer_19_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_19_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="156" name="weight_buffer_19_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_19_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="157" name="weight_buffer_19_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_19_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="158" name="weight_buffer_20_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_20_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="159" name="weight_buffer_20_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_20_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="160" name="weight_buffer_20_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_20_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="161" name="weight_buffer_20_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_20_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="162" name="weight_buffer_21_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_21_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="163" name="weight_buffer_21_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_21_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="164" name="weight_buffer_21_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_21_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="165" name="weight_buffer_21_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_21_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="166" name="weight_buffer_22_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_22_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="167" name="weight_buffer_22_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_22_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="168" name="weight_buffer_22_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_22_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="169" name="weight_buffer_22_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_22_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="170" name="weight_buffer_23_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_23_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="171" name="weight_buffer_23_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_23_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="172" name="weight_buffer_23_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_23_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="173" name="weight_buffer_23_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_23_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="174" name="weight_buffer_24_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_24_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="175" name="weight_buffer_24_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_24_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="176" name="weight_buffer_24_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_24_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="177" name="weight_buffer_24_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_24_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="178" name="weight_buffer_25_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_25_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="179" name="weight_buffer_25_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_25_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="180" name="weight_buffer_25_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_25_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="181" name="weight_buffer_25_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_25_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="182" name="weight_buffer_26_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_26_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="183" name="weight_buffer_26_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_26_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="184" name="weight_buffer_26_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_26_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="185" name="weight_buffer_26_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_26_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="186" name="weight_buffer_27_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_27_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="187" name="weight_buffer_27_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_27_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="188" name="weight_buffer_27_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_27_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="189" name="weight_buffer_27_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_27_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="190" name="weight_buffer_28_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_28_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="191" name="weight_buffer_28_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_28_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="192" name="weight_buffer_28_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_28_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="193" name="weight_buffer_28_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_28_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="194" name="weight_buffer_29_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_29_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="195" name="weight_buffer_29_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_29_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="196" name="weight_buffer_29_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_29_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="197" name="weight_buffer_29_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_29_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="198" name="weight_buffer_30_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_30_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="199" name="weight_buffer_30_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_30_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="200" name="weight_buffer_30_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_30_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="201" name="weight_buffer_30_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_30_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="202" name="weight_buffer_31_0" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_31_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="203" name="weight_buffer_31_1" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_31_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="204" name="weight_buffer_31_2" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_31_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="205" name="weight_buffer_31_3" dir="1" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_buffer_31_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="206" name="p_read" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="p_read"/></StgValue>
+</port>
+<port id="207" name="enable" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="enable"/></StgValue>
+</port>
+<port id="208" name="weight_load_enable" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="weight_load_enable"/></StgValue>
+</port>
+<port id="209" name="IHxIW" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="IHxIW"/></StgValue>
+</port>
+<port id="210" name="LayerType" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="LayerType"/></StgValue>
+</port>
+<port id="211" name="trow_loops_V" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="trow_loops_V"/></StgValue>
+</port>
+<port id="212" name="tmp_inoffset" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="tmp_inoffset"/></StgValue>
+</port>
+<port id="213" name="input_memcpy_buffer0" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer0"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="214" name="input_memcpy_buffer1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="215" name="input_memcpy_buffer2" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer2"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="216" name="input_memcpy_buffer3" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer3"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="217" name="t2_local_V" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="t2_local_V"/></StgValue>
+</port>
+<port id="218" name="input_memcpy_buffer0_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer0_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="219" name="input_memcpy_buffer1_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer1_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="220" name="input_memcpy_buffer2_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer2_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="221" name="input_memcpy_buffer3_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="input_memcpy_buffer3_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="222" name="Woffset" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="Woffset"/></StgValue>
+</port>
+<port id="223" name="weight_memcpy_buffer" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_memcpy_buffer"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+<port id="224" name="weight_memcpy_buffer_1" dir="2" iftype="1">
+<core>RAM</core><StgValue><ssdm name="weight_memcpy_buffer_1"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</port>
+</ports>
+
+
+<dataflows>
+<dataflow id="226" from="_ssdm_op_Read.ap_auto.i6" to="trow_loops_V_read" fromId="225" toId="4">
+</dataflow>
+<dataflow id="227" from="trow_loops_V" to="trow_loops_V_read" fromId="211" toId="4">
+</dataflow>
+<dataflow id="229" from="_ssdm_op_Read.ap_auto.i4" to="LayerType_read" fromId="228" toId="5">
+</dataflow>
+<dataflow id="230" from="LayerType" to="LayerType_read" fromId="210" toId="5">
+</dataflow>
+<dataflow id="232" from="_ssdm_op_Read.ap_auto.i19" to="IHxIW_read" fromId="231" toId="6">
+</dataflow>
+<dataflow id="233" from="IHxIW" to="IHxIW_read" fromId="209" toId="6">
+</dataflow>
+<dataflow id="235" from="_ssdm_op_Read.ap_auto.i1" to="weight_load_enable_r" fromId="234" toId="7">
+</dataflow>
+<dataflow id="236" from="weight_load_enable" to="weight_load_enable_r" fromId="208" toId="7">
+</dataflow>
+<dataflow id="237" from="_ssdm_op_Read.ap_auto.i1" to="enable_read" fromId="234" toId="8">
+</dataflow>
+<dataflow id="238" from="enable" to="enable_read" fromId="207" toId="8">
+</dataflow>
+<dataflow id="240" from="_ssdm_op_Read.ap_auto.i32" to="p_read_3" fromId="239" toId="9">
+</dataflow>
+<dataflow id="241" from="p_read" to="p_read_3" fromId="206" toId="9">
+</dataflow>
+<dataflow id="242" from="_ssdm_op_Read.ap_auto.i32" to="Padding_read" fromId="239" toId="10">
+</dataflow>
+<dataflow id="243" from="Padding" to="Padding_read" fromId="73" toId="10">
+</dataflow>
+<dataflow id="245" from="_ssdm_op_Read.ap_auto.i8" to="TCol_read" fromId="244" toId="11">
+</dataflow>
+<dataflow id="246" from="TCol" to="TCol_read" fromId="72" toId="11">
+</dataflow>
+<dataflow id="247" from="_ssdm_op_Read.ap_auto.i8" to="TRow_read" fromId="244" toId="12">
+</dataflow>
+<dataflow id="248" from="TRow" to="TRow_read" fromId="71" toId="12">
+</dataflow>
+<dataflow id="249" from="_ssdm_op_Read.ap_auto.i32" to="TN_read" fromId="239" toId="13">
+</dataflow>
+<dataflow id="250" from="TN" to="TN_read" fromId="70" toId="13">
+</dataflow>
+<dataflow id="251" from="_ssdm_op_Read.ap_auto.i32" to="TM_MIN_read" fromId="239" toId="14">
+</dataflow>
+<dataflow id="252" from="TM_MIN" to="TM_MIN_read" fromId="69" toId="14">
+</dataflow>
+<dataflow id="253" from="_ssdm_op_Read.ap_auto.i32" to="n_read" fromId="239" toId="15">
+</dataflow>
+<dataflow id="254" from="n" to="n_read" fromId="68" toId="15">
+</dataflow>
+<dataflow id="255" from="_ssdm_op_Read.ap_auto.i32" to="m_read" fromId="239" toId="16">
+</dataflow>
+<dataflow id="256" from="m" to="m_read" fromId="67" toId="16">
+</dataflow>
+<dataflow id="257" from="_ssdm_op_Read.ap_auto.i32" to="c_read" fromId="239" toId="17">
+</dataflow>
+<dataflow id="258" from="c" to="c_read" fromId="66" toId="17">
+</dataflow>
+<dataflow id="259" from="_ssdm_op_Read.ap_auto.i32" to="r_read" fromId="239" toId="18">
+</dataflow>
+<dataflow id="260" from="r" to="r_read" fromId="65" toId="18">
+</dataflow>
+<dataflow id="261" from="_ssdm_op_Read.ap_auto.i32" to="Kernel_stride_read" fromId="239" toId="19">
+</dataflow>
+<dataflow id="262" from="Kernel_stride" to="Kernel_stride_read" fromId="64" toId="19">
+</dataflow>
+<dataflow id="263" from="_ssdm_op_Read.ap_auto.i32" to="Kernel_size_read" fromId="239" toId="20">
+</dataflow>
+<dataflow id="264" from="Kernel_size" to="Kernel_size_read" fromId="63" toId="20">
+</dataflow>
+<dataflow id="265" from="_ssdm_op_Read.ap_auto.i32" to="Input_h_read" fromId="239" toId="21">
+</dataflow>
+<dataflow id="266" from="Input_h" to="Input_h_read" fromId="62" toId="21">
+</dataflow>
+<dataflow id="267" from="_ssdm_op_Read.ap_auto.i32" to="Input_w_read" fromId="239" toId="22">
+</dataflow>
+<dataflow id="268" from="Input_w" to="Input_w_read" fromId="61" toId="22">
+</dataflow>
+<dataflow id="269" from="_ssdm_op_Read.ap_auto.i32" to="InFM_num_read" fromId="239" toId="23">
+</dataflow>
+<dataflow id="270" from="InFM_num" to="InFM_num_read" fromId="60" toId="23">
+</dataflow>
+<dataflow id="272" from="_ssdm_op_Read.ap_auto.i30" to="Weight_offset_read" fromId="271" toId="24">
+</dataflow>
+<dataflow id="273" from="Weight_offset" to="Weight_offset_read" fromId="59" toId="24">
+</dataflow>
+<dataflow id="274" from="_ssdm_op_Read.ap_auto.i30" to="input3_offset_read" fromId="271" toId="25">
+</dataflow>
+<dataflow id="275" from="input3_offset" to="input3_offset_read" fromId="57" toId="25">
+</dataflow>
+<dataflow id="276" from="_ssdm_op_Read.ap_auto.i30" to="input2_offset_read" fromId="271" toId="26">
+</dataflow>
+<dataflow id="277" from="input2_offset" to="input2_offset_read" fromId="55" toId="26">
+</dataflow>
+<dataflow id="278" from="_ssdm_op_Read.ap_auto.i30" to="input1_offset_read" fromId="271" toId="27">
+</dataflow>
+<dataflow id="279" from="input1_offset" to="input1_offset_read" fromId="53" toId="27">
+</dataflow>
+<dataflow id="280" from="_ssdm_op_Read.ap_auto.i30" to="input_offset_read" fromId="271" toId="28">
+</dataflow>
+<dataflow id="281" from="input_offset" to="input_offset_read" fromId="51" toId="28">
+</dataflow>
+<dataflow id="283" from="_ssdm_op_SpecInterface" to="StgValue_29" fromId="282" toId="29">
+</dataflow>
+<dataflow id="284" from="input_r" to="StgValue_29" fromId="50" toId="29">
+</dataflow>
+<dataflow id="286" from="p_str16" to="StgValue_29" fromId="285" toId="29">
+</dataflow>
+<dataflow id="288" from="StgValue_287" to="StgValue_29" fromId="287" toId="29">
+</dataflow>
+<dataflow id="289" from="StgValue_287" to="StgValue_29" fromId="287" toId="29">
+</dataflow>
+<dataflow id="291" from="p_str1" to="StgValue_29" fromId="290" toId="29">
+</dataflow>
+<dataflow id="292" from="StgValue_287" to="StgValue_29" fromId="287" toId="29">
+</dataflow>
+<dataflow id="294" from="StgValue_293" to="StgValue_29" fromId="293" toId="29">
+</dataflow>
+<dataflow id="296" from="p_str17" to="StgValue_29" fromId="295" toId="29">
+</dataflow>
+<dataflow id="298" from="p_str18" to="StgValue_29" fromId="297" toId="29">
+</dataflow>
+<dataflow id="299" from="p_str1" to="StgValue_29" fromId="290" toId="29">
+</dataflow>
+<dataflow id="301" from="StgValue_300" to="StgValue_29" fromId="300" toId="29">
+</dataflow>
+<dataflow id="302" from="StgValue_300" to="StgValue_29" fromId="300" toId="29">
+</dataflow>
+<dataflow id="304" from="StgValue_303" to="StgValue_29" fromId="303" toId="29">
+</dataflow>
+<dataflow id="305" from="StgValue_303" to="StgValue_29" fromId="303" toId="29">
+</dataflow>
+<dataflow id="306" from="p_str1" to="StgValue_29" fromId="290" toId="29">
+</dataflow>
+<dataflow id="307" from="p_str1" to="StgValue_29" fromId="290" toId="29">
+</dataflow>
+<dataflow id="308" from="_ssdm_op_SpecInterface" to="StgValue_30" fromId="282" toId="30">
+</dataflow>
+<dataflow id="309" from="input1" to="StgValue_30" fromId="52" toId="30">
+</dataflow>
+<dataflow id="310" from="p_str16" to="StgValue_30" fromId="285" toId="30">
+</dataflow>
+<dataflow id="311" from="StgValue_287" to="StgValue_30" fromId="287" toId="30">
+</dataflow>
+<dataflow id="312" from="StgValue_287" to="StgValue_30" fromId="287" toId="30">
+</dataflow>
+<dataflow id="313" from="p_str1" to="StgValue_30" fromId="290" toId="30">
+</dataflow>
+<dataflow id="314" from="StgValue_287" to="StgValue_30" fromId="287" toId="30">
+</dataflow>
+<dataflow id="315" from="StgValue_293" to="StgValue_30" fromId="293" toId="30">
+</dataflow>
+<dataflow id="317" from="p_str19" to="StgValue_30" fromId="316" toId="30">
+</dataflow>
+<dataflow id="318" from="p_str18" to="StgValue_30" fromId="297" toId="30">
+</dataflow>
+<dataflow id="319" from="p_str1" to="StgValue_30" fromId="290" toId="30">
+</dataflow>
+<dataflow id="320" from="StgValue_300" to="StgValue_30" fromId="300" toId="30">
+</dataflow>
+<dataflow id="321" from="StgValue_300" to="StgValue_30" fromId="300" toId="30">
+</dataflow>
+<dataflow id="322" from="StgValue_303" to="StgValue_30" fromId="303" toId="30">
+</dataflow>
+<dataflow id="323" from="StgValue_303" to="StgValue_30" fromId="303" toId="30">
+</dataflow>
+<dataflow id="324" from="p_str1" to="StgValue_30" fromId="290" toId="30">
+</dataflow>
+<dataflow id="325" from="p_str1" to="StgValue_30" fromId="290" toId="30">
+</dataflow>
+<dataflow id="326" from="_ssdm_op_SpecInterface" to="StgValue_31" fromId="282" toId="31">
+</dataflow>
+<dataflow id="327" from="input2" to="StgValue_31" fromId="54" toId="31">
+</dataflow>
+<dataflow id="328" from="p_str16" to="StgValue_31" fromId="285" toId="31">
+</dataflow>
+<dataflow id="329" from="StgValue_287" to="StgValue_31" fromId="287" toId="31">
+</dataflow>
+<dataflow id="330" from="StgValue_287" to="StgValue_31" fromId="287" toId="31">
+</dataflow>
+<dataflow id="331" from="p_str1" to="StgValue_31" fromId="290" toId="31">
+</dataflow>
+<dataflow id="332" from="StgValue_287" to="StgValue_31" fromId="287" toId="31">
+</dataflow>
+<dataflow id="333" from="StgValue_293" to="StgValue_31" fromId="293" toId="31">
+</dataflow>
+<dataflow id="335" from="p_str20" to="StgValue_31" fromId="334" toId="31">
+</dataflow>
+<dataflow id="336" from="p_str18" to="StgValue_31" fromId="297" toId="31">
+</dataflow>
+<dataflow id="337" from="p_str1" to="StgValue_31" fromId="290" toId="31">
+</dataflow>
+<dataflow id="338" from="StgValue_300" to="StgValue_31" fromId="300" toId="31">
+</dataflow>
+<dataflow id="340" from="StgValue_339" to="StgValue_31" fromId="339" toId="31">
+</dataflow>
+<dataflow id="341" from="StgValue_303" to="StgValue_31" fromId="303" toId="31">
+</dataflow>
+<dataflow id="342" from="StgValue_339" to="StgValue_31" fromId="339" toId="31">
+</dataflow>
+<dataflow id="343" from="p_str1" to="StgValue_31" fromId="290" toId="31">
+</dataflow>
+<dataflow id="344" from="p_str1" to="StgValue_31" fromId="290" toId="31">
+</dataflow>
+<dataflow id="345" from="_ssdm_op_SpecInterface" to="StgValue_32" fromId="282" toId="32">
+</dataflow>
+<dataflow id="346" from="input3" to="StgValue_32" fromId="56" toId="32">
+</dataflow>
+<dataflow id="347" from="p_str16" to="StgValue_32" fromId="285" toId="32">
+</dataflow>
+<dataflow id="348" from="StgValue_287" to="StgValue_32" fromId="287" toId="32">
+</dataflow>
+<dataflow id="349" from="StgValue_287" to="StgValue_32" fromId="287" toId="32">
+</dataflow>
+<dataflow id="350" from="p_str1" to="StgValue_32" fromId="290" toId="32">
+</dataflow>
+<dataflow id="351" from="StgValue_287" to="StgValue_32" fromId="287" toId="32">
+</dataflow>
+<dataflow id="352" from="StgValue_293" to="StgValue_32" fromId="293" toId="32">
+</dataflow>
+<dataflow id="354" from="p_str21" to="StgValue_32" fromId="353" toId="32">
+</dataflow>
+<dataflow id="355" from="p_str18" to="StgValue_32" fromId="297" toId="32">
+</dataflow>
+<dataflow id="356" from="p_str1" to="StgValue_32" fromId="290" toId="32">
+</dataflow>
+<dataflow id="357" from="StgValue_300" to="StgValue_32" fromId="300" toId="32">
+</dataflow>
+<dataflow id="358" from="StgValue_339" to="StgValue_32" fromId="339" toId="32">
+</dataflow>
+<dataflow id="359" from="StgValue_303" to="StgValue_32" fromId="303" toId="32">
+</dataflow>
+<dataflow id="360" from="StgValue_339" to="StgValue_32" fromId="339" toId="32">
+</dataflow>
+<dataflow id="361" from="p_str1" to="StgValue_32" fromId="290" toId="32">
+</dataflow>
+<dataflow id="362" from="p_str1" to="StgValue_32" fromId="290" toId="32">
+</dataflow>
+<dataflow id="363" from="_ssdm_op_SpecInterface" to="StgValue_33" fromId="282" toId="33">
+</dataflow>
+<dataflow id="364" from="Weight" to="StgValue_33" fromId="58" toId="33">
+</dataflow>
+<dataflow id="365" from="p_str16" to="StgValue_33" fromId="285" toId="33">
+</dataflow>
+<dataflow id="366" from="StgValue_287" to="StgValue_33" fromId="287" toId="33">
+</dataflow>
+<dataflow id="367" from="StgValue_287" to="StgValue_33" fromId="287" toId="33">
+</dataflow>
+<dataflow id="368" from="p_str1" to="StgValue_33" fromId="290" toId="33">
+</dataflow>
+<dataflow id="369" from="StgValue_287" to="StgValue_33" fromId="287" toId="33">
+</dataflow>
+<dataflow id="370" from="StgValue_293" to="StgValue_33" fromId="293" toId="33">
+</dataflow>
+<dataflow id="372" from="p_str22" to="StgValue_33" fromId="371" toId="33">
+</dataflow>
+<dataflow id="373" from="p_str18" to="StgValue_33" fromId="297" toId="33">
+</dataflow>
+<dataflow id="374" from="p_str1" to="StgValue_33" fromId="290" toId="33">
+</dataflow>
+<dataflow id="375" from="StgValue_300" to="StgValue_33" fromId="300" toId="33">
+</dataflow>
+<dataflow id="376" from="StgValue_339" to="StgValue_33" fromId="339" toId="33">
+</dataflow>
+<dataflow id="378" from="StgValue_377" to="StgValue_33" fromId="377" toId="33">
+</dataflow>
+<dataflow id="379" from="StgValue_339" to="StgValue_33" fromId="339" toId="33">
+</dataflow>
+<dataflow id="380" from="p_str1" to="StgValue_33" fromId="290" toId="33">
+</dataflow>
+<dataflow id="381" from="p_str1" to="StgValue_33" fromId="290" toId="33">
+</dataflow>
+<dataflow id="382" from="enable_read" to="StgValue_34" fromId="8" toId="34">
+</dataflow>
+<dataflow id="383" from="InFM_num_read" to="tmp" fromId="23" toId="35">
+</dataflow>
+<dataflow id="384" from="n_read" to="tmp" fromId="15" toId="35">
+</dataflow>
+<dataflow id="385" from="tmp" to="tmp_s" fromId="35" toId="36">
+</dataflow>
+<dataflow id="386" from="TN_read" to="tmp_s" fromId="13" toId="36">
+</dataflow>
+<dataflow id="387" from="tmp_s" to="TN_MIN" fromId="36" toId="37">
+</dataflow>
+<dataflow id="388" from="TN_read" to="TN_MIN" fromId="13" toId="37">
+</dataflow>
+<dataflow id="389" from="tmp" to="TN_MIN" fromId="35" toId="37">
+</dataflow>
+<dataflow id="390" from="LayerType_read" to="tmp_89" fromId="5" toId="38">
+</dataflow>
+<dataflow id="392" from="input_load" to="StgValue_39" fromId="391" toId="39">
+</dataflow>
+<dataflow id="393" from="input_r" to="StgValue_39" fromId="50" toId="39">
+</dataflow>
+<dataflow id="394" from="input_offset_read" to="StgValue_39" fromId="28" toId="39">
+</dataflow>
+<dataflow id="395" from="input1" to="StgValue_39" fromId="52" toId="39">
+</dataflow>
+<dataflow id="396" from="input1_offset_read" to="StgValue_39" fromId="27" toId="39">
+</dataflow>
+<dataflow id="397" from="input2" to="StgValue_39" fromId="54" toId="39">
+</dataflow>
+<dataflow id="398" from="input2_offset_read" to="StgValue_39" fromId="26" toId="39">
+</dataflow>
+<dataflow id="399" from="input3" to="StgValue_39" fromId="56" toId="39">
+</dataflow>
+<dataflow id="400" from="input3_offset_read" to="StgValue_39" fromId="25" toId="39">
+</dataflow>
+<dataflow id="401" from="input_buffer_0" to="StgValue_39" fromId="74" toId="39">
+</dataflow>
+<dataflow id="402" from="input_buffer_1" to="StgValue_39" fromId="75" toId="39">
+</dataflow>
+<dataflow id="403" from="input_buffer_2" to="StgValue_39" fromId="76" toId="39">
+</dataflow>
+<dataflow id="404" from="input_buffer_3" to="StgValue_39" fromId="77" toId="39">
+</dataflow>
+<dataflow id="405" from="r_read" to="StgValue_39" fromId="18" toId="39">
+</dataflow>
+<dataflow id="406" from="c_read" to="StgValue_39" fromId="17" toId="39">
+</dataflow>
+<dataflow id="407" from="n_read" to="StgValue_39" fromId="15" toId="39">
+</dataflow>
+<dataflow id="408" from="Kernel_stride_read" to="StgValue_39" fromId="19" toId="39">
+</dataflow>
+<dataflow id="409" from="Padding_read" to="StgValue_39" fromId="10" toId="39">
+</dataflow>
+<dataflow id="410" from="TRow_read" to="StgValue_39" fromId="12" toId="39">
+</dataflow>
+<dataflow id="411" from="TCol_read" to="StgValue_39" fromId="11" toId="39">
+</dataflow>
+<dataflow id="412" from="Input_w_read" to="StgValue_39" fromId="22" toId="39">
+</dataflow>
+<dataflow id="413" from="Input_h_read" to="StgValue_39" fromId="21" toId="39">
+</dataflow>
+<dataflow id="414" from="TN_MIN" to="StgValue_39" fromId="37" toId="39">
+</dataflow>
+<dataflow id="415" from="IHxIW_read" to="StgValue_39" fromId="6" toId="39">
+</dataflow>
+<dataflow id="416" from="tmp_89" to="StgValue_39" fromId="38" toId="39">
+</dataflow>
+<dataflow id="417" from="trow_loops_V_read" to="StgValue_39" fromId="4" toId="39">
+</dataflow>
+<dataflow id="418" from="tmp_inoffset" to="StgValue_39" fromId="212" toId="39">
+</dataflow>
+<dataflow id="419" from="input_memcpy_buffer0" to="StgValue_39" fromId="213" toId="39">
+</dataflow>
+<dataflow id="420" from="input_memcpy_buffer1" to="StgValue_39" fromId="214" toId="39">
+</dataflow>
+<dataflow id="421" from="input_memcpy_buffer2" to="StgValue_39" fromId="215" toId="39">
+</dataflow>
+<dataflow id="422" from="input_memcpy_buffer3" to="StgValue_39" fromId="216" toId="39">
+</dataflow>
+<dataflow id="423" from="t2_local_V" to="StgValue_39" fromId="217" toId="39">
+</dataflow>
+<dataflow id="424" from="input_memcpy_buffer0_1" to="StgValue_39" fromId="218" toId="39">
+</dataflow>
+<dataflow id="425" from="input_memcpy_buffer1_1" to="StgValue_39" fromId="219" toId="39">
+</dataflow>
+<dataflow id="426" from="input_memcpy_buffer2_1" to="StgValue_39" fromId="220" toId="39">
+</dataflow>
+<dataflow id="427" from="input_memcpy_buffer3_1" to="StgValue_39" fromId="221" toId="39">
+</dataflow>
+<dataflow id="429" from="weight_load_reorg" to="StgValue_40" fromId="428" toId="40">
+</dataflow>
+<dataflow id="430" from="Weight" to="StgValue_40" fromId="58" toId="40">
+</dataflow>
+<dataflow id="431" from="Weight_offset_read" to="StgValue_40" fromId="24" toId="40">
+</dataflow>
+<dataflow id="432" from="weight_buffer_0_0" to="StgValue_40" fromId="78" toId="40">
+</dataflow>
+<dataflow id="433" from="weight_buffer_0_1" to="StgValue_40" fromId="79" toId="40">
+</dataflow>
+<dataflow id="434" from="weight_buffer_0_2" to="StgValue_40" fromId="80" toId="40">
+</dataflow>
+<dataflow id="435" from="weight_buffer_0_3" to="StgValue_40" fromId="81" toId="40">
+</dataflow>
+<dataflow id="436" from="weight_buffer_1_0" to="StgValue_40" fromId="82" toId="40">
+</dataflow>
+<dataflow id="437" from="weight_buffer_1_1" to="StgValue_40" fromId="83" toId="40">
+</dataflow>
+<dataflow id="438" from="weight_buffer_1_2" to="StgValue_40" fromId="84" toId="40">
+</dataflow>
+<dataflow id="439" from="weight_buffer_1_3" to="StgValue_40" fromId="85" toId="40">
+</dataflow>
+<dataflow id="440" from="weight_buffer_2_0" to="StgValue_40" fromId="86" toId="40">
+</dataflow>
+<dataflow id="441" from="weight_buffer_2_1" to="StgValue_40" fromId="87" toId="40">
+</dataflow>
+<dataflow id="442" from="weight_buffer_2_2" to="StgValue_40" fromId="88" toId="40">
+</dataflow>
+<dataflow id="443" from="weight_buffer_2_3" to="StgValue_40" fromId="89" toId="40">
+</dataflow>
+<dataflow id="444" from="weight_buffer_3_0" to="StgValue_40" fromId="90" toId="40">
+</dataflow>
+<dataflow id="445" from="weight_buffer_3_1" to="StgValue_40" fromId="91" toId="40">
+</dataflow>
+<dataflow id="446" from="weight_buffer_3_2" to="StgValue_40" fromId="92" toId="40">
+</dataflow>
+<dataflow id="447" from="weight_buffer_3_3" to="StgValue_40" fromId="93" toId="40">
+</dataflow>
+<dataflow id="448" from="weight_buffer_4_0" to="StgValue_40" fromId="94" toId="40">
+</dataflow>
+<dataflow id="449" from="weight_buffer_4_1" to="StgValue_40" fromId="95" toId="40">
+</dataflow>
+<dataflow id="450" from="weight_buffer_4_2" to="StgValue_40" fromId="96" toId="40">
+</dataflow>
+<dataflow id="451" from="weight_buffer_4_3" to="StgValue_40" fromId="97" toId="40">
+</dataflow>
+<dataflow id="452" from="weight_buffer_5_0" to="StgValue_40" fromId="98" toId="40">
+</dataflow>
+<dataflow id="453" from="weight_buffer_5_1" to="StgValue_40" fromId="99" toId="40">
+</dataflow>
+<dataflow id="454" from="weight_buffer_5_2" to="StgValue_40" fromId="100" toId="40">
+</dataflow>
+<dataflow id="455" from="weight_buffer_5_3" to="StgValue_40" fromId="101" toId="40">
+</dataflow>
+<dataflow id="456" from="weight_buffer_6_0" to="StgValue_40" fromId="102" toId="40">
+</dataflow>
+<dataflow id="457" from="weight_buffer_6_1" to="StgValue_40" fromId="103" toId="40">
+</dataflow>
+<dataflow id="458" from="weight_buffer_6_2" to="StgValue_40" fromId="104" toId="40">
+</dataflow>
+<dataflow id="459" from="weight_buffer_6_3" to="StgValue_40" fromId="105" toId="40">
+</dataflow>
+<dataflow id="460" from="weight_buffer_7_0" to="StgValue_40" fromId="106" toId="40">
+</dataflow>
+<dataflow id="461" from="weight_buffer_7_1" to="StgValue_40" fromId="107" toId="40">
+</dataflow>
+<dataflow id="462" from="weight_buffer_7_2" to="StgValue_40" fromId="108" toId="40">
+</dataflow>
+<dataflow id="463" from="weight_buffer_7_3" to="StgValue_40" fromId="109" toId="40">
+</dataflow>
+<dataflow id="464" from="weight_buffer_8_0" to="StgValue_40" fromId="110" toId="40">
+</dataflow>
+<dataflow id="465" from="weight_buffer_8_1" to="StgValue_40" fromId="111" toId="40">
+</dataflow>
+<dataflow id="466" from="weight_buffer_8_2" to="StgValue_40" fromId="112" toId="40">
+</dataflow>
+<dataflow id="467" from="weight_buffer_8_3" to="StgValue_40" fromId="113" toId="40">
+</dataflow>
+<dataflow id="468" from="weight_buffer_9_0" to="StgValue_40" fromId="114" toId="40">
+</dataflow>
+<dataflow id="469" from="weight_buffer_9_1" to="StgValue_40" fromId="115" toId="40">
+</dataflow>
+<dataflow id="470" from="weight_buffer_9_2" to="StgValue_40" fromId="116" toId="40">
+</dataflow>
+<dataflow id="471" from="weight_buffer_9_3" to="StgValue_40" fromId="117" toId="40">
+</dataflow>
+<dataflow id="472" from="weight_buffer_10_0" to="StgValue_40" fromId="118" toId="40">
+</dataflow>
+<dataflow id="473" from="weight_buffer_10_1" to="StgValue_40" fromId="119" toId="40">
+</dataflow>
+<dataflow id="474" from="weight_buffer_10_2" to="StgValue_40" fromId="120" toId="40">
+</dataflow>
+<dataflow id="475" from="weight_buffer_10_3" to="StgValue_40" fromId="121" toId="40">
+</dataflow>
+<dataflow id="476" from="weight_buffer_11_0" to="StgValue_40" fromId="122" toId="40">
+</dataflow>
+<dataflow id="477" from="weight_buffer_11_1" to="StgValue_40" fromId="123" toId="40">
+</dataflow>
+<dataflow id="478" from="weight_buffer_11_2" to="StgValue_40" fromId="124" toId="40">
+</dataflow>
+<dataflow id="479" from="weight_buffer_11_3" to="StgValue_40" fromId="125" toId="40">
+</dataflow>
+<dataflow id="480" from="weight_buffer_12_0" to="StgValue_40" fromId="126" toId="40">
+</dataflow>
+<dataflow id="481" from="weight_buffer_12_1" to="StgValue_40" fromId="127" toId="40">
+</dataflow>
+<dataflow id="482" from="weight_buffer_12_2" to="StgValue_40" fromId="128" toId="40">
+</dataflow>
+<dataflow id="483" from="weight_buffer_12_3" to="StgValue_40" fromId="129" toId="40">
+</dataflow>
+<dataflow id="484" from="weight_buffer_13_0" to="StgValue_40" fromId="130" toId="40">
+</dataflow>
+<dataflow id="485" from="weight_buffer_13_1" to="StgValue_40" fromId="131" toId="40">
+</dataflow>
+<dataflow id="486" from="weight_buffer_13_2" to="StgValue_40" fromId="132" toId="40">
+</dataflow>
+<dataflow id="487" from="weight_buffer_13_3" to="StgValue_40" fromId="133" toId="40">
+</dataflow>
+<dataflow id="488" from="weight_buffer_14_0" to="StgValue_40" fromId="134" toId="40">
+</dataflow>
+<dataflow id="489" from="weight_buffer_14_1" to="StgValue_40" fromId="135" toId="40">
+</dataflow>
+<dataflow id="490" from="weight_buffer_14_2" to="StgValue_40" fromId="136" toId="40">
+</dataflow>
+<dataflow id="491" from="weight_buffer_14_3" to="StgValue_40" fromId="137" toId="40">
+</dataflow>
+<dataflow id="492" from="weight_buffer_15_0" to="StgValue_40" fromId="138" toId="40">
+</dataflow>
+<dataflow id="493" from="weight_buffer_15_1" to="StgValue_40" fromId="139" toId="40">
+</dataflow>
+<dataflow id="494" from="weight_buffer_15_2" to="StgValue_40" fromId="140" toId="40">
+</dataflow>
+<dataflow id="495" from="weight_buffer_15_3" to="StgValue_40" fromId="141" toId="40">
+</dataflow>
+<dataflow id="496" from="weight_buffer_16_0" to="StgValue_40" fromId="142" toId="40">
+</dataflow>
+<dataflow id="497" from="weight_buffer_16_1" to="StgValue_40" fromId="143" toId="40">
+</dataflow>
+<dataflow id="498" from="weight_buffer_16_2" to="StgValue_40" fromId="144" toId="40">
+</dataflow>
+<dataflow id="499" from="weight_buffer_16_3" to="StgValue_40" fromId="145" toId="40">
+</dataflow>
+<dataflow id="500" from="weight_buffer_17_0" to="StgValue_40" fromId="146" toId="40">
+</dataflow>
+<dataflow id="501" from="weight_buffer_17_1" to="StgValue_40" fromId="147" toId="40">
+</dataflow>
+<dataflow id="502" from="weight_buffer_17_2" to="StgValue_40" fromId="148" toId="40">
+</dataflow>
+<dataflow id="503" from="weight_buffer_17_3" to="StgValue_40" fromId="149" toId="40">
+</dataflow>
+<dataflow id="504" from="weight_buffer_18_0" to="StgValue_40" fromId="150" toId="40">
+</dataflow>
+<dataflow id="505" from="weight_buffer_18_1" to="StgValue_40" fromId="151" toId="40">
+</dataflow>
+<dataflow id="506" from="weight_buffer_18_2" to="StgValue_40" fromId="152" toId="40">
+</dataflow>
+<dataflow id="507" from="weight_buffer_18_3" to="StgValue_40" fromId="153" toId="40">
+</dataflow>
+<dataflow id="508" from="weight_buffer_19_0" to="StgValue_40" fromId="154" toId="40">
+</dataflow>
+<dataflow id="509" from="weight_buffer_19_1" to="StgValue_40" fromId="155" toId="40">
+</dataflow>
+<dataflow id="510" from="weight_buffer_19_2" to="StgValue_40" fromId="156" toId="40">
+</dataflow>
+<dataflow id="511" from="weight_buffer_19_3" to="StgValue_40" fromId="157" toId="40">
+</dataflow>
+<dataflow id="512" from="weight_buffer_20_0" to="StgValue_40" fromId="158" toId="40">
+</dataflow>
+<dataflow id="513" from="weight_buffer_20_1" to="StgValue_40" fromId="159" toId="40">
+</dataflow>
+<dataflow id="514" from="weight_buffer_20_2" to="StgValue_40" fromId="160" toId="40">
+</dataflow>
+<dataflow id="515" from="weight_buffer_20_3" to="StgValue_40" fromId="161" toId="40">
+</dataflow>
+<dataflow id="516" from="weight_buffer_21_0" to="StgValue_40" fromId="162" toId="40">
+</dataflow>
+<dataflow id="517" from="weight_buffer_21_1" to="StgValue_40" fromId="163" toId="40">
+</dataflow>
+<dataflow id="518" from="weight_buffer_21_2" to="StgValue_40" fromId="164" toId="40">
+</dataflow>
+<dataflow id="519" from="weight_buffer_21_3" to="StgValue_40" fromId="165" toId="40">
+</dataflow>
+<dataflow id="520" from="weight_buffer_22_0" to="StgValue_40" fromId="166" toId="40">
+</dataflow>
+<dataflow id="521" from="weight_buffer_22_1" to="StgValue_40" fromId="167" toId="40">
+</dataflow>
+<dataflow id="522" from="weight_buffer_22_2" to="StgValue_40" fromId="168" toId="40">
+</dataflow>
+<dataflow id="523" from="weight_buffer_22_3" to="StgValue_40" fromId="169" toId="40">
+</dataflow>
+<dataflow id="524" from="weight_buffer_23_0" to="StgValue_40" fromId="170" toId="40">
+</dataflow>
+<dataflow id="525" from="weight_buffer_23_1" to="StgValue_40" fromId="171" toId="40">
+</dataflow>
+<dataflow id="526" from="weight_buffer_23_2" to="StgValue_40" fromId="172" toId="40">
+</dataflow>
+<dataflow id="527" from="weight_buffer_23_3" to="StgValue_40" fromId="173" toId="40">
+</dataflow>
+<dataflow id="528" from="weight_buffer_24_0" to="StgValue_40" fromId="174" toId="40">
+</dataflow>
+<dataflow id="529" from="weight_buffer_24_1" to="StgValue_40" fromId="175" toId="40">
+</dataflow>
+<dataflow id="530" from="weight_buffer_24_2" to="StgValue_40" fromId="176" toId="40">
+</dataflow>
+<dataflow id="531" from="weight_buffer_24_3" to="StgValue_40" fromId="177" toId="40">
+</dataflow>
+<dataflow id="532" from="weight_buffer_25_0" to="StgValue_40" fromId="178" toId="40">
+</dataflow>
+<dataflow id="533" from="weight_buffer_25_1" to="StgValue_40" fromId="179" toId="40">
+</dataflow>
+<dataflow id="534" from="weight_buffer_25_2" to="StgValue_40" fromId="180" toId="40">
+</dataflow>
+<dataflow id="535" from="weight_buffer_25_3" to="StgValue_40" fromId="181" toId="40">
+</dataflow>
+<dataflow id="536" from="weight_buffer_26_0" to="StgValue_40" fromId="182" toId="40">
+</dataflow>
+<dataflow id="537" from="weight_buffer_26_1" to="StgValue_40" fromId="183" toId="40">
+</dataflow>
+<dataflow id="538" from="weight_buffer_26_2" to="StgValue_40" fromId="184" toId="40">
+</dataflow>
+<dataflow id="539" from="weight_buffer_26_3" to="StgValue_40" fromId="185" toId="40">
+</dataflow>
+<dataflow id="540" from="weight_buffer_27_0" to="StgValue_40" fromId="186" toId="40">
+</dataflow>
+<dataflow id="541" from="weight_buffer_27_1" to="StgValue_40" fromId="187" toId="40">
+</dataflow>
+<dataflow id="542" from="weight_buffer_27_2" to="StgValue_40" fromId="188" toId="40">
+</dataflow>
+<dataflow id="543" from="weight_buffer_27_3" to="StgValue_40" fromId="189" toId="40">
+</dataflow>
+<dataflow id="544" from="weight_buffer_28_0" to="StgValue_40" fromId="190" toId="40">
+</dataflow>
+<dataflow id="545" from="weight_buffer_28_1" to="StgValue_40" fromId="191" toId="40">
+</dataflow>
+<dataflow id="546" from="weight_buffer_28_2" to="StgValue_40" fromId="192" toId="40">
+</dataflow>
+<dataflow id="547" from="weight_buffer_28_3" to="StgValue_40" fromId="193" toId="40">
+</dataflow>
+<dataflow id="548" from="weight_buffer_29_0" to="StgValue_40" fromId="194" toId="40">
+</dataflow>
+<dataflow id="549" from="weight_buffer_29_1" to="StgValue_40" fromId="195" toId="40">
+</dataflow>
+<dataflow id="550" from="weight_buffer_29_2" to="StgValue_40" fromId="196" toId="40">
+</dataflow>
+<dataflow id="551" from="weight_buffer_29_3" to="StgValue_40" fromId="197" toId="40">
+</dataflow>
+<dataflow id="552" from="weight_buffer_30_0" to="StgValue_40" fromId="198" toId="40">
+</dataflow>
+<dataflow id="553" from="weight_buffer_30_1" to="StgValue_40" fromId="199" toId="40">
+</dataflow>
+<dataflow id="554" from="weight_buffer_30_2" to="StgValue_40" fromId="200" toId="40">
+</dataflow>
+<dataflow id="555" from="weight_buffer_30_3" to="StgValue_40" fromId="201" toId="40">
+</dataflow>
+<dataflow id="556" from="weight_buffer_31_0" to="StgValue_40" fromId="202" toId="40">
+</dataflow>
+<dataflow id="557" from="weight_buffer_31_1" to="StgValue_40" fromId="203" toId="40">
+</dataflow>
+<dataflow id="558" from="weight_buffer_31_2" to="StgValue_40" fromId="204" toId="40">
+</dataflow>
+<dataflow id="559" from="weight_buffer_31_3" to="StgValue_40" fromId="205" toId="40">
+</dataflow>
+<dataflow id="560" from="weight_load_enable_r" to="StgValue_40" fromId="7" toId="40">
+</dataflow>
+<dataflow id="561" from="m_read" to="StgValue_40" fromId="16" toId="40">
+</dataflow>
+<dataflow id="562" from="n_read" to="StgValue_40" fromId="15" toId="40">
+</dataflow>
+<dataflow id="563" from="Kernel_size_read" to="StgValue_40" fromId="20" toId="40">
+</dataflow>
+<dataflow id="564" from="TM_MIN_read" to="StgValue_40" fromId="14" toId="40">
+</dataflow>
+<dataflow id="565" from="TN_MIN" to="StgValue_40" fromId="37" toId="40">
+</dataflow>
+<dataflow id="566" from="Woffset" to="StgValue_40" fromId="222" toId="40">
+</dataflow>
+<dataflow id="567" from="weight_memcpy_buffer" to="StgValue_40" fromId="223" toId="40">
+</dataflow>
+<dataflow id="568" from="weight_memcpy_buffer_1" to="StgValue_40" fromId="224" toId="40">
+</dataflow>
+<dataflow id="569" from="input_load" to="StgValue_41" fromId="391" toId="41">
+</dataflow>
+<dataflow id="570" from="input_r" to="StgValue_41" fromId="50" toId="41">
+</dataflow>
+<dataflow id="571" from="input_offset_read" to="StgValue_41" fromId="28" toId="41">
+</dataflow>
+<dataflow id="572" from="input1" to="StgValue_41" fromId="52" toId="41">
+</dataflow>
+<dataflow id="573" from="input1_offset_read" to="StgValue_41" fromId="27" toId="41">
+</dataflow>
+<dataflow id="574" from="input2" to="StgValue_41" fromId="54" toId="41">
+</dataflow>
+<dataflow id="575" from="input2_offset_read" to="StgValue_41" fromId="26" toId="41">
+</dataflow>
+<dataflow id="576" from="input3" to="StgValue_41" fromId="56" toId="41">
+</dataflow>
+<dataflow id="577" from="input3_offset_read" to="StgValue_41" fromId="25" toId="41">
+</dataflow>
+<dataflow id="578" from="input_buffer_0" to="StgValue_41" fromId="74" toId="41">
+</dataflow>
+<dataflow id="579" from="input_buffer_1" to="StgValue_41" fromId="75" toId="41">
+</dataflow>
+<dataflow id="580" from="input_buffer_2" to="StgValue_41" fromId="76" toId="41">
+</dataflow>
+<dataflow id="581" from="input_buffer_3" to="StgValue_41" fromId="77" toId="41">
+</dataflow>
+<dataflow id="582" from="r_read" to="StgValue_41" fromId="18" toId="41">
+</dataflow>
+<dataflow id="583" from="c_read" to="StgValue_41" fromId="17" toId="41">
+</dataflow>
+<dataflow id="584" from="n_read" to="StgValue_41" fromId="15" toId="41">
+</dataflow>
+<dataflow id="585" from="Kernel_stride_read" to="StgValue_41" fromId="19" toId="41">
+</dataflow>
+<dataflow id="586" from="Padding_read" to="StgValue_41" fromId="10" toId="41">
+</dataflow>
+<dataflow id="587" from="TRow_read" to="StgValue_41" fromId="12" toId="41">
+</dataflow>
+<dataflow id="588" from="TCol_read" to="StgValue_41" fromId="11" toId="41">
+</dataflow>
+<dataflow id="589" from="Input_w_read" to="StgValue_41" fromId="22" toId="41">
+</dataflow>
+<dataflow id="590" from="Input_h_read" to="StgValue_41" fromId="21" toId="41">
+</dataflow>
+<dataflow id="591" from="TN_MIN" to="StgValue_41" fromId="37" toId="41">
+</dataflow>
+<dataflow id="592" from="IHxIW_read" to="StgValue_41" fromId="6" toId="41">
+</dataflow>
+<dataflow id="593" from="tmp_89" to="StgValue_41" fromId="38" toId="41">
+</dataflow>
+<dataflow id="594" from="trow_loops_V_read" to="StgValue_41" fromId="4" toId="41">
+</dataflow>
+<dataflow id="595" from="tmp_inoffset" to="StgValue_41" fromId="212" toId="41">
+</dataflow>
+<dataflow id="596" from="input_memcpy_buffer0" to="StgValue_41" fromId="213" toId="41">
+</dataflow>
+<dataflow id="597" from="input_memcpy_buffer1" to="StgValue_41" fromId="214" toId="41">
+</dataflow>
+<dataflow id="598" from="input_memcpy_buffer2" to="StgValue_41" fromId="215" toId="41">
+</dataflow>
+<dataflow id="599" from="input_memcpy_buffer3" to="StgValue_41" fromId="216" toId="41">
+</dataflow>
+<dataflow id="600" from="t2_local_V" to="StgValue_41" fromId="217" toId="41">
+</dataflow>
+<dataflow id="601" from="input_memcpy_buffer0_1" to="StgValue_41" fromId="218" toId="41">
+</dataflow>
+<dataflow id="602" from="input_memcpy_buffer1_1" to="StgValue_41" fromId="219" toId="41">
+</dataflow>
+<dataflow id="603" from="input_memcpy_buffer2_1" to="StgValue_41" fromId="220" toId="41">
+</dataflow>
+<dataflow id="604" from="input_memcpy_buffer3_1" to="StgValue_41" fromId="221" toId="41">
+</dataflow>
+<dataflow id="605" from="weight_load_reorg" to="StgValue_42" fromId="428" toId="42">
+</dataflow>
+<dataflow id="606" from="Weight" to="StgValue_42" fromId="58" toId="42">
+</dataflow>
+<dataflow id="607" from="Weight_offset_read" to="StgValue_42" fromId="24" toId="42">
+</dataflow>
+<dataflow id="608" from="weight_buffer_0_0" to="StgValue_42" fromId="78" toId="42">
+</dataflow>
+<dataflow id="609" from="weight_buffer_0_1" to="StgValue_42" fromId="79" toId="42">
+</dataflow>
+<dataflow id="610" from="weight_buffer_0_2" to="StgValue_42" fromId="80" toId="42">
+</dataflow>
+<dataflow id="611" from="weight_buffer_0_3" to="StgValue_42" fromId="81" toId="42">
+</dataflow>
+<dataflow id="612" from="weight_buffer_1_0" to="StgValue_42" fromId="82" toId="42">
+</dataflow>
+<dataflow id="613" from="weight_buffer_1_1" to="StgValue_42" fromId="83" toId="42">
+</dataflow>
+<dataflow id="614" from="weight_buffer_1_2" to="StgValue_42" fromId="84" toId="42">
+</dataflow>
+<dataflow id="615" from="weight_buffer_1_3" to="StgValue_42" fromId="85" toId="42">
+</dataflow>
+<dataflow id="616" from="weight_buffer_2_0" to="StgValue_42" fromId="86" toId="42">
+</dataflow>
+<dataflow id="617" from="weight_buffer_2_1" to="StgValue_42" fromId="87" toId="42">
+</dataflow>
+<dataflow id="618" from="weight_buffer_2_2" to="StgValue_42" fromId="88" toId="42">
+</dataflow>
+<dataflow id="619" from="weight_buffer_2_3" to="StgValue_42" fromId="89" toId="42">
+</dataflow>
+<dataflow id="620" from="weight_buffer_3_0" to="StgValue_42" fromId="90" toId="42">
+</dataflow>
+<dataflow id="621" from="weight_buffer_3_1" to="StgValue_42" fromId="91" toId="42">
+</dataflow>
+<dataflow id="622" from="weight_buffer_3_2" to="StgValue_42" fromId="92" toId="42">
+</dataflow>
+<dataflow id="623" from="weight_buffer_3_3" to="StgValue_42" fromId="93" toId="42">
+</dataflow>
+<dataflow id="624" from="weight_buffer_4_0" to="StgValue_42" fromId="94" toId="42">
+</dataflow>
+<dataflow id="625" from="weight_buffer_4_1" to="StgValue_42" fromId="95" toId="42">
+</dataflow>
+<dataflow id="626" from="weight_buffer_4_2" to="StgValue_42" fromId="96" toId="42">
+</dataflow>
+<dataflow id="627" from="weight_buffer_4_3" to="StgValue_42" fromId="97" toId="42">
+</dataflow>
+<dataflow id="628" from="weight_buffer_5_0" to="StgValue_42" fromId="98" toId="42">
+</dataflow>
+<dataflow id="629" from="weight_buffer_5_1" to="StgValue_42" fromId="99" toId="42">
+</dataflow>
+<dataflow id="630" from="weight_buffer_5_2" to="StgValue_42" fromId="100" toId="42">
+</dataflow>
+<dataflow id="631" from="weight_buffer_5_3" to="StgValue_42" fromId="101" toId="42">
+</dataflow>
+<dataflow id="632" from="weight_buffer_6_0" to="StgValue_42" fromId="102" toId="42">
+</dataflow>
+<dataflow id="633" from="weight_buffer_6_1" to="StgValue_42" fromId="103" toId="42">
+</dataflow>
+<dataflow id="634" from="weight_buffer_6_2" to="StgValue_42" fromId="104" toId="42">
+</dataflow>
+<dataflow id="635" from="weight_buffer_6_3" to="StgValue_42" fromId="105" toId="42">
+</dataflow>
+<dataflow id="636" from="weight_buffer_7_0" to="StgValue_42" fromId="106" toId="42">
+</dataflow>
+<dataflow id="637" from="weight_buffer_7_1" to="StgValue_42" fromId="107" toId="42">
+</dataflow>
+<dataflow id="638" from="weight_buffer_7_2" to="StgValue_42" fromId="108" toId="42">
+</dataflow>
+<dataflow id="639" from="weight_buffer_7_3" to="StgValue_42" fromId="109" toId="42">
+</dataflow>
+<dataflow id="640" from="weight_buffer_8_0" to="StgValue_42" fromId="110" toId="42">
+</dataflow>
+<dataflow id="641" from="weight_buffer_8_1" to="StgValue_42" fromId="111" toId="42">
+</dataflow>
+<dataflow id="642" from="weight_buffer_8_2" to="StgValue_42" fromId="112" toId="42">
+</dataflow>
+<dataflow id="643" from="weight_buffer_8_3" to="StgValue_42" fromId="113" toId="42">
+</dataflow>
+<dataflow id="644" from="weight_buffer_9_0" to="StgValue_42" fromId="114" toId="42">
+</dataflow>
+<dataflow id="645" from="weight_buffer_9_1" to="StgValue_42" fromId="115" toId="42">
+</dataflow>
+<dataflow id="646" from="weight_buffer_9_2" to="StgValue_42" fromId="116" toId="42">
+</dataflow>
+<dataflow id="647" from="weight_buffer_9_3" to="StgValue_42" fromId="117" toId="42">
+</dataflow>
+<dataflow id="648" from="weight_buffer_10_0" to="StgValue_42" fromId="118" toId="42">
+</dataflow>
+<dataflow id="649" from="weight_buffer_10_1" to="StgValue_42" fromId="119" toId="42">
+</dataflow>
+<dataflow id="650" from="weight_buffer_10_2" to="StgValue_42" fromId="120" toId="42">
+</dataflow>
+<dataflow id="651" from="weight_buffer_10_3" to="StgValue_42" fromId="121" toId="42">
+</dataflow>
+<dataflow id="652" from="weight_buffer_11_0" to="StgValue_42" fromId="122" toId="42">
+</dataflow>
+<dataflow id="653" from="weight_buffer_11_1" to="StgValue_42" fromId="123" toId="42">
+</dataflow>
+<dataflow id="654" from="weight_buffer_11_2" to="StgValue_42" fromId="124" toId="42">
+</dataflow>
+<dataflow id="655" from="weight_buffer_11_3" to="StgValue_42" fromId="125" toId="42">
+</dataflow>
+<dataflow id="656" from="weight_buffer_12_0" to="StgValue_42" fromId="126" toId="42">
+</dataflow>
+<dataflow id="657" from="weight_buffer_12_1" to="StgValue_42" fromId="127" toId="42">
+</dataflow>
+<dataflow id="658" from="weight_buffer_12_2" to="StgValue_42" fromId="128" toId="42">
+</dataflow>
+<dataflow id="659" from="weight_buffer_12_3" to="StgValue_42" fromId="129" toId="42">
+</dataflow>
+<dataflow id="660" from="weight_buffer_13_0" to="StgValue_42" fromId="130" toId="42">
+</dataflow>
+<dataflow id="661" from="weight_buffer_13_1" to="StgValue_42" fromId="131" toId="42">
+</dataflow>
+<dataflow id="662" from="weight_buffer_13_2" to="StgValue_42" fromId="132" toId="42">
+</dataflow>
+<dataflow id="663" from="weight_buffer_13_3" to="StgValue_42" fromId="133" toId="42">
+</dataflow>
+<dataflow id="664" from="weight_buffer_14_0" to="StgValue_42" fromId="134" toId="42">
+</dataflow>
+<dataflow id="665" from="weight_buffer_14_1" to="StgValue_42" fromId="135" toId="42">
+</dataflow>
+<dataflow id="666" from="weight_buffer_14_2" to="StgValue_42" fromId="136" toId="42">
+</dataflow>
+<dataflow id="667" from="weight_buffer_14_3" to="StgValue_42" fromId="137" toId="42">
+</dataflow>
+<dataflow id="668" from="weight_buffer_15_0" to="StgValue_42" fromId="138" toId="42">
+</dataflow>
+<dataflow id="669" from="weight_buffer_15_1" to="StgValue_42" fromId="139" toId="42">
+</dataflow>
+<dataflow id="670" from="weight_buffer_15_2" to="StgValue_42" fromId="140" toId="42">
+</dataflow>
+<dataflow id="671" from="weight_buffer_15_3" to="StgValue_42" fromId="141" toId="42">
+</dataflow>
+<dataflow id="672" from="weight_buffer_16_0" to="StgValue_42" fromId="142" toId="42">
+</dataflow>
+<dataflow id="673" from="weight_buffer_16_1" to="StgValue_42" fromId="143" toId="42">
+</dataflow>
+<dataflow id="674" from="weight_buffer_16_2" to="StgValue_42" fromId="144" toId="42">
+</dataflow>
+<dataflow id="675" from="weight_buffer_16_3" to="StgValue_42" fromId="145" toId="42">
+</dataflow>
+<dataflow id="676" from="weight_buffer_17_0" to="StgValue_42" fromId="146" toId="42">
+</dataflow>
+<dataflow id="677" from="weight_buffer_17_1" to="StgValue_42" fromId="147" toId="42">
+</dataflow>
+<dataflow id="678" from="weight_buffer_17_2" to="StgValue_42" fromId="148" toId="42">
+</dataflow>
+<dataflow id="679" from="weight_buffer_17_3" to="StgValue_42" fromId="149" toId="42">
+</dataflow>
+<dataflow id="680" from="weight_buffer_18_0" to="StgValue_42" fromId="150" toId="42">
+</dataflow>
+<dataflow id="681" from="weight_buffer_18_1" to="StgValue_42" fromId="151" toId="42">
+</dataflow>
+<dataflow id="682" from="weight_buffer_18_2" to="StgValue_42" fromId="152" toId="42">
+</dataflow>
+<dataflow id="683" from="weight_buffer_18_3" to="StgValue_42" fromId="153" toId="42">
+</dataflow>
+<dataflow id="684" from="weight_buffer_19_0" to="StgValue_42" fromId="154" toId="42">
+</dataflow>
+<dataflow id="685" from="weight_buffer_19_1" to="StgValue_42" fromId="155" toId="42">
+</dataflow>
+<dataflow id="686" from="weight_buffer_19_2" to="StgValue_42" fromId="156" toId="42">
+</dataflow>
+<dataflow id="687" from="weight_buffer_19_3" to="StgValue_42" fromId="157" toId="42">
+</dataflow>
+<dataflow id="688" from="weight_buffer_20_0" to="StgValue_42" fromId="158" toId="42">
+</dataflow>
+<dataflow id="689" from="weight_buffer_20_1" to="StgValue_42" fromId="159" toId="42">
+</dataflow>
+<dataflow id="690" from="weight_buffer_20_2" to="StgValue_42" fromId="160" toId="42">
+</dataflow>
+<dataflow id="691" from="weight_buffer_20_3" to="StgValue_42" fromId="161" toId="42">
+</dataflow>
+<dataflow id="692" from="weight_buffer_21_0" to="StgValue_42" fromId="162" toId="42">
+</dataflow>
+<dataflow id="693" from="weight_buffer_21_1" to="StgValue_42" fromId="163" toId="42">
+</dataflow>
+<dataflow id="694" from="weight_buffer_21_2" to="StgValue_42" fromId="164" toId="42">
+</dataflow>
+<dataflow id="695" from="weight_buffer_21_3" to="StgValue_42" fromId="165" toId="42">
+</dataflow>
+<dataflow id="696" from="weight_buffer_22_0" to="StgValue_42" fromId="166" toId="42">
+</dataflow>
+<dataflow id="697" from="weight_buffer_22_1" to="StgValue_42" fromId="167" toId="42">
+</dataflow>
+<dataflow id="698" from="weight_buffer_22_2" to="StgValue_42" fromId="168" toId="42">
+</dataflow>
+<dataflow id="699" from="weight_buffer_22_3" to="StgValue_42" fromId="169" toId="42">
+</dataflow>
+<dataflow id="700" from="weight_buffer_23_0" to="StgValue_42" fromId="170" toId="42">
+</dataflow>
+<dataflow id="701" from="weight_buffer_23_1" to="StgValue_42" fromId="171" toId="42">
+</dataflow>
+<dataflow id="702" from="weight_buffer_23_2" to="StgValue_42" fromId="172" toId="42">
+</dataflow>
+<dataflow id="703" from="weight_buffer_23_3" to="StgValue_42" fromId="173" toId="42">
+</dataflow>
+<dataflow id="704" from="weight_buffer_24_0" to="StgValue_42" fromId="174" toId="42">
+</dataflow>
+<dataflow id="705" from="weight_buffer_24_1" to="StgValue_42" fromId="175" toId="42">
+</dataflow>
+<dataflow id="706" from="weight_buffer_24_2" to="StgValue_42" fromId="176" toId="42">
+</dataflow>
+<dataflow id="707" from="weight_buffer_24_3" to="StgValue_42" fromId="177" toId="42">
+</dataflow>
+<dataflow id="708" from="weight_buffer_25_0" to="StgValue_42" fromId="178" toId="42">
+</dataflow>
+<dataflow id="709" from="weight_buffer_25_1" to="StgValue_42" fromId="179" toId="42">
+</dataflow>
+<dataflow id="710" from="weight_buffer_25_2" to="StgValue_42" fromId="180" toId="42">
+</dataflow>
+<dataflow id="711" from="weight_buffer_25_3" to="StgValue_42" fromId="181" toId="42">
+</dataflow>
+<dataflow id="712" from="weight_buffer_26_0" to="StgValue_42" fromId="182" toId="42">
+</dataflow>
+<dataflow id="713" from="weight_buffer_26_1" to="StgValue_42" fromId="183" toId="42">
+</dataflow>
+<dataflow id="714" from="weight_buffer_26_2" to="StgValue_42" fromId="184" toId="42">
+</dataflow>
+<dataflow id="715" from="weight_buffer_26_3" to="StgValue_42" fromId="185" toId="42">
+</dataflow>
+<dataflow id="716" from="weight_buffer_27_0" to="StgValue_42" fromId="186" toId="42">
+</dataflow>
+<dataflow id="717" from="weight_buffer_27_1" to="StgValue_42" fromId="187" toId="42">
+</dataflow>
+<dataflow id="718" from="weight_buffer_27_2" to="StgValue_42" fromId="188" toId="42">
+</dataflow>
+<dataflow id="719" from="weight_buffer_27_3" to="StgValue_42" fromId="189" toId="42">
+</dataflow>
+<dataflow id="720" from="weight_buffer_28_0" to="StgValue_42" fromId="190" toId="42">
+</dataflow>
+<dataflow id="721" from="weight_buffer_28_1" to="StgValue_42" fromId="191" toId="42">
+</dataflow>
+<dataflow id="722" from="weight_buffer_28_2" to="StgValue_42" fromId="192" toId="42">
+</dataflow>
+<dataflow id="723" from="weight_buffer_28_3" to="StgValue_42" fromId="193" toId="42">
+</dataflow>
+<dataflow id="724" from="weight_buffer_29_0" to="StgValue_42" fromId="194" toId="42">
+</dataflow>
+<dataflow id="725" from="weight_buffer_29_1" to="StgValue_42" fromId="195" toId="42">
+</dataflow>
+<dataflow id="726" from="weight_buffer_29_2" to="StgValue_42" fromId="196" toId="42">
+</dataflow>
+<dataflow id="727" from="weight_buffer_29_3" to="StgValue_42" fromId="197" toId="42">
+</dataflow>
+<dataflow id="728" from="weight_buffer_30_0" to="StgValue_42" fromId="198" toId="42">
+</dataflow>
+<dataflow id="729" from="weight_buffer_30_1" to="StgValue_42" fromId="199" toId="42">
+</dataflow>
+<dataflow id="730" from="weight_buffer_30_2" to="StgValue_42" fromId="200" toId="42">
+</dataflow>
+<dataflow id="731" from="weight_buffer_30_3" to="StgValue_42" fromId="201" toId="42">
+</dataflow>
+<dataflow id="732" from="weight_buffer_31_0" to="StgValue_42" fromId="202" toId="42">
+</dataflow>
+<dataflow id="733" from="weight_buffer_31_1" to="StgValue_42" fromId="203" toId="42">
+</dataflow>
+<dataflow id="734" from="weight_buffer_31_2" to="StgValue_42" fromId="204" toId="42">
+</dataflow>
+<dataflow id="735" from="weight_buffer_31_3" to="StgValue_42" fromId="205" toId="42">
+</dataflow>
+<dataflow id="736" from="weight_load_enable_r" to="StgValue_42" fromId="7" toId="42">
+</dataflow>
+<dataflow id="737" from="m_read" to="StgValue_42" fromId="16" toId="42">
+</dataflow>
+<dataflow id="738" from="n_read" to="StgValue_42" fromId="15" toId="42">
+</dataflow>
+<dataflow id="739" from="Kernel_size_read" to="StgValue_42" fromId="20" toId="42">
+</dataflow>
+<dataflow id="740" from="TM_MIN_read" to="StgValue_42" fromId="14" toId="42">
+</dataflow>
+<dataflow id="741" from="TN_MIN" to="StgValue_42" fromId="37" toId="42">
+</dataflow>
+<dataflow id="742" from="Woffset" to="StgValue_42" fromId="222" toId="42">
+</dataflow>
+<dataflow id="743" from="weight_memcpy_buffer" to="StgValue_42" fromId="223" toId="42">
+</dataflow>
+<dataflow id="744" from="weight_memcpy_buffer_1" to="StgValue_42" fromId="224" toId="42">
+</dataflow>
+<dataflow id="745" from="n_read" to="write_flag" fromId="15" toId="44">
+<condition id="15">
+<or_exp><and_exp><literal name="enable_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="746" from="StgValue_43" to="write_flag" fromId="43" toId="44">
+</dataflow>
+<dataflow id="747" from="p_read_3" to="write_flag" fromId="9" toId="44">
+<condition id="16">
+<or_exp><and_exp><literal name="enable_read" val="0"/>
+</and_exp></or_exp>
+</condition>
+</dataflow>
+<dataflow id="748" from="StgValue_34" to="write_flag" fromId="34" toId="44">
+</dataflow>
+<dataflow id="749" from="write_flag" to="StgValue_45" fromId="44" toId="45">
+</dataflow>
+<dataflow id="750" from="enable_read" to="StgValue_1" fromId="8" toId="1">
+</dataflow>
+<dataflow id="751" from="enable_read" to="StgValue_3" fromId="8" toId="3">
+</dataflow>
+</dataflows>
+
+
+</stg>

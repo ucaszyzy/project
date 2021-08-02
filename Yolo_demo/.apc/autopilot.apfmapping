@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="cnn.cpp" path="D:\pro\cnn.cpp"/>
+    <originFiles name="cnn.h" path="D:\pro\cnn.h"/>
+  </source>
+  <testbench>
+    <originFiles name="biasv2_comb_ap16.bin" path="D:\pro\biasv2_comb_ap16.bin"/>
+    <originFiles name="biasv2_comb_ap16_maxQ_23.bin" path="D:\pro\biasv2_comb_ap16_maxQ_23.bin"/>
+    <originFiles name="coco.names" path="D:\pro\coco.names"/>
+    <originFiles name="kite.jpg" path="D:\pro\kite.jpg"/>
+    <originFiles name="main.cpp" path="D:\pro\main.cpp"/>
+    <originFiles name="stb_image.h" path="D:\pro\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="D:\pro\stb_image_write.h"/>
+    <originFiles name="weightsv2_comb_reorg_ap16.bin" path="D:\pro\weightsv2_comb_reorg_ap16.bin"/>
+    <originFiles name="weightsv2_comb_reorg_ap16_maxQ_23.bin" path="D:\pro\weightsv2_comb_reorg_ap16_maxQ_23.bin"/>
+    <originFiles name="yolov2.cfg" path="D:\pro\yolov2.cfg"/>
+    <originFiles name="yolov2.h" path="D:\pro\yolov2.h"/>
+    <originFiles name="yolov2_ap16_inout_maxQ_24.bin" path="D:\pro\yolov2_ap16_inout_maxQ_24.bin"/>
+    <originFiles name="labels" path="D:\pro\labels"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

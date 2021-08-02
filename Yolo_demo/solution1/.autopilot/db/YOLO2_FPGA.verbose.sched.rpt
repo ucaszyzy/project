@@ -1,0 +1,464 @@
+
+
+================================================================
+== Vivado HLS Report for 'YOLO2_FPGA'
+================================================================
+* Date:           Thu Jul 29 20:17:23 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    10.166|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        | + Loop 1.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |  ++ Loop 1.1.1  |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 2
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	10  / (!tmp_115)
+	5  / (tmp_115)
+5 --> 
+	6  / (tmp_121)
+	4  / (!tmp_121)
+6 --> 
+	7  / (tmp_124 & !pingpongm)
+	9  / (tmp_124 & pingpongm)
+	5  / (!tmp_124)
+7 --> 
+	8  / true
+8 --> 
+	6  / true
+9 --> 
+	8  / true
+10 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 11 [2/2] (1.00ns)   --->   "%trow_loops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %trow_loops)"   --->   Operation 11 'read' 'trow_loops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 12 [2/2] (1.00ns)   --->   "%BetaQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %BetaQ)"   --->   Operation 12 'read' 'BetaQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 13 [2/2] (1.00ns)   --->   "%WeightQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %WeightQ)"   --->   Operation 13 'read' 'WeightQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 14 [2/2] (1.00ns)   --->   "%OutputQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %OutputQ)"   --->   Operation 14 'read' 'OutputQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 15 [2/2] (1.00ns)   --->   "%InputQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %InputQ)"   --->   Operation 15 'read' 'InputQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 16 [2/2] (1.00ns)   --->   "%LayerType_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %LayerType)"   --->   Operation 16 'read' 'LayerType_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 17 [2/2] (1.00ns)   --->   "%cLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %cLoops)"   --->   Operation 17 'read' 'cLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 18 [2/2] (1.00ns)   --->   "%rLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %rLoops)"   --->   Operation 18 'read' 'rLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 19 [2/2] (1.00ns)   --->   "%nLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %nLoops)"   --->   Operation 19 'read' 'nLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 20 [2/2] (1.00ns)   --->   "%mLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %mLoops)"   --->   Operation 20 'read' 'mLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 21 [2/2] (1.00ns)   --->   "%TC_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TC)"   --->   Operation 21 'read' 'TC_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 22 [2/2] (1.00ns)   --->   "%TR_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TR)"   --->   Operation 22 'read' 'TR_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 23 [2/2] (1.00ns)   --->   "%TN_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TN)"   --->   Operation 23 'read' 'TN_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 24 [2/2] (1.00ns)   --->   "%TM_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TM)"   --->   Operation 24 'read' 'TM_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 25 [2/2] (1.00ns)   --->   "%IsNL_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %IsNL)"   --->   Operation 25 'read' 'IsNL_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 26 [2/2] (1.00ns)   --->   "%Padding_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Padding)"   --->   Operation 26 'read' 'Padding_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 27 [2/2] (1.00ns)   --->   "%output_h_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %output_h)"   --->   Operation 27 'read' 'output_h_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 28 [2/2] (1.00ns)   --->   "%output_w_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %output_w)"   --->   Operation 28 'read' 'output_w_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 29 [2/2] (1.00ns)   --->   "%Input_h_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_h)"   --->   Operation 29 'read' 'Input_h_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 30 [2/2] (1.00ns)   --->   "%Input_w_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_w)"   --->   Operation 30 'read' 'Input_w_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 31 [2/2] (1.00ns)   --->   "%Kernel_stride_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Kernel_stride)"   --->   Operation 31 'read' 'Kernel_stride_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 32 [2/2] (1.00ns)   --->   "%Kernel_size_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Kernel_size)"   --->   Operation 32 'read' 'Kernel_size_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 33 [2/2] (1.00ns)   --->   "%OutFM_num_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %OutFM_num)"   --->   Operation 33 'read' 'OutFM_num_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 34 [2/2] (1.00ns)   --->   "%InFM_num_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %InFM_num)"   --->   Operation 34 'read' 'InFM_num_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 35 [2/2] (1.00ns)   --->   "%Beta_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Beta)"   --->   Operation 35 'read' 'Beta_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 36 [2/2] (1.00ns)   --->   "%Weight_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Weight)"   --->   Operation 36 'read' 'Weight_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 37 [1/1] (1.00ns)   --->   "%Output1_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Output1)"   --->   Operation 37 'read' 'Output1_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 38 [2/2] (1.00ns)   --->   "%Output_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Output_r)"   --->   Operation 38 'read' 'Output_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 39 [1/1] (1.00ns)   --->   "%Input3_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input3)"   --->   Operation 39 'read' 'Input3_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 40 [1/1] (1.00ns)   --->   "%Input2_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input2)"   --->   Operation 40 'read' 'Input2_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 41 [1/1] (1.00ns)   --->   "%Input1_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input1)"   --->   Operation 41 'read' 'Input1_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 42 [2/2] (1.00ns)   --->   "%Input_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_r)"   --->   Operation 42 'read' 'Input_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%Output2 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Output1_read, i32 2, i32 31)"   --->   Operation 43 'partselect' 'Output2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%Input5 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Input3_read, i32 2, i32 31)"   --->   Operation 44 'partselect' 'Input5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%Input6 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Input2_read, i32 2, i32 31)"   --->   Operation 45 'partselect' 'Input6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%Input7 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Input1_read, i32 2, i32 31)"   --->   Operation 46 'partselect' 'Input7' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.38>
+ST_2 : Operation 47 [1/2] (1.00ns)   --->   "%trow_loops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %trow_loops)"   --->   Operation 47 'read' 'trow_loops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 48 [1/2] (1.00ns)   --->   "%BetaQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %BetaQ)"   --->   Operation 48 'read' 'BetaQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 49 [1/2] (1.00ns)   --->   "%WeightQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %WeightQ)"   --->   Operation 49 'read' 'WeightQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 50 [1/2] (1.00ns)   --->   "%OutputQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %OutputQ)"   --->   Operation 50 'read' 'OutputQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 51 [1/2] (1.00ns)   --->   "%InputQ_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %InputQ)"   --->   Operation 51 'read' 'InputQ_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 52 [1/2] (1.00ns)   --->   "%LayerType_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %LayerType)"   --->   Operation 52 'read' 'LayerType_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 53 [1/2] (1.00ns)   --->   "%cLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %cLoops)"   --->   Operation 53 'read' 'cLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 54 [1/2] (1.00ns)   --->   "%rLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %rLoops)"   --->   Operation 54 'read' 'rLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 55 [1/2] (1.00ns)   --->   "%nLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %nLoops)"   --->   Operation 55 'read' 'nLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 56 [1/2] (1.00ns)   --->   "%mLoops_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %mLoops)"   --->   Operation 56 'read' 'mLoops_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 57 [1/2] (1.00ns)   --->   "%TC_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TC)"   --->   Operation 57 'read' 'TC_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 58 [1/2] (1.00ns)   --->   "%TR_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TR)"   --->   Operation 58 'read' 'TR_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 59 [1/2] (1.00ns)   --->   "%TN_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TN)"   --->   Operation 59 'read' 'TN_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 60 [1/2] (1.00ns)   --->   "%TM_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %TM)"   --->   Operation 60 'read' 'TM_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 61 [1/2] (1.00ns)   --->   "%IsNL_read = call i1 @_ssdm_op_Read.s_axilite.i1(i1 %IsNL)"   --->   Operation 61 'read' 'IsNL_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 62 [1/2] (1.00ns)   --->   "%Padding_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Padding)"   --->   Operation 62 'read' 'Padding_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 63 [1/2] (1.00ns)   --->   "%output_h_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %output_h)"   --->   Operation 63 'read' 'output_h_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 64 [1/2] (1.00ns)   --->   "%output_w_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %output_w)"   --->   Operation 64 'read' 'output_w_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 65 [1/2] (1.00ns)   --->   "%Input_h_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_h)"   --->   Operation 65 'read' 'Input_h_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 66 [1/2] (1.00ns)   --->   "%Input_w_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_w)"   --->   Operation 66 'read' 'Input_w_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 67 [1/2] (1.00ns)   --->   "%Kernel_stride_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Kernel_stride)"   --->   Operation 67 'read' 'Kernel_stride_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 68 [1/2] (1.00ns)   --->   "%Kernel_size_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Kernel_size)"   --->   Operation 68 'read' 'Kernel_size_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 69 [1/2] (1.00ns)   --->   "%OutFM_num_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %OutFM_num)"   --->   Operation 69 'read' 'OutFM_num_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 70 [1/2] (1.00ns)   --->   "%InFM_num_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %InFM_num)"   --->   Operation 70 'read' 'InFM_num_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 71 [1/2] (1.00ns)   --->   "%Beta_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Beta)"   --->   Operation 71 'read' 'Beta_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 72 [1/2] (1.00ns)   --->   "%Weight_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Weight)"   --->   Operation 72 'read' 'Weight_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 73 [1/2] (1.00ns)   --->   "%Output_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Output_r)"   --->   Operation 73 'read' 'Output_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 74 [1/2] (1.00ns)   --->   "%Input_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %Input_r)"   --->   Operation 74 'read' 'Input_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%Beta1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Beta_read, i32 2, i32 31)"   --->   Operation 75 'partselect' 'Beta1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%Weight1 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Weight_read, i32 2, i32 31)"   --->   Operation 76 'partselect' 'Weight1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%Output3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Output_read, i32 2, i32 31)"   --->   Operation 77 'partselect' 'Output3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.00ns)   --->   "%Input4 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %Input_read, i32 2, i32 31)"   --->   Operation 78 'partselect' 'Input4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DATA_BUS5), !map !337"   --->   Operation 79 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DATA_BUS4), !map !344"   --->   Operation 80 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DATA_BUS3), !map !348"   --->   Operation 81 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DATA_BUS2), !map !352"   --->   Operation 82 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %DATA_BUS1), !map !357"   --->   Operation 83 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %InFM_num) nounwind, !map !362"   --->   Operation 84 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %OutFM_num) nounwind, !map !368"   --->   Operation 85 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %Kernel_size) nounwind, !map !372"   --->   Operation 86 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %Kernel_stride) nounwind, !map !376"   --->   Operation 87 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %Input_w) nounwind, !map !380"   --->   Operation 88 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %Input_h) nounwind, !map !384"   --->   Operation 89 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %output_w) nounwind, !map !388"   --->   Operation 90 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %output_h) nounwind, !map !392"   --->   Operation 91 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %Padding) nounwind, !map !396"   --->   Operation 92 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %IsNL) nounwind, !map !400"   --->   Operation 93 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 94 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %IsBN) nounwind, !map !404"   --->   Operation 94 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %TM) nounwind, !map !408"   --->   Operation 95 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %TN) nounwind, !map !412"   --->   Operation 96 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 97 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %TR) nounwind, !map !416"   --->   Operation 97 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 98 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %TC) nounwind, !map !420"   --->   Operation 98 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 99 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %mLoops) nounwind, !map !424"   --->   Operation 99 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 100 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %nLoops) nounwind, !map !428"   --->   Operation 100 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 101 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %rLoops) nounwind, !map !432"   --->   Operation 101 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 102 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %cLoops) nounwind, !map !436"   --->   Operation 102 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 103 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %LayerType) nounwind, !map !440"   --->   Operation 103 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 104 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %InputQ) nounwind, !map !444"   --->   Operation 104 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 105 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %OutputQ) nounwind, !map !448"   --->   Operation 105 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 106 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %WeightQ) nounwind, !map !452"   --->   Operation 106 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 107 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %BetaQ) nounwind, !map !456"   --->   Operation 107 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 108 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32 %trow_loops) nounwind, !map !460"   --->   Operation 108 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 109 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([11 x i8]* @YOLO2_FPGA_str) nounwind"   --->   Operation 109 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 110 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DATA_BUS1, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1099]   --->   Operation 110 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 111 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DATA_BUS2, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str19, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1100]   --->   Operation 111 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 112 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input1, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [1 x i8]* @bundle, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1100]   --->   Operation 112 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 113 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DATA_BUS3, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str20, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1101]   --->   Operation 113 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 114 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input2, [10 x i8]* @mode15, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [1 x i8]* @bundle16, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1101]   --->   Operation 114 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 115 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DATA_BUS4, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str21, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1102]   --->   Operation 115 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 116 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input3, [10 x i8]* @mode17, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [1 x i8]* @bundle18, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1102]   --->   Operation 116 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 117 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Output1, [10 x i8]* @mode19, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [1 x i8]* @bundle20, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1104]   --->   Operation 117 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 118 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %DATA_BUS5, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1105]   --->   Operation 118 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 119 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1108]   --->   Operation 119 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %InFM_num, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1109]   --->   Operation 120 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 121 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %OutFM_num, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1110]   --->   Operation 121 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Kernel_size, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1111]   --->   Operation 122 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 123 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Kernel_stride, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1112]   --->   Operation 123 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 124 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input_w, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1113]   --->   Operation 124 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 125 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input_h, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1114]   --->   Operation 125 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 126 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %output_w, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1115]   --->   Operation 126 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 127 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %output_h, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1116]   --->   Operation 127 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 128 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Padding, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1117]   --->   Operation 128 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 129 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1 %IsNL, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1118]   --->   Operation 129 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 130 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1 %IsBN, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1119]   --->   Operation 130 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 131 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %TM, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1120]   --->   Operation 131 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 132 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %TN, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1121]   --->   Operation 132 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 133 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %TR, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1122]   --->   Operation 133 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 134 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %TC, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1123]   --->   Operation 134 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 135 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %mLoops, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1124]   --->   Operation 135 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 136 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %nLoops, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1125]   --->   Operation 136 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 137 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %rLoops, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1126]   --->   Operation 137 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 138 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %cLoops, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1127]   --->   Operation 138 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %LayerType, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1128]   --->   Operation 139 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %InputQ, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1129]   --->   Operation 140 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 141 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %OutputQ, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1130]   --->   Operation 141 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 142 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %WeightQ, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1131]   --->   Operation 142 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 143 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %BetaQ, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1132]   --->   Operation 143 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 144 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %trow_loops, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1133]   --->   Operation 144 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 145 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Input_r, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1135]   --->   Operation 145 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 146 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Output_r, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1136]   --->   Operation 146 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 147 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Weight, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1137]   --->   Operation 147 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 148 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %Beta, [10 x i8]* @p_str23, i32 1, i32 1, [1 x i8]* @p_str1, i32 0, i32 0, [9 x i8]* @p_str24, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1138]   --->   Operation 148 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 149 [1/1] (0.00ns)   --->   "%output_h_9b_V = trunc i32 %output_h_read to i9" [cnn.cpp:1156]   --->   Operation 149 'trunc' 'output_h_9b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 150 [1/1] (0.00ns)   --->   "%output_w_9b_V = trunc i32 %output_w_read to i9" [cnn.cpp:1157]   --->   Operation 150 'trunc' 'output_w_9b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 151 [1/1] (0.00ns)   --->   "%TR_5b_V = trunc i32 %TR_read to i5" [cnn.cpp:1158]   --->   Operation 151 'trunc' 'TR_5b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 152 [1/1] (0.00ns)   --->   "%TC_5b_V = trunc i32 %TC_read to i5" [cnn.cpp:1159]   --->   Operation 152 'trunc' 'TC_5b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 153 [1/1] (0.00ns)   --->   "%Kernel_stride_2b_V = trunc i32 %Kernel_stride_read to i2" [cnn.cpp:1160]   --->   Operation 153 'trunc' 'Kernel_stride_2b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 154 [1/1] (0.00ns)   --->   "%Kernel_size_2b_V = trunc i32 %Kernel_size_read to i2" [cnn.cpp:1161]   --->   Operation 154 'trunc' 'Kernel_size_2b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 155 [1/1] (0.00ns)   --->   "%Input_h_10b_V = trunc i32 %Input_h_read to i10" [cnn.cpp:1163]   --->   Operation 155 'trunc' 'Input_h_10b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 156 [1/1] (0.00ns)   --->   "%Input_w_9b_V = trunc i32 %Input_w_read to i9" [cnn.cpp:1164]   --->   Operation 156 'trunc' 'Input_w_9b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 157 [1/1] (0.00ns)   --->   "%trow_loops_6b_V = trunc i32 %trow_loops_read to i6" [cnn.cpp:1165]   --->   Operation 157 'trunc' 'trow_loops_6b_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 158 [1/1] (0.00ns)   --->   "%lhs_V = zext i9 %output_h_9b_V to i18" [cnn.cpp:1167]   --->   Operation 158 'zext' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 159 [1/1] (0.00ns)   --->   "%rhs_V = zext i9 %output_w_9b_V to i18" [cnn.cpp:1167]   --->   Operation 159 'zext' 'rhs_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 160 [1/1] (4.35ns)   --->   "%r_V = mul i18 %rhs_V, %lhs_V" [cnn.cpp:1167]   --->   Operation 160 'mul' 'r_V' <Predicate = true> <Delay = 4.35> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 4.35> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 161 [1/1] (0.00ns)   --->   "%tmp_cast = zext i5 %TR_5b_V to i6" [cnn.cpp:1168]   --->   Operation 161 'zext' 'tmp_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 162 [1/1] (0.00ns)   --->   "%tmp_s = add i6 -1, %tmp_cast" [cnn.cpp:1168]   --->   Operation 162 'add' 'tmp_s' <Predicate = true> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 163 [1/1] (0.00ns)   --->   "%tmp_137_cast = sext i6 %tmp_s to i8" [cnn.cpp:1168]   --->   Operation 163 'sext' 'tmp_137_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 164 [1/1] (0.00ns)   --->   "%tmp_108 = zext i2 %Kernel_stride_2b_V to i8" [cnn.cpp:1168]   --->   Operation 164 'zext' 'tmp_108' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 165 [1/1] (3.36ns)   --->   "%tmp_109 = mul i8 %tmp_137_cast, %tmp_108" [cnn.cpp:1168]   --->   Operation 165 'mul' 'tmp_109' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 166 [1/1] (0.00ns)   --->   "%tmp_110 = zext i2 %Kernel_size_2b_V to i8" [cnn.cpp:1168]   --->   Operation 166 'zext' 'tmp_110' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 167 [1/1] (3.02ns)   --->   "%TRow = add i8 %tmp_109, %tmp_110" [cnn.cpp:1168]   --->   Operation 167 'add' 'TRow' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 168 [1/1] (0.00ns)   --->   "%tmp_141_cast = zext i5 %TC_5b_V to i6" [cnn.cpp:1169]   --->   Operation 168 'zext' 'tmp_141_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 169 [1/1] (0.00ns)   --->   "%tmp_111 = add i6 -1, %tmp_141_cast" [cnn.cpp:1169]   --->   Operation 169 'add' 'tmp_111' <Predicate = true> <Delay = 0.00> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 170 [1/1] (0.00ns)   --->   "%tmp_142_cast = sext i6 %tmp_111 to i8" [cnn.cpp:1169]   --->   Operation 170 'sext' 'tmp_142_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 171 [1/1] (3.36ns)   --->   "%tmp_112 = mul i8 %tmp_142_cast, %tmp_108" [cnn.cpp:1169]   --->   Operation 171 'mul' 'tmp_112' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 172 [1/1] (3.02ns)   --->   "%TCol = add i8 %tmp_112, %tmp_110" [cnn.cpp:1169]   --->   Operation 172 'add' 'TCol' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 173 [1/1] (0.00ns)   --->   "%lhs_V_11 = zext i10 %Input_h_10b_V to i19" [cnn.cpp:1170]   --->   Operation 173 'zext' 'lhs_V_11' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 174 [1/1] (0.00ns)   --->   "%rhs_V_8 = zext i9 %Input_w_9b_V to i19" [cnn.cpp:1170]   --->   Operation 174 'zext' 'rhs_V_8' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 175 [1/1] (6.38ns)   --->   "%r_V_24 = mul i19 %lhs_V_11, %rhs_V_8" [cnn.cpp:1170]   --->   Operation 175 'mul' 'r_V_24' <Predicate = true> <Delay = 6.38> <Core = "DSP48">   --->   Core 61 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 176 [1/1] (2.55ns)   --->   "%mLoops_add1 = add nsw i32 1, %mLoops_read" [cnn.cpp:1175]   --->   Operation 176 'add' 'mLoops_add1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 177 [1/1] (2.55ns)   --->   "%mLoops_add2 = add nsw i32 2, %mLoops_read" [cnn.cpp:1176]   --->   Operation 177 'add' 'mLoops_add2' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 178 [1/1] (2.47ns)   --->   "%tmp_113 = icmp ne i32 %LayerType_read, 0" [cnn.cpp:1177]   --->   Operation 178 'icmp' 'tmp_113' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 179 [1/1] (0.69ns)   --->   "%mLoops_bound = select i1 %tmp_113, i32 %mLoops_add2, i32 %mLoops_add1" [cnn.cpp:1177]   --->   Operation 179 'select' 'mLoops_bound' <Predicate = true> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 180 [1/1] (0.00ns)   --->   "%tmp = trunc i32 %BetaQ_read to i8" [cnn.cpp:1178]   --->   Operation 180 'trunc' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 181 [1/1] (1.91ns)   --->   "%InterSubBeta = sub i8 20, %tmp" [cnn.cpp:1178]   --->   Operation 181 'sub' 'InterSubBeta' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 182 [1/1] (0.00ns)   --->   "%tmp_117 = trunc i32 %InputQ_read to i8"   --->   Operation 182 'trunc' 'tmp_117' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 183 [1/1] (0.00ns)   --->   "%tmp_118 = trunc i32 %WeightQ_read to i8"   --->   Operation 183 'trunc' 'tmp_118' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 184 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp1 = add i8 -20, %tmp_117" [cnn.cpp:1179]   --->   Operation 184 'add' 'tmp1' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 185 [1/1] (3.66ns) (root node of TernaryAdder)   --->   "%WeightAddInputSubInt = add i8 %tmp1, %tmp_118" [cnn.cpp:1179]   --->   Operation 185 'add' 'WeightAddInputSubInt' <Predicate = true> <Delay = 3.66> <Core = "TAddSub">   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.83> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 186 [1/1] (0.00ns)   --->   "%tmp_119 = trunc i32 %OutputQ_read to i8" [cnn.cpp:1180]   --->   Operation 186 'trunc' 'tmp_119' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 187 [1/1] (1.91ns)   --->   "%InterSubOutput = sub i8 20, %tmp_119" [cnn.cpp:1180]   --->   Operation 187 'sub' 'InterSubOutput' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 188 [1/1] (2.47ns)   --->   "%tmp_114 = icmp eq i32 %LayerType_read, 0" [cnn.cpp:1215]   --->   Operation 188 'icmp' 'tmp_114' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 189 [1/1] (0.00ns)   --->   "br i1 %tmp_114, label %0, label %._crit_edge355" [cnn.cpp:1215]   --->   Operation 189 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 190 [2/2] (2.55ns)   --->   "call fastcc void @copy_beta(i32* %DATA_BUS5, i30 %Beta1, i32 %OutFM_num_read)" [cnn.cpp:1216]   --->   Operation 190 'call' <Predicate = (tmp_114)> <Delay = 2.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 191 [1/2] (0.00ns)   --->   "call fastcc void @copy_beta(i32* %DATA_BUS5, i30 %Beta1, i32 %OutFM_num_read)" [cnn.cpp:1216]   --->   Operation 191 'call' <Predicate = (tmp_114)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 192 [1/1] (0.00ns)   --->   "br label %._crit_edge355" [cnn.cpp:1216]   --->   Operation 192 'br' <Predicate = (tmp_114)> <Delay = 0.00>
+ST_3 : Operation 193 [1/1] (0.00ns)   --->   "%TMP_M_next0_0_1 = alloca i32"   --->   Operation 193 'alloca' 'TMP_M_next0_0_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 194 [1/1] (0.00ns)   --->   "%TMP_M_next1_0_1 = alloca i32"   --->   Operation 194 'alloca' 'TMP_M_next1_0_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 195 [1/1] (0.00ns)   --->   "%TM_MIN_next0_0_1 = alloca i32"   --->   Operation 195 'alloca' 'TM_MIN_next0_0_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 196 [1/1] (0.00ns)   --->   "%TM_MIN_next1_0_1 = alloca i32"   --->   Operation 196 'alloca' 'TM_MIN_next1_0_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 197 [1/1] (1.76ns)   --->   "br label %1" [cnn.cpp:1218]   --->   Operation 197 'br' <Predicate = true> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 5.72>
+ST_4 : Operation 198 [1/1] (0.00ns)   --->   "%r = phi i31 [ 0, %._crit_edge355 ], [ %r_1, %10 ]"   --->   Operation 198 'phi' 'r' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 199 [1/1] (0.00ns)   --->   "%TMP_R = phi i32 [ 0, %._crit_edge355 ], [ %TMP_R_1, %10 ]"   --->   Operation 199 'phi' 'TMP_R' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 200 [1/1] (0.00ns)   --->   "%r_cast = zext i31 %r to i32" [cnn.cpp:1218]   --->   Operation 200 'zext' 'r_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 201 [1/1] (2.47ns)   --->   "%tmp_115 = icmp slt i32 %r_cast, %rLoops_read" [cnn.cpp:1218]   --->   Operation 201 'icmp' 'tmp_115' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 202 [1/1] (2.52ns)   --->   "%r_1 = add i31 %r, 1" [cnn.cpp:1218]   --->   Operation 202 'add' 'r_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 203 [1/1] (0.00ns)   --->   "br i1 %tmp_115, label %2, label %11" [cnn.cpp:1218]   --->   Operation 203 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 204 [1/1] (2.55ns)   --->   "%tmp_116 = sub nsw i32 %output_h_read, %TMP_R" [cnn.cpp:1220]   --->   Operation 204 'sub' 'tmp_116' <Predicate = (tmp_115)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 205 [1/1] (2.47ns)   --->   "%tmp_120 = icmp sgt i32 %tmp_116, %TR_read" [cnn.cpp:1220]   --->   Operation 205 'icmp' 'tmp_120' <Predicate = (tmp_115)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 206 [1/1] (0.69ns)   --->   "%TR_MIN = select i1 %tmp_120, i32 %TR_read, i32 %tmp_116" [cnn.cpp:1220]   --->   Operation 206 'select' 'TR_MIN' <Predicate = (tmp_115)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 207 [1/1] (1.76ns)   --->   "br label %3" [cnn.cpp:1221]   --->   Operation 207 'br' <Predicate = (tmp_115)> <Delay = 1.76>
+ST_4 : Operation 208 [2/2] (0.00ns)   --->   "ret void" [cnn.cpp:1259]   --->   Operation 208 'ret' <Predicate = (!tmp_115)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 5.72>
+ST_5 : Operation 209 [1/1] (0.00ns)   --->   "%c = phi i31 [ 0, %2 ], [ %c_1, %9 ]"   --->   Operation 209 'phi' 'c' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 210 [1/1] (0.00ns)   --->   "%TMP_C = phi i32 [ 0, %2 ], [ %TMP_C_1, %9 ]"   --->   Operation 210 'phi' 'TMP_C' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 211 [1/1] (0.00ns)   --->   "%c_cast = zext i31 %c to i32" [cnn.cpp:1221]   --->   Operation 211 'zext' 'c_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 212 [1/1] (2.47ns)   --->   "%tmp_121 = icmp slt i32 %c_cast, %cLoops_read" [cnn.cpp:1221]   --->   Operation 212 'icmp' 'tmp_121' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 213 [1/1] (2.52ns)   --->   "%c_1 = add i31 %c, 1" [cnn.cpp:1221]   --->   Operation 213 'add' 'c_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 214 [1/1] (0.00ns)   --->   "br i1 %tmp_121, label %4, label %10" [cnn.cpp:1221]   --->   Operation 214 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 215 [1/1] (2.55ns)   --->   "%tmp_122 = sub nsw i32 %output_w_read, %TMP_C" [cnn.cpp:1223]   --->   Operation 215 'sub' 'tmp_122' <Predicate = (tmp_121)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 216 [1/1] (2.47ns)   --->   "%tmp_123 = icmp sgt i32 %tmp_122, %TC_read" [cnn.cpp:1223]   --->   Operation 216 'icmp' 'tmp_123' <Predicate = (tmp_121)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 217 [1/1] (0.69ns)   --->   "%TC_MIN = select i1 %tmp_123, i32 %TC_read, i32 %tmp_122" [cnn.cpp:1223]   --->   Operation 217 'select' 'TC_MIN' <Predicate = (tmp_121)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 218 [1/1] (1.76ns)   --->   "br label %5" [cnn.cpp:1225]   --->   Operation 218 'br' <Predicate = (tmp_121)> <Delay = 1.76>
+ST_5 : Operation 219 [1/1] (2.55ns)   --->   "%TMP_R_1 = add nsw i32 %TMP_R, %TR_read" [cnn.cpp:1218]   --->   Operation 219 'add' 'TMP_R_1' <Predicate = (!tmp_121)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 220 [1/1] (0.00ns)   --->   "br label %1" [cnn.cpp:1218]   --->   Operation 220 'br' <Predicate = (!tmp_121)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 5.72>
+ST_6 : Operation 221 [1/1] (0.00ns)   --->   "%m = phi i31 [ 0, %4 ], [ %m_1, %8 ]"   --->   Operation 221 'phi' 'm' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 222 [1/1] (0.00ns)   --->   "%TMP_M = phi i32 [ 0, %4 ], [ %TMP_M_1, %8 ]"   --->   Operation 222 'phi' 'TMP_M' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 223 [1/1] (0.00ns)   --->   "%pingpongm = phi i1 [ false, %4 ], [ %pingpongm_1, %8 ]"   --->   Operation 223 'phi' 'pingpongm' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 224 [1/1] (0.00ns)   --->   "%m_cast = zext i31 %m to i32" [cnn.cpp:1225]   --->   Operation 224 'zext' 'm_cast' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 225 [1/1] (2.47ns)   --->   "%tmp_124 = icmp slt i32 %m_cast, %mLoops_bound" [cnn.cpp:1225]   --->   Operation 225 'icmp' 'tmp_124' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 226 [1/1] (2.52ns)   --->   "%m_1 = add i31 %m, 1" [cnn.cpp:1225]   --->   Operation 226 'add' 'm_1' <Predicate = true> <Delay = 2.52> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 227 [1/1] (0.00ns)   --->   "br i1 %tmp_124, label %_ifconv, label %9" [cnn.cpp:1225]   --->   Operation 227 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 228 [1/1] (2.55ns)   --->   "%tmp_125 = sub nsw i32 %OutFM_num_read, %TMP_M" [cnn.cpp:1227]   --->   Operation 228 'sub' 'tmp_125' <Predicate = (tmp_124)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 229 [1/1] (2.47ns)   --->   "%tmp_126 = icmp sgt i32 %tmp_125, %TM_read" [cnn.cpp:1227]   --->   Operation 229 'icmp' 'tmp_126' <Predicate = (tmp_124)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 230 [1/1] (0.69ns)   --->   "%TM_MIN = select i1 %tmp_126, i32 %TM_read, i32 %tmp_125" [cnn.cpp:1227]   --->   Operation 230 'select' 'TM_MIN' <Predicate = (tmp_124)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 231 [1/1] (2.47ns)   --->   "%MneZero = icmp ne i31 %m, 0" [cnn.cpp:1228]   --->   Operation 231 'icmp' 'MneZero' <Predicate = (tmp_124)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 232 [1/1] (2.47ns)   --->   "%MneOne = icmp ne i31 %m, 1" [cnn.cpp:1229]   --->   Operation 232 'icmp' 'MneOne' <Predicate = (tmp_124)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 233 [1/1] (2.47ns)   --->   "%MnemLoops = icmp ne i32 %m_cast, %mLoops_read" [cnn.cpp:1230]   --->   Operation 233 'icmp' 'MnemLoops' <Predicate = (tmp_124)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 234 [1/1] (2.47ns)   --->   "%MneMLoopsaddOne = icmp ne i32 %m_cast, %mLoops_add1" [cnn.cpp:1231]   --->   Operation 234 'icmp' 'MneMLoopsaddOne' <Predicate = (tmp_124)> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 235 [1/1] (0.00ns) (grouped into LUT with out node input_flag)   --->   "%MneMLoopsaddOne_0_s = or i1 %tmp_114, %MneMLoopsaddOne" [cnn.cpp:1232]   --->   Operation 235 'or' 'MneMLoopsaddOne_0_s' <Predicate = (tmp_124)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 236 [1/1] (0.97ns) (out node of the LUT)   --->   "%input_flag = and i1 %MnemLoops, %MneMLoopsaddOne_0_s" [cnn.cpp:1232]   --->   Operation 236 'and' 'input_flag' <Predicate = (tmp_124)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 237 [1/1] (0.00ns) (grouped into LUT with out node process_flag)   --->   "%MneMLoopsaddOne_0_1 = and i1 %MneZero, %MneMLoopsaddOne" [cnn.cpp:1233]   --->   Operation 237 'and' 'MneMLoopsaddOne_0_1' <Predicate = (!tmp_114 & tmp_124)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 238 [1/1] (0.99ns) (out node of the LUT)   --->   "%process_flag = select i1 %tmp_114, i1 %MnemLoops, i1 %MneMLoopsaddOne_0_1" [cnn.cpp:1233]   --->   Operation 238 'select' 'process_flag' <Predicate = (tmp_124)> <Delay = 0.99> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 239 [1/1] (0.00ns) (grouped into LUT with out node write_flag)   --->   "%MneOne_0_s = or i1 %tmp_114, %MneOne" [cnn.cpp:1234]   --->   Operation 239 'or' 'MneOne_0_s' <Predicate = (tmp_124)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 240 [1/1] (0.97ns) (out node of the LUT)   --->   "%write_flag = and i1 %MneZero, %MneOne_0_s" [cnn.cpp:1234]   --->   Operation 240 'and' 'write_flag' <Predicate = (tmp_124)> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 241 [1/1] (0.00ns)   --->   "%TMP_M_next0_0_1_loa = load i32* %TMP_M_next0_0_1" [cnn.cpp:1247]   --->   Operation 241 'load' 'TMP_M_next0_0_1_loa' <Predicate = (tmp_124)> <Delay = 0.00>
+ST_6 : Operation 242 [1/1] (0.00ns)   --->   "%TMP_M_next1_0_1_loa = load i32* %TMP_M_next1_0_1" [cnn.cpp:1252]   --->   Operation 242 'load' 'TMP_M_next1_0_1_loa' <Predicate = (tmp_124)> <Delay = 0.00>
+ST_6 : Operation 243 [1/1] (0.00ns)   --->   "%TM_MIN_next0_0_1_lo = load i32* %TM_MIN_next0_0_1" [cnn.cpp:1247]   --->   Operation 243 'load' 'TM_MIN_next0_0_1_lo' <Predicate = (tmp_124)> <Delay = 0.00>
+ST_6 : Operation 244 [1/1] (0.00ns)   --->   "%TM_MIN_next1_0_1_lo = load i32* %TM_MIN_next1_0_1" [cnn.cpp:1252]   --->   Operation 244 'load' 'TM_MIN_next1_0_1_lo' <Predicate = (tmp_124)> <Delay = 0.00>
+ST_6 : Operation 245 [1/1] (0.00ns)   --->   "br i1 %pingpongm, label %7, label %6" [cnn.cpp:1236]   --->   Operation 245 'br' <Predicate = (tmp_124)> <Delay = 0.00>
+ST_6 : Operation 246 [1/1] (2.55ns)   --->   "%TMP_C_1 = add nsw i32 %TMP_C, %TC_read" [cnn.cpp:1221]   --->   Operation 246 'add' 'TMP_C_1' <Predicate = (!tmp_124)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 247 [1/1] (0.00ns)   --->   "br label %3" [cnn.cpp:1221]   --->   Operation 247 'br' <Predicate = (!tmp_124)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 8.14>
+ST_7 : Operation 248 [2/2] (6.05ns)   --->   "%tmp_128 = call fastcc { i32, i32 } @intra_pingpong_wrapp(i32* %DATA_BUS1, i30 %Input4, i32* %DATA_BUS2, i30 %Input7, i32* %DATA_BUS3, i30 %Input6, i32* %DATA_BUS4, i30 %Input5, i32* %DATA_BUS5, i30 %Weight1, [676 x i32]* @output_buffer1_0, [676 x i32]* @output_buffer1_1, [676 x i32]* @output_buffer1_2, [676 x i32]* @output_buffer1_3, [676 x i32]* @output_buffer1_4, [676 x i32]* @output_buffer1_5, [676 x i32]* @output_buffer1_6, [676 x i32]* @output_buffer1_7, [676 x i32]* @output_buffer1_8, [676 x i32]* @output_buffer1_9, [676 x i32]* @output_buffer1_10, [676 x i32]* @output_buffer1_11, [676 x i32]* @output_buffer1_12, [676 x i32]* @output_buffer1_13, [676 x i32]* @output_buffer1_14, [676 x i32]* @output_buffer1_15, [676 x i32]* @output_buffer1_16, [676 x i32]* @output_buffer1_17, [676 x i32]* @output_buffer1_18, [676 x i32]* @output_buffer1_19, [676 x i32]* @output_buffer1_20, [676 x i32]* @output_buffer1_21, [676 x i32]* @output_buffer1_22, [676 x i32]* @output_buffer1_23, [676 x i32]* @output_buffer1_24, [676 x i32]* @output_buffer1_25, [676 x i32]* @output_buffer1_26, [676 x i32]* @output_buffer1_27, [676 x i32]* @output_buffer1_28, [676 x i32]* @output_buffer1_29, [676 x i32]* @output_buffer1_30, [676 x i32]* @output_buffer1_31, [1024 x i16]* nocapture @beta_buffer, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M, i32 %TM_MIN, i32 %TR_MIN, i32 %TC_MIN, i32 %TN_read, i8 %TRow, i8 %TCol, i32 %Padding_read, i19 %r_V_24, i32 %nLoops_read, i32 %LayerType_read, i32 %TM_read, i32 %TMP_M_next1_0_1_loa, i32 %TM_MIN_next1_0_1_lo, i1 false, i1 %input_flag, i1 %process_flag, i8 %InterSubBeta, i8 %WeightAddInputSubInt, i6 %trow_loops_6b_V)" [cnn.cpp:1238]   --->   Operation 248 'call' 'tmp_128' <Predicate = true> <Delay = 6.05> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_7 : Operation 249 [2/2] (8.14ns)   --->   "call fastcc void @write_back_output_re([676 x i32]* nocapture @output_buffer_0, [676 x i32]* nocapture @output_buffer_1, [676 x i32]* nocapture @output_buffer_2, [676 x i32]* nocapture @output_buffer_3, [676 x i32]* nocapture @output_buffer_4, [676 x i32]* nocapture @output_buffer_5, [676 x i32]* nocapture @output_buffer_6, [676 x i32]* nocapture @output_buffer_7, [676 x i32]* nocapture @output_buffer_8, [676 x i32]* nocapture @output_buffer_9, [676 x i32]* nocapture @output_buffer_10, [676 x i32]* nocapture @output_buffer_11, [676 x i32]* nocapture @output_buffer_12, [676 x i32]* nocapture @output_buffer_13, [676 x i32]* nocapture @output_buffer_14, [676 x i32]* nocapture @output_buffer_15, [676 x i32]* nocapture @output_buffer_16, [676 x i32]* nocapture @output_buffer_17, [676 x i32]* nocapture @output_buffer_18, [676 x i32]* nocapture @output_buffer_19, [676 x i32]* nocapture @output_buffer_20, [676 x i32]* nocapture @output_buffer_21, [676 x i32]* nocapture @output_buffer_22, [676 x i32]* nocapture @output_buffer_23, [676 x i32]* nocapture @output_buffer_24, [676 x i32]* nocapture @output_buffer_25, [676 x i32]* nocapture @output_buffer_26, [676 x i32]* nocapture @output_buffer_27, [676 x i32]* nocapture @output_buffer_28, [676 x i32]* nocapture @output_buffer_29, [676 x i32]* nocapture @output_buffer_30, [676 x i32]* nocapture @output_buffer_31, i32* %DATA_BUS1, i30 %Output3, i32* %DATA_BUS2, i30 %Output2, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M_next0_0_1_loa, i32 %output_w_read, i32 %TM_MIN_next0_0_1_lo, i32 %TC_MIN, i18 %r_V, i1 %write_flag, i1 %IsNL_read, i8 %InterSubOutput, i32 %LayerType_read)" [cnn.cpp:1243]   --->   Operation 249 'call' <Predicate = true> <Delay = 8.14> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 2.55>
+ST_8 : Operation 250 [1/2] (0.00ns)   --->   "%tmp_128 = call fastcc { i32, i32 } @intra_pingpong_wrapp(i32* %DATA_BUS1, i30 %Input4, i32* %DATA_BUS2, i30 %Input7, i32* %DATA_BUS3, i30 %Input6, i32* %DATA_BUS4, i30 %Input5, i32* %DATA_BUS5, i30 %Weight1, [676 x i32]* @output_buffer1_0, [676 x i32]* @output_buffer1_1, [676 x i32]* @output_buffer1_2, [676 x i32]* @output_buffer1_3, [676 x i32]* @output_buffer1_4, [676 x i32]* @output_buffer1_5, [676 x i32]* @output_buffer1_6, [676 x i32]* @output_buffer1_7, [676 x i32]* @output_buffer1_8, [676 x i32]* @output_buffer1_9, [676 x i32]* @output_buffer1_10, [676 x i32]* @output_buffer1_11, [676 x i32]* @output_buffer1_12, [676 x i32]* @output_buffer1_13, [676 x i32]* @output_buffer1_14, [676 x i32]* @output_buffer1_15, [676 x i32]* @output_buffer1_16, [676 x i32]* @output_buffer1_17, [676 x i32]* @output_buffer1_18, [676 x i32]* @output_buffer1_19, [676 x i32]* @output_buffer1_20, [676 x i32]* @output_buffer1_21, [676 x i32]* @output_buffer1_22, [676 x i32]* @output_buffer1_23, [676 x i32]* @output_buffer1_24, [676 x i32]* @output_buffer1_25, [676 x i32]* @output_buffer1_26, [676 x i32]* @output_buffer1_27, [676 x i32]* @output_buffer1_28, [676 x i32]* @output_buffer1_29, [676 x i32]* @output_buffer1_30, [676 x i32]* @output_buffer1_31, [1024 x i16]* nocapture @beta_buffer, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M, i32 %TM_MIN, i32 %TR_MIN, i32 %TC_MIN, i32 %TN_read, i8 %TRow, i8 %TCol, i32 %Padding_read, i19 %r_V_24, i32 %nLoops_read, i32 %LayerType_read, i32 %TM_read, i32 %TMP_M_next1_0_1_loa, i32 %TM_MIN_next1_0_1_lo, i1 false, i1 %input_flag, i1 %process_flag, i8 %InterSubBeta, i8 %WeightAddInputSubInt, i6 %trow_loops_6b_V)" [cnn.cpp:1238]   --->   Operation 250 'call' 'tmp_128' <Predicate = (!pingpongm)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 251 [1/1] (0.00ns)   --->   "%TMP_M_next1_0 = extractvalue { i32, i32 } %tmp_128, 0" [cnn.cpp:1238]   --->   Operation 251 'extractvalue' 'TMP_M_next1_0' <Predicate = (!pingpongm)> <Delay = 0.00>
+ST_8 : Operation 252 [1/1] (0.00ns)   --->   "%TM_MIN_next1_0 = extractvalue { i32, i32 } %tmp_128, 1" [cnn.cpp:1238]   --->   Operation 252 'extractvalue' 'TM_MIN_next1_0' <Predicate = (!pingpongm)> <Delay = 0.00>
+ST_8 : Operation 253 [1/2] (0.00ns)   --->   "call fastcc void @write_back_output_re([676 x i32]* nocapture @output_buffer_0, [676 x i32]* nocapture @output_buffer_1, [676 x i32]* nocapture @output_buffer_2, [676 x i32]* nocapture @output_buffer_3, [676 x i32]* nocapture @output_buffer_4, [676 x i32]* nocapture @output_buffer_5, [676 x i32]* nocapture @output_buffer_6, [676 x i32]* nocapture @output_buffer_7, [676 x i32]* nocapture @output_buffer_8, [676 x i32]* nocapture @output_buffer_9, [676 x i32]* nocapture @output_buffer_10, [676 x i32]* nocapture @output_buffer_11, [676 x i32]* nocapture @output_buffer_12, [676 x i32]* nocapture @output_buffer_13, [676 x i32]* nocapture @output_buffer_14, [676 x i32]* nocapture @output_buffer_15, [676 x i32]* nocapture @output_buffer_16, [676 x i32]* nocapture @output_buffer_17, [676 x i32]* nocapture @output_buffer_18, [676 x i32]* nocapture @output_buffer_19, [676 x i32]* nocapture @output_buffer_20, [676 x i32]* nocapture @output_buffer_21, [676 x i32]* nocapture @output_buffer_22, [676 x i32]* nocapture @output_buffer_23, [676 x i32]* nocapture @output_buffer_24, [676 x i32]* nocapture @output_buffer_25, [676 x i32]* nocapture @output_buffer_26, [676 x i32]* nocapture @output_buffer_27, [676 x i32]* nocapture @output_buffer_28, [676 x i32]* nocapture @output_buffer_29, [676 x i32]* nocapture @output_buffer_30, [676 x i32]* nocapture @output_buffer_31, i32* %DATA_BUS1, i30 %Output3, i32* %DATA_BUS2, i30 %Output2, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M_next0_0_1_loa, i32 %output_w_read, i32 %TM_MIN_next0_0_1_lo, i32 %TC_MIN, i18 %r_V, i1 %write_flag, i1 %IsNL_read, i8 %InterSubOutput, i32 %LayerType_read)" [cnn.cpp:1243]   --->   Operation 253 'call' <Predicate = (!pingpongm)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 254 [1/1] (0.00ns)   --->   "store i32 %TM_MIN_next1_0, i32* %TM_MIN_next1_0_1" [cnn.cpp:1238]   --->   Operation 254 'store' <Predicate = (!pingpongm)> <Delay = 0.00>
+ST_8 : Operation 255 [1/1] (0.00ns)   --->   "store i32 %TMP_M_next1_0, i32* %TMP_M_next1_0_1" [cnn.cpp:1238]   --->   Operation 255 'store' <Predicate = (!pingpongm)> <Delay = 0.00>
+ST_8 : Operation 256 [1/1] (1.76ns)   --->   "br label %8" [cnn.cpp:1245]   --->   Operation 256 'br' <Predicate = (!pingpongm)> <Delay = 1.76>
+ST_8 : Operation 257 [1/2] (0.00ns)   --->   "%tmp_127 = call fastcc { i32, i32 } @intra_pingpong_wrapp(i32* %DATA_BUS1, i30 %Input4, i32* %DATA_BUS2, i30 %Input7, i32* %DATA_BUS3, i30 %Input6, i32* %DATA_BUS4, i30 %Input5, i32* %DATA_BUS5, i30 %Weight1, [676 x i32]* @output_buffer_0, [676 x i32]* @output_buffer_1, [676 x i32]* @output_buffer_2, [676 x i32]* @output_buffer_3, [676 x i32]* @output_buffer_4, [676 x i32]* @output_buffer_5, [676 x i32]* @output_buffer_6, [676 x i32]* @output_buffer_7, [676 x i32]* @output_buffer_8, [676 x i32]* @output_buffer_9, [676 x i32]* @output_buffer_10, [676 x i32]* @output_buffer_11, [676 x i32]* @output_buffer_12, [676 x i32]* @output_buffer_13, [676 x i32]* @output_buffer_14, [676 x i32]* @output_buffer_15, [676 x i32]* @output_buffer_16, [676 x i32]* @output_buffer_17, [676 x i32]* @output_buffer_18, [676 x i32]* @output_buffer_19, [676 x i32]* @output_buffer_20, [676 x i32]* @output_buffer_21, [676 x i32]* @output_buffer_22, [676 x i32]* @output_buffer_23, [676 x i32]* @output_buffer_24, [676 x i32]* @output_buffer_25, [676 x i32]* @output_buffer_26, [676 x i32]* @output_buffer_27, [676 x i32]* @output_buffer_28, [676 x i32]* @output_buffer_29, [676 x i32]* @output_buffer_30, [676 x i32]* @output_buffer_31, [1024 x i16]* nocapture @beta_buffer, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M, i32 %TM_MIN, i32 %TR_MIN, i32 %TC_MIN, i32 %TN_read, i8 %TRow, i8 %TCol, i32 %Padding_read, i19 %r_V_24, i32 %nLoops_read, i32 %LayerType_read, i32 %TM_read, i32 %TMP_M_next0_0_1_loa, i32 %TM_MIN_next0_0_1_lo, i1 true, i1 %input_flag, i1 %process_flag, i8 %InterSubBeta, i8 %WeightAddInputSubInt, i6 %trow_loops_6b_V)" [cnn.cpp:1247]   --->   Operation 257 'call' 'tmp_127' <Predicate = (pingpongm)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 258 [1/1] (0.00ns)   --->   "%TMP_M_next0_0 = extractvalue { i32, i32 } %tmp_127, 0" [cnn.cpp:1247]   --->   Operation 258 'extractvalue' 'TMP_M_next0_0' <Predicate = (pingpongm)> <Delay = 0.00>
+ST_8 : Operation 259 [1/1] (0.00ns)   --->   "%TM_MIN_next0_0 = extractvalue { i32, i32 } %tmp_127, 1" [cnn.cpp:1247]   --->   Operation 259 'extractvalue' 'TM_MIN_next0_0' <Predicate = (pingpongm)> <Delay = 0.00>
+ST_8 : Operation 260 [1/2] (0.00ns)   --->   "call fastcc void @write_back_output_re([676 x i32]* nocapture @output_buffer1_0, [676 x i32]* nocapture @output_buffer1_1, [676 x i32]* nocapture @output_buffer1_2, [676 x i32]* nocapture @output_buffer1_3, [676 x i32]* nocapture @output_buffer1_4, [676 x i32]* nocapture @output_buffer1_5, [676 x i32]* nocapture @output_buffer1_6, [676 x i32]* nocapture @output_buffer1_7, [676 x i32]* nocapture @output_buffer1_8, [676 x i32]* nocapture @output_buffer1_9, [676 x i32]* nocapture @output_buffer1_10, [676 x i32]* nocapture @output_buffer1_11, [676 x i32]* nocapture @output_buffer1_12, [676 x i32]* nocapture @output_buffer1_13, [676 x i32]* nocapture @output_buffer1_14, [676 x i32]* nocapture @output_buffer1_15, [676 x i32]* nocapture @output_buffer1_16, [676 x i32]* nocapture @output_buffer1_17, [676 x i32]* nocapture @output_buffer1_18, [676 x i32]* nocapture @output_buffer1_19, [676 x i32]* nocapture @output_buffer1_20, [676 x i32]* nocapture @output_buffer1_21, [676 x i32]* nocapture @output_buffer1_22, [676 x i32]* nocapture @output_buffer1_23, [676 x i32]* nocapture @output_buffer1_24, [676 x i32]* nocapture @output_buffer1_25, [676 x i32]* nocapture @output_buffer1_26, [676 x i32]* nocapture @output_buffer1_27, [676 x i32]* nocapture @output_buffer1_28, [676 x i32]* nocapture @output_buffer1_29, [676 x i32]* nocapture @output_buffer1_30, [676 x i32]* nocapture @output_buffer1_31, i32* %DATA_BUS1, i30 %Output3, i32* %DATA_BUS2, i30 %Output2, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M_next1_0_1_loa, i32 %output_w_read, i32 %TM_MIN_next1_0_1_lo, i32 %TC_MIN, i18 %r_V, i1 %write_flag, i1 %IsNL_read, i8 %InterSubOutput, i32 %LayerType_read)" [cnn.cpp:1252]   --->   Operation 260 'call' <Predicate = (pingpongm)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_8 : Operation 261 [1/1] (0.00ns)   --->   "store i32 %TM_MIN_next0_0, i32* %TM_MIN_next0_0_1" [cnn.cpp:1247]   --->   Operation 261 'store' <Predicate = (pingpongm)> <Delay = 0.00>
+ST_8 : Operation 262 [1/1] (0.00ns)   --->   "store i32 %TMP_M_next0_0, i32* %TMP_M_next0_0_1" [cnn.cpp:1247]   --->   Operation 262 'store' <Predicate = (pingpongm)> <Delay = 0.00>
+ST_8 : Operation 263 [1/1] (1.76ns)   --->   "br label %8"   --->   Operation 263 'br' <Predicate = (pingpongm)> <Delay = 1.76>
+ST_8 : Operation 264 [1/1] (0.00ns)   --->   "%pingpongm_1 = phi i1 [ false, %7 ], [ true, %6 ]"   --->   Operation 264 'phi' 'pingpongm_1' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 265 [1/1] (2.55ns)   --->   "%TMP_M_1 = add nsw i32 %TMP_M, %TM_read" [cnn.cpp:1225]   --->   Operation 265 'add' 'TMP_M_1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 266 [1/1] (0.00ns)   --->   "br label %5" [cnn.cpp:1225]   --->   Operation 266 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 8.14>
+ST_9 : Operation 267 [2/2] (6.05ns)   --->   "%tmp_127 = call fastcc { i32, i32 } @intra_pingpong_wrapp(i32* %DATA_BUS1, i30 %Input4, i32* %DATA_BUS2, i30 %Input7, i32* %DATA_BUS3, i30 %Input6, i32* %DATA_BUS4, i30 %Input5, i32* %DATA_BUS5, i30 %Weight1, [676 x i32]* @output_buffer_0, [676 x i32]* @output_buffer_1, [676 x i32]* @output_buffer_2, [676 x i32]* @output_buffer_3, [676 x i32]* @output_buffer_4, [676 x i32]* @output_buffer_5, [676 x i32]* @output_buffer_6, [676 x i32]* @output_buffer_7, [676 x i32]* @output_buffer_8, [676 x i32]* @output_buffer_9, [676 x i32]* @output_buffer_10, [676 x i32]* @output_buffer_11, [676 x i32]* @output_buffer_12, [676 x i32]* @output_buffer_13, [676 x i32]* @output_buffer_14, [676 x i32]* @output_buffer_15, [676 x i32]* @output_buffer_16, [676 x i32]* @output_buffer_17, [676 x i32]* @output_buffer_18, [676 x i32]* @output_buffer_19, [676 x i32]* @output_buffer_20, [676 x i32]* @output_buffer_21, [676 x i32]* @output_buffer_22, [676 x i32]* @output_buffer_23, [676 x i32]* @output_buffer_24, [676 x i32]* @output_buffer_25, [676 x i32]* @output_buffer_26, [676 x i32]* @output_buffer_27, [676 x i32]* @output_buffer_28, [676 x i32]* @output_buffer_29, [676 x i32]* @output_buffer_30, [676 x i32]* @output_buffer_31, [1024 x i16]* nocapture @beta_buffer, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M, i32 %TM_MIN, i32 %TR_MIN, i32 %TC_MIN, i32 %TN_read, i8 %TRow, i8 %TCol, i32 %Padding_read, i19 %r_V_24, i32 %nLoops_read, i32 %LayerType_read, i32 %TM_read, i32 %TMP_M_next0_0_1_loa, i32 %TM_MIN_next0_0_1_lo, i1 true, i1 %input_flag, i1 %process_flag, i8 %InterSubBeta, i8 %WeightAddInputSubInt, i6 %trow_loops_6b_V)" [cnn.cpp:1247]   --->   Operation 267 'call' 'tmp_127' <Predicate = true> <Delay = 6.05> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 268 [2/2] (8.14ns)   --->   "call fastcc void @write_back_output_re([676 x i32]* nocapture @output_buffer1_0, [676 x i32]* nocapture @output_buffer1_1, [676 x i32]* nocapture @output_buffer1_2, [676 x i32]* nocapture @output_buffer1_3, [676 x i32]* nocapture @output_buffer1_4, [676 x i32]* nocapture @output_buffer1_5, [676 x i32]* nocapture @output_buffer1_6, [676 x i32]* nocapture @output_buffer1_7, [676 x i32]* nocapture @output_buffer1_8, [676 x i32]* nocapture @output_buffer1_9, [676 x i32]* nocapture @output_buffer1_10, [676 x i32]* nocapture @output_buffer1_11, [676 x i32]* nocapture @output_buffer1_12, [676 x i32]* nocapture @output_buffer1_13, [676 x i32]* nocapture @output_buffer1_14, [676 x i32]* nocapture @output_buffer1_15, [676 x i32]* nocapture @output_buffer1_16, [676 x i32]* nocapture @output_buffer1_17, [676 x i32]* nocapture @output_buffer1_18, [676 x i32]* nocapture @output_buffer1_19, [676 x i32]* nocapture @output_buffer1_20, [676 x i32]* nocapture @output_buffer1_21, [676 x i32]* nocapture @output_buffer1_22, [676 x i32]* nocapture @output_buffer1_23, [676 x i32]* nocapture @output_buffer1_24, [676 x i32]* nocapture @output_buffer1_25, [676 x i32]* nocapture @output_buffer1_26, [676 x i32]* nocapture @output_buffer1_27, [676 x i32]* nocapture @output_buffer1_28, [676 x i32]* nocapture @output_buffer1_29, [676 x i32]* nocapture @output_buffer1_30, [676 x i32]* nocapture @output_buffer1_31, i32* %DATA_BUS1, i30 %Output3, i32* %DATA_BUS2, i30 %Output2, i32 %TMP_R, i32 %TMP_C, i32 %TMP_M_next1_0_1_loa, i32 %output_w_read, i32 %TM_MIN_next1_0_1_lo, i32 %TC_MIN, i18 %r_V, i1 %write_flag, i1 %IsNL_read, i8 %InterSubOutput, i32 %LayerType_read)" [cnn.cpp:1252]   --->   Operation 268 'call' <Predicate = true> <Delay = 8.14> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 4> <Delay = 0.00>
+ST_10 : Operation 269 [1/2] (0.00ns)   --->   "ret void" [cnn.cpp:1259]   --->   Operation 269 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'trow_loops' [422]  (1 ns)
+
+ <State 2>: 7.38ns
+The critical path consists of the following:
+	s_axi read on port 'Input_h' [440]  (1 ns)
+	'mul' operation ('r.V', cnn.cpp:1170) [558]  (6.38 ns)
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('r') with incoming values : ('r', cnn.cpp:1218) [583]  (1.77 ns)
+
+ <State 4>: 5.72ns
+The critical path consists of the following:
+	'phi' operation ('TMP_R') with incoming values : ('TMP_R', cnn.cpp:1218) [584]  (0 ns)
+	'sub' operation ('tmp_116', cnn.cpp:1220) [590]  (2.55 ns)
+	'icmp' operation ('tmp_120', cnn.cpp:1220) [591]  (2.47 ns)
+	'select' operation ('val', cnn.cpp:1220) [592]  (0.698 ns)
+
+ <State 5>: 5.72ns
+The critical path consists of the following:
+	'phi' operation ('TMP_C') with incoming values : ('TMP_C', cnn.cpp:1221) [596]  (0 ns)
+	'sub' operation ('tmp_122', cnn.cpp:1223) [602]  (2.55 ns)
+	'icmp' operation ('tmp_123', cnn.cpp:1223) [603]  (2.47 ns)
+	'select' operation ('val', cnn.cpp:1223) [604]  (0.698 ns)
+
+ <State 6>: 5.72ns
+The critical path consists of the following:
+	'phi' operation ('TMP_M') with incoming values : ('TMP_M', cnn.cpp:1225) [608]  (0 ns)
+	'sub' operation ('tmp_125', cnn.cpp:1227) [615]  (2.55 ns)
+	'icmp' operation ('tmp_126', cnn.cpp:1227) [616]  (2.47 ns)
+	'select' operation ('TM', cnn.cpp:1227) [617]  (0.698 ns)
+
+ <State 7>: 8.15ns
+The critical path consists of the following:
+	'call' operation (cnn.cpp:1243) to 'write_back_output_re' [637]  (8.15 ns)
+
+ <State 8>: 2.55ns
+The critical path consists of the following:
+	'add' operation ('TMP_M', cnn.cpp:1225) [651]  (2.55 ns)
+
+ <State 9>: 8.15ns
+The critical path consists of the following:
+	'call' operation (cnn.cpp:1252) to 'write_back_output_re' [645]  (8.15 ns)
+
+ <State 10>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

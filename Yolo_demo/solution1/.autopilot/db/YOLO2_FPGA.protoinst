@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"YOLO2_FPGA": {
+			"proto_instances": {
+			}
+		}
+	}
+}

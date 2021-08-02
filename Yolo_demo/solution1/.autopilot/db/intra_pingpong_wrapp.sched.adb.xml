@@ -1,0 +1,1983 @@
+<stg><name>intra_pingpong_wrapp</name>
+
+
+<trans_list>
+
+<trans id="126" from="1" to="8">
+<condition id="49">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="0"/>
+</and_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="127" from="1" to="2">
+<condition id="50">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="131" from="1" to="3">
+<condition id="55">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="136" from="1" to="4">
+<condition id="63">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="130" from="2" to="8">
+<condition id="54">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="134" from="3" to="8">
+<condition id="59">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="137" from="4" to="5">
+<condition id="65">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+<literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="138" from="4" to="7">
+<condition id="64">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+<literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="144" from="4" to="8">
+<condition id="73">
+<or_exp><and_exp><literal name="tmp_41" val="0"/>
+</and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="140" from="5" to="6">
+<condition id="67">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="143" from="6" to="4">
+<condition id="71">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+
+<trans id="142" from="7" to="6">
+<condition id="69">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+</trans>
+</trans_list>
+
+
+
+<state_list>
+
+<state id="1" st_id="1">
+
+<operation id="9" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="383" bw="6" op_0_bw="6" op_1_bw="6">
+<![CDATA[
+:0  %trow_loops_V_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %trow_loops_V)
+
+]]></Node>
+<StgValue><ssdm name="trow_loops_V_read"/></StgValue>
+</operation>
+
+<operation id="10" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="384" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:1  %WeightAddInputSubInt = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %WeightAddInputSubInter)
+
+]]></Node>
+<StgValue><ssdm name="WeightAddInputSubInt"/></StgValue>
+</operation>
+
+<operation id="11" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="385" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:2  %InterSubBeta_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %InterSubBeta)
+
+]]></Node>
+<StgValue><ssdm name="InterSubBeta_read"/></StgValue>
+</operation>
+
+<operation id="12" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="386" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:3  %process_flag_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %process_flag)
+
+]]></Node>
+<StgValue><ssdm name="process_flag_read"/></StgValue>
+</operation>
+
+<operation id="13" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="387" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:4  %input_flag_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %input_flag)
+
+]]></Node>
+<StgValue><ssdm name="input_flag_read"/></StgValue>
+</operation>
+
+<operation id="14" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="388" bw="1" op_0_bw="1" op_1_bw="1">
+<![CDATA[
+:5  %pingpongx_offset_rea = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %pingpongx_offset)
+
+]]></Node>
+<StgValue><ssdm name="pingpongx_offset_rea"/></StgValue>
+</operation>
+
+<operation id="15" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="389" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:6  %p_read_1 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %p_read1)
+
+]]></Node>
+<StgValue><ssdm name="p_read_1"/></StgValue>
+</operation>
+
+<operation id="16" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="390" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:7  %p_read_2 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %p_read)
+
+]]></Node>
+<StgValue><ssdm name="p_read_2"/></StgValue>
+</operation>
+
+<operation id="17" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="391" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:8  %TM_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TM)
+
+]]></Node>
+<StgValue><ssdm name="TM_read"/></StgValue>
+</operation>
+
+<operation id="18" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="392" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:9  %LayerType_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %LayerType)
+
+]]></Node>
+<StgValue><ssdm name="LayerType_read"/></StgValue>
+</operation>
+
+<operation id="19" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="393" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:10  %nLoops_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %nLoops)
+
+]]></Node>
+<StgValue><ssdm name="nLoops_read"/></StgValue>
+</operation>
+
+<operation id="20" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="394" bw="19" op_0_bw="19" op_1_bw="19">
+<![CDATA[
+:11  %IHxIW_read = call i19 @_ssdm_op_Read.ap_auto.i19(i19 %IHxIW)
+
+]]></Node>
+<StgValue><ssdm name="IHxIW_read"/></StgValue>
+</operation>
+
+<operation id="21" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="395" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:12  %Padding_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Padding)
+
+]]></Node>
+<StgValue><ssdm name="Padding_read"/></StgValue>
+</operation>
+
+<operation id="22" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="396" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:13  %TCol_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %TCol)
+
+]]></Node>
+<StgValue><ssdm name="TCol_read"/></StgValue>
+</operation>
+
+<operation id="23" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="397" bw="8" op_0_bw="8" op_1_bw="8">
+<![CDATA[
+:14  %TRow_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %TRow)
+
+]]></Node>
+<StgValue><ssdm name="TRow_read"/></StgValue>
+</operation>
+
+<operation id="24" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="398" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:15  %TN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TN)
+
+]]></Node>
+<StgValue><ssdm name="TN_read"/></StgValue>
+</operation>
+
+<operation id="25" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="399" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:16  %TC_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TC_MIN)
+
+]]></Node>
+<StgValue><ssdm name="TC_MIN_read"/></StgValue>
+</operation>
+
+<operation id="26" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="400" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:17  %TR_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TR_MIN)
+
+]]></Node>
+<StgValue><ssdm name="TR_MIN_read"/></StgValue>
+</operation>
+
+<operation id="27" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="401" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:18  %TM_MIN_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TM_MIN)
+
+]]></Node>
+<StgValue><ssdm name="TM_MIN_read"/></StgValue>
+</operation>
+
+<operation id="28" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="402" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:19  %TMP_M_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TMP_M)
+
+]]></Node>
+<StgValue><ssdm name="TMP_M_read"/></StgValue>
+</operation>
+
+<operation id="29" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="403" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:20  %TMP_C_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TMP_C)
+
+]]></Node>
+<StgValue><ssdm name="TMP_C_read"/></StgValue>
+</operation>
+
+<operation id="30" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="404" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:21  %TMP_R_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %TMP_R)
+
+]]></Node>
+<StgValue><ssdm name="TMP_R_read"/></StgValue>
+</operation>
+
+<operation id="31" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="405" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:22  %Kernel_stride_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Kernel_stride)
+
+]]></Node>
+<StgValue><ssdm name="Kernel_stride_read"/></StgValue>
+</operation>
+
+<operation id="32" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="406" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:23  %Kernel_size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Kernel_size)
+
+]]></Node>
+<StgValue><ssdm name="Kernel_size_read"/></StgValue>
+</operation>
+
+<operation id="33" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="407" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:24  %Input_h_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Input_h)
+
+]]></Node>
+<StgValue><ssdm name="Input_h_read"/></StgValue>
+</operation>
+
+<operation id="34" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="408" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:25  %Input_w_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %Input_w)
+
+]]></Node>
+<StgValue><ssdm name="Input_w_read"/></StgValue>
+</operation>
+
+<operation id="35" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="409" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:26  %InFM_num_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %InFM_num)
+
+]]></Node>
+<StgValue><ssdm name="InFM_num_read"/></StgValue>
+</operation>
+
+<operation id="36" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="410" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:27  %Weight_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Weight_offset)
+
+]]></Node>
+<StgValue><ssdm name="Weight_offset_read"/></StgValue>
+</operation>
+
+<operation id="37" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="411" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:28  %Input3_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Input3_offset)
+
+]]></Node>
+<StgValue><ssdm name="Input3_offset_read"/></StgValue>
+</operation>
+
+<operation id="38" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="412" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:29  %Input2_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Input2_offset)
+
+]]></Node>
+<StgValue><ssdm name="Input2_offset_read"/></StgValue>
+</operation>
+
+<operation id="39" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="413" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:30  %Input1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Input1_offset)
+
+]]></Node>
+<StgValue><ssdm name="Input1_offset_read"/></StgValue>
+</operation>
+
+<operation id="40" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="414" bw="30" op_0_bw="30" op_1_bw="30">
+<![CDATA[
+:31  %Input_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Input_offset)
+
+]]></Node>
+<StgValue><ssdm name="Input_offset_read"/></StgValue>
+</operation>
+
+<operation id="41" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="415" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:32  call void (...)* @_ssdm_op_SpecInterface(i32* %Weight, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="42" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="416" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:33  call void (...)* @_ssdm_op_SpecInterface(i32* %Input3, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str21, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="43" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="417" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:34  call void (...)* @_ssdm_op_SpecInterface(i32* %Input2, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str20, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="44" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="418" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:35  call void (...)* @_ssdm_op_SpecInterface(i32* %Input1, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str19, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="45" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="419" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
+<![CDATA[
+:36  call void (...)* @_ssdm_op_SpecInterface(i32* %Input_r, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="46" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="420" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:37  %tmp = icmp eq i32 %LayerType_read, 0
+
+]]></Node>
+<StgValue><ssdm name="tmp"/></StgValue>
+</operation>
+
+<operation id="47" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="421" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:38  br i1 %tmp, label %1, label %8
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="48" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="423" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  %tmp_s = icmp eq i32 %LayerType_read, 1
+
+]]></Node>
+<StgValue><ssdm name="tmp_s"/></StgValue>
+</operation>
+
+<operation id="49" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="424" bw="32" op_0_bw="32">
+<![CDATA[
+:1  %tmp_x_load = load i32* @tmp_x, align 4
+
+]]></Node>
+<StgValue><ssdm name="tmp_x_load"/></StgValue>
+</operation>
+
+<operation id="50" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="425" bw="32" op_0_bw="32">
+<![CDATA[
+:2  %tmp_tx_min_load = load i32* @tmp_tx_min, align 4
+
+]]></Node>
+<StgValue><ssdm name="tmp_tx_min_load"/></StgValue>
+</operation>
+
+<operation id="51" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="426" bw="32" op_0_bw="32">
+<![CDATA[
+:3  %NOP_0_load = load i32* @NOP_0, align 4
+
+]]></Node>
+<StgValue><ssdm name="NOP_0_load"/></StgValue>
+</operation>
+
+<operation id="52" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="2">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="427" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:4  br i1 %tmp_s, label %9, label %13
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="53" st_id="1" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="429" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  %tmp_40 = icmp eq i32 %LayerType_read, 2
+
+]]></Node>
+<StgValue><ssdm name="tmp_40"/></StgValue>
+</operation>
+
+<operation id="54" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="4">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="430" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:1  br i1 %tmp_40, label %14, label %.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="55" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="432" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  store i32 %TMP_M_read, i32* @tmp_x, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="56" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="433" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %TM_MIN_read, i32* @tmp_tx_min, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="57" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="6">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="434" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:2  br i1 %pingpongx_offset_rea, label %16, label %15
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="58" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+<literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="436" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_48 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 2, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_48"/></StgValue>
+</operation>
+
+<operation id="59" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="8">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+<literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="438" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="1">
+<![CDATA[
+:2  call fastcc void @reorg_yolo25([2809 x i16]* @input_buffer1_0, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="60" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="10">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+<literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="441" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_47 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 2, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_47"/></StgValue>
+</operation>
+
+<operation id="61" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="10">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="0"/>
+<literal name="tmp_40" val="1"/>
+<literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="443" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="1">
+<![CDATA[
+:2  call fastcc void @reorg_yolo25([2809 x i16]* @input_buffer0_0, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="62" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="12">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="448" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  store i32 %TMP_M_read, i32* @tmp_x, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="63" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="12">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="449" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %TM_MIN_read, i32* @tmp_tx_min, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="64" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="12">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="450" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:2  br i1 %pingpongx_offset_rea, label %11, label %10
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="65" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="14">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+<literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="452" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_46 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 1, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_46"/></StgValue>
+</operation>
+
+<operation id="66" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="14">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+<literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="454" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="1">
+<![CDATA[
+:2  call fastcc void @pool_yolo26([2809 x i16]* @input_buffer1_0, [2809 x i16]* @input_buffer1_1, [2809 x i16]* @input_buffer1_2, [2809 x i16]* @input_buffer1_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %Kernel_stride_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="67" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="16">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+<literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="457" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_42 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 1, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_42"/></StgValue>
+</operation>
+
+<operation id="68" st_id="1" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="16">
+<or_exp><and_exp><literal name="tmp" val="0"/>
+<literal name="tmp_s" val="1"/>
+<literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="459" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="1">
+<![CDATA[
+:2  call fastcc void @pool_yolo26([2809 x i16]* @input_buffer0_0, [2809 x i16]* @input_buffer0_1, [2809 x i16]* @input_buffer0_2, [2809 x i16]* @input_buffer0_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %Kernel_stride_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="69" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="18">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="464" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:0  br i1 %input_flag_read, label %2, label %.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="70" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="20">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="466" bw="32" op_0_bw="32">
+<![CDATA[
+:0  %TMP_N_next1_0_1 = alloca i32
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next1_0_1"/></StgValue>
+</operation>
+
+<operation id="71" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="20">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="467" bw="32" op_0_bw="32">
+<![CDATA[
+:1  %TMP_N_next0_0_1 = alloca i32
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next0_0_1"/></StgValue>
+</operation>
+
+<operation id="72" st_id="1" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="20">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="468" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:2  %tmp_39 = add nsw i32 %nLoops_read, 1
+
+]]></Node>
+<StgValue><ssdm name="tmp_39"/></StgValue>
+</operation>
+
+<operation id="73" st_id="1" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="20">
+<or_exp><and_exp><literal name="tmp" val="1"/>
+<literal name="input_flag_read" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="469" bw="0" op_0_bw="0">
+<![CDATA[
+:3  br label %3
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="2" st_id="2">
+
+<operation id="74" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="21">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="436" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_48 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 2, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_48"/></StgValue>
+</operation>
+
+<operation id="75" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="21">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="437" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %tmp_48, i32* @NOP_0, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="76" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="21">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="438" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="1">
+<![CDATA[
+:2  call fastcc void @reorg_yolo25([2809 x i16]* @input_buffer1_0, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="77" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="21">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="439" bw="0" op_0_bw="0">
+<![CDATA[
+:3  br label %17
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="78" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="22">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="441" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_47 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 2, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_47"/></StgValue>
+</operation>
+
+<operation id="79" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="22">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="442" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %tmp_47, i32* @NOP_0, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="80" st_id="2" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="22">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="443" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="1">
+<![CDATA[
+:2  call fastcc void @reorg_yolo25([2809 x i16]* @input_buffer0_0, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="81" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="22">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="444" bw="0" op_0_bw="0">
+<![CDATA[
+:3  br label %17
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="82" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="25">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="446" bw="0" op_0_bw="0">
+<![CDATA[
+:0  br label %.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="3" st_id="3">
+
+<operation id="83" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="26">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="452" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_46 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 1, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_46"/></StgValue>
+</operation>
+
+<operation id="84" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="26">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="453" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %tmp_46, i32* @NOP_0, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="85" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="26">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="454" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="1">
+<![CDATA[
+:2  call fastcc void @pool_yolo26([2809 x i16]* @input_buffer1_0, [2809 x i16]* @input_buffer1_1, [2809 x i16]* @input_buffer1_2, [2809 x i16]* @input_buffer1_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %Kernel_stride_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="86" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="26">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="455" bw="0" op_0_bw="0">
+<![CDATA[
+:3  br label %12
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="87" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="27">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="457" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %tmp_42 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TM_read, i8 %TRow_read, i8 %TCol_read, i32 0, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %NOP_0_load, i1 %input_flag_read, i1 false, i19 %IHxIW_read, i4 1, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="tmp_42"/></StgValue>
+</operation>
+
+<operation id="88" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="27">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="458" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  store i32 %tmp_42, i32* @NOP_0, align 4
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="89" st_id="3" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="27">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="459" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="1">
+<![CDATA[
+:2  call fastcc void @pool_yolo26([2809 x i16]* @input_buffer0_0, [2809 x i16]* @input_buffer0_1, [2809 x i16]* @input_buffer0_2, [2809 x i16]* @input_buffer0_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, i32 %Kernel_stride_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %process_flag_read)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="90" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="27">
+<or_exp><and_exp><literal name="pingpongx_offset_rea" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="460" bw="0" op_0_bw="0">
+<![CDATA[
+:3  br label %12
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="91" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="30">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="462" bw="0" op_0_bw="0">
+<![CDATA[
+:0  br label %.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="4" st_id="4">
+
+<operation id="92" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="471" bw="1" op_0_bw="1" op_1_bw="0">
+<![CDATA[
+:0  %pingpong = phi i1 [ false, %2 ], [ %pingpong_1, %7 ]
+
+]]></Node>
+<StgValue><ssdm name="pingpong"/></StgValue>
+</operation>
+
+<operation id="93" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="472" bw="31" op_0_bw="31" op_1_bw="0">
+<![CDATA[
+:1  %n = phi i31 [ 0, %2 ], [ %n_1, %7 ]
+
+]]></Node>
+<StgValue><ssdm name="n"/></StgValue>
+</operation>
+
+<operation id="94" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="473" bw="32" op_0_bw="32" op_1_bw="0">
+<![CDATA[
+:2  %TMP_N = phi i32 [ 0, %2 ], [ %TMP_N_1, %7 ]
+
+]]></Node>
+<StgValue><ssdm name="TMP_N"/></StgValue>
+</operation>
+
+<operation id="95" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="474" bw="32" op_0_bw="31">
+<![CDATA[
+:3  %n_cast = zext i31 %n to i32
+
+]]></Node>
+<StgValue><ssdm name="n_cast"/></StgValue>
+</operation>
+
+<operation id="96" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="475" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:4  %tmp_41 = icmp slt i32 %n_cast, %tmp_39
+
+]]></Node>
+<StgValue><ssdm name="tmp_41"/></StgValue>
+</operation>
+
+<operation id="97" st_id="4" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="476" bw="31" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+:5  %n_1 = add i31 %n, 1
+
+]]></Node>
+<StgValue><ssdm name="n_1"/></StgValue>
+</operation>
+
+<operation id="98" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="31">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="477" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:6  br i1 %tmp_41, label %4, label %.loopexit.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="99" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="33">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="479" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:0  %tmp_43 = icmp ne i32 %n_cast, %nLoops_read
+
+]]></Node>
+<StgValue><ssdm name="tmp_43"/></StgValue>
+</operation>
+
+<operation id="100" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="33">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="480" bw="32" op_0_bw="32">
+<![CDATA[
+:1  %TMP_N_next1_0_1_loa = load i32* %TMP_N_next1_0_1
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next1_0_1_loa"/></StgValue>
+</operation>
+
+<operation id="101" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="33">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="481" bw="32" op_0_bw="32">
+<![CDATA[
+:2  %TMP_N_next0_0_1_loa = load i32* %TMP_N_next0_0_1
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next0_0_1_loa"/></StgValue>
+</operation>
+
+<operation id="102" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="33">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="482" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:3  br i1 %pingpong, label %5, label %6
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="103" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="35">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+<literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="485" bw="1" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+:1  %tmp_45 = icmp ne i31 %n, 0
+
+]]></Node>
+<StgValue><ssdm name="tmp_45"/></StgValue>
+</operation>
+
+<operation id="104" st_id="4" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="37">
+<or_exp><and_exp><literal name="tmp_41" val="1"/>
+<literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="491" bw="1" op_0_bw="31" op_1_bw="31">
+<![CDATA[
+:1  %tmp_44 = icmp ne i31 %n, 0
+
+]]></Node>
+<StgValue><ssdm name="tmp_44"/></StgValue>
+</operation>
+
+<operation id="105" st_id="4" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="39">
+<or_exp><and_exp><literal name="tmp_41" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="500" bw="0" op_0_bw="0">
+<![CDATA[
+.loopexit.loopexit:0  br label %.loopexit
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="5" st_id="5">
+
+<operation id="106" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="40">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="484" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %TMP_N_next0_0 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_N, i32 %TM_MIN_read, i32 %TN_read, i8 %TRow_read, i8 %TCol_read, i32 %Padding_read, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %TMP_N_next0_0_1_loa, i1 %tmp_43, i1 true, i19 %IHxIW_read, i4 0, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next0_0"/></StgValue>
+</operation>
+
+<operation id="107" st_id="5" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="40">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="486" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="32" op_167_bw="32" op_168_bw="32" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="1" op_173_bw="8" op_174_bw="8">
+<![CDATA[
+:2  call fastcc void @compute4([2809 x i16]* @input_buffer1_0, [2809 x i16]* @input_buffer1_1, [2809 x i16]* @input_buffer1_2, [2809 x i16]* @input_buffer1_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, [676 x i32]* %output_buffer_4, [676 x i32]* %output_buffer_5, [676 x i32]* %output_buffer_6, [676 x i32]* %output_buffer_7, [676 x i32]* %output_buffer_8, [676 x i32]* %output_buffer_9, [676 x i32]* %output_buffer_10, [676 x i32]* %output_buffer_11, [676 x i32]* %output_buffer_12, [676 x i32]* %output_buffer_13, [676 x i32]* %output_buffer_14, [676 x i32]* %output_buffer_15, [676 x i32]* %output_buffer_16, [676 x i32]* %output_buffer_17, [676 x i32]* %output_buffer_18, [676 x i32]* %output_buffer_19, [676 x i32]* %output_buffer_20, [676 x i32]* %output_buffer_21, [676 x i32]* %output_buffer_22, [676 x i32]* %output_buffer_23, [676 x i32]* %output_buffer_24, [676 x i32]* %output_buffer_25, [676 x i32]* %output_buffer_26, [676 x i32]* %output_buffer_27, [676 x i32]* %output_buffer_28, [676 x i32]* %output_buffer_29, [676 x i32]* %output_buffer_30, [676 x i32]* %output_buffer_31, [9 x i16]* @weight_buffer1_0_0, [9 x i16]* @weight_buffer1_0_1, [9 x i16]* @weight_buffer1_0_2, [9 x i16]* @weight_buffer1_0_3, [9 x i16]* @weight_buffer1_1_0, [9 x i16]* @weight_buffer1_1_1, [9 x i16]* @weight_buffer1_1_2, [9 x i16]* @weight_buffer1_1_3, [9 x i16]* @weight_buffer1_2_0, [9 x i16]* @weight_buffer1_2_1, [9 x i16]* @weight_buffer1_2_2, [9 x i16]* @weight_buffer1_2_3, [9 x i16]* @weight_buffer1_3_0, [9 x i16]* @weight_buffer1_3_1, [9 x i16]* @weight_buffer1_3_2, [9 x i16]* @weight_buffer1_3_3, [9 x i16]* @weight_buffer1_4_0, [9 x i16]* @weight_buffer1_4_1, [9 x i16]* @weight_buffer1_4_2, [9 x i16]* @weight_buffer1_4_3, [9 x i16]* @weight_buffer1_5_0, [9 x i16]* @weight_buffer1_5_1, [9 x i16]* @weight_buffer1_5_2, [9 x i16]* @weight_buffer1_5_3, [9 x i16]* @weight_buffer1_6_0, [9 x i16]* @weight_buffer1_6_1, [9 x i16]* @weight_buffer1_6_2, [9 x i16]* @weight_buffer1_6_3, [9 x i16]* @weight_buffer1_7_0, [9 x i16]* @weight_buffer1_7_1, [9 x i16]* @weight_buffer1_7_2, [9 x i16]* @weight_buffer1_7_3, [9 x i16]* @weight_buffer1_8_0, [9 x i16]* @weight_buffer1_8_1, [9 x i16]* @weight_buffer1_8_2, [9 x i16]* @weight_buffer1_8_3, [9 x i16]* @weight_buffer1_9_0, [9 x i16]* @weight_buffer1_9_1, [9 x i16]* @weight_buffer1_9_2, [9 x i16]* @weight_buffer1_9_3, [9 x i16]* @weight_buffer1_10_0, [9 x i16]* @weight_buffer1_10_1, [9 x i16]* @weight_buffer1_10_2, [9 x i16]* @weight_buffer1_10_3, [9 x i16]* @weight_buffer1_11_0, [9 x i16]* @weight_buffer1_11_1, [9 x i16]* @weight_buffer1_11_2, [9 x i16]* @weight_buffer1_11_3, [9 x i16]* @weight_buffer1_12_0, [9 x i16]* @weight_buffer1_12_1, [9 x i16]* @weight_buffer1_12_2, [9 x i16]* @weight_buffer1_12_3, [9 x i16]* @weight_buffer1_13_0, [9 x i16]* @weight_buffer1_13_1, [9 x i16]* @weight_buffer1_13_2, [9 x i16]* @weight_buffer1_13_3, [9 x i16]* @weight_buffer1_14_0, [9 x i16]* @weight_buffer1_14_1, [9 x i16]* @weight_buffer1_14_2, [9 x i16]* @weight_buffer1_14_3, [9 x i16]* @weight_buffer1_15_0, [9 x i16]* @weight_buffer1_15_1, [9 x i16]* @weight_buffer1_15_2, [9 x i16]* @weight_buffer1_15_3, [9 x i16]* @weight_buffer1_16_0, [9 x i16]* @weight_buffer1_16_1, [9 x i16]* @weight_buffer1_16_2, [9 x i16]* @weight_buffer1_16_3, [9 x i16]* @weight_buffer1_17_0, [9 x i16]* @weight_buffer1_17_1, [9 x i16]* @weight_buffer1_17_2, [9 x i16]* @weight_buffer1_17_3, [9 x i16]* @weight_buffer1_18_0, [9 x i16]* @weight_buffer1_18_1, [9 x i16]* @weight_buffer1_18_2, [9 x i16]* @weight_buffer1_18_3, [9 x i16]* @weight_buffer1_19_0, [9 x i16]* @weight_buffer1_19_1, [9 x i16]* @weight_buffer1_19_2, [9 x i16]* @weight_buffer1_19_3, [9 x i16]* @weight_buffer1_20_0, [9 x i16]* @weight_buffer1_20_1, [9 x i16]* @weight_buffer1_20_2, [9 x i16]* @weight_buffer1_20_3, [9 x i16]* @weight_buffer1_21_0, [9 x i16]* @weight_buffer1_21_1, [9 x i16]* @weight_buffer1_21_2, [9 x i16]* @weight_buffer1_21_3, [9 x i16]* @weight_buffer1_22_0, [9 x i16]* @weight_buffer1_22_1, [9 x i16]* @weight_buffer1_22_2, [9 x i16]* @weight_buffer1_22_3, [9 x i16]* @weight_buffer1_23_0, [9 x i16]* @weight_buffer1_23_1, [9 x i16]* @weight_buffer1_23_2, [9 x i16]* @weight_buffer1_23_3, [9 x i16]* @weight_buffer1_24_0, [9 x i16]* @weight_buffer1_24_1, [9 x i16]* @weight_buffer1_24_2, [9 x i16]* @weight_buffer1_24_3, [9 x i16]* @weight_buffer1_25_0, [9 x i16]* @weight_buffer1_25_1, [9 x i16]* @weight_buffer1_25_2, [9 x i16]* @weight_buffer1_25_3, [9 x i16]* @weight_buffer1_26_0, [9 x i16]* @weight_buffer1_26_1, [9 x i16]* @weight_buffer1_26_2, [9 x i16]* @weight_buffer1_26_3, [9 x i16]* @weight_buffer1_27_0, [9 x i16]* @weight_buffer1_27_1, [9 x i16]* @weight_buffer1_27_2, [9 x i16]* @weight_buffer1_27_3, [9 x i16]* @weight_buffer1_28_0, [9 x i16]* @weight_buffer1_28_1, [9 x i16]* @weight_buffer1_28_2, [9 x i16]* @weight_buffer1_28_3, [9 x i16]* @weight_buffer1_29_0, [9 x i16]* @weight_buffer1_29_1, [9 x i16]* @weight_buffer1_29_2, [9 x i16]* @weight_buffer1_29_3, [9 x i16]* @weight_buffer1_30_0, [9 x i16]* @weight_buffer1_30_1, [9 x i16]* @weight_buffer1_30_2, [9 x i16]* @weight_buffer1_30_3, [9 x i16]* @weight_buffer1_31_0, [9 x i16]* @weight_buffer1_31_1, [9 x i16]* @weight_buffer1_31_2, [9 x i16]* @weight_buffer1_31_3, [1024 x i16]* %beta_buffer, i32 %TMP_N_next1_0_1_loa, i32 %Kernel_size_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %tmp_45, i8 %InterSubBeta_read, i8 %WeightAddInputSubInt)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="6" st_id="6">
+
+<operation id="108" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="41">
+<or_exp><and_exp><literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="484" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %TMP_N_next0_0 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_N, i32 %TM_MIN_read, i32 %TN_read, i8 %TRow_read, i8 %TCol_read, i32 %Padding_read, [2809 x i16]* nocapture @input_buffer0_0, [2809 x i16]* nocapture @input_buffer0_1, [2809 x i16]* nocapture @input_buffer0_2, [2809 x i16]* nocapture @input_buffer0_3, [9 x i16]* nocapture @weight_buffer0_0_0, [9 x i16]* nocapture @weight_buffer0_0_1, [9 x i16]* nocapture @weight_buffer0_0_2, [9 x i16]* nocapture @weight_buffer0_0_3, [9 x i16]* nocapture @weight_buffer0_1_0, [9 x i16]* nocapture @weight_buffer0_1_1, [9 x i16]* nocapture @weight_buffer0_1_2, [9 x i16]* nocapture @weight_buffer0_1_3, [9 x i16]* nocapture @weight_buffer0_2_0, [9 x i16]* nocapture @weight_buffer0_2_1, [9 x i16]* nocapture @weight_buffer0_2_2, [9 x i16]* nocapture @weight_buffer0_2_3, [9 x i16]* nocapture @weight_buffer0_3_0, [9 x i16]* nocapture @weight_buffer0_3_1, [9 x i16]* nocapture @weight_buffer0_3_2, [9 x i16]* nocapture @weight_buffer0_3_3, [9 x i16]* nocapture @weight_buffer0_4_0, [9 x i16]* nocapture @weight_buffer0_4_1, [9 x i16]* nocapture @weight_buffer0_4_2, [9 x i16]* nocapture @weight_buffer0_4_3, [9 x i16]* nocapture @weight_buffer0_5_0, [9 x i16]* nocapture @weight_buffer0_5_1, [9 x i16]* nocapture @weight_buffer0_5_2, [9 x i16]* nocapture @weight_buffer0_5_3, [9 x i16]* nocapture @weight_buffer0_6_0, [9 x i16]* nocapture @weight_buffer0_6_1, [9 x i16]* nocapture @weight_buffer0_6_2, [9 x i16]* nocapture @weight_buffer0_6_3, [9 x i16]* nocapture @weight_buffer0_7_0, [9 x i16]* nocapture @weight_buffer0_7_1, [9 x i16]* nocapture @weight_buffer0_7_2, [9 x i16]* nocapture @weight_buffer0_7_3, [9 x i16]* nocapture @weight_buffer0_8_0, [9 x i16]* nocapture @weight_buffer0_8_1, [9 x i16]* nocapture @weight_buffer0_8_2, [9 x i16]* nocapture @weight_buffer0_8_3, [9 x i16]* nocapture @weight_buffer0_9_0, [9 x i16]* nocapture @weight_buffer0_9_1, [9 x i16]* nocapture @weight_buffer0_9_2, [9 x i16]* nocapture @weight_buffer0_9_3, [9 x i16]* nocapture @weight_buffer0_10_0, [9 x i16]* nocapture @weight_buffer0_10_1, [9 x i16]* nocapture @weight_buffer0_10_2, [9 x i16]* nocapture @weight_buffer0_10_3, [9 x i16]* nocapture @weight_buffer0_11_0, [9 x i16]* nocapture @weight_buffer0_11_1, [9 x i16]* nocapture @weight_buffer0_11_2, [9 x i16]* nocapture @weight_buffer0_11_3, [9 x i16]* nocapture @weight_buffer0_12_0, [9 x i16]* nocapture @weight_buffer0_12_1, [9 x i16]* nocapture @weight_buffer0_12_2, [9 x i16]* nocapture @weight_buffer0_12_3, [9 x i16]* nocapture @weight_buffer0_13_0, [9 x i16]* nocapture @weight_buffer0_13_1, [9 x i16]* nocapture @weight_buffer0_13_2, [9 x i16]* nocapture @weight_buffer0_13_3, [9 x i16]* nocapture @weight_buffer0_14_0, [9 x i16]* nocapture @weight_buffer0_14_1, [9 x i16]* nocapture @weight_buffer0_14_2, [9 x i16]* nocapture @weight_buffer0_14_3, [9 x i16]* nocapture @weight_buffer0_15_0, [9 x i16]* nocapture @weight_buffer0_15_1, [9 x i16]* nocapture @weight_buffer0_15_2, [9 x i16]* nocapture @weight_buffer0_15_3, [9 x i16]* nocapture @weight_buffer0_16_0, [9 x i16]* nocapture @weight_buffer0_16_1, [9 x i16]* nocapture @weight_buffer0_16_2, [9 x i16]* nocapture @weight_buffer0_16_3, [9 x i16]* nocapture @weight_buffer0_17_0, [9 x i16]* nocapture @weight_buffer0_17_1, [9 x i16]* nocapture @weight_buffer0_17_2, [9 x i16]* nocapture @weight_buffer0_17_3, [9 x i16]* nocapture @weight_buffer0_18_0, [9 x i16]* nocapture @weight_buffer0_18_1, [9 x i16]* nocapture @weight_buffer0_18_2, [9 x i16]* nocapture @weight_buffer0_18_3, [9 x i16]* nocapture @weight_buffer0_19_0, [9 x i16]* nocapture @weight_buffer0_19_1, [9 x i16]* nocapture @weight_buffer0_19_2, [9 x i16]* nocapture @weight_buffer0_19_3, [9 x i16]* nocapture @weight_buffer0_20_0, [9 x i16]* nocapture @weight_buffer0_20_1, [9 x i16]* nocapture @weight_buffer0_20_2, [9 x i16]* nocapture @weight_buffer0_20_3, [9 x i16]* nocapture @weight_buffer0_21_0, [9 x i16]* nocapture @weight_buffer0_21_1, [9 x i16]* nocapture @weight_buffer0_21_2, [9 x i16]* nocapture @weight_buffer0_21_3, [9 x i16]* nocapture @weight_buffer0_22_0, [9 x i16]* nocapture @weight_buffer0_22_1, [9 x i16]* nocapture @weight_buffer0_22_2, [9 x i16]* nocapture @weight_buffer0_22_3, [9 x i16]* nocapture @weight_buffer0_23_0, [9 x i16]* nocapture @weight_buffer0_23_1, [9 x i16]* nocapture @weight_buffer0_23_2, [9 x i16]* nocapture @weight_buffer0_23_3, [9 x i16]* nocapture @weight_buffer0_24_0, [9 x i16]* nocapture @weight_buffer0_24_1, [9 x i16]* nocapture @weight_buffer0_24_2, [9 x i16]* nocapture @weight_buffer0_24_3, [9 x i16]* nocapture @weight_buffer0_25_0, [9 x i16]* nocapture @weight_buffer0_25_1, [9 x i16]* nocapture @weight_buffer0_25_2, [9 x i16]* nocapture @weight_buffer0_25_3, [9 x i16]* nocapture @weight_buffer0_26_0, [9 x i16]* nocapture @weight_buffer0_26_1, [9 x i16]* nocapture @weight_buffer0_26_2, [9 x i16]* nocapture @weight_buffer0_26_3, [9 x i16]* nocapture @weight_buffer0_27_0, [9 x i16]* nocapture @weight_buffer0_27_1, [9 x i16]* nocapture @weight_buffer0_27_2, [9 x i16]* nocapture @weight_buffer0_27_3, [9 x i16]* nocapture @weight_buffer0_28_0, [9 x i16]* nocapture @weight_buffer0_28_1, [9 x i16]* nocapture @weight_buffer0_28_2, [9 x i16]* nocapture @weight_buffer0_28_3, [9 x i16]* nocapture @weight_buffer0_29_0, [9 x i16]* nocapture @weight_buffer0_29_1, [9 x i16]* nocapture @weight_buffer0_29_2, [9 x i16]* nocapture @weight_buffer0_29_3, [9 x i16]* nocapture @weight_buffer0_30_0, [9 x i16]* nocapture @weight_buffer0_30_1, [9 x i16]* nocapture @weight_buffer0_30_2, [9 x i16]* nocapture @weight_buffer0_30_3, [9 x i16]* nocapture @weight_buffer0_31_0, [9 x i16]* nocapture @weight_buffer0_31_1, [9 x i16]* nocapture @weight_buffer0_31_2, [9 x i16]* nocapture @weight_buffer0_31_3, i32 %TMP_N_next0_0_1_loa, i1 %tmp_43, i1 true, i19 %IHxIW_read, i4 0, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next0_0"/></StgValue>
+</operation>
+
+<operation id="109" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="41">
+<or_exp><and_exp><literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="486" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="32" op_167_bw="32" op_168_bw="32" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="1" op_173_bw="8" op_174_bw="8">
+<![CDATA[
+:2  call fastcc void @compute4([2809 x i16]* @input_buffer1_0, [2809 x i16]* @input_buffer1_1, [2809 x i16]* @input_buffer1_2, [2809 x i16]* @input_buffer1_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, [676 x i32]* %output_buffer_4, [676 x i32]* %output_buffer_5, [676 x i32]* %output_buffer_6, [676 x i32]* %output_buffer_7, [676 x i32]* %output_buffer_8, [676 x i32]* %output_buffer_9, [676 x i32]* %output_buffer_10, [676 x i32]* %output_buffer_11, [676 x i32]* %output_buffer_12, [676 x i32]* %output_buffer_13, [676 x i32]* %output_buffer_14, [676 x i32]* %output_buffer_15, [676 x i32]* %output_buffer_16, [676 x i32]* %output_buffer_17, [676 x i32]* %output_buffer_18, [676 x i32]* %output_buffer_19, [676 x i32]* %output_buffer_20, [676 x i32]* %output_buffer_21, [676 x i32]* %output_buffer_22, [676 x i32]* %output_buffer_23, [676 x i32]* %output_buffer_24, [676 x i32]* %output_buffer_25, [676 x i32]* %output_buffer_26, [676 x i32]* %output_buffer_27, [676 x i32]* %output_buffer_28, [676 x i32]* %output_buffer_29, [676 x i32]* %output_buffer_30, [676 x i32]* %output_buffer_31, [9 x i16]* @weight_buffer1_0_0, [9 x i16]* @weight_buffer1_0_1, [9 x i16]* @weight_buffer1_0_2, [9 x i16]* @weight_buffer1_0_3, [9 x i16]* @weight_buffer1_1_0, [9 x i16]* @weight_buffer1_1_1, [9 x i16]* @weight_buffer1_1_2, [9 x i16]* @weight_buffer1_1_3, [9 x i16]* @weight_buffer1_2_0, [9 x i16]* @weight_buffer1_2_1, [9 x i16]* @weight_buffer1_2_2, [9 x i16]* @weight_buffer1_2_3, [9 x i16]* @weight_buffer1_3_0, [9 x i16]* @weight_buffer1_3_1, [9 x i16]* @weight_buffer1_3_2, [9 x i16]* @weight_buffer1_3_3, [9 x i16]* @weight_buffer1_4_0, [9 x i16]* @weight_buffer1_4_1, [9 x i16]* @weight_buffer1_4_2, [9 x i16]* @weight_buffer1_4_3, [9 x i16]* @weight_buffer1_5_0, [9 x i16]* @weight_buffer1_5_1, [9 x i16]* @weight_buffer1_5_2, [9 x i16]* @weight_buffer1_5_3, [9 x i16]* @weight_buffer1_6_0, [9 x i16]* @weight_buffer1_6_1, [9 x i16]* @weight_buffer1_6_2, [9 x i16]* @weight_buffer1_6_3, [9 x i16]* @weight_buffer1_7_0, [9 x i16]* @weight_buffer1_7_1, [9 x i16]* @weight_buffer1_7_2, [9 x i16]* @weight_buffer1_7_3, [9 x i16]* @weight_buffer1_8_0, [9 x i16]* @weight_buffer1_8_1, [9 x i16]* @weight_buffer1_8_2, [9 x i16]* @weight_buffer1_8_3, [9 x i16]* @weight_buffer1_9_0, [9 x i16]* @weight_buffer1_9_1, [9 x i16]* @weight_buffer1_9_2, [9 x i16]* @weight_buffer1_9_3, [9 x i16]* @weight_buffer1_10_0, [9 x i16]* @weight_buffer1_10_1, [9 x i16]* @weight_buffer1_10_2, [9 x i16]* @weight_buffer1_10_3, [9 x i16]* @weight_buffer1_11_0, [9 x i16]* @weight_buffer1_11_1, [9 x i16]* @weight_buffer1_11_2, [9 x i16]* @weight_buffer1_11_3, [9 x i16]* @weight_buffer1_12_0, [9 x i16]* @weight_buffer1_12_1, [9 x i16]* @weight_buffer1_12_2, [9 x i16]* @weight_buffer1_12_3, [9 x i16]* @weight_buffer1_13_0, [9 x i16]* @weight_buffer1_13_1, [9 x i16]* @weight_buffer1_13_2, [9 x i16]* @weight_buffer1_13_3, [9 x i16]* @weight_buffer1_14_0, [9 x i16]* @weight_buffer1_14_1, [9 x i16]* @weight_buffer1_14_2, [9 x i16]* @weight_buffer1_14_3, [9 x i16]* @weight_buffer1_15_0, [9 x i16]* @weight_buffer1_15_1, [9 x i16]* @weight_buffer1_15_2, [9 x i16]* @weight_buffer1_15_3, [9 x i16]* @weight_buffer1_16_0, [9 x i16]* @weight_buffer1_16_1, [9 x i16]* @weight_buffer1_16_2, [9 x i16]* @weight_buffer1_16_3, [9 x i16]* @weight_buffer1_17_0, [9 x i16]* @weight_buffer1_17_1, [9 x i16]* @weight_buffer1_17_2, [9 x i16]* @weight_buffer1_17_3, [9 x i16]* @weight_buffer1_18_0, [9 x i16]* @weight_buffer1_18_1, [9 x i16]* @weight_buffer1_18_2, [9 x i16]* @weight_buffer1_18_3, [9 x i16]* @weight_buffer1_19_0, [9 x i16]* @weight_buffer1_19_1, [9 x i16]* @weight_buffer1_19_2, [9 x i16]* @weight_buffer1_19_3, [9 x i16]* @weight_buffer1_20_0, [9 x i16]* @weight_buffer1_20_1, [9 x i16]* @weight_buffer1_20_2, [9 x i16]* @weight_buffer1_20_3, [9 x i16]* @weight_buffer1_21_0, [9 x i16]* @weight_buffer1_21_1, [9 x i16]* @weight_buffer1_21_2, [9 x i16]* @weight_buffer1_21_3, [9 x i16]* @weight_buffer1_22_0, [9 x i16]* @weight_buffer1_22_1, [9 x i16]* @weight_buffer1_22_2, [9 x i16]* @weight_buffer1_22_3, [9 x i16]* @weight_buffer1_23_0, [9 x i16]* @weight_buffer1_23_1, [9 x i16]* @weight_buffer1_23_2, [9 x i16]* @weight_buffer1_23_3, [9 x i16]* @weight_buffer1_24_0, [9 x i16]* @weight_buffer1_24_1, [9 x i16]* @weight_buffer1_24_2, [9 x i16]* @weight_buffer1_24_3, [9 x i16]* @weight_buffer1_25_0, [9 x i16]* @weight_buffer1_25_1, [9 x i16]* @weight_buffer1_25_2, [9 x i16]* @weight_buffer1_25_3, [9 x i16]* @weight_buffer1_26_0, [9 x i16]* @weight_buffer1_26_1, [9 x i16]* @weight_buffer1_26_2, [9 x i16]* @weight_buffer1_26_3, [9 x i16]* @weight_buffer1_27_0, [9 x i16]* @weight_buffer1_27_1, [9 x i16]* @weight_buffer1_27_2, [9 x i16]* @weight_buffer1_27_3, [9 x i16]* @weight_buffer1_28_0, [9 x i16]* @weight_buffer1_28_1, [9 x i16]* @weight_buffer1_28_2, [9 x i16]* @weight_buffer1_28_3, [9 x i16]* @weight_buffer1_29_0, [9 x i16]* @weight_buffer1_29_1, [9 x i16]* @weight_buffer1_29_2, [9 x i16]* @weight_buffer1_29_3, [9 x i16]* @weight_buffer1_30_0, [9 x i16]* @weight_buffer1_30_1, [9 x i16]* @weight_buffer1_30_2, [9 x i16]* @weight_buffer1_30_3, [9 x i16]* @weight_buffer1_31_0, [9 x i16]* @weight_buffer1_31_1, [9 x i16]* @weight_buffer1_31_2, [9 x i16]* @weight_buffer1_31_3, [1024 x i16]* %beta_buffer, i32 %TMP_N_next1_0_1_loa, i32 %Kernel_size_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %tmp_45, i8 %InterSubBeta_read, i8 %WeightAddInputSubInt)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="110" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="41">
+<or_exp><and_exp><literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="487" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:3  store i32 %TMP_N_next0_0, i32* %TMP_N_next0_0_1
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="111" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="41">
+<or_exp><and_exp><literal name="pingpong" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="488" bw="0" op_0_bw="0">
+<![CDATA[
+:4  br label %7
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="112" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="42">
+<or_exp><and_exp><literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="490" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %TMP_N_next1_0 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_N, i32 %TM_MIN_read, i32 %TN_read, i8 %TRow_read, i8 %TCol_read, i32 %Padding_read, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer1_0_0, [9 x i16]* nocapture @weight_buffer1_0_1, [9 x i16]* nocapture @weight_buffer1_0_2, [9 x i16]* nocapture @weight_buffer1_0_3, [9 x i16]* nocapture @weight_buffer1_1_0, [9 x i16]* nocapture @weight_buffer1_1_1, [9 x i16]* nocapture @weight_buffer1_1_2, [9 x i16]* nocapture @weight_buffer1_1_3, [9 x i16]* nocapture @weight_buffer1_2_0, [9 x i16]* nocapture @weight_buffer1_2_1, [9 x i16]* nocapture @weight_buffer1_2_2, [9 x i16]* nocapture @weight_buffer1_2_3, [9 x i16]* nocapture @weight_buffer1_3_0, [9 x i16]* nocapture @weight_buffer1_3_1, [9 x i16]* nocapture @weight_buffer1_3_2, [9 x i16]* nocapture @weight_buffer1_3_3, [9 x i16]* nocapture @weight_buffer1_4_0, [9 x i16]* nocapture @weight_buffer1_4_1, [9 x i16]* nocapture @weight_buffer1_4_2, [9 x i16]* nocapture @weight_buffer1_4_3, [9 x i16]* nocapture @weight_buffer1_5_0, [9 x i16]* nocapture @weight_buffer1_5_1, [9 x i16]* nocapture @weight_buffer1_5_2, [9 x i16]* nocapture @weight_buffer1_5_3, [9 x i16]* nocapture @weight_buffer1_6_0, [9 x i16]* nocapture @weight_buffer1_6_1, [9 x i16]* nocapture @weight_buffer1_6_2, [9 x i16]* nocapture @weight_buffer1_6_3, [9 x i16]* nocapture @weight_buffer1_7_0, [9 x i16]* nocapture @weight_buffer1_7_1, [9 x i16]* nocapture @weight_buffer1_7_2, [9 x i16]* nocapture @weight_buffer1_7_3, [9 x i16]* nocapture @weight_buffer1_8_0, [9 x i16]* nocapture @weight_buffer1_8_1, [9 x i16]* nocapture @weight_buffer1_8_2, [9 x i16]* nocapture @weight_buffer1_8_3, [9 x i16]* nocapture @weight_buffer1_9_0, [9 x i16]* nocapture @weight_buffer1_9_1, [9 x i16]* nocapture @weight_buffer1_9_2, [9 x i16]* nocapture @weight_buffer1_9_3, [9 x i16]* nocapture @weight_buffer1_10_0, [9 x i16]* nocapture @weight_buffer1_10_1, [9 x i16]* nocapture @weight_buffer1_10_2, [9 x i16]* nocapture @weight_buffer1_10_3, [9 x i16]* nocapture @weight_buffer1_11_0, [9 x i16]* nocapture @weight_buffer1_11_1, [9 x i16]* nocapture @weight_buffer1_11_2, [9 x i16]* nocapture @weight_buffer1_11_3, [9 x i16]* nocapture @weight_buffer1_12_0, [9 x i16]* nocapture @weight_buffer1_12_1, [9 x i16]* nocapture @weight_buffer1_12_2, [9 x i16]* nocapture @weight_buffer1_12_3, [9 x i16]* nocapture @weight_buffer1_13_0, [9 x i16]* nocapture @weight_buffer1_13_1, [9 x i16]* nocapture @weight_buffer1_13_2, [9 x i16]* nocapture @weight_buffer1_13_3, [9 x i16]* nocapture @weight_buffer1_14_0, [9 x i16]* nocapture @weight_buffer1_14_1, [9 x i16]* nocapture @weight_buffer1_14_2, [9 x i16]* nocapture @weight_buffer1_14_3, [9 x i16]* nocapture @weight_buffer1_15_0, [9 x i16]* nocapture @weight_buffer1_15_1, [9 x i16]* nocapture @weight_buffer1_15_2, [9 x i16]* nocapture @weight_buffer1_15_3, [9 x i16]* nocapture @weight_buffer1_16_0, [9 x i16]* nocapture @weight_buffer1_16_1, [9 x i16]* nocapture @weight_buffer1_16_2, [9 x i16]* nocapture @weight_buffer1_16_3, [9 x i16]* nocapture @weight_buffer1_17_0, [9 x i16]* nocapture @weight_buffer1_17_1, [9 x i16]* nocapture @weight_buffer1_17_2, [9 x i16]* nocapture @weight_buffer1_17_3, [9 x i16]* nocapture @weight_buffer1_18_0, [9 x i16]* nocapture @weight_buffer1_18_1, [9 x i16]* nocapture @weight_buffer1_18_2, [9 x i16]* nocapture @weight_buffer1_18_3, [9 x i16]* nocapture @weight_buffer1_19_0, [9 x i16]* nocapture @weight_buffer1_19_1, [9 x i16]* nocapture @weight_buffer1_19_2, [9 x i16]* nocapture @weight_buffer1_19_3, [9 x i16]* nocapture @weight_buffer1_20_0, [9 x i16]* nocapture @weight_buffer1_20_1, [9 x i16]* nocapture @weight_buffer1_20_2, [9 x i16]* nocapture @weight_buffer1_20_3, [9 x i16]* nocapture @weight_buffer1_21_0, [9 x i16]* nocapture @weight_buffer1_21_1, [9 x i16]* nocapture @weight_buffer1_21_2, [9 x i16]* nocapture @weight_buffer1_21_3, [9 x i16]* nocapture @weight_buffer1_22_0, [9 x i16]* nocapture @weight_buffer1_22_1, [9 x i16]* nocapture @weight_buffer1_22_2, [9 x i16]* nocapture @weight_buffer1_22_3, [9 x i16]* nocapture @weight_buffer1_23_0, [9 x i16]* nocapture @weight_buffer1_23_1, [9 x i16]* nocapture @weight_buffer1_23_2, [9 x i16]* nocapture @weight_buffer1_23_3, [9 x i16]* nocapture @weight_buffer1_24_0, [9 x i16]* nocapture @weight_buffer1_24_1, [9 x i16]* nocapture @weight_buffer1_24_2, [9 x i16]* nocapture @weight_buffer1_24_3, [9 x i16]* nocapture @weight_buffer1_25_0, [9 x i16]* nocapture @weight_buffer1_25_1, [9 x i16]* nocapture @weight_buffer1_25_2, [9 x i16]* nocapture @weight_buffer1_25_3, [9 x i16]* nocapture @weight_buffer1_26_0, [9 x i16]* nocapture @weight_buffer1_26_1, [9 x i16]* nocapture @weight_buffer1_26_2, [9 x i16]* nocapture @weight_buffer1_26_3, [9 x i16]* nocapture @weight_buffer1_27_0, [9 x i16]* nocapture @weight_buffer1_27_1, [9 x i16]* nocapture @weight_buffer1_27_2, [9 x i16]* nocapture @weight_buffer1_27_3, [9 x i16]* nocapture @weight_buffer1_28_0, [9 x i16]* nocapture @weight_buffer1_28_1, [9 x i16]* nocapture @weight_buffer1_28_2, [9 x i16]* nocapture @weight_buffer1_28_3, [9 x i16]* nocapture @weight_buffer1_29_0, [9 x i16]* nocapture @weight_buffer1_29_1, [9 x i16]* nocapture @weight_buffer1_29_2, [9 x i16]* nocapture @weight_buffer1_29_3, [9 x i16]* nocapture @weight_buffer1_30_0, [9 x i16]* nocapture @weight_buffer1_30_1, [9 x i16]* nocapture @weight_buffer1_30_2, [9 x i16]* nocapture @weight_buffer1_30_3, [9 x i16]* nocapture @weight_buffer1_31_0, [9 x i16]* nocapture @weight_buffer1_31_1, [9 x i16]* nocapture @weight_buffer1_31_2, [9 x i16]* nocapture @weight_buffer1_31_3, i32 %TMP_N_next1_0_1_loa, i1 %tmp_43, i1 true, i19 %IHxIW_read, i4 0, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next1_0"/></StgValue>
+</operation>
+
+<operation id="113" st_id="6" stage="1" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="42">
+<or_exp><and_exp><literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="492" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="32" op_167_bw="32" op_168_bw="32" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="1" op_173_bw="8" op_174_bw="8">
+<![CDATA[
+:2  call fastcc void @compute4([2809 x i16]* @input_buffer0_0, [2809 x i16]* @input_buffer0_1, [2809 x i16]* @input_buffer0_2, [2809 x i16]* @input_buffer0_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, [676 x i32]* %output_buffer_4, [676 x i32]* %output_buffer_5, [676 x i32]* %output_buffer_6, [676 x i32]* %output_buffer_7, [676 x i32]* %output_buffer_8, [676 x i32]* %output_buffer_9, [676 x i32]* %output_buffer_10, [676 x i32]* %output_buffer_11, [676 x i32]* %output_buffer_12, [676 x i32]* %output_buffer_13, [676 x i32]* %output_buffer_14, [676 x i32]* %output_buffer_15, [676 x i32]* %output_buffer_16, [676 x i32]* %output_buffer_17, [676 x i32]* %output_buffer_18, [676 x i32]* %output_buffer_19, [676 x i32]* %output_buffer_20, [676 x i32]* %output_buffer_21, [676 x i32]* %output_buffer_22, [676 x i32]* %output_buffer_23, [676 x i32]* %output_buffer_24, [676 x i32]* %output_buffer_25, [676 x i32]* %output_buffer_26, [676 x i32]* %output_buffer_27, [676 x i32]* %output_buffer_28, [676 x i32]* %output_buffer_29, [676 x i32]* %output_buffer_30, [676 x i32]* %output_buffer_31, [9 x i16]* @weight_buffer0_0_0, [9 x i16]* @weight_buffer0_0_1, [9 x i16]* @weight_buffer0_0_2, [9 x i16]* @weight_buffer0_0_3, [9 x i16]* @weight_buffer0_1_0, [9 x i16]* @weight_buffer0_1_1, [9 x i16]* @weight_buffer0_1_2, [9 x i16]* @weight_buffer0_1_3, [9 x i16]* @weight_buffer0_2_0, [9 x i16]* @weight_buffer0_2_1, [9 x i16]* @weight_buffer0_2_2, [9 x i16]* @weight_buffer0_2_3, [9 x i16]* @weight_buffer0_3_0, [9 x i16]* @weight_buffer0_3_1, [9 x i16]* @weight_buffer0_3_2, [9 x i16]* @weight_buffer0_3_3, [9 x i16]* @weight_buffer0_4_0, [9 x i16]* @weight_buffer0_4_1, [9 x i16]* @weight_buffer0_4_2, [9 x i16]* @weight_buffer0_4_3, [9 x i16]* @weight_buffer0_5_0, [9 x i16]* @weight_buffer0_5_1, [9 x i16]* @weight_buffer0_5_2, [9 x i16]* @weight_buffer0_5_3, [9 x i16]* @weight_buffer0_6_0, [9 x i16]* @weight_buffer0_6_1, [9 x i16]* @weight_buffer0_6_2, [9 x i16]* @weight_buffer0_6_3, [9 x i16]* @weight_buffer0_7_0, [9 x i16]* @weight_buffer0_7_1, [9 x i16]* @weight_buffer0_7_2, [9 x i16]* @weight_buffer0_7_3, [9 x i16]* @weight_buffer0_8_0, [9 x i16]* @weight_buffer0_8_1, [9 x i16]* @weight_buffer0_8_2, [9 x i16]* @weight_buffer0_8_3, [9 x i16]* @weight_buffer0_9_0, [9 x i16]* @weight_buffer0_9_1, [9 x i16]* @weight_buffer0_9_2, [9 x i16]* @weight_buffer0_9_3, [9 x i16]* @weight_buffer0_10_0, [9 x i16]* @weight_buffer0_10_1, [9 x i16]* @weight_buffer0_10_2, [9 x i16]* @weight_buffer0_10_3, [9 x i16]* @weight_buffer0_11_0, [9 x i16]* @weight_buffer0_11_1, [9 x i16]* @weight_buffer0_11_2, [9 x i16]* @weight_buffer0_11_3, [9 x i16]* @weight_buffer0_12_0, [9 x i16]* @weight_buffer0_12_1, [9 x i16]* @weight_buffer0_12_2, [9 x i16]* @weight_buffer0_12_3, [9 x i16]* @weight_buffer0_13_0, [9 x i16]* @weight_buffer0_13_1, [9 x i16]* @weight_buffer0_13_2, [9 x i16]* @weight_buffer0_13_3, [9 x i16]* @weight_buffer0_14_0, [9 x i16]* @weight_buffer0_14_1, [9 x i16]* @weight_buffer0_14_2, [9 x i16]* @weight_buffer0_14_3, [9 x i16]* @weight_buffer0_15_0, [9 x i16]* @weight_buffer0_15_1, [9 x i16]* @weight_buffer0_15_2, [9 x i16]* @weight_buffer0_15_3, [9 x i16]* @weight_buffer0_16_0, [9 x i16]* @weight_buffer0_16_1, [9 x i16]* @weight_buffer0_16_2, [9 x i16]* @weight_buffer0_16_3, [9 x i16]* @weight_buffer0_17_0, [9 x i16]* @weight_buffer0_17_1, [9 x i16]* @weight_buffer0_17_2, [9 x i16]* @weight_buffer0_17_3, [9 x i16]* @weight_buffer0_18_0, [9 x i16]* @weight_buffer0_18_1, [9 x i16]* @weight_buffer0_18_2, [9 x i16]* @weight_buffer0_18_3, [9 x i16]* @weight_buffer0_19_0, [9 x i16]* @weight_buffer0_19_1, [9 x i16]* @weight_buffer0_19_2, [9 x i16]* @weight_buffer0_19_3, [9 x i16]* @weight_buffer0_20_0, [9 x i16]* @weight_buffer0_20_1, [9 x i16]* @weight_buffer0_20_2, [9 x i16]* @weight_buffer0_20_3, [9 x i16]* @weight_buffer0_21_0, [9 x i16]* @weight_buffer0_21_1, [9 x i16]* @weight_buffer0_21_2, [9 x i16]* @weight_buffer0_21_3, [9 x i16]* @weight_buffer0_22_0, [9 x i16]* @weight_buffer0_22_1, [9 x i16]* @weight_buffer0_22_2, [9 x i16]* @weight_buffer0_22_3, [9 x i16]* @weight_buffer0_23_0, [9 x i16]* @weight_buffer0_23_1, [9 x i16]* @weight_buffer0_23_2, [9 x i16]* @weight_buffer0_23_3, [9 x i16]* @weight_buffer0_24_0, [9 x i16]* @weight_buffer0_24_1, [9 x i16]* @weight_buffer0_24_2, [9 x i16]* @weight_buffer0_24_3, [9 x i16]* @weight_buffer0_25_0, [9 x i16]* @weight_buffer0_25_1, [9 x i16]* @weight_buffer0_25_2, [9 x i16]* @weight_buffer0_25_3, [9 x i16]* @weight_buffer0_26_0, [9 x i16]* @weight_buffer0_26_1, [9 x i16]* @weight_buffer0_26_2, [9 x i16]* @weight_buffer0_26_3, [9 x i16]* @weight_buffer0_27_0, [9 x i16]* @weight_buffer0_27_1, [9 x i16]* @weight_buffer0_27_2, [9 x i16]* @weight_buffer0_27_3, [9 x i16]* @weight_buffer0_28_0, [9 x i16]* @weight_buffer0_28_1, [9 x i16]* @weight_buffer0_28_2, [9 x i16]* @weight_buffer0_28_3, [9 x i16]* @weight_buffer0_29_0, [9 x i16]* @weight_buffer0_29_1, [9 x i16]* @weight_buffer0_29_2, [9 x i16]* @weight_buffer0_29_3, [9 x i16]* @weight_buffer0_30_0, [9 x i16]* @weight_buffer0_30_1, [9 x i16]* @weight_buffer0_30_2, [9 x i16]* @weight_buffer0_30_3, [9 x i16]* @weight_buffer0_31_0, [9 x i16]* @weight_buffer0_31_1, [9 x i16]* @weight_buffer0_31_2, [9 x i16]* @weight_buffer0_31_3, [1024 x i16]* %beta_buffer, i32 %TMP_N_next0_0_1_loa, i32 %Kernel_size_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %tmp_44, i8 %InterSubBeta_read, i8 %WeightAddInputSubInt)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="114" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="42">
+<or_exp><and_exp><literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="493" bw="0" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:3  store i32 %TMP_N_next1_0, i32* %TMP_N_next1_0_1
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="115" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="42">
+<or_exp><and_exp><literal name="pingpong" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="494" bw="0" op_0_bw="0">
+<![CDATA[
+:4  br label %7
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+
+<operation id="116" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="45">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="496" bw="1" op_0_bw="1" op_1_bw="0">
+<![CDATA[
+:0  %pingpong_1 = phi i1 [ false, %5 ], [ true, %6 ]
+
+]]></Node>
+<StgValue><ssdm name="pingpong_1"/></StgValue>
+</operation>
+
+<operation id="117" st_id="6" stage="1" lat="1">
+<core>AddSub</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="45">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="497" bw="32" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:1  %TMP_N_1 = add nsw i32 %TMP_N, %TN_read
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_1"/></StgValue>
+</operation>
+
+<operation id="118" st_id="6" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="45">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="498" bw="0" op_0_bw="0">
+<![CDATA[
+:2  br label %3
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="7" st_id="7">
+
+<operation id="119" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="46">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="490" bw="32" op_0_bw="32" op_1_bw="32" op_2_bw="30" op_3_bw="32" op_4_bw="30" op_5_bw="32" op_6_bw="30" op_7_bw="32" op_8_bw="30" op_9_bw="32" op_10_bw="30" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="8" op_23_bw="8" op_24_bw="32" op_25_bw="16" op_26_bw="16" op_27_bw="16" op_28_bw="16" op_29_bw="16" op_30_bw="16" op_31_bw="16" op_32_bw="16" op_33_bw="16" op_34_bw="16" op_35_bw="16" op_36_bw="16" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="32" op_158_bw="1" op_159_bw="1" op_160_bw="19" op_161_bw="4" op_162_bw="6">
+<![CDATA[
+:0  %TMP_N_next1_0 = call fastcc i32 @copy_input_weight(i32* %Input_r, i30 %Input_offset_read, i32* %Input1, i30 %Input1_offset_read, i32* %Input2, i30 %Input2_offset_read, i32* %Input3, i30 %Input3_offset_read, i32* %Weight, i30 %Weight_offset_read, i32 %InFM_num_read, i32 %Input_w_read, i32 %Input_h_read, i32 %Kernel_size_read, i32 %Kernel_stride_read, i32 %TMP_R_read, i32 %TMP_C_read, i32 %TMP_M_read, i32 %TMP_N, i32 %TM_MIN_read, i32 %TN_read, i8 %TRow_read, i8 %TCol_read, i32 %Padding_read, [2809 x i16]* nocapture @input_buffer1_0, [2809 x i16]* nocapture @input_buffer1_1, [2809 x i16]* nocapture @input_buffer1_2, [2809 x i16]* nocapture @input_buffer1_3, [9 x i16]* nocapture @weight_buffer1_0_0, [9 x i16]* nocapture @weight_buffer1_0_1, [9 x i16]* nocapture @weight_buffer1_0_2, [9 x i16]* nocapture @weight_buffer1_0_3, [9 x i16]* nocapture @weight_buffer1_1_0, [9 x i16]* nocapture @weight_buffer1_1_1, [9 x i16]* nocapture @weight_buffer1_1_2, [9 x i16]* nocapture @weight_buffer1_1_3, [9 x i16]* nocapture @weight_buffer1_2_0, [9 x i16]* nocapture @weight_buffer1_2_1, [9 x i16]* nocapture @weight_buffer1_2_2, [9 x i16]* nocapture @weight_buffer1_2_3, [9 x i16]* nocapture @weight_buffer1_3_0, [9 x i16]* nocapture @weight_buffer1_3_1, [9 x i16]* nocapture @weight_buffer1_3_2, [9 x i16]* nocapture @weight_buffer1_3_3, [9 x i16]* nocapture @weight_buffer1_4_0, [9 x i16]* nocapture @weight_buffer1_4_1, [9 x i16]* nocapture @weight_buffer1_4_2, [9 x i16]* nocapture @weight_buffer1_4_3, [9 x i16]* nocapture @weight_buffer1_5_0, [9 x i16]* nocapture @weight_buffer1_5_1, [9 x i16]* nocapture @weight_buffer1_5_2, [9 x i16]* nocapture @weight_buffer1_5_3, [9 x i16]* nocapture @weight_buffer1_6_0, [9 x i16]* nocapture @weight_buffer1_6_1, [9 x i16]* nocapture @weight_buffer1_6_2, [9 x i16]* nocapture @weight_buffer1_6_3, [9 x i16]* nocapture @weight_buffer1_7_0, [9 x i16]* nocapture @weight_buffer1_7_1, [9 x i16]* nocapture @weight_buffer1_7_2, [9 x i16]* nocapture @weight_buffer1_7_3, [9 x i16]* nocapture @weight_buffer1_8_0, [9 x i16]* nocapture @weight_buffer1_8_1, [9 x i16]* nocapture @weight_buffer1_8_2, [9 x i16]* nocapture @weight_buffer1_8_3, [9 x i16]* nocapture @weight_buffer1_9_0, [9 x i16]* nocapture @weight_buffer1_9_1, [9 x i16]* nocapture @weight_buffer1_9_2, [9 x i16]* nocapture @weight_buffer1_9_3, [9 x i16]* nocapture @weight_buffer1_10_0, [9 x i16]* nocapture @weight_buffer1_10_1, [9 x i16]* nocapture @weight_buffer1_10_2, [9 x i16]* nocapture @weight_buffer1_10_3, [9 x i16]* nocapture @weight_buffer1_11_0, [9 x i16]* nocapture @weight_buffer1_11_1, [9 x i16]* nocapture @weight_buffer1_11_2, [9 x i16]* nocapture @weight_buffer1_11_3, [9 x i16]* nocapture @weight_buffer1_12_0, [9 x i16]* nocapture @weight_buffer1_12_1, [9 x i16]* nocapture @weight_buffer1_12_2, [9 x i16]* nocapture @weight_buffer1_12_3, [9 x i16]* nocapture @weight_buffer1_13_0, [9 x i16]* nocapture @weight_buffer1_13_1, [9 x i16]* nocapture @weight_buffer1_13_2, [9 x i16]* nocapture @weight_buffer1_13_3, [9 x i16]* nocapture @weight_buffer1_14_0, [9 x i16]* nocapture @weight_buffer1_14_1, [9 x i16]* nocapture @weight_buffer1_14_2, [9 x i16]* nocapture @weight_buffer1_14_3, [9 x i16]* nocapture @weight_buffer1_15_0, [9 x i16]* nocapture @weight_buffer1_15_1, [9 x i16]* nocapture @weight_buffer1_15_2, [9 x i16]* nocapture @weight_buffer1_15_3, [9 x i16]* nocapture @weight_buffer1_16_0, [9 x i16]* nocapture @weight_buffer1_16_1, [9 x i16]* nocapture @weight_buffer1_16_2, [9 x i16]* nocapture @weight_buffer1_16_3, [9 x i16]* nocapture @weight_buffer1_17_0, [9 x i16]* nocapture @weight_buffer1_17_1, [9 x i16]* nocapture @weight_buffer1_17_2, [9 x i16]* nocapture @weight_buffer1_17_3, [9 x i16]* nocapture @weight_buffer1_18_0, [9 x i16]* nocapture @weight_buffer1_18_1, [9 x i16]* nocapture @weight_buffer1_18_2, [9 x i16]* nocapture @weight_buffer1_18_3, [9 x i16]* nocapture @weight_buffer1_19_0, [9 x i16]* nocapture @weight_buffer1_19_1, [9 x i16]* nocapture @weight_buffer1_19_2, [9 x i16]* nocapture @weight_buffer1_19_3, [9 x i16]* nocapture @weight_buffer1_20_0, [9 x i16]* nocapture @weight_buffer1_20_1, [9 x i16]* nocapture @weight_buffer1_20_2, [9 x i16]* nocapture @weight_buffer1_20_3, [9 x i16]* nocapture @weight_buffer1_21_0, [9 x i16]* nocapture @weight_buffer1_21_1, [9 x i16]* nocapture @weight_buffer1_21_2, [9 x i16]* nocapture @weight_buffer1_21_3, [9 x i16]* nocapture @weight_buffer1_22_0, [9 x i16]* nocapture @weight_buffer1_22_1, [9 x i16]* nocapture @weight_buffer1_22_2, [9 x i16]* nocapture @weight_buffer1_22_3, [9 x i16]* nocapture @weight_buffer1_23_0, [9 x i16]* nocapture @weight_buffer1_23_1, [9 x i16]* nocapture @weight_buffer1_23_2, [9 x i16]* nocapture @weight_buffer1_23_3, [9 x i16]* nocapture @weight_buffer1_24_0, [9 x i16]* nocapture @weight_buffer1_24_1, [9 x i16]* nocapture @weight_buffer1_24_2, [9 x i16]* nocapture @weight_buffer1_24_3, [9 x i16]* nocapture @weight_buffer1_25_0, [9 x i16]* nocapture @weight_buffer1_25_1, [9 x i16]* nocapture @weight_buffer1_25_2, [9 x i16]* nocapture @weight_buffer1_25_3, [9 x i16]* nocapture @weight_buffer1_26_0, [9 x i16]* nocapture @weight_buffer1_26_1, [9 x i16]* nocapture @weight_buffer1_26_2, [9 x i16]* nocapture @weight_buffer1_26_3, [9 x i16]* nocapture @weight_buffer1_27_0, [9 x i16]* nocapture @weight_buffer1_27_1, [9 x i16]* nocapture @weight_buffer1_27_2, [9 x i16]* nocapture @weight_buffer1_27_3, [9 x i16]* nocapture @weight_buffer1_28_0, [9 x i16]* nocapture @weight_buffer1_28_1, [9 x i16]* nocapture @weight_buffer1_28_2, [9 x i16]* nocapture @weight_buffer1_28_3, [9 x i16]* nocapture @weight_buffer1_29_0, [9 x i16]* nocapture @weight_buffer1_29_1, [9 x i16]* nocapture @weight_buffer1_29_2, [9 x i16]* nocapture @weight_buffer1_29_3, [9 x i16]* nocapture @weight_buffer1_30_0, [9 x i16]* nocapture @weight_buffer1_30_1, [9 x i16]* nocapture @weight_buffer1_30_2, [9 x i16]* nocapture @weight_buffer1_30_3, [9 x i16]* nocapture @weight_buffer1_31_0, [9 x i16]* nocapture @weight_buffer1_31_1, [9 x i16]* nocapture @weight_buffer1_31_2, [9 x i16]* nocapture @weight_buffer1_31_3, i32 %TMP_N_next1_0_1_loa, i1 %tmp_43, i1 true, i19 %IHxIW_read, i4 0, i6 %trow_loops_V_read)
+
+]]></Node>
+<StgValue><ssdm name="TMP_N_next1_0"/></StgValue>
+</operation>
+
+<operation id="120" st_id="7" stage="2" lat="2">
+<core></core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="46">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="492" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16" op_3_bw="16" op_4_bw="16" op_5_bw="32" op_6_bw="32" op_7_bw="32" op_8_bw="32" op_9_bw="32" op_10_bw="32" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="32" op_16_bw="32" op_17_bw="32" op_18_bw="32" op_19_bw="32" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="32" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32" op_31_bw="32" op_32_bw="32" op_33_bw="32" op_34_bw="32" op_35_bw="32" op_36_bw="32" op_37_bw="16" op_38_bw="16" op_39_bw="16" op_40_bw="16" op_41_bw="16" op_42_bw="16" op_43_bw="16" op_44_bw="16" op_45_bw="16" op_46_bw="16" op_47_bw="16" op_48_bw="16" op_49_bw="16" op_50_bw="16" op_51_bw="16" op_52_bw="16" op_53_bw="16" op_54_bw="16" op_55_bw="16" op_56_bw="16" op_57_bw="16" op_58_bw="16" op_59_bw="16" op_60_bw="16" op_61_bw="16" op_62_bw="16" op_63_bw="16" op_64_bw="16" op_65_bw="16" op_66_bw="16" op_67_bw="16" op_68_bw="16" op_69_bw="16" op_70_bw="16" op_71_bw="16" op_72_bw="16" op_73_bw="16" op_74_bw="16" op_75_bw="16" op_76_bw="16" op_77_bw="16" op_78_bw="16" op_79_bw="16" op_80_bw="16" op_81_bw="16" op_82_bw="16" op_83_bw="16" op_84_bw="16" op_85_bw="16" op_86_bw="16" op_87_bw="16" op_88_bw="16" op_89_bw="16" op_90_bw="16" op_91_bw="16" op_92_bw="16" op_93_bw="16" op_94_bw="16" op_95_bw="16" op_96_bw="16" op_97_bw="16" op_98_bw="16" op_99_bw="16" op_100_bw="16" op_101_bw="16" op_102_bw="16" op_103_bw="16" op_104_bw="16" op_105_bw="16" op_106_bw="16" op_107_bw="16" op_108_bw="16" op_109_bw="16" op_110_bw="16" op_111_bw="16" op_112_bw="16" op_113_bw="16" op_114_bw="16" op_115_bw="16" op_116_bw="16" op_117_bw="16" op_118_bw="16" op_119_bw="16" op_120_bw="16" op_121_bw="16" op_122_bw="16" op_123_bw="16" op_124_bw="16" op_125_bw="16" op_126_bw="16" op_127_bw="16" op_128_bw="16" op_129_bw="16" op_130_bw="16" op_131_bw="16" op_132_bw="16" op_133_bw="16" op_134_bw="16" op_135_bw="16" op_136_bw="16" op_137_bw="16" op_138_bw="16" op_139_bw="16" op_140_bw="16" op_141_bw="16" op_142_bw="16" op_143_bw="16" op_144_bw="16" op_145_bw="16" op_146_bw="16" op_147_bw="16" op_148_bw="16" op_149_bw="16" op_150_bw="16" op_151_bw="16" op_152_bw="16" op_153_bw="16" op_154_bw="16" op_155_bw="16" op_156_bw="16" op_157_bw="16" op_158_bw="16" op_159_bw="16" op_160_bw="16" op_161_bw="16" op_162_bw="16" op_163_bw="16" op_164_bw="16" op_165_bw="16" op_166_bw="32" op_167_bw="32" op_168_bw="32" op_169_bw="32" op_170_bw="32" op_171_bw="32" op_172_bw="1" op_173_bw="8" op_174_bw="8">
+<![CDATA[
+:2  call fastcc void @compute4([2809 x i16]* @input_buffer0_0, [2809 x i16]* @input_buffer0_1, [2809 x i16]* @input_buffer0_2, [2809 x i16]* @input_buffer0_3, [676 x i32]* %output_buffer_0, [676 x i32]* %output_buffer_1, [676 x i32]* %output_buffer_2, [676 x i32]* %output_buffer_3, [676 x i32]* %output_buffer_4, [676 x i32]* %output_buffer_5, [676 x i32]* %output_buffer_6, [676 x i32]* %output_buffer_7, [676 x i32]* %output_buffer_8, [676 x i32]* %output_buffer_9, [676 x i32]* %output_buffer_10, [676 x i32]* %output_buffer_11, [676 x i32]* %output_buffer_12, [676 x i32]* %output_buffer_13, [676 x i32]* %output_buffer_14, [676 x i32]* %output_buffer_15, [676 x i32]* %output_buffer_16, [676 x i32]* %output_buffer_17, [676 x i32]* %output_buffer_18, [676 x i32]* %output_buffer_19, [676 x i32]* %output_buffer_20, [676 x i32]* %output_buffer_21, [676 x i32]* %output_buffer_22, [676 x i32]* %output_buffer_23, [676 x i32]* %output_buffer_24, [676 x i32]* %output_buffer_25, [676 x i32]* %output_buffer_26, [676 x i32]* %output_buffer_27, [676 x i32]* %output_buffer_28, [676 x i32]* %output_buffer_29, [676 x i32]* %output_buffer_30, [676 x i32]* %output_buffer_31, [9 x i16]* @weight_buffer0_0_0, [9 x i16]* @weight_buffer0_0_1, [9 x i16]* @weight_buffer0_0_2, [9 x i16]* @weight_buffer0_0_3, [9 x i16]* @weight_buffer0_1_0, [9 x i16]* @weight_buffer0_1_1, [9 x i16]* @weight_buffer0_1_2, [9 x i16]* @weight_buffer0_1_3, [9 x i16]* @weight_buffer0_2_0, [9 x i16]* @weight_buffer0_2_1, [9 x i16]* @weight_buffer0_2_2, [9 x i16]* @weight_buffer0_2_3, [9 x i16]* @weight_buffer0_3_0, [9 x i16]* @weight_buffer0_3_1, [9 x i16]* @weight_buffer0_3_2, [9 x i16]* @weight_buffer0_3_3, [9 x i16]* @weight_buffer0_4_0, [9 x i16]* @weight_buffer0_4_1, [9 x i16]* @weight_buffer0_4_2, [9 x i16]* @weight_buffer0_4_3, [9 x i16]* @weight_buffer0_5_0, [9 x i16]* @weight_buffer0_5_1, [9 x i16]* @weight_buffer0_5_2, [9 x i16]* @weight_buffer0_5_3, [9 x i16]* @weight_buffer0_6_0, [9 x i16]* @weight_buffer0_6_1, [9 x i16]* @weight_buffer0_6_2, [9 x i16]* @weight_buffer0_6_3, [9 x i16]* @weight_buffer0_7_0, [9 x i16]* @weight_buffer0_7_1, [9 x i16]* @weight_buffer0_7_2, [9 x i16]* @weight_buffer0_7_3, [9 x i16]* @weight_buffer0_8_0, [9 x i16]* @weight_buffer0_8_1, [9 x i16]* @weight_buffer0_8_2, [9 x i16]* @weight_buffer0_8_3, [9 x i16]* @weight_buffer0_9_0, [9 x i16]* @weight_buffer0_9_1, [9 x i16]* @weight_buffer0_9_2, [9 x i16]* @weight_buffer0_9_3, [9 x i16]* @weight_buffer0_10_0, [9 x i16]* @weight_buffer0_10_1, [9 x i16]* @weight_buffer0_10_2, [9 x i16]* @weight_buffer0_10_3, [9 x i16]* @weight_buffer0_11_0, [9 x i16]* @weight_buffer0_11_1, [9 x i16]* @weight_buffer0_11_2, [9 x i16]* @weight_buffer0_11_3, [9 x i16]* @weight_buffer0_12_0, [9 x i16]* @weight_buffer0_12_1, [9 x i16]* @weight_buffer0_12_2, [9 x i16]* @weight_buffer0_12_3, [9 x i16]* @weight_buffer0_13_0, [9 x i16]* @weight_buffer0_13_1, [9 x i16]* @weight_buffer0_13_2, [9 x i16]* @weight_buffer0_13_3, [9 x i16]* @weight_buffer0_14_0, [9 x i16]* @weight_buffer0_14_1, [9 x i16]* @weight_buffer0_14_2, [9 x i16]* @weight_buffer0_14_3, [9 x i16]* @weight_buffer0_15_0, [9 x i16]* @weight_buffer0_15_1, [9 x i16]* @weight_buffer0_15_2, [9 x i16]* @weight_buffer0_15_3, [9 x i16]* @weight_buffer0_16_0, [9 x i16]* @weight_buffer0_16_1, [9 x i16]* @weight_buffer0_16_2, [9 x i16]* @weight_buffer0_16_3, [9 x i16]* @weight_buffer0_17_0, [9 x i16]* @weight_buffer0_17_1, [9 x i16]* @weight_buffer0_17_2, [9 x i16]* @weight_buffer0_17_3, [9 x i16]* @weight_buffer0_18_0, [9 x i16]* @weight_buffer0_18_1, [9 x i16]* @weight_buffer0_18_2, [9 x i16]* @weight_buffer0_18_3, [9 x i16]* @weight_buffer0_19_0, [9 x i16]* @weight_buffer0_19_1, [9 x i16]* @weight_buffer0_19_2, [9 x i16]* @weight_buffer0_19_3, [9 x i16]* @weight_buffer0_20_0, [9 x i16]* @weight_buffer0_20_1, [9 x i16]* @weight_buffer0_20_2, [9 x i16]* @weight_buffer0_20_3, [9 x i16]* @weight_buffer0_21_0, [9 x i16]* @weight_buffer0_21_1, [9 x i16]* @weight_buffer0_21_2, [9 x i16]* @weight_buffer0_21_3, [9 x i16]* @weight_buffer0_22_0, [9 x i16]* @weight_buffer0_22_1, [9 x i16]* @weight_buffer0_22_2, [9 x i16]* @weight_buffer0_22_3, [9 x i16]* @weight_buffer0_23_0, [9 x i16]* @weight_buffer0_23_1, [9 x i16]* @weight_buffer0_23_2, [9 x i16]* @weight_buffer0_23_3, [9 x i16]* @weight_buffer0_24_0, [9 x i16]* @weight_buffer0_24_1, [9 x i16]* @weight_buffer0_24_2, [9 x i16]* @weight_buffer0_24_3, [9 x i16]* @weight_buffer0_25_0, [9 x i16]* @weight_buffer0_25_1, [9 x i16]* @weight_buffer0_25_2, [9 x i16]* @weight_buffer0_25_3, [9 x i16]* @weight_buffer0_26_0, [9 x i16]* @weight_buffer0_26_1, [9 x i16]* @weight_buffer0_26_2, [9 x i16]* @weight_buffer0_26_3, [9 x i16]* @weight_buffer0_27_0, [9 x i16]* @weight_buffer0_27_1, [9 x i16]* @weight_buffer0_27_2, [9 x i16]* @weight_buffer0_27_3, [9 x i16]* @weight_buffer0_28_0, [9 x i16]* @weight_buffer0_28_1, [9 x i16]* @weight_buffer0_28_2, [9 x i16]* @weight_buffer0_28_3, [9 x i16]* @weight_buffer0_29_0, [9 x i16]* @weight_buffer0_29_1, [9 x i16]* @weight_buffer0_29_2, [9 x i16]* @weight_buffer0_29_3, [9 x i16]* @weight_buffer0_30_0, [9 x i16]* @weight_buffer0_30_1, [9 x i16]* @weight_buffer0_30_2, [9 x i16]* @weight_buffer0_30_3, [9 x i16]* @weight_buffer0_31_0, [9 x i16]* @weight_buffer0_31_1, [9 x i16]* @weight_buffer0_31_2, [9 x i16]* @weight_buffer0_31_3, [1024 x i16]* %beta_buffer, i32 %TMP_N_next0_0_1_loa, i32 %Kernel_size_read, i32 %TMP_M_read, i32 %TM_MIN_read, i32 %TR_MIN_read, i32 %TC_MIN_read, i1 %tmp_44, i8 %InterSubBeta_read, i8 %WeightAddInputSubInt)
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+
+<state id="8" st_id="8">
+
+<operation id="121" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="47">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="502" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32">
+<![CDATA[
+.loopexit:0  %write_flag_2 = phi i32 [ %p_read_2, %1 ], [ %tmp_x_load, %12 ], [ %tmp_x_load, %17 ], [ %p_read_2, %13 ], [ %TMP_M_read, %.loopexit.loopexit ]
+
+]]></Node>
+<StgValue><ssdm name="write_flag_2"/></StgValue>
+</operation>
+
+<operation id="122" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="47">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="503" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32">
+<![CDATA[
+.loopexit:1  %TX_MIN_next_0_2 = phi i32 [ %p_read_1, %1 ], [ %tmp_tx_min_load, %12 ], [ %tmp_tx_min_load, %17 ], [ %p_read_1, %13 ], [ %TM_MIN_read, %.loopexit.loopexit ]
+
+]]></Node>
+<StgValue><ssdm name="TX_MIN_next_0_2"/></StgValue>
+</operation>
+
+<operation id="123" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="47">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="504" bw="64" op_0_bw="64" op_1_bw="32">
+<![CDATA[
+.loopexit:2  %mrv = insertvalue { i32, i32 } undef, i32 %write_flag_2, 0
+
+]]></Node>
+<StgValue><ssdm name="mrv"/></StgValue>
+</operation>
+
+<operation id="124" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="47">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="505" bw="64" op_0_bw="64" op_1_bw="32">
+<![CDATA[
+.loopexit:3  %mrv_1 = insertvalue { i32, i32 } %mrv, i32 %TX_MIN_next_0_2, 1
+
+]]></Node>
+<StgValue><ssdm name="mrv_1"/></StgValue>
+</operation>
+
+<operation id="125" st_id="8" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="47">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="506" bw="0" op_0_bw="64">
+<![CDATA[
+.loopexit:4  ret { i32, i32 } %mrv_1
+
+]]></Node>
+<StgValue><ssdm name=""/></StgValue>
+</operation>
+</state>
+</state_list>
+
+
+<ports>
+</ports>
+
+
+<dataflows>
+</dataflows>
+
+
+</stg>

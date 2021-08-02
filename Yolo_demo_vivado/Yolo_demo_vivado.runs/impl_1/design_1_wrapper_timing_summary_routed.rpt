@@ -1,0 +1,1524 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Thu Jul 29 21:20:03 2021
+| Host         : LAPTOP-NGD1H6KK running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : design_1_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -2.474   -21354.863                  28130               123751        0.014        0.000                      0               123751        2.083        0.000                       0                 37994  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                              Waveform(ns)         Period(ns)      Frequency(MHz)
+-----                              ------------         ----------      --------------
+clk_fpga_0                         {0.000 5.000}        10.000          100.000         
+design_1_i/clk_wiz_0/inst/clk_in1  {0.000 5.000}        10.000          100.000         
+  clk_out1_design_1_clk_wiz_0_0    {0.000 3.333}        6.667           150.000         
+  clkfbout_design_1_clk_wiz_0_0    {0.000 10.000}       20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                                  WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                                  -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0                                                                                                                                                                           7.845        0.000                       0                     1  
+design_1_i/clk_wiz_0/inst/clk_in1                                                                                                                                                    3.000        0.000                       0                     1  
+  clk_out1_design_1_clk_wiz_0_0         -2.474   -21354.863                  28130               123751        0.014        0.000                      0               123751        2.083        0.000                       0                 37989  
+  clkfbout_design_1_clk_wiz_0_0                                                                                                                                                     17.845        0.000                       0                     3  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
+
+Check Type  Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period  n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y18  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  design_1_i/clk_wiz_0/inst/clk_in1
+  To Clock:  design_1_i/clk_wiz_0/inst/clk_in1
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         design_1_i/clk_wiz_0/inst/clk_in1
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { design_1_i/clk_wiz_0/inst/clk_in1 }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_out1_design_1_clk_wiz_0_0
+  To Clock:  clk_out1_design_1_clk_wiz_0_0
+
+Setup :        28130  Failing Endpoints,  Worst Slack       -2.474ns,  Total Violation   -21354.863ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.014ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.083ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -2.474ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        9.086ns  (logic 4.123ns (45.378%)  route 4.963ns (54.622%))
+  Logic Levels:           13  (CARRY4=4 LUT4=2 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.858ns = ( 8.525 - 6.667 ) 
+    Source Clock Delay      (SCD):    2.057ns
+    Clock Pessimism Removal (CPR):    0.162ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       2.057     2.057    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X111Y106       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y106       FDRE (Prop_fdre_C_Q)         0.419     2.476 f  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/Q
+                         net (fo=4, routed)           0.683     3.159    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482[0]
+    SLICE_X110Y106       LUT5 (Prop_lut5_I1_O)        0.299     3.458 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11/O
+                         net (fo=1, routed)           0.433     3.891    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11_n_2
+    SLICE_X110Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.015 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10/O
+                         net (fo=1, routed)           0.407     4.422    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10_n_2
+    SLICE_X111Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.546 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9/O
+                         net (fo=11, routed)          0.686     5.232    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9_n_2
+    SLICE_X112Y106       LUT4 (Prop_lut4_I2_O)        0.124     5.356 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7/O
+                         net (fo=1, routed)           0.000     5.356    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7_n_2
+    SLICE_X112Y106       CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.578     5.934 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry/O[2]
+                         net (fo=16, routed)          0.641     6.575    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/B[2]
+    SLICE_X113Y108       LUT6 (Prop_lut6_I0_O)        0.301     6.876 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4/O
+                         net (fo=2, routed)           0.602     7.478    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4_n_2
+    SLICE_X112Y109       LUT6 (Prop_lut6_I0_O)        0.124     7.602 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     7.602    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8_n_2
+    SLICE_X112Y109       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     8.115 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     8.115    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_n_2
+    SLICE_X112Y110       CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.438 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1/O[1]
+                         net (fo=2, routed)           0.429     8.867    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1_n_8
+    SLICE_X110Y110       LUT5 (Prop_lut5_I2_O)        0.306     9.173 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_9/O
+                         net (fo=2, routed)           0.507     9.680    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_9_n_2
+    SLICE_X111Y110       LUT4 (Prop_lut4_I3_O)        0.124     9.804 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_2/O
+                         net (fo=2, routed)           0.575    10.379    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_2_n_2
+    SLICE_X110Y109       LUT6 (Prop_lut6_I0_O)        0.124    10.503 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_6/O
+                         net (fo=1, routed)           0.000    10.503    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_6_n_2
+    SLICE_X110Y109       CARRY4 (Prop_carry4_S[1]_O[3])
+                                                      0.640    11.143 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1/O[3]
+                         net (fo=1, routed)           0.000    11.143    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2[13]
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.858     8.525    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[13]/C
+                         clock pessimism              0.162     8.687    
+                         clock uncertainty           -0.080     8.607    
+    SLICE_X110Y109       FDRE (Setup_fdre_C_D)        0.062     8.669    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[13]
+  -------------------------------------------------------------------
+                         required time                          8.669    
+                         arrival time                         -11.143    
+  -------------------------------------------------------------------
+                         slack                                 -2.474    
+
+Slack (VIOLATED) :        -2.433ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[11]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.194ns  (logic 4.133ns (50.437%)  route 4.061ns (49.563%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.260ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.623ns = ( 8.290 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[6])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[6]
+                         net (fo=6, routed)           1.831     7.726    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[6]
+    SLICE_X45Y27         LUT3 (Prop_lut3_I0_O)        0.124     7.850 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_6__40/O
+                         net (fo=11, routed)          2.231    10.081    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/p[6]
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[11]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.623     8.290    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.294    
+                         clock uncertainty           -0.080     8.213    
+    RAMB36_X0Y1          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[11])
+                                                     -0.566     7.647    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.647    
+                         arrival time                         -10.081    
+  -------------------------------------------------------------------
+                         slack                                 -2.433    
+
+Slack (VIOLATED) :        -2.414ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        9.026ns  (logic 4.063ns (45.015%)  route 4.963ns (54.985%))
+  Logic Levels:           13  (CARRY4=4 LUT4=2 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.858ns = ( 8.525 - 6.667 ) 
+    Source Clock Delay      (SCD):    2.057ns
+    Clock Pessimism Removal (CPR):    0.162ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       2.057     2.057    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X111Y106       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y106       FDRE (Prop_fdre_C_Q)         0.419     2.476 f  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/Q
+                         net (fo=4, routed)           0.683     3.159    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482[0]
+    SLICE_X110Y106       LUT5 (Prop_lut5_I1_O)        0.299     3.458 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11/O
+                         net (fo=1, routed)           0.433     3.891    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11_n_2
+    SLICE_X110Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.015 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10/O
+                         net (fo=1, routed)           0.407     4.422    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10_n_2
+    SLICE_X111Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.546 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9/O
+                         net (fo=11, routed)          0.686     5.232    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9_n_2
+    SLICE_X112Y106       LUT4 (Prop_lut4_I2_O)        0.124     5.356 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7/O
+                         net (fo=1, routed)           0.000     5.356    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7_n_2
+    SLICE_X112Y106       CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.578     5.934 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry/O[2]
+                         net (fo=16, routed)          0.641     6.575    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/B[2]
+    SLICE_X113Y108       LUT6 (Prop_lut6_I0_O)        0.301     6.876 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4/O
+                         net (fo=2, routed)           0.602     7.478    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4_n_2
+    SLICE_X112Y109       LUT6 (Prop_lut6_I0_O)        0.124     7.602 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     7.602    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8_n_2
+    SLICE_X112Y109       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     8.115 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     8.115    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_n_2
+    SLICE_X112Y110       CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     8.438 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1/O[1]
+                         net (fo=2, routed)           0.429     8.867    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1_n_8
+    SLICE_X110Y110       LUT5 (Prop_lut5_I2_O)        0.306     9.173 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_9/O
+                         net (fo=2, routed)           0.507     9.680    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_9_n_2
+    SLICE_X111Y110       LUT4 (Prop_lut4_I3_O)        0.124     9.804 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_2/O
+                         net (fo=2, routed)           0.575    10.379    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_2_n_2
+    SLICE_X110Y109       LUT6 (Prop_lut6_I0_O)        0.124    10.503 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_6/O
+                         net (fo=1, routed)           0.000    10.503    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1_i_6_n_2
+    SLICE_X110Y109       CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.580    11.083 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1/O[2]
+                         net (fo=1, routed)           0.000    11.083    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2[12]
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.858     8.525    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[12]/C
+                         clock pessimism              0.162     8.687    
+                         clock uncertainty           -0.080     8.607    
+    SLICE_X110Y109       FDRE (Setup_fdre_C_D)        0.062     8.669    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[12]
+  -------------------------------------------------------------------
+                         required time                          8.669    
+                         arrival time                         -11.083    
+  -------------------------------------------------------------------
+                         slack                                 -2.414    
+
+Slack (VIOLATED) :        -2.318ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[14]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.079ns  (logic 4.133ns (51.157%)  route 3.946ns (48.843%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.260ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.623ns = ( 8.290 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[9])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[9]
+                         net (fo=6, routed)           1.842     7.738    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[9]
+    SLICE_X43Y31         LUT3 (Prop_lut3_I0_O)        0.124     7.862 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_3__43/O
+                         net (fo=11, routed)          2.104     9.966    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/p[9]
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[14]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.623     8.290    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.294    
+                         clock uncertainty           -0.080     8.213    
+    RAMB36_X0Y1          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[14])
+                                                     -0.566     7.647    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.647    
+                         arrival time                          -9.966    
+  -------------------------------------------------------------------
+                         slack                                 -2.318    
+
+Slack (VIOLATED) :        -2.315ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.926ns  (logic 4.103ns (45.965%)  route 4.823ns (54.035%))
+  Logic Levels:           14  (CARRY4=5 LUT4=2 LUT5=3 LUT6=4)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.858ns = ( 8.525 - 6.667 ) 
+    Source Clock Delay      (SCD):    2.057ns
+    Clock Pessimism Removal (CPR):    0.162ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       2.057     2.057    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X111Y106       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y106       FDRE (Prop_fdre_C_Q)         0.419     2.476 f  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482_reg[0]/Q
+                         net (fo=4, routed)           0.683     3.159    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/phitmp_reg_1482[0]
+    SLICE_X110Y106       LUT5 (Prop_lut5_I1_O)        0.299     3.458 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11/O
+                         net (fo=1, routed)           0.433     3.891    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_11_n_2
+    SLICE_X110Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.015 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10/O
+                         net (fo=1, routed)           0.407     4.422    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_10_n_2
+    SLICE_X111Y106       LUT6 (Prop_lut6_I0_O)        0.124     4.546 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9/O
+                         net (fo=11, routed)          0.686     5.232    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_9_n_2
+    SLICE_X112Y106       LUT4 (Prop_lut4_I2_O)        0.124     5.356 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7/O
+                         net (fo=1, routed)           0.000     5.356    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry_i_7_n_2
+    SLICE_X112Y106       CARRY4 (Prop_carry4_S[1]_O[2])
+                                                      0.578     5.934 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/tmp_61_fu_598_p2_carry/O[2]
+                         net (fo=16, routed)          0.641     6.575    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/B[2]
+    SLICE_X113Y108       LUT6 (Prop_lut6_I0_O)        0.301     6.876 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4/O
+                         net (fo=2, routed)           0.602     7.478    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_4_n_2
+    SLICE_X112Y109       LUT6 (Prop_lut6_I0_O)        0.124     7.602 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8/O
+                         net (fo=1, routed)           0.000     7.602    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_i_8_n_2
+    SLICE_X112Y109       CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     8.115 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     8.115    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__0_n_2
+    SLICE_X112Y110       CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     8.334 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1/O[0]
+                         net (fo=2, routed)           0.314     8.648    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__0_carry__1_n_9
+    SLICE_X110Y110       LUT5 (Prop_lut5_I2_O)        0.295     8.943 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_9/O
+                         net (fo=2, routed)           0.414     9.356    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_9_n_2
+    SLICE_X111Y108       LUT4 (Prop_lut4_I2_O)        0.124     9.480 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_1/O
+                         net (fo=2, routed)           0.644    10.124    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_1_n_2
+    SLICE_X110Y108       LUT5 (Prop_lut5_I0_O)        0.124    10.248 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_5/O
+                         net (fo=1, routed)           0.000    10.248    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_i_5_n_2
+    SLICE_X110Y108       CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    10.649 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    10.649    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__0_n_2
+    SLICE_X110Y109       CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.983 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2__30_carry__1/O[1]
+                         net (fo=1, routed)           0.000    10.983    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_fu_610_p2[11]
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.858     8.525    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/ap_clk
+    SLICE_X110Y109       FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[11]/C
+                         clock pessimism              0.162     8.687    
+                         clock uncertainty           -0.080     8.607    
+    SLICE_X110Y109       FDRE (Setup_fdre_C_D)        0.062     8.669    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/grp_copy_input2buf_row_fu_391/bound_reg_1523_reg[11]
+  -------------------------------------------------------------------
+                         required time                          8.669    
+                         arrival time                         -10.983    
+  -------------------------------------------------------------------
+                         slack                                 -2.315    
+
+Slack (VIOLATED) :        -2.314ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[6]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.074ns  (logic 4.133ns (51.186%)  route 3.941ns (48.814%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.260ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.623ns = ( 8.290 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[1]
+                         net (fo=6, routed)           2.063     7.958    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[1]
+    SLICE_X41Y24         LUT3 (Prop_lut3_I0_O)        0.124     8.082 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_11__35/O
+                         net (fo=11, routed)          1.879     9.961    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/p[1]
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.623     8.290    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X0Y1          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.294    
+                         clock uncertainty           -0.080     8.213    
+    RAMB36_X0Y1          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[6])
+                                                     -0.566     7.647    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_23_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.647    
+                         arrival time                          -9.961    
+  -------------------------------------------------------------------
+                         slack                                 -2.314    
+
+Slack (VIOLATED) :        -2.291ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[11]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.051ns  (logic 4.133ns (51.338%)  route 3.918ns (48.662%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.261ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.622ns = ( 8.289 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[6])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[6]
+                         net (fo=6, routed)           1.976     7.871    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/YOLO2_FPGA_mac_mutde_U617/YOLO2_FPGA_mac_mutde_DSP48_8_U/output_buffer_14_address0[6]
+    SLICE_X41Y31         LUT3 (Prop_lut3_I2_O)        0.124     7.995 r  design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/YOLO2_FPGA_mac_mutde_U617/YOLO2_FPGA_mac_mutde_DSP48_8_U/ram_reg_i_6__39/O
+                         net (fo=11, routed)          1.942     9.937    design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/p[6]
+    RAMB36_X0Y8          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[11]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.622     8.289    design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X0Y8          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.293    
+                         clock uncertainty           -0.080     8.212    
+    RAMB36_X0Y8          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[11])
+                                                     -0.566     7.646    design_1_i/YOLO2_FPGA_0/inst/output_buffer_25_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.646    
+                         arrival time                          -9.937    
+  -------------------------------------------------------------------
+                         slack                                 -2.291    
+
+Slack (VIOLATED) :        -2.276ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[10]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.036ns  (logic 4.133ns (51.431%)  route 3.903ns (48.569%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.261ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.622ns = ( 8.289 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[5])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[5]
+                         net (fo=6, routed)           2.248     8.144    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[5]
+    SLICE_X33Y24         LUT3 (Prop_lut3_I0_O)        0.124     8.268 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_7__40/O
+                         net (fo=11, routed)          1.654     9.922    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/p[5]
+    RAMB36_X1Y0          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.622     8.289    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X1Y0          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.293    
+                         clock uncertainty           -0.080     8.212    
+    RAMB36_X1Y0          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[10])
+                                                     -0.566     7.646    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_19_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.646    
+                         arrival time                          -9.922    
+  -------------------------------------------------------------------
+                         slack                                 -2.276    
+
+Slack (VIOLATED) :        -2.263ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[6]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.009ns  (logic 4.133ns (51.605%)  route 3.876ns (48.395%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.275ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.608ns = ( 8.275 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[1])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[1]
+                         net (fo=6, routed)           2.063     7.958    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[1]
+    SLICE_X41Y24         LUT3 (Prop_lut3_I0_O)        0.124     8.082 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_11__35/O
+                         net (fo=11, routed)          1.813     9.895    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/p[1]
+    RAMB36_X0Y5          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[6]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.608     8.275    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X0Y5          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.279    
+                         clock uncertainty           -0.080     8.198    
+    RAMB36_X0Y5          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[6])
+                                                     -0.566     7.632    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_27_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.632    
+                         arrival time                          -9.895    
+  -------------------------------------------------------------------
+                         slack                                 -2.263    
+
+Slack (VIOLATED) :        -2.251ns  (required time - arrival time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[8]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clk_out1_design_1_clk_wiz_0_0 rise@6.667ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        8.009ns  (logic 4.133ns (51.603%)  route 3.876ns (48.397%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        -0.263ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.620ns = ( 8.287 - 6.667 ) 
+    Source Clock Delay      (SCD):    1.887ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.080ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.144ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.980     1.980    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -4.287    -2.307 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.206    -0.101    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.101    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.887     1.887    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ap_clk
+    DSP48_X3Y15          DSP48E1                                      r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48_X3Y15          DSP48E1 (Prop_dsp48e1_CLK_P[3])
+                                                      4.009     5.896 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/p/P[3]
+                         net (fo=6, routed)           1.657     7.553    design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/P[3]
+    SLICE_X59Y29         LUT3 (Prop_lut3_I0_O)        0.124     7.677 r  design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/grp_outputpixel2buf_fu_367/YOLO2_FPGA_mac_murcU_U996/YOLO2_FPGA_mac_murcU_DSP48_6_U/ram_reg_i_7__36/O
+                         net (fo=17, routed)          2.219     9.896    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ADDRBWRADDR[3]
+    RAMB36_X1Y8          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/ADDRBWRADDR[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      6.667     6.667 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     6.667 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           1.770     8.437    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.873     4.563 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           2.012     6.576    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.091     6.667 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       1.620     8.287    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ap_clk
+    RAMB36_X1Y8          RAMB36E1                                     r  design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg/CLKBWRCLK
+                         clock pessimism              0.004     8.291    
+                         clock uncertainty           -0.080     8.210    
+    RAMB36_X1Y8          RAMB36E1 (Setup_ramb36e1_CLKBWRCLK_ADDRBWRADDR[8])
+                                                     -0.566     7.644    design_1_i/YOLO2_FPGA_0/inst/output_buffer1_28_U/YOLO2_FPGA_outputeYW_ram_U/ram_reg
+  -------------------------------------------------------------------
+                         required time                          7.644    
+                         arrival time                          -9.896    
+  -------------------------------------------------------------------
+                         slack                                 -2.251    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.014ns  (arrival time - required time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/rs_rreq/data_p1_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/mem_reg[4][6]_srl5/D
+                            (rising edge-triggered cell SRL16E clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.470ns  (logic 0.141ns (30.004%)  route 0.329ns (69.996%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.347ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.935ns
+    Source Clock Delay      (SCD):    0.583ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.583     0.583    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/rs_rreq/ap_clk
+    SLICE_X81Y96         FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/rs_rreq/data_p1_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y96         FDRE (Prop_fdre_C_Q)         0.141     0.724 r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/rs_rreq/data_p1_reg[6]/Q
+                         net (fo=1, routed)           0.329     1.053    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/data_p1_reg[61][6]
+    SLICE_X66Y102        SRL16E                                       r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/mem_reg[4][6]_srl5/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.935     0.935    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/ap_clk
+    SLICE_X66Y102        SRL16E                                       r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/mem_reg[4][6]_srl5/CLK
+                         clock pessimism             -0.005     0.930    
+    SLICE_X66Y102        SRL16E (Hold_srl16e_CLK_D)
+                                                      0.109     1.039    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS5_m_axi_U/bus_read/fifo_rreq/mem_reg[4][6]_srl5
+  -------------------------------------------------------------------
+                         required time                         -1.039    
+                         arrival time                           1.053    
+  -------------------------------------------------------------------
+                         slack                                  0.014    
+
+Slack (MET) :             0.017ns  (arrival time - required time)
+  Source:                 design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/sect_addr_buf_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.377ns  (logic 0.186ns (49.395%)  route 0.191ns (50.605%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.824ns
+    Source Clock Delay      (SCD):    0.552ns
+    Clock Pessimism Removal (CPR):    0.005ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.552     0.552    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/ap_clk
+    SLICE_X53Y96         FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/sect_addr_buf_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y96         FDRE (Prop_fdre_C_Q)         0.141     0.693 r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/sect_addr_buf_reg[3]/Q
+                         net (fo=1, routed)           0.191     0.883    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/sect_addr_buf_reg_n_2_[3]
+    SLICE_X49Y95         LUT6 (Prop_lut6_I0_O)        0.045     0.928 r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf[3]_i_1__2/O
+                         net (fo=1, routed)           0.000     0.928    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf[3]_i_1__2_n_2
+    SLICE_X49Y95         FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.824     0.824    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/ap_clk
+    SLICE_X49Y95         FDRE                                         r  design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[3]/C
+                         clock pessimism             -0.005     0.819    
+    SLICE_X49Y95         FDRE (Hold_fdre_C_D)         0.092     0.911    design_1_i/YOLO2_FPGA_0/inst/YOLO2_FPGA_DATA_BUS3_m_axi_U/bus_read/could_multi_bursts.araddr_buf_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.911    
+                         arrival time                           0.928    
+  -------------------------------------------------------------------
+                         slack                                  0.017    
+
+Slack (MET) :             0.021ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_sreg/m_vector_i_reg[1142]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/skid_buffer_reg[1142]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.313ns  (logic 0.148ns (47.213%)  route 0.165ns (52.787%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.898ns
+    Source Clock Delay      (SCD):    0.622ns
+    Clock Pessimism Removal (CPR):    0.009ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.622     0.622    design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_sreg/aclk
+    SLICE_X50Y123        FDRE                                         r  design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_sreg/m_vector_i_reg[1142]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y123        FDRE (Prop_fdre_C_Q)         0.148     0.770 r  design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_sreg/m_vector_i_reg[1142]/Q
+                         net (fo=2, routed)           0.165     0.936    design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/m_vector_i_reg[1144]_0[49]
+    SLICE_X49Y121        FDRE                                         r  design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/skid_buffer_reg[1142]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.898     0.898    design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/aclk
+    SLICE_X49Y121        FDRE                                         r  design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/skid_buffer_reg[1142]/C
+                         clock pessimism             -0.009     0.889    
+    SLICE_X49Y121        FDRE (Hold_fdre_C_D)         0.025     0.914    design_1_i/axi_smc_3/inst/s00_entry_pipeline/s00_mmu/inst/ar_reg_stall/skid_buffer_reg[1142]
+  -------------------------------------------------------------------
+                         required time                         -0.914    
+                         arrival time                           0.936    
+  -------------------------------------------------------------------
+                         slack                                  0.021    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA_D1/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA_D1/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA_D1/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMA_D1
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB_D1/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB_D1/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB_D1/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMB_D1
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC_D1/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC_D1/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMD32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC_D1/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMC_D1
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMD/ADR0
+                            (rising edge-triggered cell RAMS32 clocked by clk_out1_design_1_clk_wiz_0_0  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clk_out1_design_1_clk_wiz_0_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_design_1_clk_wiz_0_0 rise@0.000ns - clk_out1_design_1_clk_wiz_0_0 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.909ns
+    Source Clock Delay      (SCD):    0.637ns
+    Clock Pessimism Removal (CPR):    0.259ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.672     0.672    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.395    -0.722 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.696    -0.026    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.637     0.637    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/s_sc_aclk
+    SLICE_X43Y109        FDRE                                         r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y109        FDRE (Prop_fdre_C_Q)         0.141     0.778 r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_wr_addra/count_r_reg[0]/Q
+                         net (fo=103, routed)         0.206     0.984    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/ADDRD0
+    SLICE_X42Y109        RAMS32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMD/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_design_1_clk_wiz_0_0 rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y18       BUFG                         0.000     0.000 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=1, routed)           0.945     0.945    design_1_i/clk_wiz_0/inst/clk_in1
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.726    -0.781 r  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.752    -0.029    design_1_i/clk_wiz_0/inst/clk_out1_design_1_clk_wiz_0_0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029     0.000 r  design_1_i/clk_wiz_0/inst/clkout1_buf/O
+                         net (fo=38002, routed)       0.909     0.909    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/WCLK
+    SLICE_X42Y109        RAMS32                                       r  design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMD/CLK
+                         clock pessimism             -0.259     0.650    
+    SLICE_X42Y109        RAMS32 (Hold_rams32_CLK_ADR0)
+                                                      0.310     0.960    design_1_i/axi_smc_3/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_132_137/RAMD
+  -------------------------------------------------------------------
+                         required time                         -0.960    
+                         arrival time                           0.984    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_out1_design_1_clk_wiz_0_0
+Waveform(ns):       { 0.000 3.333 }
+Period(ns):         6.667
+Sources:            { design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X4Y54      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_reorg_yolo25_fu_2138/p_0_out__0/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X4Y40      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_copy_input_weight_fu_1649/grp_input_load_fu_557/YOLO2_FPGA_mac_mujbC_U76/YOLO2_FPGA_mac_mujbC_DSP48_0_U/p/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X4Y51      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_reorg_yolo25_fu_2138/p_0_out__2/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X4Y32      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_reorg_yolo25_fu_2138/tmp_8_reg_771_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X3Y42      design_1_i/YOLO2_FPGA_0/inst/r_V_24_reg_2771_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.884         6.667       2.783      DSP48_X3Y51      design_1_i/YOLO2_FPGA_0/inst/grp_write_back_output_re_fu_2003/r_V_reg_937_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.687         6.667       2.980      DSP48_X4Y14      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/tmp_227_14_reg_8347_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.687         6.667       2.980      DSP48_X2Y13      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/tmp_227_23_reg_8527_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.687         6.667       2.980      DSP48_X1Y15      design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/tmp_227_4_reg_8127_reg/CLK
+Min Period        n/a     DSP48E1/CLK         n/a            3.687         6.667       2.980      DSP48_X3Y2       design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/grp_compute4_fu_1110/tmp_231_13_reg_8332_reg/CLK
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       6.667       206.693    MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y67    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__0/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y67    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__10/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y67    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__12/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y67    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__14/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y66    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__23/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y66    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__25/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y66    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__27/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y66    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__29/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y65    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__3/SP/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X112Y65    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__31/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y64    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__16/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y64    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__18/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y64    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__2/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y64    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__20/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y63    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__22/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y62    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__23/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y63    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__24/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y62    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__25/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y63    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__26/SP/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         3.333       2.083      SLICE_X104Y62    design_1_i/YOLO2_FPGA_0/inst/grp_intra_pingpong_wrapp_fu_1230/input_memcpy_buffer0_1_U/input_load_input_bkb_ram_U/ram_reg_0_15_0_0__27/SP/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_design_1_clk_wiz_0_0
+  To Clock:  clkfbout_design_1_clk_wiz_0_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack       17.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_design_1_clk_wiz_0_0
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     BUFG/I               n/a            2.155         20.000      17.845     BUFGCTRL_X0Y16   design_1_i/clk_wiz_0/inst/clkf_buf/I
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         20.000      18.751     MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBOUT
+Min Period  n/a     MMCME2_ADV/CLKFBIN   n/a            1.249         20.000      18.751     MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       20.000      80.000     MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            213.360       20.000      193.360    MMCME2_ADV_X1Y2  design_1_i/clk_wiz_0/inst/mmcm_adv_inst/CLKFBOUT
+
+
+

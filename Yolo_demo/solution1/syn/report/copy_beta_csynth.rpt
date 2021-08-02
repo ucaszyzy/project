@@ -1,0 +1,227 @@
+
+
+================================================================
+== Vivado HLS Report for 'copy_beta'
+================================================================
+* Date:           Thu Jul 29 20:17:26 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |                            |      Latency     | Iteration|  Initiation Interval  |      Trip      |          |
+        |          Loop Name         | min |     max    |  Latency |  achieved |   target  |      Count     | Pipelined|
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |- memcpy.beta_tmp.gep.Beta  |    0|  1073741824|         3|          1|          1| 0 ~ 1073741823 |    yes   |
+        |- Loop 2                    |    ?|           ?|         2|          1|          1|               ?|    yes   |
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    192|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        1|      -|       0|      0|
+|Multiplexer      |        -|      -|       -|    158|
+|Register         |        -|      -|     264|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        1|      0|     264|    350|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |   Memory   |       Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |beta_tmp_U  |copy_beta_beta_tmp  |        1|  0|   0|   512|   32|     1|        16384|
+    +------------+--------------------+---------+---+----+------+-----+------+-------------+
+    |Total       |                    |        1|  0|   0|   512|   32|     1|        16384|
+    +------------+--------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |indvar_next_fu_220_p2              |     +    |      0|  0|  37|          30|           1|
+    |tmp_fu_174_p2                      |     +    |      0|  0|  39|          32|           1|
+    |x_2_fu_240_p2                      |     +    |      0|  0|  37|          30|           1|
+    |ap_block_pp0_stage0_11001          |    and   |      0|  0|   2|           1|           1|
+    |ap_block_state10_pp0_stage0_iter1  |    and   |      0|  0|   2|           1|           1|
+    |exitcond_fu_215_p2                 |   icmp   |      0|  0|  18|          30|          30|
+    |tmp_s_fu_235_p2                    |   icmp   |      0|  0|  18|          31|          31|
+    |tmp_77_fu_279_p2                   |    or    |      0|  0|  31|          31|           1|
+    |ap_enable_pp0                      |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_pp1                      |    xor   |      0|  0|   2|           1|           2|
+    |ap_enable_reg_pp0_iter1            |    xor   |      0|  0|   2|           2|           1|
+    |ap_enable_reg_pp1_iter1            |    xor   |      0|  0|   2|           2|           1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0| 192|         192|          73|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------------+----+-----------+-----+-----------+
+    |                Name               | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |Beta_blk_n_AR                      |   9|          2|    1|          2|
+    |Beta_blk_n_R                       |   9|          2|    1|          2|
+    |ap_NS_fsm                          |  56|         13|    1|         13|
+    |ap_enable_reg_pp0_iter1            |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2            |   9|          2|    1|          2|
+    |ap_enable_reg_pp1_iter1            |  15|          3|    1|          3|
+    |ap_phi_mux_indvar_phi_fu_155_p4    |   9|          2|   30|         60|
+    |ap_sig_ioackin_m_axi_Beta_ARREADY  |   9|          2|    1|          2|
+    |beta_tmp_address0                  |  15|          3|    9|         27|
+    |indvar_reg_151                     |   9|          2|   30|         60|
+    |x_reg_163                          |   9|          2|   30|         60|
+    +-----------------------------------+----+-----------+-----+-----------+
+    |Total                              | 158|         35|  106|        233|
+    +-----------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------+----+----+-----+-----------+
+    |                Name               | FF | LUT| Bits| Const Bits|
+    +-----------------------------------+----+----+-----+-----------+
+    |Beta_addr_read_reg_320             |  32|   0|   32|          0|
+    |ap_CS_fsm                          |  12|   0|   12|          0|
+    |ap_enable_reg_pp0_iter0            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2            |   1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter0            |   1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter1            |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_Beta_ARREADY  |   1|   0|    1|          0|
+    |exitcond_reg_311                   |   1|   0|    1|          0|
+    |exitcond_reg_311_pp0_iter1_reg     |   1|   0|    1|          0|
+    |indvar_next_reg_315                |  30|   0|   30|          0|
+    |indvar_reg_151                     |  30|   0|   30|          0|
+    |indvar_reg_151_pp0_iter1_reg       |  30|   0|   30|          0|
+    |tmp_31_cast_reg_289                |  30|   0|   30|          0|
+    |tmp_32_reg_295                     |  31|   0|   31|          0|
+    |tmp_74_reg_339                     |  30|   0|   31|          1|
+    |tmp_s_reg_325                      |   1|   0|    1|          0|
+    |x_reg_163                          |  30|   0|   30|          0|
+    +-----------------------------------+----+----+-----+-----------+
+    |Total                              | 264|   0|  265|          1|
+    +-----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  | Source Object|    C Type    |
++----------------------+-----+-----+------------+--------------+--------------+
+|ap_clk                |  in |    1| ap_ctrl_hs |   copy_beta  | return value |
+|ap_rst                |  in |    1| ap_ctrl_hs |   copy_beta  | return value |
+|ap_start              |  in |    1| ap_ctrl_hs |   copy_beta  | return value |
+|ap_done               | out |    1| ap_ctrl_hs |   copy_beta  | return value |
+|ap_idle               | out |    1| ap_ctrl_hs |   copy_beta  | return value |
+|ap_ready              | out |    1| ap_ctrl_hs |   copy_beta  | return value |
+|m_axi_Beta_AWVALID    | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWREADY    |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWADDR     | out |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWID       | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWLEN      | out |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWSIZE     | out |    3|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWBURST    | out |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWLOCK     | out |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWCACHE    | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWPROT     | out |    3|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWQOS      | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWREGION   | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_AWUSER     | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WVALID     | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WREADY     |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WDATA      | out |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WSTRB      | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WLAST      | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WID        | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_WUSER      | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARVALID    | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARREADY    |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARADDR     | out |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARID       | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARLEN      | out |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARSIZE     | out |    3|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARBURST    | out |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARLOCK     | out |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARCACHE    | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARPROT     | out |    3|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARQOS      | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARREGION   | out |    4|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_ARUSER     | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RVALID     |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RREADY     | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RDATA      |  in |   32|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RLAST      |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RID        |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RUSER      |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_RRESP      |  in |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_BVALID     |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_BREADY     | out |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_BRESP      |  in |    2|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_BID        |  in |    1|    m_axi   |     Beta     |    pointer   |
+|m_axi_Beta_BUSER      |  in |    1|    m_axi   |     Beta     |    pointer   |
+|Beta_offset           |  in |   30|   ap_none  |  Beta_offset |    scalar    |
+|OFM_NUM               |  in |   32|   ap_none  |    OFM_NUM   |    scalar    |
+|beta_buffer_address0  | out |   10|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_ce0       | out |    1|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_we0       | out |    1|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_d0        | out |   16|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_address1  | out |   10|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_ce1       | out |    1|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_we1       | out |    1|  ap_memory |  beta_buffer |     array    |
+|beta_buffer_d1        | out |   16|  ap_memory |  beta_buffer |     array    |
++----------------------+-----+-----+------------+--------------+--------------+
+

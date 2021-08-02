@@ -1,0 +1,218 @@
+
+
+================================================================
+== Vivado HLS Report for 'mmcpy_inputpixel_m2b'
+================================================================
+* Date:           Thu Jul 29 20:17:06 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|   45|    1|   45|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (enable_read)
+	3  / (!enable_read)
+2 --> 
+	3  / true
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.25>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %enable)"   --->   Operation 4 'read' 'enable_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%IsRowPixel_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %IsRowPixel)"   --->   Operation 5 'read' 'IsRowPixel_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%ColIncreaseLength_V_s = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %ColIncreaseLength_V)"   --->   Operation 6 'read' 'ColIncreaseLength_V_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%IHxIW_18b_V_read = call i18 @_ssdm_op_Read.ap_auto.i18(i18 %IHxIW_18b_V)"   --->   Operation 7 'read' 'IHxIW_18b_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%RowIncreaseLength_V_s = call i9 @_ssdm_op_Read.ap_auto.i9(i9 %RowIncreaseLength_V)"   --->   Operation 8 'read' 'RowIncreaseLength_V_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%IN_OFFSET_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %IN_OFFSET)"   --->   Operation 9 'read' 'IN_OFFSET_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%next_t2_0_V_write_r = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %next_t2_0_V_write)"   --->   Operation 10 'read' 'next_t2_0_V_write_r' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%TN_MIN_3b_V_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %TN_MIN_3b_V)"   --->   Operation 11 'read' 'TN_MIN_3b_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%RowBeginByte_3_V_re = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %RowBeginByte_3_V_read)"   --->   Operation 12 'read' 'RowBeginByte_3_V_re' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%RowBeginByte_2_V_re = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %RowBeginByte_2_V_read)"   --->   Operation 13 'read' 'RowBeginByte_2_V_re' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%RowBeginByte_1_V_re = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %RowBeginByte_1_V_read)"   --->   Operation 14 'read' 'RowBeginByte_1_V_re' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%RowBeginByte_0_V_re = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %RowBeginByte_0_V_read)"   --->   Operation 15 'read' 'RowBeginByte_0_V_re' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%input3_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input3_offset)"   --->   Operation 16 'read' 'input3_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%input2_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input2_offset)"   --->   Operation 17 'read' 'input2_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%input1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input1_offset)"   --->   Operation 18 'read' 'input1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%input_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %input_offset)"   --->   Operation 19 'read' 'input_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%IN_OFFSET_cast = zext i30 %IN_OFFSET_read to i32"   --->   Operation 20 'zext' 'IN_OFFSET_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %input_r, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 21 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %input1, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str19, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 22 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %input2, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str20, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 23 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %input3, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str21, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 64, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 24 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (1.76ns)   --->   "br i1 %enable_read, label %_ifconv, label %._crit_edge" [cnn.cpp:77]   --->   Operation 25 'br' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 26 [1/1] (1.42ns)   --->   "%init = icmp eq i6 %next_t2_0_V_write_r, 0" [cnn.cpp:80]   --->   Operation 26 'icmp' 'init' <Predicate = (enable_read)> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_inoffset_load = load i32* @tmp_inoffset, align 4" [cnn.cpp:86]   --->   Operation 27 'load' 'tmp_inoffset_load' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp = zext i9 %RowIncreaseLength_V_s to i32" [cnn.cpp:86]   --->   Operation 28 'zext' 'tmp' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (2.55ns)   --->   "%tmp_s = add nsw i32 %tmp, %tmp_inoffset_load" [cnn.cpp:86]   --->   Operation 29 'add' 'tmp_s' <Predicate = (enable_read)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.69ns)   --->   "%storemerge = select i1 %init, i32 %IN_OFFSET_cast, i32 %tmp_s" [cnn.cpp:80]   --->   Operation 30 'select' 'storemerge' <Predicate = (enable_read)> <Delay = 0.69> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "store i32 %storemerge, i32* @tmp_inoffset, align 4" [cnn.cpp:83]   --->   Operation 31 'store' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_53_cast5 = zext i18 %IHxIW_18b_V_read to i21" [cnn.cpp:108]   --->   Operation 32 'zext' 'tmp_53_cast5' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_18 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %storemerge, i32 1, i32 31)" [cnn.cpp:105]   --->   Operation 33 'partselect' 'tmp_18' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_59 = trunc i32 %storemerge to i1" [cnn.cpp:106]   --->   Operation 34 'trunc' 'tmp_59' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%p_shl = call i20 @_ssdm_op_BitConcatenate.i20.i18.i2(i18 %IHxIW_18b_V_read, i2 0)" [cnn.cpp:104]   --->   Operation 35 'bitconcatenate' 'p_shl' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%p_shl_cast = zext i20 %p_shl to i21" [cnn.cpp:104]   --->   Operation 36 'zext' 'p_shl_cast' <Predicate = (enable_read)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (2.19ns)   --->   "%tmp_100_3 = sub i21 %p_shl_cast, %tmp_53_cast5" [cnn.cpp:104]   --->   Operation 37 'sub' 'tmp_100_3' <Predicate = (enable_read)> <Delay = 2.19> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%tmp_62 = trunc i21 %tmp_100_3 to i1" [cnn.cpp:104]   --->   Operation 38 'trunc' 'tmp_62' <Predicate = (enable_read)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 8.33>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_31 = zext i18 %IHxIW_18b_V_read to i32" [cnn.cpp:104]   --->   Operation 39 'zext' 'tmp_31' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%lhs_V = zext i6 %ColIncreaseLength_V_s to i7" [cnn.cpp:108]   --->   Operation 40 'zext' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%rhs_V = zext i1 %tmp_59 to i7" [cnn.cpp:108]   --->   Operation 41 'zext' 'rhs_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_60 = trunc i6 %ColIncreaseLength_V_s to i1"   --->   Operation 42 'trunc' 'tmp_60' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (1.82ns)   --->   "%r_V = add i7 %rhs_V, %lhs_V" [cnn.cpp:108]   --->   Operation 43 'add' 'r_V' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node RowIntNum_2)   --->   "%tmp_55_cast3 = xor i1 %tmp_60, %tmp_59" [cnn.cpp:112]   --->   Operation 44 'xor' 'tmp_55_cast3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_56_cast = call i6 @_ssdm_op_PartSelect.i6.i7.i32.i32(i7 %r_V, i32 1, i32 6)" [cnn.cpp:112]   --->   Operation 45 'partselect' 'tmp_56_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (1.82ns)   --->   "%tmp_32 = add i6 1, %tmp_56_cast" [cnn.cpp:114]   --->   Operation 46 'add' 'tmp_32' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (1.18ns) (out node of the LUT)   --->   "%RowIntNum_2 = select i1 %tmp_55_cast3, i6 %tmp_32, i6 %tmp_56_cast" [cnn.cpp:113]   --->   Operation 47 'select' 'RowIntNum_2' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_61 = trunc i18 %IHxIW_18b_V_read to i1"   --->   Operation 48 'trunc' 'tmp_61' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (2.55ns)   --->   "%tmp_101_1 = add i32 %tmp_31, %storemerge" [cnn.cpp:104]   --->   Operation 49 'add' 'tmp_101_1' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_21 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %tmp_101_1, i32 1, i32 31)" [cnn.cpp:105]   --->   Operation 50 'partselect' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.97ns)   --->   "%RowBeginByte_V1 = xor i1 %tmp_59, %tmp_61" [cnn.cpp:106]   --->   Operation 51 'xor' 'RowBeginByte_V1' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%rhs_V_1 = zext i1 %RowBeginByte_V1 to i7" [cnn.cpp:108]   --->   Operation 52 'zext' 'rhs_V_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (1.82ns)   --->   "%r_V_1 = add i7 %rhs_V_1, %lhs_V" [cnn.cpp:108]   --->   Operation 53 'add' 'r_V_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 54 [1/1] (0.00ns) (grouped into LUT with out node RowIntNum_1)   --->   "%tmp_105_1_cast2 = xor i1 %tmp_60, %RowBeginByte_V1" [cnn.cpp:112]   --->   Operation 54 'xor' 'tmp_105_1_cast2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_106_1_cast = call i6 @_ssdm_op_PartSelect.i6.i7.i32.i32(i7 %r_V_1, i32 1, i32 6)" [cnn.cpp:112]   --->   Operation 55 'partselect' 'tmp_106_1_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (1.82ns)   --->   "%tmp_109_1 = add i6 1, %tmp_106_1_cast" [cnn.cpp:114]   --->   Operation 56 'add' 'tmp_109_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 57 [1/1] (1.18ns) (out node of the LUT)   --->   "%RowIntNum_1 = select i1 %tmp_105_1_cast2, i6 %tmp_109_1, i6 %tmp_106_1_cast" [cnn.cpp:113]   --->   Operation 57 'select' 'RowIntNum_1' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%tmp_100_2 = call i19 @_ssdm_op_BitConcatenate.i19.i18.i1(i18 %IHxIW_18b_V_read, i1 false)" [cnn.cpp:104]   --->   Operation 58 'bitconcatenate' 'tmp_100_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_100_2_cast = zext i19 %tmp_100_2 to i32" [cnn.cpp:104]   --->   Operation 59 'zext' 'tmp_100_2_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (2.55ns)   --->   "%tmp_101_2 = add i32 %storemerge, %tmp_100_2_cast" [cnn.cpp:104]   --->   Operation 60 'add' 'tmp_101_2' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_23 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %tmp_101_2, i32 1, i32 31)" [cnn.cpp:105]   --->   Operation 61 'partselect' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%tmp_100_3_cast = sext i21 %tmp_100_3 to i32" [cnn.cpp:104]   --->   Operation 62 'sext' 'tmp_100_3_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (2.55ns)   --->   "%tmp_101_3 = add i32 %storemerge, %tmp_100_3_cast" [cnn.cpp:104]   --->   Operation 63 'add' 'tmp_101_3' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_26 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %tmp_101_3, i32 1, i32 31)" [cnn.cpp:105]   --->   Operation 64 'partselect' 'tmp_26' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (0.97ns)   --->   "%RowBeginByte_V3 = xor i1 %tmp_59, %tmp_62" [cnn.cpp:106]   --->   Operation 65 'xor' 'RowBeginByte_V3' <Predicate = true> <Delay = 0.97> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%rhs_V_3 = zext i1 %RowBeginByte_V3 to i7" [cnn.cpp:108]   --->   Operation 66 'zext' 'rhs_V_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (1.82ns)   --->   "%r_V_3 = add i7 %rhs_V_3, %lhs_V" [cnn.cpp:108]   --->   Operation 67 'add' 'r_V_3' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 68 [1/1] (0.00ns) (grouped into LUT with out node RowIntNum_3)   --->   "%tmp_105_3_cast1 = xor i1 %tmp_60, %RowBeginByte_V3" [cnn.cpp:112]   --->   Operation 68 'xor' 'tmp_105_3_cast1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%tmp_106_3_cast = call i6 @_ssdm_op_PartSelect.i6.i7.i32.i32(i7 %r_V_3, i32 1, i32 6)" [cnn.cpp:112]   --->   Operation 69 'partselect' 'tmp_106_3_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (1.82ns)   --->   "%tmp_109_3 = add i6 1, %tmp_106_3_cast" [cnn.cpp:114]   --->   Operation 70 'add' 'tmp_109_3' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 71 [1/1] (1.18ns) (out node of the LUT)   --->   "%RowIntNum_3 = select i1 %tmp_105_3_cast1, i6 %tmp_109_3, i6 %tmp_106_3_cast" [cnn.cpp:113]   --->   Operation 71 'select' 'RowIntNum_3' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 72 [2/2] (2.52ns)   --->   "call fastcc void @mmcpy_inputport(i32* %input_r, i30 %input_offset_read, [28 x i32]* nocapture %input_memcpy_buffer, i3 %TN_MIN_3b_V_read, i31 %tmp_18, i6 %RowIntNum_2)" [cnn.cpp:119]   --->   Operation 72 'call' <Predicate = true> <Delay = 2.52> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 73 [2/2] (2.52ns)   --->   "call fastcc void @mmcpy_inputport1(i32* %input1, i30 %input1_offset_read, [28 x i32]* nocapture %input_memcpy_buffer1, i3 %TN_MIN_3b_V_read, i31 %tmp_21, i6 %RowIntNum_1)" [cnn.cpp:120]   --->   Operation 73 'call' <Predicate = true> <Delay = 2.52> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 74 [2/2] (2.52ns)   --->   "call fastcc void @mmcpy_inputport2(i32* %input2, i30 %input2_offset_read, [28 x i32]* nocapture %input_memcpy_buffer2, i3 %TN_MIN_3b_V_read, i31 %tmp_23, i6 %RowIntNum_2)" [cnn.cpp:121]   --->   Operation 74 'call' <Predicate = true> <Delay = 2.52> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 75 [2/2] (2.52ns)   --->   "call fastcc void @mmcpy_inputport3(i32* %input3, i30 %input3_offset_read, [28 x i32]* nocapture %input_memcpy_buffer3, i3 %TN_MIN_3b_V_read, i31 %tmp_26, i6 %RowIntNum_3)" [cnn.cpp:122]   --->   Operation 75 'call' <Predicate = true> <Delay = 2.52> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 1.76>
+ST_3 : Operation 76 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_inputport(i32* %input_r, i30 %input_offset_read, [28 x i32]* nocapture %input_memcpy_buffer, i3 %TN_MIN_3b_V_read, i31 %tmp_18, i6 %RowIntNum_2)" [cnn.cpp:119]   --->   Operation 76 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 77 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_inputport1(i32* %input1, i30 %input1_offset_read, [28 x i32]* nocapture %input_memcpy_buffer1, i3 %TN_MIN_3b_V_read, i31 %tmp_21, i6 %RowIntNum_1)" [cnn.cpp:120]   --->   Operation 77 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 78 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_inputport2(i32* %input2, i30 %input2_offset_read, [28 x i32]* nocapture %input_memcpy_buffer2, i3 %TN_MIN_3b_V_read, i31 %tmp_23, i6 %RowIntNum_2)" [cnn.cpp:121]   --->   Operation 78 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 79 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_inputport3(i32* %input3, i30 %input3_offset_read, [28 x i32]* nocapture %input_memcpy_buffer3, i3 %TN_MIN_3b_V_read, i31 %tmp_26, i6 %RowIntNum_3)" [cnn.cpp:122]   --->   Operation 79 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 80 [1/1] (1.76ns)   --->   "br label %._crit_edge" [cnn.cpp:123]   --->   Operation 80 'br' <Predicate = (enable_read)> <Delay = 1.76>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%RowBeginByte_1_V_wr = phi i1 [ %RowBeginByte_V1, %_ifconv ], [ %RowBeginByte_1_V_re, %0 ]" [cnn.cpp:123]   --->   Operation 81 'phi' 'RowBeginByte_1_V_wr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%RowBeginByte_2_V_wr = phi i1 [ %tmp_59, %_ifconv ], [ %RowBeginByte_2_V_re, %0 ]" [cnn.cpp:123]   --->   Operation 82 'phi' 'RowBeginByte_2_V_wr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%RowBeginByte_3_V_wr = phi i1 [ %RowBeginByte_V3, %_ifconv ], [ %RowBeginByte_3_V_re, %0 ]" [cnn.cpp:123]   --->   Operation 83 'phi' 'RowBeginByte_3_V_wr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%RowBeginByte_0_V_wr = phi i1 [ %tmp_59, %_ifconv ], [ %RowBeginByte_0_V_re, %0 ]" [cnn.cpp:123]   --->   Operation 84 'phi' 'RowBeginByte_0_V_wr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue { i6, i1, i1, i1, i1, i1 } undef, i6 %next_t2_0_V_write_r, 0" [cnn.cpp:123]   --->   Operation 85 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i6, i1, i1, i1, i1, i1 } %mrv_s, i1 %IsRowPixel_read, 1" [cnn.cpp:123]   --->   Operation 86 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue { i6, i1, i1, i1, i1, i1 } %mrv_1, i1 %RowBeginByte_0_V_wr, 2" [cnn.cpp:123]   --->   Operation 87 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue { i6, i1, i1, i1, i1, i1 } %mrv_2, i1 %RowBeginByte_1_V_wr, 3" [cnn.cpp:123]   --->   Operation 88 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue { i6, i1, i1, i1, i1, i1 } %mrv_3, i1 %RowBeginByte_2_V_wr, 4" [cnn.cpp:123]   --->   Operation 89 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue { i6, i1, i1, i1, i1, i1 } %mrv_4, i1 %RowBeginByte_3_V_wr, 5" [cnn.cpp:123]   --->   Operation 90 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "ret { i6, i1, i1, i1, i1, i1 } %mrv_5" [cnn.cpp:123]   --->   Operation 91 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 3.25ns
+The critical path consists of the following:
+	wire read on port 'RowIncreaseLength_V' [30]  (0 ns)
+	'add' operation ('tmp_s', cnn.cpp:86) [52]  (2.55 ns)
+	'select' operation ('storemerge', cnn.cpp:80) [53]  (0.698 ns)
+
+ <State 2>: 8.34ns
+The critical path consists of the following:
+	'xor' operation ('RowBeginByte_V1', cnn.cpp:106) [70]  (0.978 ns)
+	'add' operation ('r_V_1', cnn.cpp:108) [72]  (1.83 ns)
+	'add' operation ('tmp_109_1', cnn.cpp:114) [75]  (1.83 ns)
+	'select' operation ('RowIntNum[1]', cnn.cpp:113) [76]  (1.19 ns)
+	'call' operation (cnn.cpp:120) to 'mmcpy_inputport1' [96]  (2.52 ns)
+
+ <State 3>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('RowBeginByte[1].V', cnn.cpp:123) with incoming values : ('RowBeginByte[1].V') ('RowBeginByte_V1', cnn.cpp:106) [101]  (1.77 ns)
+	'phi' operation ('RowBeginByte[1].V', cnn.cpp:123) with incoming values : ('RowBeginByte[1].V') ('RowBeginByte_V1', cnn.cpp:106) [101]  (0 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

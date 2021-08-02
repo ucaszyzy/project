@@ -1,0 +1,306 @@
+
+
+================================================================
+== Vivado HLS Report for 'copy_beta'
+================================================================
+* Date:           Thu Jul 29 20:17:04 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |                            |      Latency     | Iteration|  Initiation Interval  |      Trip      |          |
+        |          Loop Name         | min |     max    |  Latency |  achieved |   target  |      Count     | Pipelined|
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+        |- memcpy.beta_tmp.gep.Beta  |    0|  1073741824|         3|          1|          1| 0 ~ 1073741823 |    yes   |
+        |- Loop 2                    |    ?|           ?|         2|          1|          1|               ?|    yes   |
+        +----------------------------+-----+------------+----------+-----------+-----------+----------------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 15
+* Pipeline : 2
+  Pipeline-0 : II = 1, D = 3, States = { 9 10 11 }
+  Pipeline-1 : II = 1, D = 2, States = { 13 14 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	12  / (exitcond)
+	10  / (!exitcond)
+10 --> 
+	11  / true
+11 --> 
+	9  / true
+12 --> 
+	13  / true
+13 --> 
+	15  / (!tmp_s)
+	14  / (tmp_s)
+14 --> 
+	13  / true
+15 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.55>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%OFM_NUM_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %OFM_NUM)"   --->   Operation 16 'read' 'OFM_NUM_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (2.55ns)   --->   "%tmp = add nsw i32 %OFM_NUM_read, 1" [cnn.cpp:1080]   --->   Operation 17 'add' 'tmp' <Predicate = true> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%tmp_31_cast = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %tmp, i32 1, i32 30)" [cnn.cpp:1080]   --->   Operation 18 'partselect' 'tmp_31_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_32 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %tmp, i32 1, i32 31)" [cnn.cpp:1080]   --->   Operation 19 'partselect' 'tmp_32' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 8.75>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%Beta_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Beta_offset)"   --->   Operation 20 'read' 'Beta_offset_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_72 = zext i30 %Beta_offset_read to i64"   --->   Operation 21 'zext' 'tmp_72' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%Beta_addr = getelementptr i32* %Beta, i64 %tmp_72"   --->   Operation 22 'getelementptr' 'Beta_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_200_add_i32_shr_s = zext i30 %tmp_31_cast to i32" [cnn.cpp:1081]   --->   Operation 23 'zext' 'tmp_200_add_i32_shr_s' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [7/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 24 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 8.75>
+ST_3 : Operation 25 [6/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 25 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 8.75>
+ST_4 : Operation 26 [5/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 26 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 8.75>
+ST_5 : Operation 27 [4/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 27 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 8.75>
+ST_6 : Operation 28 [3/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 28 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 8.75>
+ST_7 : Operation 29 [2/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 29 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 8.75>
+ST_8 : Operation 30 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Beta, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str22, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 16, i32 128, i32 16, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 30 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 31 [1/7] (8.75ns)   --->   "%Beta_addr_rd_req = call i1 @_ssdm_op_ReadReq.m_axi.i32P(i32* %Beta_addr, i32 %tmp_200_add_i32_shr_s)" [cnn.cpp:1081]   --->   Operation 31 'readreq' 'Beta_addr_rd_req' <Predicate = true> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 32 [1/1] (1.76ns)   --->   "br label %burst.rd.header"   --->   Operation 32 'br' <Predicate = true> <Delay = 1.76>
+
+State 9 <SV = 8> <Delay = 2.49>
+ST_9 : Operation 33 [1/1] (0.00ns)   --->   "%indvar = phi i30 [ 0, %0 ], [ %indvar_next, %burst.rd.body ]"   --->   Operation 33 'phi' 'indvar' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 34 [1/1] (2.46ns)   --->   "%exitcond = icmp eq i30 %indvar, %tmp_31_cast" [cnn.cpp:1080]   --->   Operation 34 'icmp' 'exitcond' <Predicate = true> <Delay = 2.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 35 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 0, i64 1073741823, i64 0)"   --->   Operation 35 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 36 [1/1] (2.49ns)   --->   "%indvar_next = add i30 %indvar, 1"   --->   Operation 36 'add' 'indvar_next' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %burst.rd.end.preheader, label %burst.rd.body" [cnn.cpp:1080]   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
+
+State 10 <SV = 9> <Delay = 8.75>
+ST_10 : Operation 38 [1/1] (8.75ns)   --->   "%Beta_addr_read = call i32 @_ssdm_op_Read.m_axi.i32P(i32* %Beta_addr)" [cnn.cpp:1081]   --->   Operation 38 'read' 'Beta_addr_read' <Predicate = (!exitcond)> <Delay = 8.75> <Core = "m_axi">   --->   Core 9 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 3.25>
+ST_11 : Operation 39 [1/1] (0.00ns)   --->   "%burstread_rbegin = call i32 (...)* @_ssdm_op_SpecRegionBegin([17 x i8]* @burstread_OC_region_s)"   --->   Operation 39 'specregionbegin' 'burstread_rbegin' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str97)"   --->   Operation 40 'specpipeline' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 41 [1/1] (0.00ns)   --->   "%empty_36 = call i32 (...)* @_ssdm_op_SpecLoopName([25 x i8]* @memcpy_OC_beta_tmp_O)"   --->   Operation 41 'specloopname' 'empty_36' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 42 [1/1] (0.00ns)   --->   "%indvar4 = zext i30 %indvar to i64"   --->   Operation 42 'zext' 'indvar4' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 43 [1/1] (0.00ns)   --->   "%beta_tmp_addr_1 = getelementptr [512 x i32]* @beta_tmp, i64 0, i64 %indvar4" [cnn.cpp:1081]   --->   Operation 43 'getelementptr' 'beta_tmp_addr_1' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 44 [1/1] (3.25ns)   --->   "store i32 %Beta_addr_read, i32* %beta_tmp_addr_1, align 4" [cnn.cpp:1081]   --->   Operation 44 'store' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_11 : Operation 45 [1/1] (0.00ns)   --->   "%burstread_rend = call i32 (...)* @_ssdm_op_SpecRegionEnd([17 x i8]* @burstread_OC_region_s, i32 %burstread_rbegin)"   --->   Operation 45 'specregionend' 'burstread_rend' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_11 : Operation 46 [1/1] (0.00ns)   --->   "br label %burst.rd.header"   --->   Operation 46 'br' <Predicate = (!exitcond)> <Delay = 0.00>
+
+State 12 <SV = 9> <Delay = 1.76>
+ST_12 : Operation 47 [1/1] (1.76ns)   --->   "br label %burst.rd.end" [cnn.cpp:1083]   --->   Operation 47 'br' <Predicate = true> <Delay = 1.76>
+
+State 13 <SV = 10> <Delay = 3.44>
+ST_13 : Operation 48 [1/1] (0.00ns)   --->   "%x = phi i30 [ %x_2, %1 ], [ 0, %burst.rd.end.preheader ]"   --->   Operation 48 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 49 [1/1] (0.00ns)   --->   "%x_cast = zext i30 %x to i31" [cnn.cpp:1083]   --->   Operation 49 'zext' 'x_cast' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 50 [1/1] (2.47ns)   --->   "%tmp_s = icmp slt i31 %x_cast, %tmp_32" [cnn.cpp:1083]   --->   Operation 50 'icmp' 'tmp_s' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 51 [1/1] (2.49ns)   --->   "%x_2 = add i30 %x, 1" [cnn.cpp:1083]   --->   Operation 51 'add' 'x_2' <Predicate = true> <Delay = 2.49> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %1, label %2" [cnn.cpp:1083]   --->   Operation 52 'br' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_73 = zext i30 %x to i64" [cnn.cpp:1086]   --->   Operation 53 'zext' 'tmp_73' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_13 : Operation 54 [1/1] (0.00ns)   --->   "%beta_tmp_addr = getelementptr inbounds [512 x i32]* @beta_tmp, i64 0, i64 %tmp_73" [cnn.cpp:1086]   --->   Operation 54 'getelementptr' 'beta_tmp_addr' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_13 : Operation 55 [2/2] (3.25ns)   --->   "%beta_tmp_load = load i32* %beta_tmp_addr, align 4" [cnn.cpp:1086]   --->   Operation 55 'load' 'beta_tmp_load' <Predicate = (tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_13 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_74 = call i31 @_ssdm_op_BitConcatenate.i31.i30.i1(i30 %x, i1 false)" [cnn.cpp:1086]   --->   Operation 56 'bitconcatenate' 'tmp_74' <Predicate = (tmp_s)> <Delay = 0.00>
+
+State 14 <SV = 11> <Delay = 6.50>
+ST_14 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_33 = call i32 (...)* @_ssdm_op_SpecRegionBegin([13 x i8]* @p_str15)" [cnn.cpp:1084]   --->   Operation 57 'specregionbegin' 'tmp_33' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 58 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind" [cnn.cpp:1085]   --->   Operation 58 'specpipeline' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 59 [1/2] (3.25ns)   --->   "%beta_tmp_load = load i32* %beta_tmp_addr, align 4" [cnn.cpp:1086]   --->   Operation 59 'load' 'beta_tmp_load' <Predicate = (tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_14 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_94 = trunc i32 %beta_tmp_load to i16" [cnn.cpp:1086]   --->   Operation 60 'trunc' 'tmp_94' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_75 = zext i31 %tmp_74 to i64" [cnn.cpp:1086]   --->   Operation 61 'zext' 'tmp_75' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 62 [1/1] (0.00ns)   --->   "%beta_buffer_addr = getelementptr [1024 x i16]* @beta_buffer, i64 0, i64 %tmp_75" [cnn.cpp:1086]   --->   Operation 62 'getelementptr' 'beta_buffer_addr' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 63 [1/1] (3.25ns)   --->   "store i16 %tmp_94, i16* %beta_buffer_addr, align 4" [cnn.cpp:1086]   --->   Operation 63 'store' <Predicate = (tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_14 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_76 = call i16 @_ssdm_op_PartSelect.i16.i32.i32.i32(i32 %beta_tmp_load, i32 16, i32 31)" [cnn.cpp:1087]   --->   Operation 64 'partselect' 'tmp_76' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 65 [1/1] (0.00ns)   --->   "%tmp_77 = or i31 %tmp_74, 1" [cnn.cpp:1087]   --->   Operation 65 'or' 'tmp_77' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_78 = zext i31 %tmp_77 to i64" [cnn.cpp:1087]   --->   Operation 66 'zext' 'tmp_78' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 67 [1/1] (0.00ns)   --->   "%beta_buffer_addr_1 = getelementptr [1024 x i16]* @beta_buffer, i64 0, i64 %tmp_78" [cnn.cpp:1087]   --->   Operation 67 'getelementptr' 'beta_buffer_addr_1' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 68 [1/1] (3.25ns)   --->   "store i16 %tmp_76, i16* %beta_buffer_addr_1, align 2" [cnn.cpp:1087]   --->   Operation 68 'store' <Predicate = (tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_14 : Operation 69 [1/1] (0.00ns)   --->   "%empty_37 = call i32 (...)* @_ssdm_op_SpecRegionEnd([13 x i8]* @p_str15, i32 %tmp_33)" [cnn.cpp:1088]   --->   Operation 69 'specregionend' 'empty_37' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_14 : Operation 70 [1/1] (0.00ns)   --->   "br label %burst.rd.end" [cnn.cpp:1083]   --->   Operation 70 'br' <Predicate = (tmp_s)> <Delay = 0.00>
+
+State 15 <SV = 11> <Delay = 0.00>
+ST_15 : Operation 71 [1/1] (0.00ns)   --->   "ret void" [cnn.cpp:1089]   --->   Operation 71 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.55ns
+The critical path consists of the following:
+	wire read on port 'OFM_NUM' [6]  (0 ns)
+	'add' operation ('tmp', cnn.cpp:1080) [11]  (2.55 ns)
+
+ <State 2>: 8.75ns
+The critical path consists of the following:
+	wire read on port 'Beta_offset' [7]  (0 ns)
+	'getelementptr' operation ('Beta_addr') [9]  (0 ns)
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 3>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 4>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 5>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 6>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 8>: 8.75ns
+The critical path consists of the following:
+	bus request on port 'Beta' (cnn.cpp:1081) [15]  (8.75 ns)
+
+ <State 9>: 2.49ns
+The critical path consists of the following:
+	'phi' operation ('indvar') with incoming values : ('indvar_next') [18]  (0 ns)
+	'add' operation ('indvar_next') [21]  (2.49 ns)
+
+ <State 10>: 8.75ns
+The critical path consists of the following:
+	bus read on port 'Beta' (cnn.cpp:1081) [28]  (8.75 ns)
+
+ <State 11>: 3.25ns
+The critical path consists of the following:
+	'getelementptr' operation ('beta_tmp_addr_1', cnn.cpp:1081) [29]  (0 ns)
+	'store' operation (cnn.cpp:1081) of variable 'Beta_addr_read', cnn.cpp:1081 on array 'beta_tmp' [30]  (3.25 ns)
+
+ <State 12>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('x') with incoming values : ('x', cnn.cpp:1083) [36]  (1.77 ns)
+
+ <State 13>: 3.45ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_s', cnn.cpp:1083) [38]  (2.47 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 14>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('beta_tmp_load', cnn.cpp:1086) on array 'beta_tmp' [46]  (3.25 ns)
+	'store' operation (cnn.cpp:1087) of variable 'tmp_76', cnn.cpp:1087 on array 'beta_buffer' [56]  (3.25 ns)
+
+ <State 15>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

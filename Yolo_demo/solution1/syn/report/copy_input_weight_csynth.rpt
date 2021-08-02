@@ -1,0 +1,936 @@
+
+
+================================================================
+== Vivado HLS Report for 'copy_input_weight'
+================================================================
+* Date:           Thu Jul 29 20:17:32 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|    10.166|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+-------------------+-----+-----+-----+-----+---------+
+        |                              |                   |  Latency  |  Interval | Pipeline|
+        |           Instance           |       Module      | min | max | min | max |   Type  |
+        +------------------------------+-------------------+-----+-----+-----+-----+---------+
+        |grp_input_load_fu_557         |input_load         |    ?|    ?|    ?|    ?|   none  |
+        |grp_weight_load_reorg_fu_614  |weight_load_reorg  |    ?|    ?|    ?|    ?|   none  |
+        +------------------------------+-------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     91|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        2|      4|    2664|   7179|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    138|
+|Register         |        -|      -|     103|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        2|      4|    2767|   7408|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |    ~0   |      1|       2|     13|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+-------------------+---------+-------+------+------+
+    |           Instance           |       Module      | BRAM_18K| DSP48E|  FF  |  LUT |
+    +------------------------------+-------------------+---------+-------+------+------+
+    |grp_input_load_fu_557         |input_load         |        0|      4|  1806|  3792|
+    |grp_weight_load_reorg_fu_614  |weight_load_reorg  |        2|      0|   858|  3387|
+    +------------------------------+-------------------+---------+-------+------+------+
+    |Total                         |                   |        2|      4|  2664|  7179|
+    +------------------------------+-------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |tmp_fu_889_p2                    |     -    |      0|  0|  39|          32|          32|
+    |tmp_s_fu_895_p2                  |   icmp   |      0|  0|  18|          32|          32|
+    |ap_block_state3_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    |TN_MIN_fu_901_p3                 |  select  |      0|  0|  32|           1|          32|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+    |Total                            |          |      0|  0|  91|          66|          97|
+    +---------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                            |  21|          4|    1|          4|
+    |ap_phi_mux_write_flag_phi_fu_551_p4  |   9|          2|   32|         64|
+    |ap_return                            |   9|          2|   32|         64|
+    |m_axi_Weight_ARVALID                 |   9|          2|    1|          2|
+    |m_axi_Weight_RREADY                  |   9|          2|    1|          2|
+    |m_axi_input1_ARVALID                 |   9|          2|    1|          2|
+    |m_axi_input1_RREADY                  |   9|          2|    1|          2|
+    |m_axi_input2_ARVALID                 |   9|          2|    1|          2|
+    |m_axi_input2_RREADY                  |   9|          2|    1|          2|
+    |m_axi_input3_ARVALID                 |   9|          2|    1|          2|
+    |m_axi_input3_RREADY                  |   9|          2|    1|          2|
+    |m_axi_input_r_ARVALID                |   9|          2|    1|          2|
+    |m_axi_input_r_RREADY                 |   9|          2|    1|          2|
+    |write_flag_reg_548                   |   9|          2|   32|         64|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                | 138|         30|  107|        216|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |TN_MIN_reg_1024                            |  32|   0|   32|          0|
+    |ap_CS_fsm                                  |   3|   0|    3|          0|
+    |ap_return_preg                             |  32|   0|   32|          0|
+    |grp_input_load_fu_557_ap_start_reg         |   1|   0|    1|          0|
+    |grp_weight_load_reorg_fu_614_ap_start_reg  |   1|   0|    1|          0|
+    |tmp_89_reg_1030                            |   2|   0|    2|          0|
+    |write_flag_reg_548                         |  32|   0|   32|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      | 103|   0|  103|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------+-----+-----+------------+--------------------+--------------+
+|          RTL Ports          | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-----------------------------+-----+-----+------------+--------------------+--------------+
+|ap_clk                       |  in |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_rst                       |  in |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_start                     |  in |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_done                      | out |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_idle                      | out |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_ready                     | out |    1| ap_ctrl_hs |  copy_input_weight | return value |
+|ap_return                    | out |   32| ap_ctrl_hs |  copy_input_weight | return value |
+|m_axi_input_r_AWVALID        | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWREADY        |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWADDR         | out |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWID           | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWLEN          | out |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWSIZE         | out |    3|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWBURST        | out |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWLOCK         | out |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWCACHE        | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWPROT         | out |    3|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWQOS          | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWREGION       | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_AWUSER         | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WVALID         | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WREADY         |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WDATA          | out |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WSTRB          | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WLAST          | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WID            | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_WUSER          | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARVALID        | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARREADY        |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARADDR         | out |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARID           | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARLEN          | out |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARSIZE         | out |    3|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARBURST        | out |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARLOCK         | out |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARCACHE        | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARPROT         | out |    3|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARQOS          | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARREGION       | out |    4|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_ARUSER         | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RVALID         |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RREADY         | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RDATA          |  in |   32|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RLAST          |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RID            |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RUSER          |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_RRESP          |  in |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_BVALID         |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_BREADY         | out |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_BRESP          |  in |    2|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_BID            |  in |    1|    m_axi   |       input_r      |    pointer   |
+|m_axi_input_r_BUSER          |  in |    1|    m_axi   |       input_r      |    pointer   |
+|input_offset                 |  in |   30|   ap_none  |    input_offset    |    scalar    |
+|m_axi_input1_AWVALID         | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWREADY         |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWADDR          | out |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWID            | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWLEN           | out |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWSIZE          | out |    3|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWBURST         | out |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWLOCK          | out |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWCACHE         | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWPROT          | out |    3|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWQOS           | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWREGION        | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_AWUSER          | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WVALID          | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WREADY          |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WDATA           | out |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WSTRB           | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WLAST           | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WID             | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_WUSER           | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARVALID         | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARREADY         |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARADDR          | out |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARID            | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARLEN           | out |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARSIZE          | out |    3|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARBURST         | out |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARLOCK          | out |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARCACHE         | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARPROT          | out |    3|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARQOS           | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARREGION        | out |    4|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_ARUSER          | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RVALID          |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RREADY          | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RDATA           |  in |   32|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RLAST           |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RID             |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RUSER           |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_RRESP           |  in |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_BVALID          |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_BREADY          | out |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_BRESP           |  in |    2|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_BID             |  in |    1|    m_axi   |       input1       |    pointer   |
+|m_axi_input1_BUSER           |  in |    1|    m_axi   |       input1       |    pointer   |
+|input1_offset                |  in |   30|   ap_none  |    input1_offset   |    scalar    |
+|m_axi_input2_AWVALID         | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWREADY         |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWADDR          | out |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWID            | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWLEN           | out |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWSIZE          | out |    3|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWBURST         | out |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWLOCK          | out |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWCACHE         | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWPROT          | out |    3|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWQOS           | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWREGION        | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_AWUSER          | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WVALID          | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WREADY          |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WDATA           | out |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WSTRB           | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WLAST           | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WID             | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_WUSER           | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARVALID         | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARREADY         |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARADDR          | out |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARID            | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARLEN           | out |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARSIZE          | out |    3|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARBURST         | out |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARLOCK          | out |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARCACHE         | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARPROT          | out |    3|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARQOS           | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARREGION        | out |    4|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_ARUSER          | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RVALID          |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RREADY          | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RDATA           |  in |   32|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RLAST           |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RID             |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RUSER           |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_RRESP           |  in |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_BVALID          |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_BREADY          | out |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_BRESP           |  in |    2|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_BID             |  in |    1|    m_axi   |       input2       |    pointer   |
+|m_axi_input2_BUSER           |  in |    1|    m_axi   |       input2       |    pointer   |
+|input2_offset                |  in |   30|   ap_none  |    input2_offset   |    scalar    |
+|m_axi_input3_AWVALID         | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWREADY         |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWADDR          | out |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWID            | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWLEN           | out |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWSIZE          | out |    3|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWBURST         | out |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWLOCK          | out |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWCACHE         | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWPROT          | out |    3|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWQOS           | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWREGION        | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_AWUSER          | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WVALID          | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WREADY          |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WDATA           | out |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WSTRB           | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WLAST           | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WID             | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_WUSER           | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARVALID         | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARREADY         |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARADDR          | out |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARID            | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARLEN           | out |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARSIZE          | out |    3|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARBURST         | out |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARLOCK          | out |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARCACHE         | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARPROT          | out |    3|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARQOS           | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARREGION        | out |    4|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_ARUSER          | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RVALID          |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RREADY          | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RDATA           |  in |   32|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RLAST           |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RID             |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RUSER           |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_RRESP           |  in |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_BVALID          |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_BREADY          | out |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_BRESP           |  in |    2|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_BID             |  in |    1|    m_axi   |       input3       |    pointer   |
+|m_axi_input3_BUSER           |  in |    1|    m_axi   |       input3       |    pointer   |
+|input3_offset                |  in |   30|   ap_none  |    input3_offset   |    scalar    |
+|m_axi_Weight_AWVALID         | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWREADY         |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWADDR          | out |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWID            | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWLEN           | out |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWSIZE          | out |    3|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWBURST         | out |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWLOCK          | out |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWCACHE         | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWPROT          | out |    3|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWQOS           | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWREGION        | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_AWUSER          | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WVALID          | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WREADY          |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WDATA           | out |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WSTRB           | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WLAST           | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WID             | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_WUSER           | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARVALID         | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARREADY         |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARADDR          | out |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARID            | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARLEN           | out |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARSIZE          | out |    3|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARBURST         | out |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARLOCK          | out |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARCACHE         | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARPROT          | out |    3|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARQOS           | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARREGION        | out |    4|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_ARUSER          | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RVALID          |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RREADY          | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RDATA           |  in |   32|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RLAST           |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RID             |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RUSER           |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_RRESP           |  in |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_BVALID          |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_BREADY          | out |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_BRESP           |  in |    2|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_BID             |  in |    1|    m_axi   |       Weight       |    pointer   |
+|m_axi_Weight_BUSER           |  in |    1|    m_axi   |       Weight       |    pointer   |
+|Weight_offset                |  in |   30|   ap_none  |    Weight_offset   |    scalar    |
+|InFM_num                     |  in |   32|   ap_none  |      InFM_num      |    scalar    |
+|Input_w                      |  in |   32|   ap_none  |       Input_w      |    scalar    |
+|Input_h                      |  in |   32|   ap_none  |       Input_h      |    scalar    |
+|Kernel_size                  |  in |   32|   ap_none  |     Kernel_size    |    scalar    |
+|Kernel_stride                |  in |   32|   ap_none  |    Kernel_stride   |    scalar    |
+|r                            |  in |   32|   ap_none  |          r         |    scalar    |
+|c                            |  in |   32|   ap_none  |          c         |    scalar    |
+|m                            |  in |   32|   ap_none  |          m         |    scalar    |
+|n                            |  in |   32|   ap_none  |          n         |    scalar    |
+|TM_MIN                       |  in |   32|   ap_none  |       TM_MIN       |    scalar    |
+|TN                           |  in |   32|   ap_none  |         TN         |    scalar    |
+|TRow                         |  in |    8|   ap_none  |        TRow        |    scalar    |
+|TCol                         |  in |    8|   ap_none  |        TCol        |    scalar    |
+|Padding                      |  in |   32|   ap_none  |       Padding      |    scalar    |
+|input_buffer_0_address0      | out |   12|  ap_memory |   input_buffer_0   |     array    |
+|input_buffer_0_ce0           | out |    1|  ap_memory |   input_buffer_0   |     array    |
+|input_buffer_0_we0           | out |    1|  ap_memory |   input_buffer_0   |     array    |
+|input_buffer_0_d0            | out |   16|  ap_memory |   input_buffer_0   |     array    |
+|input_buffer_1_address0      | out |   12|  ap_memory |   input_buffer_1   |     array    |
+|input_buffer_1_ce0           | out |    1|  ap_memory |   input_buffer_1   |     array    |
+|input_buffer_1_we0           | out |    1|  ap_memory |   input_buffer_1   |     array    |
+|input_buffer_1_d0            | out |   16|  ap_memory |   input_buffer_1   |     array    |
+|input_buffer_2_address0      | out |   12|  ap_memory |   input_buffer_2   |     array    |
+|input_buffer_2_ce0           | out |    1|  ap_memory |   input_buffer_2   |     array    |
+|input_buffer_2_we0           | out |    1|  ap_memory |   input_buffer_2   |     array    |
+|input_buffer_2_d0            | out |   16|  ap_memory |   input_buffer_2   |     array    |
+|input_buffer_3_address0      | out |   12|  ap_memory |   input_buffer_3   |     array    |
+|input_buffer_3_ce0           | out |    1|  ap_memory |   input_buffer_3   |     array    |
+|input_buffer_3_we0           | out |    1|  ap_memory |   input_buffer_3   |     array    |
+|input_buffer_3_d0            | out |   16|  ap_memory |   input_buffer_3   |     array    |
+|weight_buffer_0_0_address0   | out |    4|  ap_memory |  weight_buffer_0_0 |     array    |
+|weight_buffer_0_0_ce0        | out |    1|  ap_memory |  weight_buffer_0_0 |     array    |
+|weight_buffer_0_0_we0        | out |    1|  ap_memory |  weight_buffer_0_0 |     array    |
+|weight_buffer_0_0_d0         | out |   16|  ap_memory |  weight_buffer_0_0 |     array    |
+|weight_buffer_0_1_address0   | out |    4|  ap_memory |  weight_buffer_0_1 |     array    |
+|weight_buffer_0_1_ce0        | out |    1|  ap_memory |  weight_buffer_0_1 |     array    |
+|weight_buffer_0_1_we0        | out |    1|  ap_memory |  weight_buffer_0_1 |     array    |
+|weight_buffer_0_1_d0         | out |   16|  ap_memory |  weight_buffer_0_1 |     array    |
+|weight_buffer_0_2_address0   | out |    4|  ap_memory |  weight_buffer_0_2 |     array    |
+|weight_buffer_0_2_ce0        | out |    1|  ap_memory |  weight_buffer_0_2 |     array    |
+|weight_buffer_0_2_we0        | out |    1|  ap_memory |  weight_buffer_0_2 |     array    |
+|weight_buffer_0_2_d0         | out |   16|  ap_memory |  weight_buffer_0_2 |     array    |
+|weight_buffer_0_3_address0   | out |    4|  ap_memory |  weight_buffer_0_3 |     array    |
+|weight_buffer_0_3_ce0        | out |    1|  ap_memory |  weight_buffer_0_3 |     array    |
+|weight_buffer_0_3_we0        | out |    1|  ap_memory |  weight_buffer_0_3 |     array    |
+|weight_buffer_0_3_d0         | out |   16|  ap_memory |  weight_buffer_0_3 |     array    |
+|weight_buffer_1_0_address0   | out |    4|  ap_memory |  weight_buffer_1_0 |     array    |
+|weight_buffer_1_0_ce0        | out |    1|  ap_memory |  weight_buffer_1_0 |     array    |
+|weight_buffer_1_0_we0        | out |    1|  ap_memory |  weight_buffer_1_0 |     array    |
+|weight_buffer_1_0_d0         | out |   16|  ap_memory |  weight_buffer_1_0 |     array    |
+|weight_buffer_1_1_address0   | out |    4|  ap_memory |  weight_buffer_1_1 |     array    |
+|weight_buffer_1_1_ce0        | out |    1|  ap_memory |  weight_buffer_1_1 |     array    |
+|weight_buffer_1_1_we0        | out |    1|  ap_memory |  weight_buffer_1_1 |     array    |
+|weight_buffer_1_1_d0         | out |   16|  ap_memory |  weight_buffer_1_1 |     array    |
+|weight_buffer_1_2_address0   | out |    4|  ap_memory |  weight_buffer_1_2 |     array    |
+|weight_buffer_1_2_ce0        | out |    1|  ap_memory |  weight_buffer_1_2 |     array    |
+|weight_buffer_1_2_we0        | out |    1|  ap_memory |  weight_buffer_1_2 |     array    |
+|weight_buffer_1_2_d0         | out |   16|  ap_memory |  weight_buffer_1_2 |     array    |
+|weight_buffer_1_3_address0   | out |    4|  ap_memory |  weight_buffer_1_3 |     array    |
+|weight_buffer_1_3_ce0        | out |    1|  ap_memory |  weight_buffer_1_3 |     array    |
+|weight_buffer_1_3_we0        | out |    1|  ap_memory |  weight_buffer_1_3 |     array    |
+|weight_buffer_1_3_d0         | out |   16|  ap_memory |  weight_buffer_1_3 |     array    |
+|weight_buffer_2_0_address0   | out |    4|  ap_memory |  weight_buffer_2_0 |     array    |
+|weight_buffer_2_0_ce0        | out |    1|  ap_memory |  weight_buffer_2_0 |     array    |
+|weight_buffer_2_0_we0        | out |    1|  ap_memory |  weight_buffer_2_0 |     array    |
+|weight_buffer_2_0_d0         | out |   16|  ap_memory |  weight_buffer_2_0 |     array    |
+|weight_buffer_2_1_address0   | out |    4|  ap_memory |  weight_buffer_2_1 |     array    |
+|weight_buffer_2_1_ce0        | out |    1|  ap_memory |  weight_buffer_2_1 |     array    |
+|weight_buffer_2_1_we0        | out |    1|  ap_memory |  weight_buffer_2_1 |     array    |
+|weight_buffer_2_1_d0         | out |   16|  ap_memory |  weight_buffer_2_1 |     array    |
+|weight_buffer_2_2_address0   | out |    4|  ap_memory |  weight_buffer_2_2 |     array    |
+|weight_buffer_2_2_ce0        | out |    1|  ap_memory |  weight_buffer_2_2 |     array    |
+|weight_buffer_2_2_we0        | out |    1|  ap_memory |  weight_buffer_2_2 |     array    |
+|weight_buffer_2_2_d0         | out |   16|  ap_memory |  weight_buffer_2_2 |     array    |
+|weight_buffer_2_3_address0   | out |    4|  ap_memory |  weight_buffer_2_3 |     array    |
+|weight_buffer_2_3_ce0        | out |    1|  ap_memory |  weight_buffer_2_3 |     array    |
+|weight_buffer_2_3_we0        | out |    1|  ap_memory |  weight_buffer_2_3 |     array    |
+|weight_buffer_2_3_d0         | out |   16|  ap_memory |  weight_buffer_2_3 |     array    |
+|weight_buffer_3_0_address0   | out |    4|  ap_memory |  weight_buffer_3_0 |     array    |
+|weight_buffer_3_0_ce0        | out |    1|  ap_memory |  weight_buffer_3_0 |     array    |
+|weight_buffer_3_0_we0        | out |    1|  ap_memory |  weight_buffer_3_0 |     array    |
+|weight_buffer_3_0_d0         | out |   16|  ap_memory |  weight_buffer_3_0 |     array    |
+|weight_buffer_3_1_address0   | out |    4|  ap_memory |  weight_buffer_3_1 |     array    |
+|weight_buffer_3_1_ce0        | out |    1|  ap_memory |  weight_buffer_3_1 |     array    |
+|weight_buffer_3_1_we0        | out |    1|  ap_memory |  weight_buffer_3_1 |     array    |
+|weight_buffer_3_1_d0         | out |   16|  ap_memory |  weight_buffer_3_1 |     array    |
+|weight_buffer_3_2_address0   | out |    4|  ap_memory |  weight_buffer_3_2 |     array    |
+|weight_buffer_3_2_ce0        | out |    1|  ap_memory |  weight_buffer_3_2 |     array    |
+|weight_buffer_3_2_we0        | out |    1|  ap_memory |  weight_buffer_3_2 |     array    |
+|weight_buffer_3_2_d0         | out |   16|  ap_memory |  weight_buffer_3_2 |     array    |
+|weight_buffer_3_3_address0   | out |    4|  ap_memory |  weight_buffer_3_3 |     array    |
+|weight_buffer_3_3_ce0        | out |    1|  ap_memory |  weight_buffer_3_3 |     array    |
+|weight_buffer_3_3_we0        | out |    1|  ap_memory |  weight_buffer_3_3 |     array    |
+|weight_buffer_3_3_d0         | out |   16|  ap_memory |  weight_buffer_3_3 |     array    |
+|weight_buffer_4_0_address0   | out |    4|  ap_memory |  weight_buffer_4_0 |     array    |
+|weight_buffer_4_0_ce0        | out |    1|  ap_memory |  weight_buffer_4_0 |     array    |
+|weight_buffer_4_0_we0        | out |    1|  ap_memory |  weight_buffer_4_0 |     array    |
+|weight_buffer_4_0_d0         | out |   16|  ap_memory |  weight_buffer_4_0 |     array    |
+|weight_buffer_4_1_address0   | out |    4|  ap_memory |  weight_buffer_4_1 |     array    |
+|weight_buffer_4_1_ce0        | out |    1|  ap_memory |  weight_buffer_4_1 |     array    |
+|weight_buffer_4_1_we0        | out |    1|  ap_memory |  weight_buffer_4_1 |     array    |
+|weight_buffer_4_1_d0         | out |   16|  ap_memory |  weight_buffer_4_1 |     array    |
+|weight_buffer_4_2_address0   | out |    4|  ap_memory |  weight_buffer_4_2 |     array    |
+|weight_buffer_4_2_ce0        | out |    1|  ap_memory |  weight_buffer_4_2 |     array    |
+|weight_buffer_4_2_we0        | out |    1|  ap_memory |  weight_buffer_4_2 |     array    |
+|weight_buffer_4_2_d0         | out |   16|  ap_memory |  weight_buffer_4_2 |     array    |
+|weight_buffer_4_3_address0   | out |    4|  ap_memory |  weight_buffer_4_3 |     array    |
+|weight_buffer_4_3_ce0        | out |    1|  ap_memory |  weight_buffer_4_3 |     array    |
+|weight_buffer_4_3_we0        | out |    1|  ap_memory |  weight_buffer_4_3 |     array    |
+|weight_buffer_4_3_d0         | out |   16|  ap_memory |  weight_buffer_4_3 |     array    |
+|weight_buffer_5_0_address0   | out |    4|  ap_memory |  weight_buffer_5_0 |     array    |
+|weight_buffer_5_0_ce0        | out |    1|  ap_memory |  weight_buffer_5_0 |     array    |
+|weight_buffer_5_0_we0        | out |    1|  ap_memory |  weight_buffer_5_0 |     array    |
+|weight_buffer_5_0_d0         | out |   16|  ap_memory |  weight_buffer_5_0 |     array    |
+|weight_buffer_5_1_address0   | out |    4|  ap_memory |  weight_buffer_5_1 |     array    |
+|weight_buffer_5_1_ce0        | out |    1|  ap_memory |  weight_buffer_5_1 |     array    |
+|weight_buffer_5_1_we0        | out |    1|  ap_memory |  weight_buffer_5_1 |     array    |
+|weight_buffer_5_1_d0         | out |   16|  ap_memory |  weight_buffer_5_1 |     array    |
+|weight_buffer_5_2_address0   | out |    4|  ap_memory |  weight_buffer_5_2 |     array    |
+|weight_buffer_5_2_ce0        | out |    1|  ap_memory |  weight_buffer_5_2 |     array    |
+|weight_buffer_5_2_we0        | out |    1|  ap_memory |  weight_buffer_5_2 |     array    |
+|weight_buffer_5_2_d0         | out |   16|  ap_memory |  weight_buffer_5_2 |     array    |
+|weight_buffer_5_3_address0   | out |    4|  ap_memory |  weight_buffer_5_3 |     array    |
+|weight_buffer_5_3_ce0        | out |    1|  ap_memory |  weight_buffer_5_3 |     array    |
+|weight_buffer_5_3_we0        | out |    1|  ap_memory |  weight_buffer_5_3 |     array    |
+|weight_buffer_5_3_d0         | out |   16|  ap_memory |  weight_buffer_5_3 |     array    |
+|weight_buffer_6_0_address0   | out |    4|  ap_memory |  weight_buffer_6_0 |     array    |
+|weight_buffer_6_0_ce0        | out |    1|  ap_memory |  weight_buffer_6_0 |     array    |
+|weight_buffer_6_0_we0        | out |    1|  ap_memory |  weight_buffer_6_0 |     array    |
+|weight_buffer_6_0_d0         | out |   16|  ap_memory |  weight_buffer_6_0 |     array    |
+|weight_buffer_6_1_address0   | out |    4|  ap_memory |  weight_buffer_6_1 |     array    |
+|weight_buffer_6_1_ce0        | out |    1|  ap_memory |  weight_buffer_6_1 |     array    |
+|weight_buffer_6_1_we0        | out |    1|  ap_memory |  weight_buffer_6_1 |     array    |
+|weight_buffer_6_1_d0         | out |   16|  ap_memory |  weight_buffer_6_1 |     array    |
+|weight_buffer_6_2_address0   | out |    4|  ap_memory |  weight_buffer_6_2 |     array    |
+|weight_buffer_6_2_ce0        | out |    1|  ap_memory |  weight_buffer_6_2 |     array    |
+|weight_buffer_6_2_we0        | out |    1|  ap_memory |  weight_buffer_6_2 |     array    |
+|weight_buffer_6_2_d0         | out |   16|  ap_memory |  weight_buffer_6_2 |     array    |
+|weight_buffer_6_3_address0   | out |    4|  ap_memory |  weight_buffer_6_3 |     array    |
+|weight_buffer_6_3_ce0        | out |    1|  ap_memory |  weight_buffer_6_3 |     array    |
+|weight_buffer_6_3_we0        | out |    1|  ap_memory |  weight_buffer_6_3 |     array    |
+|weight_buffer_6_3_d0         | out |   16|  ap_memory |  weight_buffer_6_3 |     array    |
+|weight_buffer_7_0_address0   | out |    4|  ap_memory |  weight_buffer_7_0 |     array    |
+|weight_buffer_7_0_ce0        | out |    1|  ap_memory |  weight_buffer_7_0 |     array    |
+|weight_buffer_7_0_we0        | out |    1|  ap_memory |  weight_buffer_7_0 |     array    |
+|weight_buffer_7_0_d0         | out |   16|  ap_memory |  weight_buffer_7_0 |     array    |
+|weight_buffer_7_1_address0   | out |    4|  ap_memory |  weight_buffer_7_1 |     array    |
+|weight_buffer_7_1_ce0        | out |    1|  ap_memory |  weight_buffer_7_1 |     array    |
+|weight_buffer_7_1_we0        | out |    1|  ap_memory |  weight_buffer_7_1 |     array    |
+|weight_buffer_7_1_d0         | out |   16|  ap_memory |  weight_buffer_7_1 |     array    |
+|weight_buffer_7_2_address0   | out |    4|  ap_memory |  weight_buffer_7_2 |     array    |
+|weight_buffer_7_2_ce0        | out |    1|  ap_memory |  weight_buffer_7_2 |     array    |
+|weight_buffer_7_2_we0        | out |    1|  ap_memory |  weight_buffer_7_2 |     array    |
+|weight_buffer_7_2_d0         | out |   16|  ap_memory |  weight_buffer_7_2 |     array    |
+|weight_buffer_7_3_address0   | out |    4|  ap_memory |  weight_buffer_7_3 |     array    |
+|weight_buffer_7_3_ce0        | out |    1|  ap_memory |  weight_buffer_7_3 |     array    |
+|weight_buffer_7_3_we0        | out |    1|  ap_memory |  weight_buffer_7_3 |     array    |
+|weight_buffer_7_3_d0         | out |   16|  ap_memory |  weight_buffer_7_3 |     array    |
+|weight_buffer_8_0_address0   | out |    4|  ap_memory |  weight_buffer_8_0 |     array    |
+|weight_buffer_8_0_ce0        | out |    1|  ap_memory |  weight_buffer_8_0 |     array    |
+|weight_buffer_8_0_we0        | out |    1|  ap_memory |  weight_buffer_8_0 |     array    |
+|weight_buffer_8_0_d0         | out |   16|  ap_memory |  weight_buffer_8_0 |     array    |
+|weight_buffer_8_1_address0   | out |    4|  ap_memory |  weight_buffer_8_1 |     array    |
+|weight_buffer_8_1_ce0        | out |    1|  ap_memory |  weight_buffer_8_1 |     array    |
+|weight_buffer_8_1_we0        | out |    1|  ap_memory |  weight_buffer_8_1 |     array    |
+|weight_buffer_8_1_d0         | out |   16|  ap_memory |  weight_buffer_8_1 |     array    |
+|weight_buffer_8_2_address0   | out |    4|  ap_memory |  weight_buffer_8_2 |     array    |
+|weight_buffer_8_2_ce0        | out |    1|  ap_memory |  weight_buffer_8_2 |     array    |
+|weight_buffer_8_2_we0        | out |    1|  ap_memory |  weight_buffer_8_2 |     array    |
+|weight_buffer_8_2_d0         | out |   16|  ap_memory |  weight_buffer_8_2 |     array    |
+|weight_buffer_8_3_address0   | out |    4|  ap_memory |  weight_buffer_8_3 |     array    |
+|weight_buffer_8_3_ce0        | out |    1|  ap_memory |  weight_buffer_8_3 |     array    |
+|weight_buffer_8_3_we0        | out |    1|  ap_memory |  weight_buffer_8_3 |     array    |
+|weight_buffer_8_3_d0         | out |   16|  ap_memory |  weight_buffer_8_3 |     array    |
+|weight_buffer_9_0_address0   | out |    4|  ap_memory |  weight_buffer_9_0 |     array    |
+|weight_buffer_9_0_ce0        | out |    1|  ap_memory |  weight_buffer_9_0 |     array    |
+|weight_buffer_9_0_we0        | out |    1|  ap_memory |  weight_buffer_9_0 |     array    |
+|weight_buffer_9_0_d0         | out |   16|  ap_memory |  weight_buffer_9_0 |     array    |
+|weight_buffer_9_1_address0   | out |    4|  ap_memory |  weight_buffer_9_1 |     array    |
+|weight_buffer_9_1_ce0        | out |    1|  ap_memory |  weight_buffer_9_1 |     array    |
+|weight_buffer_9_1_we0        | out |    1|  ap_memory |  weight_buffer_9_1 |     array    |
+|weight_buffer_9_1_d0         | out |   16|  ap_memory |  weight_buffer_9_1 |     array    |
+|weight_buffer_9_2_address0   | out |    4|  ap_memory |  weight_buffer_9_2 |     array    |
+|weight_buffer_9_2_ce0        | out |    1|  ap_memory |  weight_buffer_9_2 |     array    |
+|weight_buffer_9_2_we0        | out |    1|  ap_memory |  weight_buffer_9_2 |     array    |
+|weight_buffer_9_2_d0         | out |   16|  ap_memory |  weight_buffer_9_2 |     array    |
+|weight_buffer_9_3_address0   | out |    4|  ap_memory |  weight_buffer_9_3 |     array    |
+|weight_buffer_9_3_ce0        | out |    1|  ap_memory |  weight_buffer_9_3 |     array    |
+|weight_buffer_9_3_we0        | out |    1|  ap_memory |  weight_buffer_9_3 |     array    |
+|weight_buffer_9_3_d0         | out |   16|  ap_memory |  weight_buffer_9_3 |     array    |
+|weight_buffer_10_0_address0  | out |    4|  ap_memory | weight_buffer_10_0 |     array    |
+|weight_buffer_10_0_ce0       | out |    1|  ap_memory | weight_buffer_10_0 |     array    |
+|weight_buffer_10_0_we0       | out |    1|  ap_memory | weight_buffer_10_0 |     array    |
+|weight_buffer_10_0_d0        | out |   16|  ap_memory | weight_buffer_10_0 |     array    |
+|weight_buffer_10_1_address0  | out |    4|  ap_memory | weight_buffer_10_1 |     array    |
+|weight_buffer_10_1_ce0       | out |    1|  ap_memory | weight_buffer_10_1 |     array    |
+|weight_buffer_10_1_we0       | out |    1|  ap_memory | weight_buffer_10_1 |     array    |
+|weight_buffer_10_1_d0        | out |   16|  ap_memory | weight_buffer_10_1 |     array    |
+|weight_buffer_10_2_address0  | out |    4|  ap_memory | weight_buffer_10_2 |     array    |
+|weight_buffer_10_2_ce0       | out |    1|  ap_memory | weight_buffer_10_2 |     array    |
+|weight_buffer_10_2_we0       | out |    1|  ap_memory | weight_buffer_10_2 |     array    |
+|weight_buffer_10_2_d0        | out |   16|  ap_memory | weight_buffer_10_2 |     array    |
+|weight_buffer_10_3_address0  | out |    4|  ap_memory | weight_buffer_10_3 |     array    |
+|weight_buffer_10_3_ce0       | out |    1|  ap_memory | weight_buffer_10_3 |     array    |
+|weight_buffer_10_3_we0       | out |    1|  ap_memory | weight_buffer_10_3 |     array    |
+|weight_buffer_10_3_d0        | out |   16|  ap_memory | weight_buffer_10_3 |     array    |
+|weight_buffer_11_0_address0  | out |    4|  ap_memory | weight_buffer_11_0 |     array    |
+|weight_buffer_11_0_ce0       | out |    1|  ap_memory | weight_buffer_11_0 |     array    |
+|weight_buffer_11_0_we0       | out |    1|  ap_memory | weight_buffer_11_0 |     array    |
+|weight_buffer_11_0_d0        | out |   16|  ap_memory | weight_buffer_11_0 |     array    |
+|weight_buffer_11_1_address0  | out |    4|  ap_memory | weight_buffer_11_1 |     array    |
+|weight_buffer_11_1_ce0       | out |    1|  ap_memory | weight_buffer_11_1 |     array    |
+|weight_buffer_11_1_we0       | out |    1|  ap_memory | weight_buffer_11_1 |     array    |
+|weight_buffer_11_1_d0        | out |   16|  ap_memory | weight_buffer_11_1 |     array    |
+|weight_buffer_11_2_address0  | out |    4|  ap_memory | weight_buffer_11_2 |     array    |
+|weight_buffer_11_2_ce0       | out |    1|  ap_memory | weight_buffer_11_2 |     array    |
+|weight_buffer_11_2_we0       | out |    1|  ap_memory | weight_buffer_11_2 |     array    |
+|weight_buffer_11_2_d0        | out |   16|  ap_memory | weight_buffer_11_2 |     array    |
+|weight_buffer_11_3_address0  | out |    4|  ap_memory | weight_buffer_11_3 |     array    |
+|weight_buffer_11_3_ce0       | out |    1|  ap_memory | weight_buffer_11_3 |     array    |
+|weight_buffer_11_3_we0       | out |    1|  ap_memory | weight_buffer_11_3 |     array    |
+|weight_buffer_11_3_d0        | out |   16|  ap_memory | weight_buffer_11_3 |     array    |
+|weight_buffer_12_0_address0  | out |    4|  ap_memory | weight_buffer_12_0 |     array    |
+|weight_buffer_12_0_ce0       | out |    1|  ap_memory | weight_buffer_12_0 |     array    |
+|weight_buffer_12_0_we0       | out |    1|  ap_memory | weight_buffer_12_0 |     array    |
+|weight_buffer_12_0_d0        | out |   16|  ap_memory | weight_buffer_12_0 |     array    |
+|weight_buffer_12_1_address0  | out |    4|  ap_memory | weight_buffer_12_1 |     array    |
+|weight_buffer_12_1_ce0       | out |    1|  ap_memory | weight_buffer_12_1 |     array    |
+|weight_buffer_12_1_we0       | out |    1|  ap_memory | weight_buffer_12_1 |     array    |
+|weight_buffer_12_1_d0        | out |   16|  ap_memory | weight_buffer_12_1 |     array    |
+|weight_buffer_12_2_address0  | out |    4|  ap_memory | weight_buffer_12_2 |     array    |
+|weight_buffer_12_2_ce0       | out |    1|  ap_memory | weight_buffer_12_2 |     array    |
+|weight_buffer_12_2_we0       | out |    1|  ap_memory | weight_buffer_12_2 |     array    |
+|weight_buffer_12_2_d0        | out |   16|  ap_memory | weight_buffer_12_2 |     array    |
+|weight_buffer_12_3_address0  | out |    4|  ap_memory | weight_buffer_12_3 |     array    |
+|weight_buffer_12_3_ce0       | out |    1|  ap_memory | weight_buffer_12_3 |     array    |
+|weight_buffer_12_3_we0       | out |    1|  ap_memory | weight_buffer_12_3 |     array    |
+|weight_buffer_12_3_d0        | out |   16|  ap_memory | weight_buffer_12_3 |     array    |
+|weight_buffer_13_0_address0  | out |    4|  ap_memory | weight_buffer_13_0 |     array    |
+|weight_buffer_13_0_ce0       | out |    1|  ap_memory | weight_buffer_13_0 |     array    |
+|weight_buffer_13_0_we0       | out |    1|  ap_memory | weight_buffer_13_0 |     array    |
+|weight_buffer_13_0_d0        | out |   16|  ap_memory | weight_buffer_13_0 |     array    |
+|weight_buffer_13_1_address0  | out |    4|  ap_memory | weight_buffer_13_1 |     array    |
+|weight_buffer_13_1_ce0       | out |    1|  ap_memory | weight_buffer_13_1 |     array    |
+|weight_buffer_13_1_we0       | out |    1|  ap_memory | weight_buffer_13_1 |     array    |
+|weight_buffer_13_1_d0        | out |   16|  ap_memory | weight_buffer_13_1 |     array    |
+|weight_buffer_13_2_address0  | out |    4|  ap_memory | weight_buffer_13_2 |     array    |
+|weight_buffer_13_2_ce0       | out |    1|  ap_memory | weight_buffer_13_2 |     array    |
+|weight_buffer_13_2_we0       | out |    1|  ap_memory | weight_buffer_13_2 |     array    |
+|weight_buffer_13_2_d0        | out |   16|  ap_memory | weight_buffer_13_2 |     array    |
+|weight_buffer_13_3_address0  | out |    4|  ap_memory | weight_buffer_13_3 |     array    |
+|weight_buffer_13_3_ce0       | out |    1|  ap_memory | weight_buffer_13_3 |     array    |
+|weight_buffer_13_3_we0       | out |    1|  ap_memory | weight_buffer_13_3 |     array    |
+|weight_buffer_13_3_d0        | out |   16|  ap_memory | weight_buffer_13_3 |     array    |
+|weight_buffer_14_0_address0  | out |    4|  ap_memory | weight_buffer_14_0 |     array    |
+|weight_buffer_14_0_ce0       | out |    1|  ap_memory | weight_buffer_14_0 |     array    |
+|weight_buffer_14_0_we0       | out |    1|  ap_memory | weight_buffer_14_0 |     array    |
+|weight_buffer_14_0_d0        | out |   16|  ap_memory | weight_buffer_14_0 |     array    |
+|weight_buffer_14_1_address0  | out |    4|  ap_memory | weight_buffer_14_1 |     array    |
+|weight_buffer_14_1_ce0       | out |    1|  ap_memory | weight_buffer_14_1 |     array    |
+|weight_buffer_14_1_we0       | out |    1|  ap_memory | weight_buffer_14_1 |     array    |
+|weight_buffer_14_1_d0        | out |   16|  ap_memory | weight_buffer_14_1 |     array    |
+|weight_buffer_14_2_address0  | out |    4|  ap_memory | weight_buffer_14_2 |     array    |
+|weight_buffer_14_2_ce0       | out |    1|  ap_memory | weight_buffer_14_2 |     array    |
+|weight_buffer_14_2_we0       | out |    1|  ap_memory | weight_buffer_14_2 |     array    |
+|weight_buffer_14_2_d0        | out |   16|  ap_memory | weight_buffer_14_2 |     array    |
+|weight_buffer_14_3_address0  | out |    4|  ap_memory | weight_buffer_14_3 |     array    |
+|weight_buffer_14_3_ce0       | out |    1|  ap_memory | weight_buffer_14_3 |     array    |
+|weight_buffer_14_3_we0       | out |    1|  ap_memory | weight_buffer_14_3 |     array    |
+|weight_buffer_14_3_d0        | out |   16|  ap_memory | weight_buffer_14_3 |     array    |
+|weight_buffer_15_0_address0  | out |    4|  ap_memory | weight_buffer_15_0 |     array    |
+|weight_buffer_15_0_ce0       | out |    1|  ap_memory | weight_buffer_15_0 |     array    |
+|weight_buffer_15_0_we0       | out |    1|  ap_memory | weight_buffer_15_0 |     array    |
+|weight_buffer_15_0_d0        | out |   16|  ap_memory | weight_buffer_15_0 |     array    |
+|weight_buffer_15_1_address0  | out |    4|  ap_memory | weight_buffer_15_1 |     array    |
+|weight_buffer_15_1_ce0       | out |    1|  ap_memory | weight_buffer_15_1 |     array    |
+|weight_buffer_15_1_we0       | out |    1|  ap_memory | weight_buffer_15_1 |     array    |
+|weight_buffer_15_1_d0        | out |   16|  ap_memory | weight_buffer_15_1 |     array    |
+|weight_buffer_15_2_address0  | out |    4|  ap_memory | weight_buffer_15_2 |     array    |
+|weight_buffer_15_2_ce0       | out |    1|  ap_memory | weight_buffer_15_2 |     array    |
+|weight_buffer_15_2_we0       | out |    1|  ap_memory | weight_buffer_15_2 |     array    |
+|weight_buffer_15_2_d0        | out |   16|  ap_memory | weight_buffer_15_2 |     array    |
+|weight_buffer_15_3_address0  | out |    4|  ap_memory | weight_buffer_15_3 |     array    |
+|weight_buffer_15_3_ce0       | out |    1|  ap_memory | weight_buffer_15_3 |     array    |
+|weight_buffer_15_3_we0       | out |    1|  ap_memory | weight_buffer_15_3 |     array    |
+|weight_buffer_15_3_d0        | out |   16|  ap_memory | weight_buffer_15_3 |     array    |
+|weight_buffer_16_0_address0  | out |    4|  ap_memory | weight_buffer_16_0 |     array    |
+|weight_buffer_16_0_ce0       | out |    1|  ap_memory | weight_buffer_16_0 |     array    |
+|weight_buffer_16_0_we0       | out |    1|  ap_memory | weight_buffer_16_0 |     array    |
+|weight_buffer_16_0_d0        | out |   16|  ap_memory | weight_buffer_16_0 |     array    |
+|weight_buffer_16_1_address0  | out |    4|  ap_memory | weight_buffer_16_1 |     array    |
+|weight_buffer_16_1_ce0       | out |    1|  ap_memory | weight_buffer_16_1 |     array    |
+|weight_buffer_16_1_we0       | out |    1|  ap_memory | weight_buffer_16_1 |     array    |
+|weight_buffer_16_1_d0        | out |   16|  ap_memory | weight_buffer_16_1 |     array    |
+|weight_buffer_16_2_address0  | out |    4|  ap_memory | weight_buffer_16_2 |     array    |
+|weight_buffer_16_2_ce0       | out |    1|  ap_memory | weight_buffer_16_2 |     array    |
+|weight_buffer_16_2_we0       | out |    1|  ap_memory | weight_buffer_16_2 |     array    |
+|weight_buffer_16_2_d0        | out |   16|  ap_memory | weight_buffer_16_2 |     array    |
+|weight_buffer_16_3_address0  | out |    4|  ap_memory | weight_buffer_16_3 |     array    |
+|weight_buffer_16_3_ce0       | out |    1|  ap_memory | weight_buffer_16_3 |     array    |
+|weight_buffer_16_3_we0       | out |    1|  ap_memory | weight_buffer_16_3 |     array    |
+|weight_buffer_16_3_d0        | out |   16|  ap_memory | weight_buffer_16_3 |     array    |
+|weight_buffer_17_0_address0  | out |    4|  ap_memory | weight_buffer_17_0 |     array    |
+|weight_buffer_17_0_ce0       | out |    1|  ap_memory | weight_buffer_17_0 |     array    |
+|weight_buffer_17_0_we0       | out |    1|  ap_memory | weight_buffer_17_0 |     array    |
+|weight_buffer_17_0_d0        | out |   16|  ap_memory | weight_buffer_17_0 |     array    |
+|weight_buffer_17_1_address0  | out |    4|  ap_memory | weight_buffer_17_1 |     array    |
+|weight_buffer_17_1_ce0       | out |    1|  ap_memory | weight_buffer_17_1 |     array    |
+|weight_buffer_17_1_we0       | out |    1|  ap_memory | weight_buffer_17_1 |     array    |
+|weight_buffer_17_1_d0        | out |   16|  ap_memory | weight_buffer_17_1 |     array    |
+|weight_buffer_17_2_address0  | out |    4|  ap_memory | weight_buffer_17_2 |     array    |
+|weight_buffer_17_2_ce0       | out |    1|  ap_memory | weight_buffer_17_2 |     array    |
+|weight_buffer_17_2_we0       | out |    1|  ap_memory | weight_buffer_17_2 |     array    |
+|weight_buffer_17_2_d0        | out |   16|  ap_memory | weight_buffer_17_2 |     array    |
+|weight_buffer_17_3_address0  | out |    4|  ap_memory | weight_buffer_17_3 |     array    |
+|weight_buffer_17_3_ce0       | out |    1|  ap_memory | weight_buffer_17_3 |     array    |
+|weight_buffer_17_3_we0       | out |    1|  ap_memory | weight_buffer_17_3 |     array    |
+|weight_buffer_17_3_d0        | out |   16|  ap_memory | weight_buffer_17_3 |     array    |
+|weight_buffer_18_0_address0  | out |    4|  ap_memory | weight_buffer_18_0 |     array    |
+|weight_buffer_18_0_ce0       | out |    1|  ap_memory | weight_buffer_18_0 |     array    |
+|weight_buffer_18_0_we0       | out |    1|  ap_memory | weight_buffer_18_0 |     array    |
+|weight_buffer_18_0_d0        | out |   16|  ap_memory | weight_buffer_18_0 |     array    |
+|weight_buffer_18_1_address0  | out |    4|  ap_memory | weight_buffer_18_1 |     array    |
+|weight_buffer_18_1_ce0       | out |    1|  ap_memory | weight_buffer_18_1 |     array    |
+|weight_buffer_18_1_we0       | out |    1|  ap_memory | weight_buffer_18_1 |     array    |
+|weight_buffer_18_1_d0        | out |   16|  ap_memory | weight_buffer_18_1 |     array    |
+|weight_buffer_18_2_address0  | out |    4|  ap_memory | weight_buffer_18_2 |     array    |
+|weight_buffer_18_2_ce0       | out |    1|  ap_memory | weight_buffer_18_2 |     array    |
+|weight_buffer_18_2_we0       | out |    1|  ap_memory | weight_buffer_18_2 |     array    |
+|weight_buffer_18_2_d0        | out |   16|  ap_memory | weight_buffer_18_2 |     array    |
+|weight_buffer_18_3_address0  | out |    4|  ap_memory | weight_buffer_18_3 |     array    |
+|weight_buffer_18_3_ce0       | out |    1|  ap_memory | weight_buffer_18_3 |     array    |
+|weight_buffer_18_3_we0       | out |    1|  ap_memory | weight_buffer_18_3 |     array    |
+|weight_buffer_18_3_d0        | out |   16|  ap_memory | weight_buffer_18_3 |     array    |
+|weight_buffer_19_0_address0  | out |    4|  ap_memory | weight_buffer_19_0 |     array    |
+|weight_buffer_19_0_ce0       | out |    1|  ap_memory | weight_buffer_19_0 |     array    |
+|weight_buffer_19_0_we0       | out |    1|  ap_memory | weight_buffer_19_0 |     array    |
+|weight_buffer_19_0_d0        | out |   16|  ap_memory | weight_buffer_19_0 |     array    |
+|weight_buffer_19_1_address0  | out |    4|  ap_memory | weight_buffer_19_1 |     array    |
+|weight_buffer_19_1_ce0       | out |    1|  ap_memory | weight_buffer_19_1 |     array    |
+|weight_buffer_19_1_we0       | out |    1|  ap_memory | weight_buffer_19_1 |     array    |
+|weight_buffer_19_1_d0        | out |   16|  ap_memory | weight_buffer_19_1 |     array    |
+|weight_buffer_19_2_address0  | out |    4|  ap_memory | weight_buffer_19_2 |     array    |
+|weight_buffer_19_2_ce0       | out |    1|  ap_memory | weight_buffer_19_2 |     array    |
+|weight_buffer_19_2_we0       | out |    1|  ap_memory | weight_buffer_19_2 |     array    |
+|weight_buffer_19_2_d0        | out |   16|  ap_memory | weight_buffer_19_2 |     array    |
+|weight_buffer_19_3_address0  | out |    4|  ap_memory | weight_buffer_19_3 |     array    |
+|weight_buffer_19_3_ce0       | out |    1|  ap_memory | weight_buffer_19_3 |     array    |
+|weight_buffer_19_3_we0       | out |    1|  ap_memory | weight_buffer_19_3 |     array    |
+|weight_buffer_19_3_d0        | out |   16|  ap_memory | weight_buffer_19_3 |     array    |
+|weight_buffer_20_0_address0  | out |    4|  ap_memory | weight_buffer_20_0 |     array    |
+|weight_buffer_20_0_ce0       | out |    1|  ap_memory | weight_buffer_20_0 |     array    |
+|weight_buffer_20_0_we0       | out |    1|  ap_memory | weight_buffer_20_0 |     array    |
+|weight_buffer_20_0_d0        | out |   16|  ap_memory | weight_buffer_20_0 |     array    |
+|weight_buffer_20_1_address0  | out |    4|  ap_memory | weight_buffer_20_1 |     array    |
+|weight_buffer_20_1_ce0       | out |    1|  ap_memory | weight_buffer_20_1 |     array    |
+|weight_buffer_20_1_we0       | out |    1|  ap_memory | weight_buffer_20_1 |     array    |
+|weight_buffer_20_1_d0        | out |   16|  ap_memory | weight_buffer_20_1 |     array    |
+|weight_buffer_20_2_address0  | out |    4|  ap_memory | weight_buffer_20_2 |     array    |
+|weight_buffer_20_2_ce0       | out |    1|  ap_memory | weight_buffer_20_2 |     array    |
+|weight_buffer_20_2_we0       | out |    1|  ap_memory | weight_buffer_20_2 |     array    |
+|weight_buffer_20_2_d0        | out |   16|  ap_memory | weight_buffer_20_2 |     array    |
+|weight_buffer_20_3_address0  | out |    4|  ap_memory | weight_buffer_20_3 |     array    |
+|weight_buffer_20_3_ce0       | out |    1|  ap_memory | weight_buffer_20_3 |     array    |
+|weight_buffer_20_3_we0       | out |    1|  ap_memory | weight_buffer_20_3 |     array    |
+|weight_buffer_20_3_d0        | out |   16|  ap_memory | weight_buffer_20_3 |     array    |
+|weight_buffer_21_0_address0  | out |    4|  ap_memory | weight_buffer_21_0 |     array    |
+|weight_buffer_21_0_ce0       | out |    1|  ap_memory | weight_buffer_21_0 |     array    |
+|weight_buffer_21_0_we0       | out |    1|  ap_memory | weight_buffer_21_0 |     array    |
+|weight_buffer_21_0_d0        | out |   16|  ap_memory | weight_buffer_21_0 |     array    |
+|weight_buffer_21_1_address0  | out |    4|  ap_memory | weight_buffer_21_1 |     array    |
+|weight_buffer_21_1_ce0       | out |    1|  ap_memory | weight_buffer_21_1 |     array    |
+|weight_buffer_21_1_we0       | out |    1|  ap_memory | weight_buffer_21_1 |     array    |
+|weight_buffer_21_1_d0        | out |   16|  ap_memory | weight_buffer_21_1 |     array    |
+|weight_buffer_21_2_address0  | out |    4|  ap_memory | weight_buffer_21_2 |     array    |
+|weight_buffer_21_2_ce0       | out |    1|  ap_memory | weight_buffer_21_2 |     array    |
+|weight_buffer_21_2_we0       | out |    1|  ap_memory | weight_buffer_21_2 |     array    |
+|weight_buffer_21_2_d0        | out |   16|  ap_memory | weight_buffer_21_2 |     array    |
+|weight_buffer_21_3_address0  | out |    4|  ap_memory | weight_buffer_21_3 |     array    |
+|weight_buffer_21_3_ce0       | out |    1|  ap_memory | weight_buffer_21_3 |     array    |
+|weight_buffer_21_3_we0       | out |    1|  ap_memory | weight_buffer_21_3 |     array    |
+|weight_buffer_21_3_d0        | out |   16|  ap_memory | weight_buffer_21_3 |     array    |
+|weight_buffer_22_0_address0  | out |    4|  ap_memory | weight_buffer_22_0 |     array    |
+|weight_buffer_22_0_ce0       | out |    1|  ap_memory | weight_buffer_22_0 |     array    |
+|weight_buffer_22_0_we0       | out |    1|  ap_memory | weight_buffer_22_0 |     array    |
+|weight_buffer_22_0_d0        | out |   16|  ap_memory | weight_buffer_22_0 |     array    |
+|weight_buffer_22_1_address0  | out |    4|  ap_memory | weight_buffer_22_1 |     array    |
+|weight_buffer_22_1_ce0       | out |    1|  ap_memory | weight_buffer_22_1 |     array    |
+|weight_buffer_22_1_we0       | out |    1|  ap_memory | weight_buffer_22_1 |     array    |
+|weight_buffer_22_1_d0        | out |   16|  ap_memory | weight_buffer_22_1 |     array    |
+|weight_buffer_22_2_address0  | out |    4|  ap_memory | weight_buffer_22_2 |     array    |
+|weight_buffer_22_2_ce0       | out |    1|  ap_memory | weight_buffer_22_2 |     array    |
+|weight_buffer_22_2_we0       | out |    1|  ap_memory | weight_buffer_22_2 |     array    |
+|weight_buffer_22_2_d0        | out |   16|  ap_memory | weight_buffer_22_2 |     array    |
+|weight_buffer_22_3_address0  | out |    4|  ap_memory | weight_buffer_22_3 |     array    |
+|weight_buffer_22_3_ce0       | out |    1|  ap_memory | weight_buffer_22_3 |     array    |
+|weight_buffer_22_3_we0       | out |    1|  ap_memory | weight_buffer_22_3 |     array    |
+|weight_buffer_22_3_d0        | out |   16|  ap_memory | weight_buffer_22_3 |     array    |
+|weight_buffer_23_0_address0  | out |    4|  ap_memory | weight_buffer_23_0 |     array    |
+|weight_buffer_23_0_ce0       | out |    1|  ap_memory | weight_buffer_23_0 |     array    |
+|weight_buffer_23_0_we0       | out |    1|  ap_memory | weight_buffer_23_0 |     array    |
+|weight_buffer_23_0_d0        | out |   16|  ap_memory | weight_buffer_23_0 |     array    |
+|weight_buffer_23_1_address0  | out |    4|  ap_memory | weight_buffer_23_1 |     array    |
+|weight_buffer_23_1_ce0       | out |    1|  ap_memory | weight_buffer_23_1 |     array    |
+|weight_buffer_23_1_we0       | out |    1|  ap_memory | weight_buffer_23_1 |     array    |
+|weight_buffer_23_1_d0        | out |   16|  ap_memory | weight_buffer_23_1 |     array    |
+|weight_buffer_23_2_address0  | out |    4|  ap_memory | weight_buffer_23_2 |     array    |
+|weight_buffer_23_2_ce0       | out |    1|  ap_memory | weight_buffer_23_2 |     array    |
+|weight_buffer_23_2_we0       | out |    1|  ap_memory | weight_buffer_23_2 |     array    |
+|weight_buffer_23_2_d0        | out |   16|  ap_memory | weight_buffer_23_2 |     array    |
+|weight_buffer_23_3_address0  | out |    4|  ap_memory | weight_buffer_23_3 |     array    |
+|weight_buffer_23_3_ce0       | out |    1|  ap_memory | weight_buffer_23_3 |     array    |
+|weight_buffer_23_3_we0       | out |    1|  ap_memory | weight_buffer_23_3 |     array    |
+|weight_buffer_23_3_d0        | out |   16|  ap_memory | weight_buffer_23_3 |     array    |
+|weight_buffer_24_0_address0  | out |    4|  ap_memory | weight_buffer_24_0 |     array    |
+|weight_buffer_24_0_ce0       | out |    1|  ap_memory | weight_buffer_24_0 |     array    |
+|weight_buffer_24_0_we0       | out |    1|  ap_memory | weight_buffer_24_0 |     array    |
+|weight_buffer_24_0_d0        | out |   16|  ap_memory | weight_buffer_24_0 |     array    |
+|weight_buffer_24_1_address0  | out |    4|  ap_memory | weight_buffer_24_1 |     array    |
+|weight_buffer_24_1_ce0       | out |    1|  ap_memory | weight_buffer_24_1 |     array    |
+|weight_buffer_24_1_we0       | out |    1|  ap_memory | weight_buffer_24_1 |     array    |
+|weight_buffer_24_1_d0        | out |   16|  ap_memory | weight_buffer_24_1 |     array    |
+|weight_buffer_24_2_address0  | out |    4|  ap_memory | weight_buffer_24_2 |     array    |
+|weight_buffer_24_2_ce0       | out |    1|  ap_memory | weight_buffer_24_2 |     array    |
+|weight_buffer_24_2_we0       | out |    1|  ap_memory | weight_buffer_24_2 |     array    |
+|weight_buffer_24_2_d0        | out |   16|  ap_memory | weight_buffer_24_2 |     array    |
+|weight_buffer_24_3_address0  | out |    4|  ap_memory | weight_buffer_24_3 |     array    |
+|weight_buffer_24_3_ce0       | out |    1|  ap_memory | weight_buffer_24_3 |     array    |
+|weight_buffer_24_3_we0       | out |    1|  ap_memory | weight_buffer_24_3 |     array    |
+|weight_buffer_24_3_d0        | out |   16|  ap_memory | weight_buffer_24_3 |     array    |
+|weight_buffer_25_0_address0  | out |    4|  ap_memory | weight_buffer_25_0 |     array    |
+|weight_buffer_25_0_ce0       | out |    1|  ap_memory | weight_buffer_25_0 |     array    |
+|weight_buffer_25_0_we0       | out |    1|  ap_memory | weight_buffer_25_0 |     array    |
+|weight_buffer_25_0_d0        | out |   16|  ap_memory | weight_buffer_25_0 |     array    |
+|weight_buffer_25_1_address0  | out |    4|  ap_memory | weight_buffer_25_1 |     array    |
+|weight_buffer_25_1_ce0       | out |    1|  ap_memory | weight_buffer_25_1 |     array    |
+|weight_buffer_25_1_we0       | out |    1|  ap_memory | weight_buffer_25_1 |     array    |
+|weight_buffer_25_1_d0        | out |   16|  ap_memory | weight_buffer_25_1 |     array    |
+|weight_buffer_25_2_address0  | out |    4|  ap_memory | weight_buffer_25_2 |     array    |
+|weight_buffer_25_2_ce0       | out |    1|  ap_memory | weight_buffer_25_2 |     array    |
+|weight_buffer_25_2_we0       | out |    1|  ap_memory | weight_buffer_25_2 |     array    |
+|weight_buffer_25_2_d0        | out |   16|  ap_memory | weight_buffer_25_2 |     array    |
+|weight_buffer_25_3_address0  | out |    4|  ap_memory | weight_buffer_25_3 |     array    |
+|weight_buffer_25_3_ce0       | out |    1|  ap_memory | weight_buffer_25_3 |     array    |
+|weight_buffer_25_3_we0       | out |    1|  ap_memory | weight_buffer_25_3 |     array    |
+|weight_buffer_25_3_d0        | out |   16|  ap_memory | weight_buffer_25_3 |     array    |
+|weight_buffer_26_0_address0  | out |    4|  ap_memory | weight_buffer_26_0 |     array    |
+|weight_buffer_26_0_ce0       | out |    1|  ap_memory | weight_buffer_26_0 |     array    |
+|weight_buffer_26_0_we0       | out |    1|  ap_memory | weight_buffer_26_0 |     array    |
+|weight_buffer_26_0_d0        | out |   16|  ap_memory | weight_buffer_26_0 |     array    |
+|weight_buffer_26_1_address0  | out |    4|  ap_memory | weight_buffer_26_1 |     array    |
+|weight_buffer_26_1_ce0       | out |    1|  ap_memory | weight_buffer_26_1 |     array    |
+|weight_buffer_26_1_we0       | out |    1|  ap_memory | weight_buffer_26_1 |     array    |
+|weight_buffer_26_1_d0        | out |   16|  ap_memory | weight_buffer_26_1 |     array    |
+|weight_buffer_26_2_address0  | out |    4|  ap_memory | weight_buffer_26_2 |     array    |
+|weight_buffer_26_2_ce0       | out |    1|  ap_memory | weight_buffer_26_2 |     array    |
+|weight_buffer_26_2_we0       | out |    1|  ap_memory | weight_buffer_26_2 |     array    |
+|weight_buffer_26_2_d0        | out |   16|  ap_memory | weight_buffer_26_2 |     array    |
+|weight_buffer_26_3_address0  | out |    4|  ap_memory | weight_buffer_26_3 |     array    |
+|weight_buffer_26_3_ce0       | out |    1|  ap_memory | weight_buffer_26_3 |     array    |
+|weight_buffer_26_3_we0       | out |    1|  ap_memory | weight_buffer_26_3 |     array    |
+|weight_buffer_26_3_d0        | out |   16|  ap_memory | weight_buffer_26_3 |     array    |
+|weight_buffer_27_0_address0  | out |    4|  ap_memory | weight_buffer_27_0 |     array    |
+|weight_buffer_27_0_ce0       | out |    1|  ap_memory | weight_buffer_27_0 |     array    |
+|weight_buffer_27_0_we0       | out |    1|  ap_memory | weight_buffer_27_0 |     array    |
+|weight_buffer_27_0_d0        | out |   16|  ap_memory | weight_buffer_27_0 |     array    |
+|weight_buffer_27_1_address0  | out |    4|  ap_memory | weight_buffer_27_1 |     array    |
+|weight_buffer_27_1_ce0       | out |    1|  ap_memory | weight_buffer_27_1 |     array    |
+|weight_buffer_27_1_we0       | out |    1|  ap_memory | weight_buffer_27_1 |     array    |
+|weight_buffer_27_1_d0        | out |   16|  ap_memory | weight_buffer_27_1 |     array    |
+|weight_buffer_27_2_address0  | out |    4|  ap_memory | weight_buffer_27_2 |     array    |
+|weight_buffer_27_2_ce0       | out |    1|  ap_memory | weight_buffer_27_2 |     array    |
+|weight_buffer_27_2_we0       | out |    1|  ap_memory | weight_buffer_27_2 |     array    |
+|weight_buffer_27_2_d0        | out |   16|  ap_memory | weight_buffer_27_2 |     array    |
+|weight_buffer_27_3_address0  | out |    4|  ap_memory | weight_buffer_27_3 |     array    |
+|weight_buffer_27_3_ce0       | out |    1|  ap_memory | weight_buffer_27_3 |     array    |
+|weight_buffer_27_3_we0       | out |    1|  ap_memory | weight_buffer_27_3 |     array    |
+|weight_buffer_27_3_d0        | out |   16|  ap_memory | weight_buffer_27_3 |     array    |
+|weight_buffer_28_0_address0  | out |    4|  ap_memory | weight_buffer_28_0 |     array    |
+|weight_buffer_28_0_ce0       | out |    1|  ap_memory | weight_buffer_28_0 |     array    |
+|weight_buffer_28_0_we0       | out |    1|  ap_memory | weight_buffer_28_0 |     array    |
+|weight_buffer_28_0_d0        | out |   16|  ap_memory | weight_buffer_28_0 |     array    |
+|weight_buffer_28_1_address0  | out |    4|  ap_memory | weight_buffer_28_1 |     array    |
+|weight_buffer_28_1_ce0       | out |    1|  ap_memory | weight_buffer_28_1 |     array    |
+|weight_buffer_28_1_we0       | out |    1|  ap_memory | weight_buffer_28_1 |     array    |
+|weight_buffer_28_1_d0        | out |   16|  ap_memory | weight_buffer_28_1 |     array    |
+|weight_buffer_28_2_address0  | out |    4|  ap_memory | weight_buffer_28_2 |     array    |
+|weight_buffer_28_2_ce0       | out |    1|  ap_memory | weight_buffer_28_2 |     array    |
+|weight_buffer_28_2_we0       | out |    1|  ap_memory | weight_buffer_28_2 |     array    |
+|weight_buffer_28_2_d0        | out |   16|  ap_memory | weight_buffer_28_2 |     array    |
+|weight_buffer_28_3_address0  | out |    4|  ap_memory | weight_buffer_28_3 |     array    |
+|weight_buffer_28_3_ce0       | out |    1|  ap_memory | weight_buffer_28_3 |     array    |
+|weight_buffer_28_3_we0       | out |    1|  ap_memory | weight_buffer_28_3 |     array    |
+|weight_buffer_28_3_d0        | out |   16|  ap_memory | weight_buffer_28_3 |     array    |
+|weight_buffer_29_0_address0  | out |    4|  ap_memory | weight_buffer_29_0 |     array    |
+|weight_buffer_29_0_ce0       | out |    1|  ap_memory | weight_buffer_29_0 |     array    |
+|weight_buffer_29_0_we0       | out |    1|  ap_memory | weight_buffer_29_0 |     array    |
+|weight_buffer_29_0_d0        | out |   16|  ap_memory | weight_buffer_29_0 |     array    |
+|weight_buffer_29_1_address0  | out |    4|  ap_memory | weight_buffer_29_1 |     array    |
+|weight_buffer_29_1_ce0       | out |    1|  ap_memory | weight_buffer_29_1 |     array    |
+|weight_buffer_29_1_we0       | out |    1|  ap_memory | weight_buffer_29_1 |     array    |
+|weight_buffer_29_1_d0        | out |   16|  ap_memory | weight_buffer_29_1 |     array    |
+|weight_buffer_29_2_address0  | out |    4|  ap_memory | weight_buffer_29_2 |     array    |
+|weight_buffer_29_2_ce0       | out |    1|  ap_memory | weight_buffer_29_2 |     array    |
+|weight_buffer_29_2_we0       | out |    1|  ap_memory | weight_buffer_29_2 |     array    |
+|weight_buffer_29_2_d0        | out |   16|  ap_memory | weight_buffer_29_2 |     array    |
+|weight_buffer_29_3_address0  | out |    4|  ap_memory | weight_buffer_29_3 |     array    |
+|weight_buffer_29_3_ce0       | out |    1|  ap_memory | weight_buffer_29_3 |     array    |
+|weight_buffer_29_3_we0       | out |    1|  ap_memory | weight_buffer_29_3 |     array    |
+|weight_buffer_29_3_d0        | out |   16|  ap_memory | weight_buffer_29_3 |     array    |
+|weight_buffer_30_0_address0  | out |    4|  ap_memory | weight_buffer_30_0 |     array    |
+|weight_buffer_30_0_ce0       | out |    1|  ap_memory | weight_buffer_30_0 |     array    |
+|weight_buffer_30_0_we0       | out |    1|  ap_memory | weight_buffer_30_0 |     array    |
+|weight_buffer_30_0_d0        | out |   16|  ap_memory | weight_buffer_30_0 |     array    |
+|weight_buffer_30_1_address0  | out |    4|  ap_memory | weight_buffer_30_1 |     array    |
+|weight_buffer_30_1_ce0       | out |    1|  ap_memory | weight_buffer_30_1 |     array    |
+|weight_buffer_30_1_we0       | out |    1|  ap_memory | weight_buffer_30_1 |     array    |
+|weight_buffer_30_1_d0        | out |   16|  ap_memory | weight_buffer_30_1 |     array    |
+|weight_buffer_30_2_address0  | out |    4|  ap_memory | weight_buffer_30_2 |     array    |
+|weight_buffer_30_2_ce0       | out |    1|  ap_memory | weight_buffer_30_2 |     array    |
+|weight_buffer_30_2_we0       | out |    1|  ap_memory | weight_buffer_30_2 |     array    |
+|weight_buffer_30_2_d0        | out |   16|  ap_memory | weight_buffer_30_2 |     array    |
+|weight_buffer_30_3_address0  | out |    4|  ap_memory | weight_buffer_30_3 |     array    |
+|weight_buffer_30_3_ce0       | out |    1|  ap_memory | weight_buffer_30_3 |     array    |
+|weight_buffer_30_3_we0       | out |    1|  ap_memory | weight_buffer_30_3 |     array    |
+|weight_buffer_30_3_d0        | out |   16|  ap_memory | weight_buffer_30_3 |     array    |
+|weight_buffer_31_0_address0  | out |    4|  ap_memory | weight_buffer_31_0 |     array    |
+|weight_buffer_31_0_ce0       | out |    1|  ap_memory | weight_buffer_31_0 |     array    |
+|weight_buffer_31_0_we0       | out |    1|  ap_memory | weight_buffer_31_0 |     array    |
+|weight_buffer_31_0_d0        | out |   16|  ap_memory | weight_buffer_31_0 |     array    |
+|weight_buffer_31_1_address0  | out |    4|  ap_memory | weight_buffer_31_1 |     array    |
+|weight_buffer_31_1_ce0       | out |    1|  ap_memory | weight_buffer_31_1 |     array    |
+|weight_buffer_31_1_we0       | out |    1|  ap_memory | weight_buffer_31_1 |     array    |
+|weight_buffer_31_1_d0        | out |   16|  ap_memory | weight_buffer_31_1 |     array    |
+|weight_buffer_31_2_address0  | out |    4|  ap_memory | weight_buffer_31_2 |     array    |
+|weight_buffer_31_2_ce0       | out |    1|  ap_memory | weight_buffer_31_2 |     array    |
+|weight_buffer_31_2_we0       | out |    1|  ap_memory | weight_buffer_31_2 |     array    |
+|weight_buffer_31_2_d0        | out |   16|  ap_memory | weight_buffer_31_2 |     array    |
+|weight_buffer_31_3_address0  | out |    4|  ap_memory | weight_buffer_31_3 |     array    |
+|weight_buffer_31_3_ce0       | out |    1|  ap_memory | weight_buffer_31_3 |     array    |
+|weight_buffer_31_3_we0       | out |    1|  ap_memory | weight_buffer_31_3 |     array    |
+|weight_buffer_31_3_d0        | out |   16|  ap_memory | weight_buffer_31_3 |     array    |
+|p_read                       |  in |   32|   ap_none  |       p_read       |    scalar    |
+|enable                       |  in |    1|   ap_none  |       enable       |    scalar    |
+|weight_load_enable           |  in |    1|   ap_none  | weight_load_enable |    scalar    |
+|IHxIW                        |  in |   19|   ap_none  |        IHxIW       |    scalar    |
+|LayerType                    |  in |    4|   ap_none  |      LayerType     |    scalar    |
+|trow_loops_V                 |  in |    6|   ap_none  |    trow_loops_V    |    scalar    |
++-----------------------------+-----+-----+------------+--------------------+--------------+
+

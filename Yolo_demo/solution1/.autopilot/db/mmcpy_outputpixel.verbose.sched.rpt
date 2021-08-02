@@ -1,0 +1,132 @@
+
+
+================================================================
+== Vivado HLS Report for 'mmcpy_outputpixel'
+================================================================
+* Date:           Thu Jul 29 20:17:22 2021
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        Yolo_demo
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    1|  264|    1|  264|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.55>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%enable_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %enable)"   --->   Operation 3 'read' 'enable_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%OutputLength1_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %OutputLength1)"   --->   Operation 4 'read' 'OutputLength1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%OutputLength_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %OutputLength)"   --->   Operation 5 'read' 'OutputLength_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%outputoffsetarray_1_4 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %outputoffsetarray_1)"   --->   Operation 6 'read' 'outputoffsetarray_1_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%outputoffsetarray_0_4 = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %outputoffsetarray_0)"   --->   Operation 7 'read' 'outputoffsetarray_0_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%mLoop2_V_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %mLoop2_V)"   --->   Operation 8 'read' 'mLoop2_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%mLoop1_V_read = call i5 @_ssdm_op_Read.ap_auto.i5(i5 %mLoop1_V)"   --->   Operation 9 'read' 'mLoop1_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tm_V_6_read = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %tm_V_6)"   --->   Operation 10 'read' 'tm_V_6_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%Output1_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Output1_offset)"   --->   Operation 11 'read' 'Output1_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%Output_offset_read = call i30 @_ssdm_op_Read.ap_auto.i30(i30 %Output_offset)"   --->   Operation 12 'read' 'Output_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Output_r, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str17, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 13 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %Output1, [6 x i8]* @p_str16, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 512, [10 x i8]* @p_str19, [6 x i8]* @p_str18, [1 x i8]* @p_str1, i32 1, i32 1, i32 64, i32 64, [1 x i8]* @p_str1, [1 x i8]* @p_str1)"   --->   Operation 14 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %enable_read, label %1, label %._crit_edge" [cnn.cpp:672]   --->   Operation 15 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [2/2] (2.55ns)   --->   "call fastcc void @mmcpy_outputport(i32* %Output_r, i30 %Output_offset_read, [169 x i32]* nocapture %output_tmp, i6 %tm_V_6_read, i5 %mLoop1_V_read, i32 %outputoffsetarray_0_4, i8 %OutputLength_read)" [cnn.cpp:676]   --->   Operation 16 'call' <Predicate = (enable_read)> <Delay = 2.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 17 [2/2] (2.55ns)   --->   "call fastcc void @mmcpy_outputport1(i32* %Output1, i30 %Output1_offset_read, [169 x i32]* nocapture %output_tmp1, i6 %tm_V_6_read, i6 %mLoop2_V_read, i32 %outputoffsetarray_1_4, i8 %OutputLength1_read)" [cnn.cpp:677]   --->   Operation 17 'call' <Predicate = (enable_read)> <Delay = 2.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 18 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_outputport(i32* %Output_r, i30 %Output_offset_read, [169 x i32]* nocapture %output_tmp, i6 %tm_V_6_read, i5 %mLoop1_V_read, i32 %outputoffsetarray_0_4, i8 %OutputLength_read)" [cnn.cpp:676]   --->   Operation 18 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 19 [1/2] (0.00ns)   --->   "call fastcc void @mmcpy_outputport1(i32* %Output1, i30 %Output1_offset_read, [169 x i32]* nocapture %output_tmp1, i6 %tm_V_6_read, i6 %mLoop2_V_read, i32 %outputoffsetarray_1_4, i8 %OutputLength1_read)" [cnn.cpp:677]   --->   Operation 19 'call' <Predicate = (enable_read)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "br label %._crit_edge" [cnn.cpp:678]   --->   Operation 20 'br' <Predicate = (enable_read)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "ret void" [cnn.cpp:678]   --->   Operation 21 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 2.55ns
+The critical path consists of the following:
+	wire read on port 'OutputLength1' [16]  (0 ns)
+	'call' operation (cnn.cpp:677) to 'mmcpy_outputport1' [30]  (2.55 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

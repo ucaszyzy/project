@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="YOLO2_FPGA" xd:componentRef="YOLO2_FPGA" xd:initiationInterval="x" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(Input)" xd:originalName="Input" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS1" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Output)" xd:originalName="Output" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS1" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="out"/>
+  <xd:arg xd:name="*(Input1)" xd:originalName="Input1" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS2" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Output1)" xd:originalName="Output1" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS2" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="out"/>
+  <xd:arg xd:name="*(Input2)" xd:originalName="Input2" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS3" xd:busTypeRef="aximm" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Input3)" xd:originalName="Input3" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS4" xd:busTypeRef="aximm" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Weight)" xd:originalName="Weight" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS5" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(Beta)" xd:originalName="Beta" xd:direction="inout" xd:interfaceRef="m_axi_DATA_BUS5" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="31:0" xd:arraySize="512" xd:dataWidth="32" xd:bufferDirection="in"/>
+  <xd:arg xd:name="Input_r" xd:originalName="Input_r" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS1" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Input1" xd:originalName="Input1" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS2" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Input2" xd:originalName="Input2" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS3" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Input3" xd:originalName="Input3" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS4" xd:dataWidth="32" xd:offset="0x28" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Output_r" xd:originalName="Output_r" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS1" xd:dataWidth="32" xd:offset="0x30" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Output1" xd:originalName="Output1" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS2" xd:dataWidth="32" xd:offset="0x38" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Weight" xd:originalName="Weight" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS5" xd:dataWidth="32" xd:offset="0x40" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Beta" xd:originalName="Beta" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_DATA_BUS5" xd:dataWidth="32" xd:offset="0x48" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="InFM_num" xd:originalName="InFM_num" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x50" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="OutFM_num" xd:originalName="OutFM_num" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x58" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Kernel_size" xd:originalName="Kernel_size" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x60" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Kernel_stride" xd:originalName="Kernel_stride" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x68" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Input_w" xd:originalName="Input_w" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x70" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Input_h" xd:originalName="Input_h" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x78" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="output_w" xd:originalName="output_w" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x80" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="output_h" xd:originalName="output_h" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x88" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="Padding" xd:originalName="Padding" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x90" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="IsNL" xd:originalName="IsNL" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="1" xd:offset="0x98" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="IsBN" xd:originalName="IsBN" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="1" xd:offset="0xA0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="TM" xd:originalName="TM" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xA8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="TN" xd:originalName="TN" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xB0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="TR" xd:originalName="TR" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xB8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="TC" xd:originalName="TC" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xC0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="mLoops" xd:originalName="mLoops" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xC8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="nLoops" xd:originalName="nLoops" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xD0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="rLoops" xd:originalName="rLoops" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xD8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="cLoops" xd:originalName="cLoops" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xE0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="LayerType" xd:originalName="LayerType" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xE8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="InputQ" xd:originalName="InputQ" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xF0" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="OutputQ" xd:originalName="OutputQ" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0xF8" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="WeightQ" xd:originalName="WeightQ" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x100" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="BetaQ" xd:originalName="BetaQ" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x108" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="trow_loops" xd:originalName="trow_loops" xd:direction="in" xd:interfaceRef="s_axi_CTRL_BUS" xd:busTypeRef="axilite" xd:dataWidth="32" xd:offset="0x110" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="56549" xd:FF="32091" xd:BRAM="178" xd:DSP="156"/>
+</xd:acceleratorMap>
